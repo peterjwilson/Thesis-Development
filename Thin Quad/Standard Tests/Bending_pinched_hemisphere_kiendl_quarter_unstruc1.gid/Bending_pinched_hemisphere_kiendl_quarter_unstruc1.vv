@@ -1,0 +1,37 @@
+BeginZE C:\Users\Peter\Desktop\TUM\Thesis\Development\Thin Quad\Standard Tests\Bending_pinched_hemisphere_kiendl_quarter_unstruc1.gid\Bending_pinched_hemisphere_kiendl_quarter_unstruc1.vv
+   x -5.9413642883300781 15.941363334655762
+   y 13.66025447845459 -3.6602544784545898
+   z -30.980762481689453 20.980762481689453
+   e 8.6602544784545898
+   v 0.20239223539829254 0.36991316080093384 0.78946024179458618
+   r 0.44604280591011047
+   m -0.52016639709472656 -0.55453097820281982 0.64955544471740723 0 0.85400122404098511 -0.32842010259628296 0.40351226925849915 0 -0.010432985611259937 0.76461470127105713 0.64440327882766724 0 0 0 0 1
+   c 5 5 5
+   pd 0
+   pno 0
+   pfo 0
+   pf 4
+   pv 0
+   NowUse 1
+   DrawingType 0
+   LightVector 90 90 150 0
+   OGLShadow(UseShadows) 0
+   OGLShadow(RenderMode) RenderNice
+   OGLShadow(ShadowBias) -0.002
+   OGLShadow(AmbientShadows) 1
+   OGLShadow(UseFBO) 0
+   OGLShadow(FBOSize) 2048
+   OGLShadow(DimmedLightFactor) 0.02
+   OGLStereo(UseStereo) 0
+   OGLStereo(RelativeEyeDistance) 1
+   OGLStereo(FlipEyes) 0
+   OGLStereo(StereoMode) AnaglyphColors
+   OGLStereo(EyeDistance) 0.075
+   OGLStereo(LeftEyeDistance) 1 0 0 1
+   OGLStereo(RightEyeDistance) 0 1 1 1
+EndZE C:\Users\Peter\Desktop\TUM\Thesis\Development\Thin Quad\Standard Tests\Bending_pinched_hemisphere_kiendl_quarter_unstruc1.gid\Bending_pinched_hemisphere_kiendl_quarter_unstruc1.vv
+
+BeginMirror
+   Mirror 0 Angle 0.0 AngleFake -15.0 SizeFactor 2.0 HeightOffset 0.25 Color #d9e5f24d Backlight Off EdgeStyle No Type Scene DrawMode Mirror
+EndMirror
+

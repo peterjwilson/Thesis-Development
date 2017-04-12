@@ -1,0 +1,37 @@
+BeginZE C:\Users\Peter\Desktop\TUM\Thesis\Development\Thin Quad\Unstructured Mesh Tests\Membrane_square_plate_skew3.gid\Membrane_square_plate_skew3.vv
+   x -28.790908813476562 78.790908813476563
+   y 61.32415771484375 -11.32415771484375
+   z -108.97247314453125 108.97247314453125
+   e 36.32415771484375
+   v 0.3540855348110199 0.082053817808628082 0.21087834239006042
+   r 0.90742546319961548
+   m 0.89759498834609985 -0.32460460066795349 0.2982533872127533 0 0.44082090258598328 0.66030752658843994 -0.60800570249557495 0 0.00042249815305694938 0.6772192120552063 0.73578119277954102 0 0 0 0 1
+   c 25 25 0
+   pd 0
+   pno 0
+   pfo 0
+   pf 4
+   pv 0
+   NowUse 1
+   DrawingType 0
+   LightVector 90 90 150 0
+   OGLShadow(UseShadows) 0
+   OGLShadow(RenderMode) RenderNice
+   OGLShadow(ShadowBias) -0.002
+   OGLShadow(AmbientShadows) 1
+   OGLShadow(UseFBO) 0
+   OGLShadow(FBOSize) 2048
+   OGLShadow(DimmedLightFactor) 0.02
+   OGLStereo(UseStereo) 0
+   OGLStereo(RelativeEyeDistance) 1
+   OGLStereo(FlipEyes) 0
+   OGLStereo(StereoMode) AnaglyphColors
+   OGLStereo(EyeDistance) 0.075
+   OGLStereo(LeftEyeDistance) 1 0 0 1
+   OGLStereo(RightEyeDistance) 0 1 1 1
+EndZE C:\Users\Peter\Desktop\TUM\Thesis\Development\Thin Quad\Unstructured Mesh Tests\Membrane_square_plate_skew3.gid\Membrane_square_plate_skew3.vv
+
+BeginMirror
+   Mirror 0 Angle 0.0 AngleFake -15.0 SizeFactor 2.0 HeightOffset 0.25 Color #d9e5f24d Backlight Off EdgeStyle No Type Scene DrawMode Mirror
+EndMirror
+

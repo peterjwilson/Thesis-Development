@@ -1,0 +1,37 @@
+BeginZE C:\Users\Peter\Desktop\TUM\Thesis\Development\Thin Quad\Standard Tests\NL\NL_open_cyl_pull2.gid\NL_open_cyl_pull2.vv
+   x -10.156040191650391 10.156040191650391
+   y 10.055807113647461 -5.102806568145752
+   z -17.562919616699219 27.912918090820312
+   e 7.5793066024780273
+   v -0.21860416233539581 0.27025523781776428 0.090784698724746704
+   r 0.93323761224746704
+   m 0.83744049072265625 -0.28760522603988647 0.46473288536071777 0 0.051289543509483337 0.88794070482254028 0.45708933472633362 0 -0.5441165566444397 -0.35894918441772461 0.75834864377975464 0 0 0 0 1
+   c 0 2.4765000343322754 -5.1750001907348633
+   pd 0
+   pno 0
+   pfo 0
+   pf 4
+   pv 0
+   NowUse 1
+   DrawingType 0
+   LightVector 90 90 150 0
+   OGLShadow(UseShadows) 0
+   OGLShadow(RenderMode) RenderNice
+   OGLShadow(ShadowBias) -0.002
+   OGLShadow(AmbientShadows) 1
+   OGLShadow(UseFBO) 0
+   OGLShadow(FBOSize) 2048
+   OGLShadow(DimmedLightFactor) 0.02
+   OGLStereo(UseStereo) 0
+   OGLStereo(RelativeEyeDistance) 1
+   OGLStereo(FlipEyes) 0
+   OGLStereo(StereoMode) AnaglyphColors
+   OGLStereo(EyeDistance) 0.075
+   OGLStereo(LeftEyeDistance) 1 0 0 1
+   OGLStereo(RightEyeDistance) 0 1 1 1
+EndZE C:\Users\Peter\Desktop\TUM\Thesis\Development\Thin Quad\Standard Tests\NL\NL_open_cyl_pull2.gid\NL_open_cyl_pull2.vv
+
+BeginMirror
+   Mirror 0 Angle 0.0 AngleFake -15.0 SizeFactor 2.0 HeightOffset 0.25 Color #d9e5f24d Backlight Off EdgeStyle No Type Scene DrawMode Mirror
+EndMirror
+

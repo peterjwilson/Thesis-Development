@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gid version="12.2">
+  <pre>
+    <layer_to_use name="Layer0"/>
+    <groups>
+      <group id="1" name="Surface" color="#ffaaaaff"/>
+      <group id="2" name="Dirichlet" color="#0000ffff"/>
+      <group id="3" name="Neumann" color="#ff00ffff"/>
+    </groups>
+    <entities_groups>
+      <entities_group name="points">
+        <vector name="entity_ids" length="2" type="integer">2 3</vector>
+        <vector name="entity_num_groups" length="2" type="ushort">1 1</vector>
+        <vector name="entity_groups" length="2" type="ushort">3 3</vector>
+      </entities_group>
+      <entities_group name="lines">
+        <vector name="entity_ids" length="1" type="integer">4</vector>
+        <vector name="entity_num_groups" length="1" type="ushort">1</vector>
+        <vector name="entity_groups" length="1" type="ushort">2</vector>
+      </entities_group>
+      <entities_group name="surfaces">
+        <vector name="entity_ids" length="1" type="integer">1</vector>
+        <vector name="entity_num_groups" length="1" type="ushort">1</vector>
+        <vector name="entity_groups" length="1" type="ushort">1</vector>
+      </entities_group>
+      <entities_group name="nodes">
+        <vector name="entity_ids" length="81" type="integer">1:81</vector>
+        <vector name="entity_num_groups" length="81" type="ushort">2 2 1x3 2 1x3 2 1x5 2 1x9 2 1x8 2 1x9 2 1x11 2 2 1x22 2</vector>
+        <vector name="entity_groups" length="92" type="ushort">2 1 2 1x4 2 1x4 2 1x6 2 1x10 2 1x9 2 1x10 2 1x12 3 1 2 1x23 3 1</vector>
+      </entities_group>
+      <entities_group name="elements">
+        <vector name="entity_ids" length="64" type="integer">1:64</vector>
+        <vector name="entity_num_groups" length="64" type="ushort">1x64</vector>
+        <vector name="entity_groups" length="64" type="ushort">1x64</vector>
+      </entities_group>
+      <entities_group name="faces">
+        <vector name="entity_ids" length="8" type="integer">1 9 17 25 33 41 49 57</vector>
+        <vector name="entity_num_faces" length="8" type="uchar">1x8</vector>
+        <vector name="entity_faces" length="8" type="uchar">3x8</vector>
+        <vector name="face_num_groups" length="8" type="ushort">1x8</vector>
+        <vector name="face_groups" length="8" type="ushort">2x8</vector>
+      </entities_group>
+    </entities_groups>
+  </pre>
+</gid>

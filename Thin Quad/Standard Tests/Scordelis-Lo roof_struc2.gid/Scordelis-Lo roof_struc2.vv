@@ -1,0 +1,37 @@
+BeginZE C:\Users\Peter\Desktop\TUM\Thesis\Development\Thin Quad\Standard Tests\Scordelis-Lo roof_struc2.gid\Scordelis-Lo roof_struc2.vv
+   x -3.467827320098877 19.537517547607422
+   y 27.93275260925293 -2.9327526092529297
+   z -68.373809814453125 24.222702026367188
+   e 15.43275260925293
+   v 0.4205794632434845 0.22702793776988983 0.36299887299537659
+   r 0.79987692832946777
+   m 0.63338029384613037 -0.38974225521087646 0.66852855682373047 0 0.77167540788650513 0.38268947601318359 -0.50800180435180664 0 -0.057849079370498657 0.83764535188674927 0.54314243793487549 0 0 0 0 1
+   c 8.0348453521728516 12.5 22.075553894042969
+   pd 0
+   pno 0
+   pfo 0
+   pf 4
+   pv 0
+   NowUse 1
+   DrawingType 0
+   LightVector 90 90 150 0
+   OGLShadow(UseShadows) 0
+   OGLShadow(RenderMode) RenderNice
+   OGLShadow(ShadowBias) -0.002
+   OGLShadow(AmbientShadows) 1
+   OGLShadow(UseFBO) 0
+   OGLShadow(FBOSize) 2048
+   OGLShadow(DimmedLightFactor) 0.02
+   OGLStereo(UseStereo) 0
+   OGLStereo(RelativeEyeDistance) 1
+   OGLStereo(FlipEyes) 0
+   OGLStereo(StereoMode) AnaglyphColors
+   OGLStereo(EyeDistance) 0.075
+   OGLStereo(LeftEyeDistance) 1 0 0 1
+   OGLStereo(RightEyeDistance) 0 1 1 1
+EndZE C:\Users\Peter\Desktop\TUM\Thesis\Development\Thin Quad\Standard Tests\Scordelis-Lo roof_struc2.gid\Scordelis-Lo roof_struc2.vv
+
+BeginMirror
+   Mirror 0 Angle 0.0 AngleFake -15.0 SizeFactor 2.0 HeightOffset 0.25 Color #d9e5f24d Backlight Off EdgeStyle No Type Scene DrawMode Mirror
+EndMirror
+

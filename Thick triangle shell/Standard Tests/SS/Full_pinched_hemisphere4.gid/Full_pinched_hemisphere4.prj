@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gid version="12.2">
+  <pre>
+    <layer_to_use name="Layer0"/>
+    <groups>
+      <group id="1" name="surface" color="#ffaaaaff"/>
+      <group id="4" name="dirichlet" color="#00ffffff"/>
+      <group id="5" name="yplus" color="#a60021ff"/>
+      <group id="6" name="yneg" color="#00ff00ff"/>
+      <group id="7" name="xplus" color="#996600ff"/>
+      <group id="8" name="xneg" color="#b33366ff"/>
+    </groups>
+    <entities_groups>
+      <entities_group name="points">
+        <vector name="entity_ids" length="5" type="integer">1 3:6</vector>
+        <vector name="entity_num_groups" length="5" type="ushort">1x5</vector>
+        <vector name="entity_groups" length="5" type="ushort">7 4 5 8 6</vector>
+      </entities_group>
+      <entities_group name="surfaces">
+        <vector name="entity_ids" length="4" type="integer">1:4</vector>
+        <vector name="entity_num_groups" length="4" type="ushort">1x4</vector>
+        <vector name="entity_groups" length="4" type="ushort">1x4</vector>
+      </entities_group>
+      <entities_group name="nodes">
+        <vector name="entity_ids" length="4585" type="integer">1:1210 1212:4586</vector>
+        <vector name="entity_num_groups" length="4585" type="ushort">1x62 2 1x1798 2 1x429 2 1x431 2 1x1798 2 1x62</vector>
+        <vector name="entity_groups" length="4590" type="ushort">1x62 6 1x1799 8 1x430 4 1x432 7 1x1799 5 1x63</vector>
+      </entities_group>
+      <entities_group name="elements">
+        <vector name="entity_ids" length="9008" type="integer">1:9008</vector>
+        <vector name="entity_num_groups" length="9008" type="ushort">1x9008</vector>
+        <vector name="entity_groups" length="9008" type="ushort">1x9008</vector>
+      </entities_group>
+    </entities_groups>
+  </pre>
+</gid>

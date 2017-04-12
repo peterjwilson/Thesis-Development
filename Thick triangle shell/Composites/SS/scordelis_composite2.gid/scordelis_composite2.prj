@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gid version="12.2">
+  <pre>
+    <layer_to_use name="Layer0"/>
+    <groups>
+      <group id="1" name="surface" color="#ffaaaaff"/>
+      <group id="2" name="rigid end" color="#0000ffff"/>
+      <group id="3" name="xz sym" color="#ff00ffff"/>
+      <group id="4" name="yz sym" color="#00ffffff"/>
+    </groups>
+    <entities_groups>
+      <entities_group name="lines">
+        <vector name="entity_ids" length="3" type="integer">1:3</vector>
+        <vector name="entity_num_groups" length="3" type="ushort">1x3</vector>
+        <vector name="entity_groups" length="3" type="ushort">4 2 3</vector>
+      </entities_group>
+      <entities_group name="surfaces">
+        <vector name="entity_ids" length="1" type="integer">1</vector>
+        <vector name="entity_num_groups" length="1" type="ushort">1</vector>
+        <vector name="entity_groups" length="1" type="ushort">1</vector>
+      </entities_group>
+      <entities_group name="nodes">
+        <vector name="entity_ids" length="289" type="integer">1:289</vector>
+        <vector name="entity_num_groups" length="289" type="ushort">2 2 1 1 2 1 1 2 1x3 2 1x6 2 1x6 2 1x5 2 1x9 2 1x9 2 1x8 2 1x14 2 1x13 2 1x10 2 1x14 2 1x18 2 1x13 3 1 2 1x6 2 1x3 2 1x6 2 1x9 2 1x7 2 1x8 2 1x13 2 1x11 2 1x11 2 1x13 2 1x7 2x4 1 2 2 1 1 2 1 2 1 1 2 1 2 1 2 1 2 1 2 1 2 2 1 2 1 2x4 3</vector>
+        <vector name="entity_groups" length="340" type="ushort">2 1 2 1x3 2 1x3 2 1x4 2 1x7 2 1x7 2 1x6 2 1x10 2 1x10 2 1x9 2 1x15 2 1x14 2 1x11 2 1x15 2 1x19 2 1x14 2 3 1 1 3 1x7 3 1x4 3 1x7 3 1x10 3 1x8 3 1x9 3 1x14 3 1x12 3 1x12 3 1x14 3 1x8 4 1 4 1 4 1 4 1 1 4 1 3 1x3 4 1 1 4 1x3 4 1 1 4 1 1 3 1 1 4 1 1 4 1 1 4 1 3 1 1 4 1 1 4 1 3 1 4 1 4 1 4 3 1</vector>
+      </entities_group>
+      <entities_group name="elements">
+        <vector name="entity_ids" length="512" type="integer">1:512</vector>
+        <vector name="entity_num_groups" length="512" type="ushort">1x512</vector>
+        <vector name="entity_groups" length="512" type="ushort">1x512</vector>
+      </entities_group>
+      <entities_group name="faces">
+        <vector name="entity_ids" length="47" type="integer">1:3 5 7 9 11 13 15 17 19 21 23 25 27 29 31 34 66 98 130 162 194 226 258 290 322 354 386 418 450 482 484 486 488 490 492 494 496 498 500 502 504 506 508 510 512</vector>
+        <vector name="entity_num_faces" length="47" type="uchar">1x31 2 1x15</vector>
+        <vector name="entity_faces" length="48" type="uchar">3 2 3x15 2x14 1 2 1x15</vector>
+        <vector name="face_num_groups" length="48" type="ushort">1x48</vector>
+        <vector name="face_groups" length="48" type="ushort">4 3 4x15 3x14 2 3 2x15</vector>
+      </entities_group>
+    </entities_groups>
+  </pre>
+</gid>

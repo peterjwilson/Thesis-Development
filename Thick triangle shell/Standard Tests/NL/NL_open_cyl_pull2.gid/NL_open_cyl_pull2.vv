@@ -1,0 +1,37 @@
+BeginZE C:\Users\Peter\Desktop\TUM\Thesis\Development\Thick triangle shell\Standard Tests\NL\NL_open_cyl_pull2.gid\NL_open_cyl_pull2.vv
+   x -3.3850095272064209 8.3380069732666016
+   y 6.8309531211853027 -1.877953052520752
+   z -10.475858688354492 15.650859832763672
+   e 4.3544530868530273
+   v -0.24575449358552276 0.25344329059639581 0.045562022824146703
+   r 0.93450273361561953
+   m 0.86738121509552002 -0.20972532033920288 0.45129275321960449 0 -0.03941398486495018 0.8750576376914978 0.48241126537322998 0 -0.49608105421066284 -0.43622171878814697 0.75074243545532227 0 0 0 0 1
+   c 2.4765000343322754 2.4765000343322754 -2.5875000953674316
+   pd 0
+   pno 0
+   pfo 0
+   pf 4
+   pv 0
+   NowUse 1
+   DrawingType 0
+   LightVector 90 90 150 0
+   OGLShadow(UseShadows) 0
+   OGLShadow(RenderMode) RenderNice
+   OGLShadow(ShadowBias) -0.002
+   OGLShadow(AmbientShadows) 1
+   OGLShadow(UseFBO) 0
+   OGLShadow(FBOSize) 2048
+   OGLShadow(DimmedLightFactor) 0.02
+   OGLStereo(UseStereo) 0
+   OGLStereo(RelativeEyeDistance) 1
+   OGLStereo(FlipEyes) 0
+   OGLStereo(StereoMode) AnaglyphColors
+   OGLStereo(EyeDistance) 0.075
+   OGLStereo(LeftEyeDistance) 1 0 0 1
+   OGLStereo(RightEyeDistance) 0 1 1 1
+EndZE C:\Users\Peter\Desktop\TUM\Thesis\Development\Thick triangle shell\Standard Tests\NL\NL_open_cyl_pull2.gid\NL_open_cyl_pull2.vv
+
+BeginMirror
+   Mirror 0 Angle 0.0 AngleFake -15.0 SizeFactor 2.0 HeightOffset 0.25 Color #d9e5f24d Backlight Off EdgeStyle No Type Scene DrawMode Mirror
+EndMirror
+

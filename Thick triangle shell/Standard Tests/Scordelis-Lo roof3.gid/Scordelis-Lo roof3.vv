@@ -1,0 +1,37 @@
+BeginZE C:\Users\Peter\Desktop\TUM\Thesis\Development\Thick triangle shell\Standard Tests\Scordelis-Lo roof3.gid\Scordelis-Lo roof3.vv
+   x -14.546207427978516 30.615907669067383
+   y 27.93275260925293 -2.9327526092529297
+   z -68.373809814453125 24.222702026367188
+   e 15.43275260925293
+   v 0.4274810254573822 0.28790029883384705 0.32622209191322327
+   r 0.79243457317352295
+   m 0.62138509750366211 -0.27087551355361938 0.73519182205200195 0 0.76316314935684204 0.42167824506759644 -0.48966258764266968 0 -0.17737677693367004 0.86534035205841064 0.46874681115150452 0 0 0 0 1
+   c 8.0348453521728516 12.5 22.075553894042969
+   pd 0
+   pno 0
+   pfo 0
+   pf 4
+   pv 0
+   NowUse 1
+   DrawingType 0
+   LightVector 90 90 150 0
+   OGLShadow(UseShadows) 0
+   OGLShadow(RenderMode) RenderNice
+   OGLShadow(ShadowBias) -0.002
+   OGLShadow(AmbientShadows) 1
+   OGLShadow(UseFBO) 0
+   OGLShadow(FBOSize) 2048
+   OGLShadow(DimmedLightFactor) 0.02
+   OGLStereo(UseStereo) 0
+   OGLStereo(RelativeEyeDistance) 1
+   OGLStereo(FlipEyes) 0
+   OGLStereo(StereoMode) AnaglyphColors
+   OGLStereo(EyeDistance) 0.075
+   OGLStereo(LeftEyeDistance) 1 0 0 1
+   OGLStereo(RightEyeDistance) 0 1 1 1
+EndZE C:\Users\Peter\Desktop\TUM\Thesis\Development\Thick triangle shell\Standard Tests\Scordelis-Lo roof3.gid\Scordelis-Lo roof3.vv
+
+BeginMirror
+   Mirror 0 Angle 0.0 AngleFake -15.0 SizeFactor 2.0 HeightOffset 0.25 Color #d9e5f24d Backlight Off EdgeStyle No Type Scene DrawMode Mirror
+EndMirror
+

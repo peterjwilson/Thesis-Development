@@ -1,0 +1,37 @@
+BeginZE C:\Users\Peter\Desktop\TUM\Thesis\Development\Thin Quad\Standard Tests\NL\NL_semi_cyl_pinch.gid\NL_semi_cyl_pinch.vv
+   x -256.92861938476562 256.92861938476562
+   y 240.87619018554687 -139.27618408203125
+   z -417.82858276367188 722.6285400390625
+   e 190.07618713378906
+   v -0.25903612375259399 0.32634618878364563 0.10273291915655136
+   r 0.90324103832244873
+   m 0.76588821411132813 -0.35465610027313232 0.53631550073623657 0 0.016514269635081291 0.84469246864318848 0.53499710559844971 0 -0.64276164770126343 -0.40089112520217896 0.65279686450958252 0 0 0 0 1
+   c 0 50.799999237060547 -152.39999389648437
+   pd 0
+   pno 0
+   pfo 0
+   pf 4
+   pv 0
+   NowUse 0
+   DrawingType 0
+   LightVector 90 90 150 0
+   OGLShadow(UseShadows) 0
+   OGLShadow(RenderMode) RenderNice
+   OGLShadow(ShadowBias) -0.002
+   OGLShadow(AmbientShadows) 1
+   OGLShadow(UseFBO) 0
+   OGLShadow(FBOSize) 2048
+   OGLShadow(DimmedLightFactor) 0.02
+   OGLStereo(UseStereo) 0
+   OGLStereo(RelativeEyeDistance) 1
+   OGLStereo(FlipEyes) 0
+   OGLStereo(StereoMode) AnaglyphColors
+   OGLStereo(EyeDistance) 0.075
+   OGLStereo(LeftEyeDistance) 1 0 0 1
+   OGLStereo(RightEyeDistance) 0 1 1 1
+EndZE C:\Users\Peter\Desktop\TUM\Thesis\Development\Thin Quad\Standard Tests\NL\NL_semi_cyl_pinch.gid\NL_semi_cyl_pinch.vv
+
+BeginMirror
+   Mirror 0 Angle 0.0 AngleFake -15.0 SizeFactor 2.0 HeightOffset 0.25 Color #d9e5f24d Backlight Off EdgeStyle No Type Scene DrawMode Mirror
+EndMirror
+

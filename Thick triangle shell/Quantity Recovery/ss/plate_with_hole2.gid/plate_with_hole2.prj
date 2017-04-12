@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gid version="12.2">
+  <pre>
+    <layer_to_use name="Layer0"/>
+    <groups>
+      <group id="1" name="surface" color="#608fbfff"/>
+      <group id="2" name="load" color="#0000ffff"/>
+      <group id="3" name="base" color="#ff00ffff"/>
+    </groups>
+    <entities_groups>
+      <entities_group name="lines">
+        <vector name="entity_ids" length="3" type="integer">4 35 36</vector>
+        <vector name="entity_num_groups" length="3" type="ushort">1x3</vector>
+        <vector name="entity_groups" length="3" type="ushort">3x3</vector>
+      </entities_group>
+      <entities_group name="surfaces">
+        <vector name="entity_ids" length="9" type="integer">4:12</vector>
+        <vector name="entity_num_groups" length="9" type="ushort">2 1 1 2 1x3 2 1</vector>
+        <vector name="entity_groups" length="12" type="ushort">1 2 1 1 2 1x4 2 1 1</vector>
+      </entities_group>
+      <entities_group name="nodes">
+        <vector name="entity_ids" length="3608" type="integer">1:3608</vector>
+        <vector name="entity_num_groups" length="3608" type="ushort">2x5 1 2 1 2 1 2 1x3 2 1x3 2 1x4 2 1 1 2 1x7 2 1 2 1x8 2 1 2 1x11 2 1 1 2 1x12 2 1 2 1x13 2 1 2 1x16 2 1 2 1x17 2 1 2 1x19 2 1 1 2 1x21 2 2 1x22 2 2 1x26 2 2 1x28 2 1 1 2 1x28 2 1 2 1x33 2 1 2 1x34 2 1x3 2 1x38 2 1 2 1x38 2 1 2 1x47 2 2 1x50 2 1 2 1x94 2 1x5 2 1x185 2 1x5 2 1x131 2 1x3 2 1x114 2 1x4 2 1x113 2 1 2 1x109 2 2 1x116 2 1 1 2 1x98 2 1 1 2 1x95 2 1 1 2 1x116 2 1 1 2 1x103 2 2 1x100 2 1 1 2 1x104 2 2 1x101 2 1x3 2 1x109 2 1 1 2 1x109 2 1x4 2 1x875 2 2 1x4 2 1 1 2 1x3 2 1x3 2 1x3 2 1x5 2 1x5 2 1x11 2 1x8 2 1x7 2 1x7 2 1x14 2 1x8 2 1x5 2 1x15 2 1x10 2 1x5 2 1x17 2 1x7 2 1x13 2 1x9 2 1x11 2 1x9 2 1x12 2 1x8 2 1x10 2 1x7 2 1x9 2 1x7 2 1x9 2 1x4 2 1x7 2 1x6 2 1x4 2 1x4 2 1 2 1x3 2 1 2 2</vector>
+        <vector name="entity_groups" length="3731" type="ushort">2 1 2 1 2 1 2 1 2 1 1 2 1 1 2 1 1 2 1x4 2 1x4 2 1x5 2 1x3 2 1x8 2 1 1 2 1x9 2 1 1 2 1x12 2 1x3 2 1x13 2 1 1 2 1x15 2 1 1 2 1x17 2 1 1 2 1x18 2 1 1 2 1x20 2 1x3 2 1x22 2 1 2 1x23 2 1 2 1x27 2 1 2 1x29 2 1x3 2 1x29 2 1 1 2 1x34 2 1 1 2 1x35 2 1x4 2 1x39 2 1 1 2 1x39 2 1 1 2 1x48 2 1 2 1x51 2 1 1 2 1x95 2 1x6 2 1x186 2 1x6 2 1x132 2 1x4 2 1x115 2 1x5 2 1x114 2 1 1 2 1x110 2 1 2 1x116 2 1x3 2 1x99 2 1x3 2 1x96 2 1x3 2 1x117 2 1x3 2 1x104 2 1 2 1x101 2 1x3 2 1x105 2 1 2 1x102 2 1x4 2 1x110 2 1x3 2 1x110 2 1x5 2 1x876 3 1 3 1x5 3 1x3 3 1x4 3 1x4 3 1x4 3 1x6 3 1x6 3 1x12 3 1x9 3 1x8 3 1x8 3 1x15 3 1x9 3 1x6 3 1x16 3 1x11 3 1x6 3 1x18 3 1x8 3 1x14 3 1x10 3 1x12 3 1x10 3 1x13 3 1x9 3 1x11 3 1x8 3 1x10 3 1x8 3 1x10 3 1x5 3 1x8 3 1x7 3 1x5 3 1x5 3 1 1 3 1x4 3 1 1 3 1 3 1</vector>
+      </entities_group>
+      <entities_group name="elements">
+        <vector name="entity_ids" length="6950" type="integer">1:6950</vector>
+        <vector name="entity_num_groups" length="6950" type="ushort">2x40 1x3396 2x20 1x2631 2x20 1x843</vector>
+        <vector name="entity_groups" length="7030" type="ushort">1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1x3396 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1x2632 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1x844</vector>
+      </entities_group>
+      <entities_group name="faces">
+        <vector name="entity_ids" length="40" type="integer">2532 2548 2762 2803 2932 3348 3352 3353 3357 3358 3361 3362 3379:3381 3385 3386 3389 3390 3393 4776 4789 5010 5022 5177 5178 5180:5183 5668 5684 5896 5916 6057 6062:6065 6074</vector>
+        <vector name="entity_num_faces" length="40" type="uchar">1x40</vector>
+        <vector name="entity_faces" length="40" type="uchar">3 2x3 3 1 1 2 1 2 1 2 1 3 1 1 2 1 2 3 2 3 2 2 1 2 1 3 1 2 3 2x3 1 1 3 1 2 1</vector>
+        <vector name="face_num_groups" length="40" type="ushort">1x40</vector>
+        <vector name="face_groups" length="40" type="ushort">3x40</vector>
+      </entities_group>
+    </entities_groups>
+  </pre>
+</gid>

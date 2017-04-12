@@ -1,0 +1,37 @@
+BeginZE C:\Users\Peter\Desktop\TUM\Thesis\Development\Thin Quad\Standard Tests\NL\NL_hinged_cylinder_shell2.gid\NL_hinged_cylinder_shell2.vv
+   x -0.38909870386123657 0.38909870386123657
+   y 2.9024195671081543 2.1648902893066406
+   z -0.85229355096817017 1.3602936267852783
+   e 0.36876451969146729
+   v -0.28808282179672701 0.38770934292634773 0.092133974562071924
+   r 0.87074740744100387
+   m 0.68238556385040283 -0.38383564352989197 0.62210935354232788 0 -0.062933966517448425 0.81703925132751465 0.57313716411590576 0 -0.72827821969985962 -0.43025234341621399 0.53337949514389038 0 0 0 0 1
+   c 0 2.5336549282073975 -0.25400000810623169
+   pd 0
+   pno 0
+   pfo 0
+   pf 4
+   pv 0
+   NowUse 1
+   DrawingType 0
+   LightVector 90 90 150 0
+   OGLShadow(UseShadows) 0
+   OGLShadow(RenderMode) RenderNice
+   OGLShadow(ShadowBias) -0.002
+   OGLShadow(AmbientShadows) 1
+   OGLShadow(UseFBO) 0
+   OGLShadow(FBOSize) 2048
+   OGLShadow(DimmedLightFactor) 0.02
+   OGLStereo(UseStereo) 0
+   OGLStereo(RelativeEyeDistance) 1
+   OGLStereo(FlipEyes) 0
+   OGLStereo(StereoMode) AnaglyphColors
+   OGLStereo(EyeDistance) 0.075
+   OGLStereo(LeftEyeDistance) 1 0 0 1
+   OGLStereo(RightEyeDistance) 0 1 1 1
+EndZE C:\Users\Peter\Desktop\TUM\Thesis\Development\Thin Quad\Standard Tests\NL\NL_hinged_cylinder_shell2.gid\NL_hinged_cylinder_shell2.vv
+
+BeginMirror
+   Mirror 0 Angle 0.0 AngleFake -15.0 SizeFactor 2.0 HeightOffset 0.25 Color #d9e5f24d Backlight Off EdgeStyle No Type Scene DrawMode Mirror
+EndMirror
+

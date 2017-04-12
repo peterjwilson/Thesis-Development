@@ -1,0 +1,37 @@
+BeginZE C:\Users\Peter\Desktop\TUM\Thesis\Development\Thick triangle shell\Standard Tests\Full_pinched_hemisphere4.gid\Full_pinched_hemisphere4.vv
+   x -24.349164962768555 24.349164962768555
+   y 15 -15
+   z -50 40
+   e 15
+   v -0.30582350769579475 0.33127692921175328 0.67079477953498168
+   r -0.58886500628690663
+   m -0.11942008137702942 0.58739060163497925 -0.80044442415237427 0 -0.99263966083526611 -0.086987309157848358 0.084260143339633942 0 -0.020134842023253441 0.80461519956588745 0.59345513582229614 0 0 0 0 1
+   c 0 0 5
+   pd 0
+   pno 0
+   pfo 0
+   pf 4
+   pv 0
+   NowUse 1
+   DrawingType 0
+   LightVector 90 90 150 0
+   OGLShadow(UseShadows) 0
+   OGLShadow(RenderMode) RenderNice
+   OGLShadow(ShadowBias) -0.002
+   OGLShadow(AmbientShadows) 1
+   OGLShadow(UseFBO) 0
+   OGLShadow(FBOSize) 2048
+   OGLShadow(DimmedLightFactor) 0.02
+   OGLStereo(UseStereo) 0
+   OGLStereo(RelativeEyeDistance) 1
+   OGLStereo(FlipEyes) 0
+   OGLStereo(StereoMode) AnaglyphColors
+   OGLStereo(EyeDistance) 0.075
+   OGLStereo(LeftEyeDistance) 1 0 0 1
+   OGLStereo(RightEyeDistance) 0 1 1 1
+EndZE C:\Users\Peter\Desktop\TUM\Thesis\Development\Thick triangle shell\Standard Tests\Full_pinched_hemisphere4.gid\Full_pinched_hemisphere4.vv
+
+BeginMirror
+   Mirror 0 Angle 0.0 AngleFake -15.0 SizeFactor 2.0 HeightOffset 0.25 Color #d9e5f24d Backlight Off EdgeStyle No Type Scene DrawMode Mirror
+EndMirror
+

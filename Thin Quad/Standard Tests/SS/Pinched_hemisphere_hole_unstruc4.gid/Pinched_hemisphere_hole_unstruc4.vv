@@ -1,0 +1,37 @@
+BeginZE C:\Users\Peter\Desktop\TUM\Thesis\Development\Thin Quad\Standard Tests\Pinched_hemisphere_hole_unstruc4.gid\Pinched_hemisphere_hole_unstruc4.vv
+   x -7.3448085784912109 17.344810485839844
+   y 13.276596069335938 -3.7660260200500488
+   z -30.563932418823242 20.563932418823242
+   e 8.5213108062744141
+   v -0.36421592329736202 0.132409543121843 0.051646034146695018
+   r 0.92040593673488313
+   m 0.95960080623626709 -0.19152195751667023 0.20612044632434845 0 -0.0013806951465085149 0.72935891151428223 0.68412983417510986 0 -0.28136166930198669 -0.65677613019943237 0.69962894916534424 0 0 0 0 1
+   c 5 4.7552847862243652 5
+   pd 0
+   pno 0
+   pfo 0
+   pf 4
+   pv 0
+   NowUse 1
+   DrawingType 0
+   LightVector 90 90 150 0
+   OGLShadow(UseShadows) 0
+   OGLShadow(RenderMode) RenderNice
+   OGLShadow(ShadowBias) -0.002
+   OGLShadow(AmbientShadows) 1
+   OGLShadow(UseFBO) 0
+   OGLShadow(FBOSize) 2048
+   OGLShadow(DimmedLightFactor) 0.02
+   OGLStereo(UseStereo) 0
+   OGLStereo(RelativeEyeDistance) 1
+   OGLStereo(FlipEyes) 0
+   OGLStereo(StereoMode) AnaglyphColors
+   OGLStereo(EyeDistance) 0.075
+   OGLStereo(LeftEyeDistance) 1 0 0 1
+   OGLStereo(RightEyeDistance) 0 1 1 1
+EndZE C:\Users\Peter\Desktop\TUM\Thesis\Development\Thin Quad\Standard Tests\Pinched_hemisphere_hole_unstruc4.gid\Pinched_hemisphere_hole_unstruc4.vv
+
+BeginMirror
+   Mirror 0 Angle 0.0 AngleFake -15.0 SizeFactor 2.0 HeightOffset 0.25 Color #d9e5f24d Backlight Off EdgeStyle No Type Scene DrawMode Mirror
+EndMirror
+

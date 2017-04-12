@@ -1,0 +1,37 @@
+BeginZE C:\Users\Peter\Desktop\TUM\Thesis\Development\Thick triangle shell\Quantity Recovery\Shell_45deg_quarter.gid\Shell_45deg_quarter.vv
+   x -5.2828292846679687 19.424972534179688
+   y 27.491180419921875 6.6509590148925781
+   z -24.189262390136719 38.331401824951172
+   e 10.420110702514648
+   v -0.262037141481053 0.62213189013953019 0.31490889955156376
+   r 0.66717376502608083
+   m 0.027568591758608818 -0.74624121189117432 0.66510450839996338 0 0.094154588878154755 0.66433781385421753 0.7414783239364624 0 -0.99517577886581421 0.042181126773357391 0.088576897978782654 0 0 0 0 1
+   c 7.0710701942443848 17.071069717407227 -7.0710701942443848
+   pd 0
+   pno 0
+   pfo 0
+   pf 4
+   pv 0
+   NowUse 1
+   DrawingType 0
+   LightVector 90 90 150 0
+   OGLShadow(UseShadows) 0
+   OGLShadow(RenderMode) RenderNice
+   OGLShadow(ShadowBias) -0.002
+   OGLShadow(AmbientShadows) 1
+   OGLShadow(UseFBO) 0
+   OGLShadow(FBOSize) 2048
+   OGLShadow(DimmedLightFactor) 0.02
+   OGLStereo(UseStereo) 0
+   OGLStereo(RelativeEyeDistance) 1
+   OGLStereo(FlipEyes) 0
+   OGLStereo(StereoMode) AnaglyphColors
+   OGLStereo(EyeDistance) 0.075
+   OGLStereo(LeftEyeDistance) 1 0 0 1
+   OGLStereo(RightEyeDistance) 0 1 1 1
+EndZE C:\Users\Peter\Desktop\TUM\Thesis\Development\Thick triangle shell\Quantity Recovery\Shell_45deg_quarter.gid\Shell_45deg_quarter.vv
+
+BeginMirror
+   Mirror 0 Angle 0.0 AngleFake -15.0 SizeFactor 2.0 HeightOffset 0.25 Color #d9e5f24d Backlight Off EdgeStyle No Type Scene DrawMode Mirror
+EndMirror
+

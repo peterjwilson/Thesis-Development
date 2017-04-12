@@ -1,0 +1,37 @@
+BeginZE C:\Users\Peter\Desktop\TUM\Thesis\Development\Thin Quad\Standard Tests\Composites\angle_ply_cylinder2.gid\angle_ply_cylinder2.vv
+   x -71.145263671875 71.145263671875
+   y 355.78030395507812 240.60908508300781
+   z -195.95866394042969 149.55500793457031
+   e 57.585613250732422
+   v -0.21311376988887787 0.47104489803314209 0.15096846222877502
+   r 0.84256023168563843
+   m 0.51065045595169067 -0.45517235994338989 0.72942048311233521 0 0.05362774059176445 0.8635820746421814 0.50134825706481934 0 -0.85811430215835571 -0.21689653396606445 0.46539846062660217 0 0 0 0 1
+   c 0 298.1947021484375 23.20182991027832
+   pd 0
+   pno 0
+   pfo 0
+   pf 4
+   pv 0
+   NowUse 0
+   DrawingType 0
+   LightVector 90 90 150 0
+   OGLShadow(UseShadows) 0
+   OGLShadow(RenderMode) RenderNice
+   OGLShadow(ShadowBias) -0.002
+   OGLShadow(AmbientShadows) 1
+   OGLShadow(UseFBO) 0
+   OGLShadow(FBOSize) 2048
+   OGLShadow(DimmedLightFactor) 0.02
+   OGLStereo(UseStereo) 0
+   OGLStereo(RelativeEyeDistance) 1
+   OGLStereo(FlipEyes) 0
+   OGLStereo(StereoMode) AnaglyphColors
+   OGLStereo(EyeDistance) 0.075
+   OGLStereo(LeftEyeDistance) 1 0 0 1
+   OGLStereo(RightEyeDistance) 0 1 1 1
+EndZE C:\Users\Peter\Desktop\TUM\Thesis\Development\Thin Quad\Standard Tests\Composites\angle_ply_cylinder2.gid\angle_ply_cylinder2.vv
+
+BeginMirror
+   Mirror 0 Angle 0.0 AngleFake -15.0 SizeFactor 2.0 HeightOffset 0.25 Color #d9e5f24d Backlight Off EdgeStyle No Type Scene DrawMode Mirror
+EndMirror
+

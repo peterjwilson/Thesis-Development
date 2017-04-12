@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gid version="12.2">
+  <pre>
+    <layer_to_use name="Layer0"/>
+    <groups>
+      <group id="1" name="surface" color="#ffaaaaff"/>
+      <group id="2" name="load" color="#0000ffff"/>
+      <group id="3" name="YZ res" color="#ff00ffff"/>
+      <group id="4" name="load_neg" color="#00ffffff"/>
+    </groups>
+    <entities_groups>
+      <entities_group name="points">
+        <vector name="entity_ids" length="4" type="integer">3 4 11 14</vector>
+        <vector name="entity_num_groups" length="4" type="ushort">1x4</vector>
+        <vector name="entity_groups" length="4" type="ushort">3 2 3 4</vector>
+      </entities_group>
+      <entities_group name="surfaces">
+        <vector name="entity_ids" length="8" type="integer">1 2 5:10</vector>
+        <vector name="entity_num_groups" length="8" type="ushort">1x8</vector>
+        <vector name="entity_groups" length="8" type="ushort">1x8</vector>
+      </entities_group>
+      <entities_group name="nodes">
+        <vector name="entity_ids" length="544" type="integer">1:544</vector>
+        <vector name="entity_num_groups" length="544" type="ushort">1x76 2 1x118 2 1x70 2 1x160 2 1x116</vector>
+        <vector name="entity_groups" length="548" type="ushort">1x76 4 1x119 3 1x71 3 1x161 2 1x117</vector>
+      </entities_group>
+      <entities_group name="elements">
+        <vector name="entity_ids" length="512" type="integer">1:512</vector>
+        <vector name="entity_num_groups" length="512" type="ushort">1x512</vector>
+        <vector name="entity_groups" length="512" type="ushort">1x512</vector>
+      </entities_group>
+    </entities_groups>
+  </pre>
+</gid>

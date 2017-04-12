@@ -1,0 +1,37 @@
+BeginZE C:\Users\Peter\Desktop\TUM\Thesis\Development\Thick triangle shell\Simple tests\cantilever_thick.gid\cantilever_thick.vv
+   x -1.6197075843811035 11.619707107543945
+   y 6.0277080535888672 -5.0277080535888672
+   z -16.583124160766602 16.583124160766602
+   e 5.5277080535888672
+   v 0.44163224101066589 0.14013972878456116 0.23082342743873596
+   r 0.85559475421905518
+   m 0.85416281223297119 -0.27120217680931091 0.44368377327919006 0 0.51876306533813477 0.50336301326751709 -0.6910213828086853 0 -0.035927493125200272 0.82041150331497192 0.57064360380172729 0 0 0 0 1
+   c 5 0.5 0
+   pd 0
+   pno 0
+   pfo 0
+   pf 4
+   pv 0
+   NowUse 1
+   DrawingType 0
+   LightVector 90 90 150 0
+   OGLShadow(UseShadows) 0
+   OGLShadow(RenderMode) RenderNice
+   OGLShadow(ShadowBias) -0.002
+   OGLShadow(AmbientShadows) 1
+   OGLShadow(UseFBO) 0
+   OGLShadow(FBOSize) 2048
+   OGLShadow(DimmedLightFactor) 0.02
+   OGLStereo(UseStereo) 0
+   OGLStereo(RelativeEyeDistance) 1
+   OGLStereo(FlipEyes) 0
+   OGLStereo(StereoMode) AnaglyphColors
+   OGLStereo(EyeDistance) 0.075
+   OGLStereo(LeftEyeDistance) 1 0 0 1
+   OGLStereo(RightEyeDistance) 0 1 1 1
+EndZE C:\Users\Peter\Desktop\TUM\Thesis\Development\Thick triangle shell\Simple tests\cantilever_thick.gid\cantilever_thick.vv
+
+BeginMirror
+   Mirror 0 Angle 0.0 AngleFake -15.0 SizeFactor 2.0 HeightOffset 0.25 Color #d9e5f24d Backlight Off EdgeStyle No Type Scene DrawMode Mirror
+EndMirror
+

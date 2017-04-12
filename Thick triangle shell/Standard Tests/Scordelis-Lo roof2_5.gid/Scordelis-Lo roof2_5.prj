@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gid version="12.2">
+  <pre>
+    <layer_to_use name="Layer0"/>
+    <groups>
+      <group id="1" name="Surface" color="#ffaaaaff"/>
+      <group id="2" name="Dirichlet" color="#0000ffff"/>
+      <group id="3" name="YZ sym" color="#ff00ffff"/>
+      <group id="4" name="XZ sym" color="#00ffffff"/>
+    </groups>
+    <entities_groups>
+      <entities_group name="lines">
+        <vector name="entity_ids" length="3" type="integer">1 3 4</vector>
+        <vector name="entity_num_groups" length="3" type="ushort">1x3</vector>
+        <vector name="entity_groups" length="3" type="ushort">3 2 4</vector>
+      </entities_group>
+      <entities_group name="surfaces">
+        <vector name="entity_ids" length="1" type="integer">1</vector>
+        <vector name="entity_num_groups" length="1" type="ushort">1</vector>
+        <vector name="entity_groups" length="1" type="ushort">1</vector>
+      </entities_group>
+      <entities_group name="nodes">
+        <vector name="entity_ids" length="305" type="integer">1:305</vector>
+        <vector name="entity_num_groups" length="305" type="ushort">3 1 2 2 1x3 2 2 1x8 2 2 1x9 2 2 1x11 2 1x4 2 1x14 2 1 1 2 1x15 2 1x5 2 1x17 2 1x7 2 1x18 2 1x7 2 1x19 2 1x13 2 1x24 2 1x27 2 1x22 2 1x24 3 2 1 2 1x3 2 1 1 2 1x4 2 1x3 2 1x3 2 1 1 2 1 1 2 2</vector>
+        <vector name="entity_groups" length="342" type="ushort">3 4 1 1 4 1 3 1x4 4 1 3 1x9 4 1 3 1x10 4 1 3 1x12 4 1x5 3 1x15 4 1x3 3 1x16 4 1x6 3 1x18 4 1x8 3 1x19 4 1x8 3 1x20 4 1x14 3 1x25 3 1x28 3 1x23 3 1x25 3 2 1 2 1 1 2 1x4 2 1x3 2 1x5 2 1x4 2 1x4 2 1x3 2 1x3 2 1 2 1</vector>
+      </entities_group>
+      <entities_group name="elements">
+        <vector name="entity_ids" length="560" type="integer">1:560</vector>
+        <vector name="entity_num_groups" length="560" type="ushort">1x560</vector>
+        <vector name="entity_groups" length="560" type="ushort">1x560</vector>
+      </entities_group>
+      <entities_group name="faces">
+        <vector name="entity_ids" length="34" type="integer">1 4 5 9 13 17 21 25 29 33 37 41 45 49 53 54 60 110 116 166 172 222 228 278 284 334 340 390 396 446 452 502 508 558</vector>
+        <vector name="entity_num_faces" length="34" type="uchar">1x34</vector>
+        <vector name="entity_faces" length="34" type="uchar">3x34</vector>
+        <vector name="face_num_groups" length="34" type="ushort">1x34</vector>
+        <vector name="face_groups" length="34" type="ushort">3 2 3x13 4 2 4 2 4 2 4 2 4 2 4 2 4 2 4 2 4 2 4</vector>
+      </entities_group>
+    </entities_groups>
+  </pre>
+</gid>

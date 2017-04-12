@@ -1,0 +1,37 @@
+BeginZE C:\Users\Peter\Desktop\TUM\Thesis\Development\Thin Quad\Quantity Recovery\TOS_EXERCISE1.gid\TOS_EXERCISE1.vv
+   x -7.8596153259277344 7.8596153259277344
+   y 13.66025447845459 -3.6602544784545898
+   z -25.980762481689453 25.980762481689453
+   e 8.6602544784545898
+   v -0.20402021706104279 0.63046711683273315 0.17553909122943878
+   r 0.72806119918823242
+   m 0.14339452981948853 -0.5128624439239502 0.84641021490097046 0 -0.001649675308726728 0.85512357950210571 0.51842164993286133 0 -0.98966425657272339 -0.075735151767730713 0.12177397310733795 0 0 0 0 1
+   c 0 5 0
+   pd 0
+   pno 0
+   pfo 0
+   pf 4
+   pv 0
+   NowUse 1
+   DrawingType 0
+   LightVector 90 90 150 0
+   OGLShadow(UseShadows) 0
+   OGLShadow(RenderMode) RenderNice
+   OGLShadow(ShadowBias) -0.002
+   OGLShadow(AmbientShadows) 1
+   OGLShadow(UseFBO) 0
+   OGLShadow(FBOSize) 2048
+   OGLShadow(DimmedLightFactor) 0.02
+   OGLStereo(UseStereo) 0
+   OGLStereo(RelativeEyeDistance) 1
+   OGLStereo(FlipEyes) 0
+   OGLStereo(StereoMode) AnaglyphColors
+   OGLStereo(EyeDistance) 0.075
+   OGLStereo(LeftEyeDistance) 1 0 0 1
+   OGLStereo(RightEyeDistance) 0 1 1 1
+EndZE C:\Users\Peter\Desktop\TUM\Thesis\Development\Thin Quad\Quantity Recovery\TOS_EXERCISE1.gid\TOS_EXERCISE1.vv
+
+BeginMirror
+   Mirror 0 Angle 0.0 AngleFake -15.0 SizeFactor 2.0 HeightOffset 0.25 Color #d9e5f24d Backlight Off EdgeStyle No Type Scene DrawMode Mirror
+EndMirror
+

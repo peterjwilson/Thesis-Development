@@ -1,0 +1,37 @@
+BeginZE C:\Users\Peter\Desktop\TUM\Thesis\Development\Thin Quad\Quantity Recovery\ss\dome_self_weight_20deg_open.gid\dome_self_weight_20deg_open.vv
+   x -2.9494881629943848 7.9494881629943848
+   y 6.5940952301025391 -1.8956353664398193
+   z -15.234596252441406 10.234596252441406
+   e 4.2448654174804687
+   v 0.2746519148349762 -0.27651017904281616 -0.074221909046173096
+   r -0.91793221235275269
+   m 0.83606642484664917 -0.28814947605133057 0.46686482429504395 0 -0.015626760199666023 0.83811485767364502 0.54526990652084351 0 -0.54840558767318726 -0.46317747235298157 0.696216881275177 0 0 0 0 1
+   c 2.5 2.3492300510406494 2.5
+   pd 0
+   pno 0
+   pfo 0
+   pf 4
+   pv 0
+   NowUse 1
+   DrawingType 0
+   LightVector 90 90 150 0
+   OGLShadow(UseShadows) 0
+   OGLShadow(RenderMode) RenderNice
+   OGLShadow(ShadowBias) -0.002
+   OGLShadow(AmbientShadows) 1
+   OGLShadow(UseFBO) 0
+   OGLShadow(FBOSize) 2048
+   OGLShadow(DimmedLightFactor) 0.02
+   OGLStereo(UseStereo) 0
+   OGLStereo(RelativeEyeDistance) 1
+   OGLStereo(FlipEyes) 0
+   OGLStereo(StereoMode) AnaglyphColors
+   OGLStereo(EyeDistance) 0.075
+   OGLStereo(LeftEyeDistance) 1 0 0 1
+   OGLStereo(RightEyeDistance) 0 1 1 1
+EndZE C:\Users\Peter\Desktop\TUM\Thesis\Development\Thin Quad\Quantity Recovery\ss\dome_self_weight_20deg_open.gid\dome_self_weight_20deg_open.vv
+
+BeginMirror
+   Mirror 0 Angle 0.0 AngleFake -15.0 SizeFactor 2.0 HeightOffset 0.25 Color #d9e5f24d Backlight Off EdgeStyle No Type Scene DrawMode Mirror
+EndMirror
+

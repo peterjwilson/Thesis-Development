@@ -1,0 +1,37 @@
+BeginZE C:\Users\Peter\Desktop\TUM\Thesis\Development\Thin Quad\Quantity Recovery\cylinder_intP.gid\cylinder_intP.vv
+   x -11.564214706420898 11.564214706420898
+   y 13.66025447845459 -3.6602544784545898
+   z -25.980762481689453 25.980762481689453
+   e 8.6602544784545898
+   v -0.37615833949735888 -0.24395477786587738 -0.12274623328638797
+   r 0.88539494888266501
+   m 0.85083884000778198 0.40088903903961182 -0.33964860439300537 0 -0.033826541155576706 0.68687653541564941 0.72598642110824585 0 0.52433669567108154 -0.60620832443237305 0.59798192977905273 0 0 0 0 1
+   c 0 5 0
+   pd 0
+   pno 0
+   pfo 0
+   pf 4
+   pv 0
+   NowUse 1
+   DrawingType 0
+   LightVector 90 90 150 0
+   OGLShadow(UseShadows) 0
+   OGLShadow(RenderMode) RenderNice
+   OGLShadow(ShadowBias) -0.002
+   OGLShadow(AmbientShadows) 1
+   OGLShadow(UseFBO) 0
+   OGLShadow(FBOSize) 2048
+   OGLShadow(DimmedLightFactor) 0.02
+   OGLStereo(UseStereo) 0
+   OGLStereo(RelativeEyeDistance) 1
+   OGLStereo(FlipEyes) 0
+   OGLStereo(StereoMode) AnaglyphColors
+   OGLStereo(EyeDistance) 0.075
+   OGLStereo(LeftEyeDistance) 1 0 0 1
+   OGLStereo(RightEyeDistance) 0 1 1 1
+EndZE C:\Users\Peter\Desktop\TUM\Thesis\Development\Thin Quad\Quantity Recovery\cylinder_intP.gid\cylinder_intP.vv
+
+BeginMirror
+   Mirror 0 Angle 0.0 AngleFake -15.0 SizeFactor 2.0 HeightOffset 0.25 Color #d9e5f24d Backlight Off EdgeStyle No Type Scene DrawMode Mirror
+EndMirror
+

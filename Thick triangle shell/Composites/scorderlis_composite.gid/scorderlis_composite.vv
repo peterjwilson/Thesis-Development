@@ -1,0 +1,37 @@
+BeginZE C:\Users\Peter\Desktop\TUM\Thesis\Development\Thick triangle shell\Composites\scorderlis_composite.gid\scorderlis_composite.vv
+   x -159.68203735351562 352.51828002929687
+   y 450.09970092773437 79.713653564453125
+   z -405.5791015625 705.5791015625
+   e 185.19302368164062
+   v -0.26859116554260254 0.31901577115058899 0.11099832504987717
+   r 0.90209043025970459
+   m 0.77181661128997803 -0.37163069844245911 0.51593577861785889 0 0.028891421854496002 0.83107632398605347 0.55540746450424194 0 -0.63518846035003662 -0.41376659274101257 0.65217548608779907 0 0 0 0 1
+   c 96.418136596679688 264.90667724609375 -150
+   pd 0
+   pno 0
+   pfo 0
+   pf 4
+   pv 0
+   NowUse 1
+   DrawingType 0
+   LightVector 90 90 150 0
+   OGLShadow(UseShadows) 0
+   OGLShadow(RenderMode) RenderNice
+   OGLShadow(ShadowBias) -0.002
+   OGLShadow(AmbientShadows) 1
+   OGLShadow(UseFBO) 0
+   OGLShadow(FBOSize) 2048
+   OGLShadow(DimmedLightFactor) 0.02
+   OGLStereo(UseStereo) 0
+   OGLStereo(RelativeEyeDistance) 1
+   OGLStereo(FlipEyes) 0
+   OGLStereo(StereoMode) AnaglyphColors
+   OGLStereo(EyeDistance) 0.075
+   OGLStereo(LeftEyeDistance) 1 0 0 1
+   OGLStereo(RightEyeDistance) 0 1 1 1
+EndZE C:\Users\Peter\Desktop\TUM\Thesis\Development\Thick triangle shell\Composites\scorderlis_composite.gid\scorderlis_composite.vv
+
+BeginMirror
+   Mirror 0 Angle 0.0 AngleFake -15.0 SizeFactor 2.0 HeightOffset 0.25 Color #d9e5f24d Backlight Off EdgeStyle No Type Scene DrawMode Mirror
+EndMirror
+

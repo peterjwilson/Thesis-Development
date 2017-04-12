@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gid version="12.2">
+  <pre>
+    <layer_to_use name="Layer0"/>
+    <groups>
+      <group id="1" name="surface" color="#ffaaaaff"/>
+      <group id="2" name="dirichlet" color="#0000ffff"/>
+    </groups>
+    <entities_groups>
+      <entities_group name="lines">
+        <vector name="entity_ids" length="1" type="integer">1</vector>
+        <vector name="entity_num_groups" length="1" type="ushort">1</vector>
+        <vector name="entity_groups" length="1" type="ushort">2</vector>
+      </entities_group>
+      <entities_group name="surfaces">
+        <vector name="entity_ids" length="1" type="integer">1</vector>
+        <vector name="entity_num_groups" length="1" type="ushort">1</vector>
+        <vector name="entity_groups" length="1" type="ushort">1</vector>
+      </entities_group>
+      <entities_group name="nodes">
+        <vector name="entity_ids" length="147" type="integer">1:147</vector>
+        <vector name="entity_num_groups" length="147" type="ushort">2 2 1 1 2 1x3 2 1x6 2 1x12 2 1x10 2 1x19 2 1x21 2 1x15 2 1x49</vector>
+        <vector name="entity_groups" length="157" type="ushort">2 1 2 1x3 2 1x4 2 1x7 2 1x13 2 1x11 2 1x20 2 1x22 2 1x16 2 1x50</vector>
+      </entities_group>
+      <entities_group name="elements">
+        <vector name="entity_ids" length="125" type="integer">1:125</vector>
+        <vector name="entity_num_groups" length="125" type="ushort">1x125</vector>
+        <vector name="entity_groups" length="125" type="ushort">1x125</vector>
+      </entities_group>
+      <entities_group name="faces">
+        <vector name="entity_ids" length="9" type="integer">2 4 13 19 29 31 33 35 36</vector>
+        <vector name="entity_num_faces" length="9" type="uchar">1x9</vector>
+        <vector name="entity_faces" length="9" type="uchar">1 2 1x7</vector>
+        <vector name="face_num_groups" length="9" type="ushort">1x9</vector>
+        <vector name="face_groups" length="9" type="ushort">2x9</vector>
+      </entities_group>
+    </entities_groups>
+  </pre>
+</gid>

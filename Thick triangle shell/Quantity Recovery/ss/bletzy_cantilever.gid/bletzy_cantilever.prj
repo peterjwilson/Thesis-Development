@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gid version="12.2">
+  <pre>
+    <layer_to_use name="Layer0"/>
+    <groups>
+      <group id="1" name="surface" color="#ffaaaaff"/>
+      <group id="2" name="clamp" color="#0000ffff"/>
+      <group id="3" name="load" color="#ff00ffff"/>
+    </groups>
+    <entities_groups>
+      <entities_group name="points">
+        <vector name="entity_ids" length="1" type="integer">3</vector>
+        <vector name="entity_num_groups" length="1" type="ushort">1</vector>
+        <vector name="entity_groups" length="1" type="ushort">3</vector>
+      </entities_group>
+      <entities_group name="lines">
+        <vector name="entity_ids" length="1" type="integer">4</vector>
+        <vector name="entity_num_groups" length="1" type="ushort">1</vector>
+        <vector name="entity_groups" length="1" type="ushort">2</vector>
+      </entities_group>
+      <entities_group name="surfaces">
+        <vector name="entity_ids" length="1" type="integer">1</vector>
+        <vector name="entity_num_groups" length="1" type="ushort">1</vector>
+        <vector name="entity_groups" length="1" type="ushort">1</vector>
+      </entities_group>
+      <entities_group name="nodes">
+        <vector name="entity_ids" length="1169" type="integer">1:1169</vector>
+        <vector name="entity_num_groups" length="1169" type="ushort">2 2 1x5 2 1x5 2 1x11 2 1x9 2 1x16 2 1x17 2 1x18 2 1x1070 2 1x8</vector>
+        <vector name="entity_groups" length="1179" type="ushort">2 1 2 1x6 2 1x6 2 1x12 2 1x10 2 1x17 2 1x18 2 1x19 2 1x1071 3 1x9</vector>
+      </entities_group>
+      <entities_group name="elements">
+        <vector name="entity_ids" length="2160" type="integer">1:2160</vector>
+        <vector name="entity_num_groups" length="2160" type="ushort">1x2160</vector>
+        <vector name="entity_groups" length="2160" type="ushort">1x2160</vector>
+      </entities_group>
+      <entities_group name="faces">
+        <vector name="entity_ids" length="8" type="integer">1 1805 1807 1809 1950 2053 2094 2150</vector>
+        <vector name="entity_num_faces" length="8" type="uchar">1x8</vector>
+        <vector name="entity_faces" length="8" type="uchar">3 2 2 3 2 3 3 1</vector>
+        <vector name="face_num_groups" length="8" type="ushort">1x8</vector>
+        <vector name="face_groups" length="8" type="ushort">2x8</vector>
+      </entities_group>
+    </entities_groups>
+  </pre>
+</gid>

@@ -1,0 +1,37 @@
+BeginZE C:\Users\Peter\Desktop\TUM\Thesis\Development\Thick triangle shell\Quantity Recovery\Tos_cyk9.gid\Tos_cyk9.vv
+   x -5.9309029579162598 7.1575698852539062
+   y 8.1364068984985352 -3.3314342498779297
+   z -9.9525489807128906 9.9525489807128906
+   e 7.5
+   v 0.17307555949028741 0.84784127421952349 0.3574107770890747
+   r -0.35137957656764834
+   m -0.69315457344055176 0.54465490579605103 -0.47211006283760071 0 0.04230751097202301 0.68460476398468018 0.72768563032150269 0 0.71954637765884399 0.48442476987838745 -0.49757996201515198 0 0 0 0 1
+   c -2.7903055301402218e-017 2.4525492191314697 -1.3081989765957201e-016
+   pd 0
+   pno 0
+   pfo 0
+   pf 4
+   pv 0
+   NowUse 1
+   DrawingType 0
+   LightVector 90 90 150 0
+   OGLShadow(UseShadows) 0
+   OGLShadow(RenderMode) RenderNice
+   OGLShadow(ShadowBias) -0.002
+   OGLShadow(AmbientShadows) 1
+   OGLShadow(UseFBO) 0
+   OGLShadow(FBOSize) 2048
+   OGLShadow(DimmedLightFactor) 0.02
+   OGLStereo(UseStereo) 0
+   OGLStereo(RelativeEyeDistance) 1
+   OGLStereo(FlipEyes) 0
+   OGLStereo(StereoMode) AnaglyphColors
+   OGLStereo(EyeDistance) 0.075
+   OGLStereo(LeftEyeDistance) 1 0 0 1
+   OGLStereo(RightEyeDistance) 0 1 1 1
+EndZE C:\Users\Peter\Desktop\TUM\Thesis\Development\Thick triangle shell\Quantity Recovery\Tos_cyk9.gid\Tos_cyk9.vv
+
+BeginMirror
+   Mirror 0 Angle 0.0 AngleFake -15.0 SizeFactor 2.0 HeightOffset 0.25 Color #d9e5f24d Backlight Off EdgeStyle No Type Scene DrawMode Mirror
+EndMirror
+

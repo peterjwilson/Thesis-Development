@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gid version="12.2">
+  <pre>
+    <layer_to_use name="Layer0"/>
+    <groups>
+      <group id="1" name="Surface" color="#ffaaaaff"/>
+      <group id="2" name="Dirichlet" color="#0000ffff"/>
+    </groups>
+    <entities_groups>
+      <entities_group name="lines">
+        <vector name="entity_ids" length="1" type="integer">1</vector>
+        <vector name="entity_num_groups" length="1" type="ushort">1</vector>
+        <vector name="entity_groups" length="1" type="ushort">2</vector>
+      </entities_group>
+      <entities_group name="surfaces">
+        <vector name="entity_ids" length="1" type="integer">1</vector>
+        <vector name="entity_num_groups" length="1" type="ushort">1</vector>
+        <vector name="entity_groups" length="1" type="ushort">1</vector>
+      </entities_group>
+      <entities_group name="nodes">
+        <vector name="entity_ids" length="88" type="integer">1:88</vector>
+        <vector name="entity_num_groups" length="88" type="ushort">2 2 1 1 2 1x4 2 1x6 2 1x9 2 1x12 2 1x14 2 1x33</vector>
+        <vector name="entity_groups" length="96" type="ushort">2 1 2 1x3 2 1x5 2 1x7 2 1x10 2 1x13 2 1x15 2 1x34</vector>
+      </entities_group>
+      <entities_group name="elements">
+        <vector name="entity_ids" length="70" type="integer">1:70</vector>
+        <vector name="entity_num_groups" length="70" type="ushort">1x70</vector>
+        <vector name="entity_groups" length="70" type="ushort">1x70</vector>
+      </entities_group>
+      <entities_group name="faces">
+        <vector name="entity_ids" length="7" type="integer">2 20 22 23 26:28</vector>
+        <vector name="entity_num_faces" length="7" type="uchar">1x7</vector>
+        <vector name="entity_faces" length="7" type="uchar">2 1x6</vector>
+        <vector name="face_num_groups" length="7" type="ushort">1x7</vector>
+        <vector name="face_groups" length="7" type="ushort">2x7</vector>
+      </entities_group>
+    </entities_groups>
+  </pre>
+</gid>

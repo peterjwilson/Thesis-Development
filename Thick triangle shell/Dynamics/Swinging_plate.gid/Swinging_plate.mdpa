@@ -1,0 +1,79 @@
+Begin ModelPartData
+//  VARIABLE_NAME value
+End ModelPartData
+
+Begin Properties 0
+End Properties
+Begin Properties 1
+	// Arranged as: thickness, RZangle, density, E1, E2, Poisson_12, G12, G13, G23
+	SHELL_ORTHOTROPIC_LAYERS  [4,9] (
+	(0.025,0.0,7850,1E+9,1E+9,0.0,1E+9,1E+9,1E+9),
+	(0.025,45.0,7850,1E+9,1E+9,0.0,1E+9,1E+9,1E+9),
+	(0.025,90.0,7850,1E+9,1E+9,0.0,1E+9,1E+9,1E+9),
+	(0.025,135.0,7850,1E+9,1E+9,0.0,1E+9,1E+9,1E+9)
+	)
+    //THICKNESS  1.00000E-001 
+    //DENSITY  7.85000E+003 
+    //YOUNG_MODULUS  1.00000E+009 
+    //POISSON_RATIO  0.00000E+000 
+End Properties
+
+Begin Nodes
+    1        0.00000        1.00000        0.00000
+    2        1.00000        1.00000        0.00000
+    3        0.00000        0.00000        0.00000
+    4        1.00000        0.00000        0.00000
+End Nodes
+
+
+Begin Elements ShellThickElementCorotational3D3N// GUI group identifier: surface
+         1          1          3          4          2 
+         2          1          2          1          3 
+End Elements
+
+Begin SubModelPart Parts_surface // Group surface // Subtree Parts
+    Begin SubModelPartNodes
+         1
+         2
+         3
+         4
+    End SubModelPartNodes
+    Begin SubModelPartElements
+         1
+         2
+    End SubModelPartElements
+    Begin SubModelPartConditions
+    End SubModelPartConditions
+End SubModelPart
+Begin SubModelPart DISPLACEMENT_dirichlet // Group dirichlet // Subtree DISPLACEMENT
+    Begin SubModelPartNodes
+         3
+         4
+    End SubModelPartNodes
+    Begin SubModelPartElements
+    End SubModelPartElements
+    Begin SubModelPartConditions
+    End SubModelPartConditions
+End SubModelPart
+Begin SubModelPart ROTATION_dirichlet // Group dirichlet // Subtree ROTATION
+    Begin SubModelPartNodes
+         3
+         4
+    End SubModelPartNodes
+    Begin SubModelPartElements
+    End SubModelPartElements
+    Begin SubModelPartConditions
+    End SubModelPartConditions
+End SubModelPart
+Begin SubModelPart SelfWeight3D_surface // Group surface // Subtree SelfWeight3D
+    Begin SubModelPartNodes
+         1
+         2
+         3
+         4
+    End SubModelPartNodes
+    Begin SubModelPartElements
+    End SubModelPartElements
+    Begin SubModelPartConditions
+    End SubModelPartConditions
+End SubModelPart

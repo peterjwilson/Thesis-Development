@@ -1,0 +1,37 @@
+BeginZE C:\Users\Peter\Desktop\TUM\Thesis\Development\Thick triangle shell\Quantity Recovery\Cylinder_self_weight_int_p.gid\Cylinder_self_weight_int_p.vv
+   x -9.6033172607421875 9.6033172607421875
+   y 13.66025447845459 -3.6602544784545898
+   z -25.980762481689453 25.980762481689453
+   e 8.6602544784545898
+   v 0.066658236086368561 -0.33841148018836975 -0.038343101739883423
+   r -0.93785077333450317
+   m 0.76801496744155884 -0.11703603714704514 0.62964713573455811 0 0.02680438756942749 0.98817294836044312 0.15098243951797485 0 -0.63987070322036743 -0.09907945990562439 0.76206868886947632 0 0 0 0 1
+   c 0 5 0
+   pd 0
+   pno 0
+   pfo 0
+   pf 4
+   pv 0
+   NowUse 1
+   DrawingType 0
+   LightVector 90 90 150 0
+   OGLShadow(UseShadows) 0
+   OGLShadow(RenderMode) RenderNice
+   OGLShadow(ShadowBias) -0.002
+   OGLShadow(AmbientShadows) 1
+   OGLShadow(UseFBO) 0
+   OGLShadow(FBOSize) 2048
+   OGLShadow(DimmedLightFactor) 0.02
+   OGLStereo(UseStereo) 0
+   OGLStereo(RelativeEyeDistance) 1
+   OGLStereo(FlipEyes) 0
+   OGLStereo(StereoMode) AnaglyphColors
+   OGLStereo(EyeDistance) 0.075
+   OGLStereo(LeftEyeDistance) 1 0 0 1
+   OGLStereo(RightEyeDistance) 0 1 1 1
+EndZE C:\Users\Peter\Desktop\TUM\Thesis\Development\Thick triangle shell\Quantity Recovery\Cylinder_self_weight_int_p.gid\Cylinder_self_weight_int_p.vv
+
+BeginMirror
+   Mirror 0 Angle 0.0 AngleFake -15.0 SizeFactor 2.0 HeightOffset 0.25 Color #d9e5f24d Backlight Off EdgeStyle No Type Scene DrawMode Mirror
+EndMirror
+
