@@ -13,12 +13,12 @@ Initializing KratosSolidMechanicsApplication...
             _____/ \__|_|   \__,_|\___|\__|\__,_|_|  \__,_|_| MECHANICS     
 Initializing KratosExternalSolversApplication... 
   [Reading Nodes    : 369 nodes read]
-  [Reading Elements : 640 elements read] [Type: ShellThinElementCorotational3D3N]
+  [Reading Elements : 320 elements read] [Type: ShellThickElementCorotational3D4N]
   [Reading Conditions : 0 conditions read] [Type: PointLoadCondition3D1N]
   [Reading Conditions : 0 conditions read] [Type: PointLoadCondition3D1N]
-  [Reading Conditions : 16 conditions read] [Type: SurfaceLoadCondition3D3N]
-  [Total Lines Read : 2541]
-Wed Apr 12 20:05:42 2017
+  [Reading Conditions : 8 conditions read] [Type: SurfaceLoadCondition3D4N]
+  [Total Lines Read : 1885]
+Wed Apr 12 19:56:02 2017
 Importing    KratosSolidMechanicsApplication
 Importing    KratosStructuralMechanicsApplication
 Importing    KratosExternalSolversApplication
@@ -33,8 +33,8 @@ solid_computational_model_part model part
     Mesh 0 : 
         Number of Nodes      : 369
         Number of Properties : 0
-        Number of Elements   : 640
-        Number of Conditions : 16
+        Number of Elements   : 320
+        Number of Conditions : 8
 
     Constitutive law initialized.
 ::[Mechanical Solver]:: Model reading finished.
@@ -45,6 +45,6 @@ solid_computational_model_part model part
 ::[KSM Simulation]:: Analysis -START- 
 ::[KSM Simulation]:: Analysis -END- 
  
-::[KSM Simulation]:: [ Computing Time = (0.55  seconds process time) ( 0.55  seconds wall time) ]
-Wed Apr 12 20:05:42 2017
+::[KSM Simulation]:: [ Computing Time = (0.47  seconds process time) ( 0.47  seconds wall time) ]
+Wed Apr 12 19:56:02 2017
 KRATOS TERMINATED CORRECTLY

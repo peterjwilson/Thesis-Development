@@ -1,5 +1,5 @@
-BeginZE C:\Users\Peter\Desktop\TUM\Thesis\Development\Thick triangle shell\Composites\nasa examples\nasa_ex3_long.gid\nasa_ex3_long.vv
-   x -1.8473856449127197 11.847385406494141
+BeginZE C:\Users\Peter\Desktop\TUM\Thesis\Development\Thin Quad\Composites\nasa_ex3_long.gid\nasa_ex3_long.vv
+   x -2.3204779624938965 12.320477485656738
    y 6.5277080535888672 -4.5277080535888672
    z -16.583124160766602 16.583124160766602
    e 5.5277080535888672
@@ -29,7 +29,7 @@ BeginZE C:\Users\Peter\Desktop\TUM\Thesis\Development\Thick triangle shell\Compo
    OGLStereo(EyeDistance) 0.075
    OGLStereo(LeftEyeDistance) 1 0 0 1
    OGLStereo(RightEyeDistance) 0 1 1 1
-EndZE C:\Users\Peter\Desktop\TUM\Thesis\Development\Thick triangle shell\Composites\nasa examples\nasa_ex3_long.gid\nasa_ex3_long.vv
+EndZE C:\Users\Peter\Desktop\TUM\Thesis\Development\Thin Quad\Composites\nasa_ex3_long.gid\nasa_ex3_long.vv
 
 BeginMirror
    Mirror 0 Angle 0.0 AngleFake -15.0 SizeFactor 2.0 HeightOffset 0.25 Color #d9e5f24d Backlight Off EdgeStyle No Type Scene DrawMode Mirror

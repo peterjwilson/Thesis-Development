@@ -26,14 +26,14 @@
         <vector name="entity_groups" length="378" type="ushort">2 1 1 2 1 1 2 1x6 2 1x5 2 1x8 2 1x10 2 1x10 2 1x14 2 1x312</vector>
       </entities_group>
       <entities_group name="elements">
-        <vector name="entity_ids" length="640" type="integer">1:640</vector>
-        <vector name="entity_num_groups" length="640" type="ushort">1x78 2 2 1x78 2 2 1x78 2 2 1x78 2 2 1x78 2 2 1x78 2 2 1x78 2 2 1x78 2 2</vector>
-        <vector name="entity_groups" length="656" type="ushort">1x79 5 1 5 1x79 5 1 5 1x79 5 1 5 1x79 5 1 5 1x79 5 1 5 1x79 5 1 5 1x79 5 1 5 1x79 5 1 5</vector>
+        <vector name="entity_ids" length="320" type="integer">1:320</vector>
+        <vector name="entity_num_groups" length="320" type="ushort">1x39 2 1x39 2 1x39 2 1x39 2 1x39 2 1x39 2 1x39 2 1x39 2</vector>
+        <vector name="entity_groups" length="328" type="ushort">1x40 5 1x40 5 1x40 5 1x40 5 1x40 5 1x40 5 1x40 5 1x40 5</vector>
       </entities_group>
       <entities_group name="faces">
-        <vector name="entity_ids" length="8" type="integer">2 82 162 242 322 402 482 562</vector>
+        <vector name="entity_ids" length="8" type="integer">1 41 81 121 161 201 241 281</vector>
         <vector name="entity_num_faces" length="8" type="uchar">1x8</vector>
-        <vector name="entity_faces" length="8" type="uchar">2x8</vector>
+        <vector name="entity_faces" length="8" type="uchar">3x8</vector>
         <vector name="face_num_groups" length="8" type="ushort">1x8</vector>
         <vector name="face_groups" length="8" type="ushort">2x8</vector>
       </entities_group>

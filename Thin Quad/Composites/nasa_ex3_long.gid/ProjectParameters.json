@@ -1,6 +1,6 @@
 {
     "problem_data"             : {
-        "problem_name"    : "2x2_mem_zrotfixed_rec",
+        "problem_name"    : "nasa_ex3_long",
         "model_part_name" : "Structure",
         "domain_size"     : 3,
         "time_step"       : 1.1,
@@ -9,13 +9,13 @@
         "echo_level"      : 0
     },
     "solver_settings"          : {
-        "solver_type"                        : "structural_mechanics_static_solver",
+        "solver_type"                        : "solid_mechanics_static_solver",
         "echo_level"                         : 0,
         "solution_type"                      : "Static",
         "analysis_type"                      : "Linear",
         "model_import_settings"              : {
             "input_type"     : "mdpa",
-            "input_filename" : "2x2_mem_zrotfixed_rec"
+            "input_filename" : "nasa_ex3_long"
         },
         "line_search"                        : false,
         "convergence_criterion"              : "Residual_criterion",
@@ -30,7 +30,7 @@
             "verbosity"   : 0
         },
         "problem_domain_sub_model_part_list" : ["Parts_surface"],
-        "processes_sub_model_part_list"      : ["DISPLACEMENT_dirichlet","ROTATION_dirichlet","ROTATION_surface","PointLoad3D_neumann"],
+        "processes_sub_model_part_list"      : ["DISPLACEMENT_clamp","ROTATION_clamp","ROTATION_surface","PointLoad3D_load","PointLoad3D_center_load","SurfaceLoad3D_surface_load"],
         "rotation_dofs"                      : true
     },
     "constraints_process_list" : [{
@@ -40,7 +40,7 @@
         "process_name"          : "ImposeVectorValueByComponentsProcess",
         "Parameters"            : {
             "mesh_id"         : 0,
-            "model_part_name" : "DISPLACEMENT_dirichlet",
+            "model_part_name" : "DISPLACEMENT_clamp",
             "variable_name"   : "DISPLACEMENT",
             "is_fixed_x"      : true,
             "is_fixed_y"      : true,
@@ -54,11 +54,11 @@
         "process_name"          : "ImposeVectorValueByComponentsProcess",
         "Parameters"            : {
             "mesh_id"         : 0,
-            "model_part_name" : "ROTATION_dirichlet",
+            "model_part_name" : "ROTATION_clamp",
             "variable_name"   : "ROTATION",
             "is_fixed_x"      : true,
             "is_fixed_y"      : true,
-            "is_fixed_z"      : true,
+            "is_fixed_z"      : false,
             "value"           : [0.0,0.0,0.0]
         }
     },{
@@ -84,10 +84,36 @@
         "process_name"          : "ApplyConstantVectorValueProcess",
         "Parameters"            : {
             "mesh_id"         : 0,
-            "model_part_name" : "PointLoad3D_neumann",
+            "model_part_name" : "PointLoad3D_load",
             "variable_name"   : "POINT_LOAD",
-            "modulus"          : 1.0,
-            "direction"       : [0.0,1,0]
+            "modulus"          : 0,
+            "direction"       : [1.0,0.0,0.0]
+        }
+    },{
+        "python_module"   : "process_factory",
+        "kratos_module" : "KratosMultiphysics",
+        "check"                 : "DirectorVectorNonZero direction",
+        "help"                  : "This process ",
+        "process_name"          : "ApplyConstantVectorValueProcess",
+        "Parameters"            : {
+            "mesh_id"         : 0,
+            "model_part_name" : "PointLoad3D_center_load",
+            "variable_name"   : "POINT_LOAD",
+            "modulus"          : 0,
+            "direction"       : [1.0,0.0,0.0]
+        }
+    },{
+        "python_module"   : "apply_vector_on_conditions_process",
+        "kratos_module" : "KratosMultiphysics.SolidMechanicsApplication",
+        "help"                  : "This process sets a vector variable value over a condition",
+        "check"                 : "DirectorVectorNonZero direction",
+        "process_name"          : "ApplyVectorOnConditionsProcess",
+        "Parameters"            : {
+            "mesh_id"         : 0,
+            "model_part_name" : "SurfaceLoad3D_surface_load",
+            "variable_name"   : "SURFACE_LOAD",
+            "modulus"          : 2000,
+            "direction"       : [1.0,0.0,0.0]
         }
     }],
     "output_configuration"     : {
@@ -106,7 +132,7 @@
             "skin_output"         : false,
             "plane_output"        : [],
             "nodal_results"       : ["DISPLACEMENT","REACTION","ROTATION","TORQUE"],
-            "gauss_point_results" : ["SHELL_ORTHOTROPIC_STRESS_BOTTOM_SURFACE"]
+            "gauss_point_results" : ["SHELL_STRAIN_GLOBAL","SHELL_FORCE_GLOBAL","SHELL_ORTHOTROPIC_STRESS_BOTTOM_SURFACE_GLOBAL"]
         },
         "point_data_configuration"  : []
     },

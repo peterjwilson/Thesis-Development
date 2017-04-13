@@ -30,7 +30,7 @@
             "verbosity"   : 0
         },
         "problem_domain_sub_model_part_list" : ["Parts_surface"],
-        "processes_sub_model_part_list"      : ["DISPLACEMENT_clamp","ROTATION_clamp","PointLoad3D_load","PointLoad3D_center_load"],
+        "processes_sub_model_part_list"      : ["DISPLACEMENT_clamp","ROTATION_clamp","ROTATION_surface","PointLoad3D_load","PointLoad3D_center_load","SurfaceLoad3D_surface_load"],
         "rotation_dofs"                      : true
     },
     "constraints_process_list" : [{
@@ -58,6 +58,20 @@
             "variable_name"   : "ROTATION",
             "is_fixed_x"      : true,
             "is_fixed_y"      : true,
+            "is_fixed_z"      : false,
+            "value"           : [0.0,0.0,0.0]
+        }
+    },{
+        "python_module"   : "impose_vector_value_by_components_process",
+        "kratos_module" : "KratosMultiphysics",
+        "help"                  : "This process fixes the selected components of a given vector variable",
+        "process_name"          : "ImposeVectorValueByComponentsProcess",
+        "Parameters"            : {
+            "mesh_id"         : 0,
+            "model_part_name" : "ROTATION_surface",
+            "variable_name"   : "ROTATION",
+            "is_fixed_x"      : false,
+            "is_fixed_y"      : false,
             "is_fixed_z"      : true,
             "value"           : [0.0,0.0,0.0]
         }
@@ -72,7 +86,7 @@
             "mesh_id"         : 0,
             "model_part_name" : "PointLoad3D_load",
             "variable_name"   : "POINT_LOAD",
-            "modulus"          : 250,
+            "modulus"          : 0,
             "direction"       : [1.0,0.0,0.0]
         }
     },{
@@ -85,7 +99,20 @@
             "mesh_id"         : 0,
             "model_part_name" : "PointLoad3D_center_load",
             "variable_name"   : "POINT_LOAD",
-            "modulus"          : 500,
+            "modulus"          : 0,
+            "direction"       : [1.0,0.0,0.0]
+        }
+    },{
+        "python_module"   : "apply_vector_on_conditions_process",
+        "kratos_module" : "KratosMultiphysics.SolidMechanicsApplication",
+        "help"                  : "This process sets a vector variable value over a condition",
+        "check"                 : "DirectorVectorNonZero direction",
+        "process_name"          : "ApplyVectorOnConditionsProcess",
+        "Parameters"            : {
+            "mesh_id"         : 0,
+            "model_part_name" : "SurfaceLoad3D_surface_load",
+            "variable_name"   : "SURFACE_LOAD",
+            "modulus"          : 2000,
             "direction"       : [1.0,0.0,0.0]
         }
     }],
@@ -105,7 +132,7 @@
             "skin_output"         : false,
             "plane_output"        : [],
             "nodal_results"       : ["DISPLACEMENT","REACTION","ROTATION","TORQUE"],
-            "gauss_point_results" : ["SHELL_STRAIN","SHELL_STRAIN_GLOBAL","SECTION_ROTATION","SHELL_ORTHOTROPIC_STRESS_BOTTOM_SURFACE","SHELL_ORTHOTROPIC_STRESS_TOP_SURFACE_GLOBAL","SHELL_FORCE","SHELL_FORCE_GLOBAL"]
+            "gauss_point_results" : ["SHELL_FORCE_GLOBAL","SHELL_STRAIN_GLOBAL","SHELL_ORTHOTROPIC_STRESS_BOTTOM_SURFACE_GLOBAL"]
         },
         "point_data_configuration"  : []
     },
