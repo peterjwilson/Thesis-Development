@@ -36,7 +36,7 @@ def ApplyLoad( model_part):
         xpos = float(node.X)
         ypos = float(node.Y)
         #print("Xpos = ",xpos)
-        value = 1.0*sin(mypi*xpos/a)*sin(mypi*ypos/b)
+        value = 1e6*sin(mypi*xpos/a)*sin(mypi*ypos/b)
         node.SetSolutionStepValue(SURFACE_LOAD,0,[0,0,value])
         #force = element.GetValue(SURFACE_LOAD)
         #print("force = ",force)

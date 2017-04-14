@@ -114,7 +114,7 @@
             "mesh_id"         : 0,
             "model_part_name" : "SurfaceLoad3D_surface",
             "variable_name"   : "SURFACE_LOAD",
-            "modulus"          : 1000000,
+            "modulus"          : 0,
             "direction"       : [0.0,0.0,-1.0]
         }
     }],
@@ -134,7 +134,7 @@
             "skin_output"         : false,
             "plane_output"        : [],
             "nodal_results"       : ["DISPLACEMENT","REACTION","ROTATION","TORQUE"],
-            "gauss_point_results" : ["SHELL_STRAIN_GLOBAL","SHELL_STRESS_MIDDLE_SURFACE_GLOBAL","SHELL_STRESS_BOTTOM_SURFACE_GLOBAL","SHELL_STRESS_TOP_SURFACE_GLOBAL"]
+            "gauss_point_results" : ["SHELL_CURVATURE_GLOBAL"]
         },
         "point_data_configuration"  : []
     },

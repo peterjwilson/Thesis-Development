@@ -30,7 +30,7 @@
             "verbosity"   : 0
         },
         "problem_domain_sub_model_part_list" : ["Parts_surface"],
-        "processes_sub_model_part_list"      : ["DISPLACEMENT_simple_support","DISPLACEMENT_xz_sym","DISPLACEMENT_yz_sym","ROTATION_xz_sym","ROTATION_yz_sym","SurfaceLoad3D_surface"],
+        "processes_sub_model_part_list"      : ["DISPLACEMENT_simple_support","DISPLACEMENT_point","ROTATION_point","SurfaceLoad3D_surface"],
         "rotation_dofs"                      : true
     },
     "constraints_process_list" : [{
@@ -54,9 +54,9 @@
         "process_name"          : "ImposeVectorValueByComponentsProcess",
         "Parameters"            : {
             "mesh_id"         : 0,
-            "model_part_name" : "DISPLACEMENT_xz_sym",
+            "model_part_name" : "DISPLACEMENT_point",
             "variable_name"   : "DISPLACEMENT",
-            "is_fixed_x"      : false,
+            "is_fixed_x"      : true,
             "is_fixed_y"      : true,
             "is_fixed_z"      : false,
             "value"           : [0.0,0.0,0.0]
@@ -68,38 +68,10 @@
         "process_name"          : "ImposeVectorValueByComponentsProcess",
         "Parameters"            : {
             "mesh_id"         : 0,
-            "model_part_name" : "DISPLACEMENT_yz_sym",
-            "variable_name"   : "DISPLACEMENT",
-            "is_fixed_x"      : true,
-            "is_fixed_y"      : false,
-            "is_fixed_z"      : false,
-            "value"           : [0.0,0.0,0.0]
-        }
-    },{
-        "python_module"   : "impose_vector_value_by_components_process",
-        "kratos_module" : "KratosMultiphysics",
-        "help"                  : "This process fixes the selected components of a given vector variable",
-        "process_name"          : "ImposeVectorValueByComponentsProcess",
-        "Parameters"            : {
-            "mesh_id"         : 0,
-            "model_part_name" : "ROTATION_xz_sym",
-            "variable_name"   : "ROTATION",
-            "is_fixed_x"      : true,
-            "is_fixed_y"      : false,
-            "is_fixed_z"      : true,
-            "value"           : [0.0,0.0,0.0]
-        }
-    },{
-        "python_module"   : "impose_vector_value_by_components_process",
-        "kratos_module" : "KratosMultiphysics",
-        "help"                  : "This process fixes the selected components of a given vector variable",
-        "process_name"          : "ImposeVectorValueByComponentsProcess",
-        "Parameters"            : {
-            "mesh_id"         : 0,
-            "model_part_name" : "ROTATION_yz_sym",
+            "model_part_name" : "ROTATION_point",
             "variable_name"   : "ROTATION",
             "is_fixed_x"      : false,
-            "is_fixed_y"      : true,
+            "is_fixed_y"      : false,
             "is_fixed_z"      : true,
             "value"           : [0.0,0.0,0.0]
         }
@@ -114,7 +86,7 @@
             "mesh_id"         : 0,
             "model_part_name" : "SurfaceLoad3D_surface",
             "variable_name"   : "SURFACE_LOAD",
-            "modulus"          : 1000000.0,
+            "modulus"          : 0.0,
             "direction"       : [0.0,0.0,-1.0]
         }
     }],
@@ -134,7 +106,7 @@
             "skin_output"         : false,
             "plane_output"        : [],
             "nodal_results"       : ["DISPLACEMENT","REACTION","ROTATION","TORQUE"],
-            "gauss_point_results" : ["SHELL_STRAIN"]
+            "gauss_point_results" : ["SHELL_CURVATURE_GLOBAL"]
         },
         "point_data_configuration"  : []
     },

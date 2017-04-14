@@ -5,7 +5,7 @@ End ModelPartData
 Begin Properties 0
 End Properties
 Begin Properties 1
-    THICKNESS  2.00000E+001 
+    THICKNESS  1.00000E+001 
     DENSITY  7.85000E+003 
     YOUNG_MODULUS  2.0E+011 
     POISSON_RATIO  3.00000E-001 

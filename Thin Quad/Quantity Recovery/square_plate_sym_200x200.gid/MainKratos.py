@@ -10,6 +10,9 @@ t0p = timer.clock()
 # measure wall time
 t0w = timer.time()
 
+from math import sin
+mypi = 3.14159265359	
+
 #
 def StartTimeMeasuring():
     # measure process time
@@ -22,6 +25,15 @@ def StopTimeMeasuring(time_ip, process, report):
     if( report ):
         used_time = time_fp - time_ip
         print("::[KSM Simulation]:: [ %.2f" % round(used_time,2),"s", process," ] ")
+        
+def ApplyLoad( model_part):
+    a = 200.0
+    b = 200.0
+    for node in model_part.Nodes:      
+        xpos = float(node.X)
+        ypos = float(node.Y)
+        value = -1e7*sin(mypi*xpos/a)*sin(mypi*ypos/b)
+        node.SetSolutionStepValue(SURFACE_LOAD,0,[0,0,value])
 
 #### TIME MONITORING END ####
 
@@ -168,7 +180,8 @@ end_time   = ProjectParameters["problem_data"]["end_time"].GetDouble()
 
 # writing a initial state results file (if no restart)
 # gid_io.write_results(time, computing_model_part) done in ExecuteBeforeSolutionLoop()
-
+myfile = open("results.txt", "w")
+dispfile = open("displacements.txt", "w")
 # solving the problem (time integration)
 while(time <= end_time):
 
@@ -184,6 +197,8 @@ while(time <= end_time):
 
     # print process info
     ##
+    print("==================================================\nAPPLYING CUSTOM SIN SURFACE LOAD\n==================================================\n\n")
+    ApplyLoad(main_model_part)
     
     for process in list_of_processes:
         process.ExecuteInitializeSolutionStep()
@@ -191,11 +206,42 @@ while(time <= end_time):
     gid_output.ExecuteInitializeSolutionStep()
         
     solver.Solve()
-       
+    
+    for node in main_model_part.Nodes:
+        if node.Y > 99.9 and node.Y < 100.1:
+            dispfile.write(str(node.X) + '\t' + str(node.GetSolutionStepValue(DISPLACEMENT_Z,0)) + "\n")
+    
+    proc_info = main_model_part.ProcessInfo 
+    for element in main_model_part.Elements:
+        x = 0.0
+        y = 0.0
+        for node in element.GetNodes():
+            x += node.X/4.0
+            y += (node.Y/4.0)
+        if y > 96.0 and y < 100:    #only take elements along the top boundary
+            myfile.write(str(x) + "\t" + str(y))
+            strain_result = []
+            strain_result = element.GetValuesOnIntegrationPoints(SHELL_CURVATURE_GLOBAL, proc_info)
+            strain_av = [0,0,0,0,0,0,0,0,0]
+            print("\n\nX = ",x)
+            for gauss_point in range(4):    #average gauss point values into central one
+                print(strain_result[gauss_point])
+                for i in range (9):
+                    strain_av[i] += strain_result[0][i]/4.0
+            for i in range(9):
+                myfile.write("\t" + str(strain_av[i]))
+            myfile.write(("\n"))
+        
+     
+        
+        
+        
     for process in list_of_processes:
         process.ExecuteFinalizeSolutionStep()
     
     gid_output.ExecuteFinalizeSolutionStep()
+    
+
 
     #TODO: decide if it shall be done only when output is processed or not (boundary_conditions_processes ??)
     for process in list_of_processes:
@@ -204,6 +250,15 @@ while(time <= end_time):
     # write results and restart files: (frequency writing is controlled internally by the gid_io)
     if gid_output.IsOutputStep():
         gid_output.PrintOutput()
+        
+
+        
+#    proc_info = main_model_part.GetSubModelPart("Parts_surface").ProcessInfo 
+#    for element in main_model_part.GetSubModelPart("Parts_surface").Elements:
+#        strain_result = []
+#        strain_result = element.GetValuesOnIntegrationPoints(VON_MISES_STRESS, proc_info)
+#        print(strain_result)
+#        #myfile.write(str(node.GetSolutionStepValue(REACTION_Y,0)) +  "\n")
                       
     #TODO: decide if it shall be done only when output is processed or not
     for process in list_of_processes:
@@ -212,7 +267,9 @@ while(time <= end_time):
 
 for process in list_of_processes:
     process.ExecuteFinalize()
-    
+
+myfile.close()
+dispfile.close()
 # ending the problem (time integration finished)
 gid_output.ExecuteFinalize()
 
