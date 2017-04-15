@@ -84,6 +84,7 @@ dmn = (np.pi**4)/(b**4) * (D[0,0] + 2.0*(D[0,1] + 2.0*D[2,2]) + D[1,1])
 Wmn = Qmn/dmn
 alpha = np.pi/a
 beta = np.pi/a
+
 w = -1.0*Wmn*(sp.sin(alpha*x_s))*(sp.sin(beta*y_s)) #transverse disp field
 phi_x = (-1.0*sp.diff(w,x_s))                       #director angles         
 phi_y = -1.0*sp.diff(w,y_s)
@@ -91,25 +92,18 @@ kappa_x = sp.diff(phi_x,x_s)                        #curvatures
 kappa_y = sp.diff(phi_y,y_s)
 kappa_xy = sp.diff(phi_x,y_s) + sp.diff(phi_y,x_s)
 
+M_xx = (D[0,0]*alpha**2 + D[0,1]*beta**2) * Wmn * (sp.sin(np.pi*x_s/a)) * (sp.sin(np.pi*y_s/b))
+M_yy = (D[0,1]*alpha**2 + D[1,1]*beta**2) * Wmn * (sp.sin(np.pi*x_s/a)) * (sp.sin(np.pi*y_s/b))
+
 
 
 # max central disp
 print("Analytical w_max = ",evaluateExpression(w,a/2.0,b/2.0))
 print("\n\n")
-print("phi_x w_max = ",evaluateExpression(phi_x,a/2.0,b/2.0))
-print("kappa x w_max = ",evaluateExpression(kappa_x,a/2.0,b/2.0))
-print("Analytical w_max = ",evaluateExpression(w,a/2.0,b/2.0))
-
-
-phi_x = Wmn*alpha*(sp.cos(alpha*x_s))*(sp.sin(beta*y_s))
-kappa_x = -1.0*Wmn*alpha*alpha*(sp.sin(alpha*x_s))*(sp.sin(beta*y_s))
-print("phi_x w_max = ",evaluateExpression(phi_x,a/2.0,b/2.0))
-print("kappa x w_max = ",evaluateExpression(kappa_x,a/2.0,b/2.0))
 
 # -----------------------------------------------------------------------------
 #       READ KRATOS DISPLACEMENTS
 # -----------------------------------------------------------------------------
-
 kratos_w = []
 kratos_w_x = []
 with open("displacements.txt", "r") as kratos_file:
@@ -118,32 +112,44 @@ with open("displacements.txt", "r") as kratos_file:
       kratos_w_x.append(float(line[0]))
       kratos_w.append(float(line[1]))
 
-
-
 # -----------------------------------------------------------------------------
-#       COMPARE THEORETICAL STRAINS WITH KRATOS OUTPUT
+#       READ KRATOS CURVATURES
 # -----------------------------------------------------------------------------
-
 kratos_x =[]
 kratos_y =[]
+kratos_kappa_x = []
 kratos_kappa_y = []
 
-with open("results.txt", "r") as kratos_file:
+with open("curvatures.txt", "r") as kratos_file:
   for line in kratos_file:
       line = line.split('\t')
       kratos_x.append(float(line[0]))
       kratos_y.append(float(line[1]))
-      kratos_kappa_y.append(float(line[5]))
-      #print(float(line[5]))
-          
-print("\n\nKratos kappa y:\n",kratos_kappa_y)
-
+      kratos_kappa_x.append(float(line[2]))
+      kratos_kappa_y.append(float(line[6]))
+      
+# -----------------------------------------------------------------------------
+#       READ KRATOS MOMENTS
+# -----------------------------------------------------------------------------      
+kratos_M_xx = []
+kratos_M_yy = []
+with open("moments.txt", "r") as kratos_file:
+  for line in kratos_file:
+      line = line.split('\t')
+      kratos_M_xx.append(float(line[2]))
+      kratos_M_yy.append(float(line[6]))    
+      
+# -----------------------------------------------------------------------------
+#       COMPARE THEORETICAL STRAINS WITH KRATOS OUTPUT
+# -----------------------------------------------------------------------------
 analytical_w = []
 analytical_kappa_y =[] 
 analytical_kappa_x =[]
 analytical_kappa_xy =[]
 analytical_phi_x = []
 analytical_phi_y = []
+analytical_M_xx = []
+analytical_M_yy = []
 e_x =[]
 e_y =[]
 e_xy =[]
@@ -158,6 +164,8 @@ for i in range(len(kratos_x)):
     analytical_kappa_xy.append(evaluateExpression(kappa_xy,kratos_x[i],kratos_y[i]))
     analytical_phi_x.append(evaluateExpression(phi_x,kratos_x[i],kratos_y[i]))
     analytical_phi_y.append(evaluateExpression(phi_y,kratos_x[i],kratos_y[i]))
+    analytical_M_xx.append(evaluateExpression(M_xx,kratos_x[i],kratos_y[i]))
+    analytical_M_yy.append(evaluateExpression(M_yy,kratos_x[i],kratos_y[i]))
     e_x.append(h/2.0*analytical_kappa_x[i])
     e_y.append(h/2.0*analytical_kappa_y[i])
     e_xy.append(h/2.0*analytical_kappa_xy[i]/2.0)
@@ -170,7 +178,7 @@ for i in range(len(kratos_x)):
     s_y.append(Mat_s[1,0])
     s_xy.append(Mat_s[2,0])
     
-print("\n\nTheoretical kappa Y:\n",analytical_kappa_y)         
+#print("\n\nTheoretical kappa Y:\n",analytical_kappa_y)         
 
 
 
@@ -191,7 +199,7 @@ plt.legend(loc=9,bbox_to_anchor=(0.5, -0.1), ncol=3, frameon=False,fontsize=labe
 #lg.loc(2)
 plt.xlim([0,200])
 plt.xlabel('X Coordinate')
-plt.ylabel('Transverse displacment')
+plt.ylabel('Transverse displacment along GPs')
 plt.grid()
 plt.tick_params(labelsize=labelfontsize)
 #plt.savefig('Simply_support_dome_n_theta.pdf',bbox_inches="tight")
@@ -218,11 +226,11 @@ plt.tick_params(labelsize=labelfontsize)
 #
 #
 
-# PHI X
+# Kappa X
 fig = plt.figure(3)
-plt.plot(kratos_x,kratos_kappa_y, color = '#77B5FE', linewidth=3.0, label = 'ANDES-DKQ',antialiased=True)
+plt.plot(kratos_x,kratos_kappa_x, color = '#77B5FE', linewidth=3.0, label = 'ANDES-DKQ',antialiased=True)
 #plt.plot(phi_dsg,n_theta_dsg, color = '#FF91A4', linewidth=3.0, label = 'DSG',antialiased=True)
-plt.plot(kratos_x,analytical_kappa_y,color = 'grey', linestyle='None', markerfacecolor= 'None', markersize = 7.0, marker='o', label = 'Ref',antialiased=True)
+#plt.plot(kratos_x,analytical_kappa_x,color = 'grey', linestyle='None', markerfacecolor= 'None', markersize = 7.0, marker='o', label = 'Ref',antialiased=True)
 #plt.plot(disp_ref,load_ref,color = 'grey', linewidth=2.0, linestyle='--', label = 'Ref',antialiased=True)
 plt.legend(loc=9,bbox_to_anchor=(0.5, -0.1), ncol=3, frameon=False,fontsize=labelfontsize+2)
 #plt.legend()
@@ -231,7 +239,7 @@ plt.legend(loc=9,bbox_to_anchor=(0.5, -0.1), ncol=3, frameon=False,fontsize=labe
 #lg.loc(2)
 #plt.xlim([0,90])
 plt.xlabel('X Coordinate')
-plt.ylabel('Transverse displacment')
+plt.ylabel('Kappa X')
 plt.grid()
 plt.tick_params(labelsize=labelfontsize)
 #plt.savefig('Simply_support_dome_n_theta.pdf',bbox_inches="tight")
@@ -240,7 +248,23 @@ plt.tick_params(labelsize=labelfontsize)
 
 
 
-
+# M YY
+fig = plt.figure(4)
+plt.plot(kratos_x,kratos_M_xx, color = '#77B5FE', linewidth=3.0, label = 'ANDES-DKQ',antialiased=True)
+#plt.plot(phi_dsg,n_theta_dsg, color = '#FF91A4', linewidth=3.0, label = 'DSG',antialiased=True)
+#plt.plot(kratos_x,analytical_M_yy,color = 'grey', linestyle='None', markerfacecolor= 'None', markersize = 7.0, marker='o', label = 'Ref',antialiased=True)
+#plt.plot(disp_ref,load_ref,color = 'grey', linewidth=2.0, linestyle='--', label = 'Ref',antialiased=True)
+plt.legend(loc=9,bbox_to_anchor=(0.5, -0.1), ncol=3, frameon=False,fontsize=labelfontsize+2)
+#plt.legend()
+#lg = plt.legend()
+#lg.draw_frame(False)
+#lg.loc(2)
+#plt.xlim([0,90])
+plt.xlabel('X Coordinate')
+plt.ylabel('M_yy')
+plt.grid()
+plt.tick_params(labelsize=labelfontsize)
+#plt.savefig('Simply_support_dome_n_theta.pdf',bbox_inches="tight")
 
 
 

@@ -180,7 +180,8 @@ end_time   = ProjectParameters["problem_data"]["end_time"].GetDouble()
 
 # writing a initial state results file (if no restart)
 # gid_io.write_results(time, computing_model_part) done in ExecuteBeforeSolutionLoop()
-myfile = open("results.txt", "w")
+curvaturefile = open("curvatures.txt", "w")
+momentfile = open("moments.txt", "w")
 dispfile = open("displacements.txt", "w")
 # solving the problem (time integration)
 while(time <= end_time):
@@ -207,10 +208,17 @@ while(time <= end_time):
         
     solver.Solve()
     
+    for process in list_of_processes:
+        process.ExecuteFinalizeSolutionStep()
+    
+    gid_output.ExecuteFinalizeSolutionStep()
+    
+    # Displacements
     for node in main_model_part.Nodes:
         if node.Y > 99.9 and node.Y < 100.1:
             dispfile.write(str(node.X) + '\t' + str(node.GetSolutionStepValue(DISPLACEMENT_Z,0)) + "\n")
     
+    # Gauss results
     proc_info = main_model_part.ProcessInfo 
     for element in main_model_part.Elements:
         x = 0.0
@@ -218,28 +226,35 @@ while(time <= end_time):
         for node in element.GetNodes():
             x += node.X/4.0
             y += (node.Y/4.0)
-        if y > 96.0 and y < 100:    #only take elements along the top boundary
-            myfile.write(str(x) + "\t" + str(y))
+        if y > 90.0 and y < 100:    #only take elements along the top boundary
+            # Curvatures
+            curvaturefile.write(str(x) + "\t" + str(y))
             strain_result = []
-            strain_result = element.GetValuesOnIntegrationPoints(SHELL_CURVATURE_GLOBAL, proc_info)
+            strain_result = element.GetValuesOnIntegrationPoints(SHELL_CURVATURE, proc_info)
             strain_av = [0,0,0,0,0,0,0,0,0]
-            print("\n\nX = ",x)
             for gauss_point in range(4):    #average gauss point values into central one
-                print(strain_result[gauss_point])
                 for i in range (9):
-                    strain_av[i] += strain_result[0][i]/4.0
+                    strain_av[i] += strain_result[gauss_point][i]/4.0
             for i in range(9):
-                myfile.write("\t" + str(strain_av[i]))
-            myfile.write(("\n"))
+                curvaturefile.write("\t" + str(strain_av[i]))
+            curvaturefile.write(("\n"))
+            
+            # Moments
+            momentfile.write(str(x) + "\t" + str(y))
+            strain_result = []
+            strain_result = element.GetValuesOnIntegrationPoints(SHELL_MOMENT, proc_info)
+            strain_av = [0,0,0,0,0,0,0,0,0]
+            for gauss_point in range(4):    #average gauss point values into central one
+                for i in range (9):
+                    strain_av[i] += strain_result[gauss_point][i]/4.0
+            for i in range(9):
+                momentfile.write("\t" + str(strain_av[i]))
+            momentfile.write(("\n"))
         
      
         
         
-        
-    for process in list_of_processes:
-        process.ExecuteFinalizeSolutionStep()
-    
-    gid_output.ExecuteFinalizeSolutionStep()
+
     
 
 
@@ -268,8 +283,9 @@ while(time <= end_time):
 for process in list_of_processes:
     process.ExecuteFinalize()
 
-myfile.close()
+curvaturefile.close()
 dispfile.close()
+momentfile.close()
 # ending the problem (time integration finished)
 gid_output.ExecuteFinalize()
 

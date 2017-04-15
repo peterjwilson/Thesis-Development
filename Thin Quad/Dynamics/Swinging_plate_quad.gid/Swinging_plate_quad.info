@@ -15,7 +15,7 @@ Initializing KratosExternalSolversApplication...
   [Reading Nodes    : 4 nodes read]
   [Reading Elements : 1 elements read] [Type: ShellThickElementCorotational3D4N]
   [Total Lines Read : 71]
-Sat Mar  4 09:20:13 2017
+Sat Apr 15 12:34:53 2017
 Importing    KratosSolidMechanicsApplication
 Importing    KratosStructuralMechanicsApplication
 Importing    KratosExternalSolversApplication
@@ -42,6 +42,6 @@ solid_computational_model_part model part
 ::[KSM Simulation]:: Analysis -START- 
 ::[KSM Simulation]:: Analysis -END- 
  
-::[KSM Simulation]:: [ Computing Time = (0.68  seconds process time) ( 0.68  seconds wall time) ]
-Sat Mar  4 09:20:13 2017
+::[KSM Simulation]:: [ Computing Time = (0.60  seconds process time) ( 0.60  seconds wall time) ]
+Sat Apr 15 12:34:54 2017
 KRATOS TERMINATED CORRECTLY
