@@ -6,16 +6,16 @@ Begin Properties 0
 End Properties
 Begin Properties 1
 	// Arranged as: thickness, RZangle, density, E1, E2, Poisson_12, G12, G13, G23
-	SHELL_ORTHOTROPIC_LAYERS  [4,9] (
+/* 	SHELL_ORTHOTROPIC_LAYERS  [4,9] (
 	(0.025,0.0,7850,1E+9,1E+9,0.0,1E+9,1E+9,1E+9),
 	(0.025,45.0,7850,1E+9,1E+9,0.0,1E+9,1E+9,1E+9),
 	(0.025,90.0,7850,1E+9,1E+9,0.0,1E+9,1E+9,1E+9),
 	(0.025,135.0,7850,1E+9,1E+9,0.0,1E+9,1E+9,1E+9)
-	)
-    //THICKNESS  1.00000E-001 
-    //DENSITY  7.85000E+003 
-    //YOUNG_MODULUS  1.00000E+009 
-    //POISSON_RATIO  0.00000E+000 
+	) */
+    THICKNESS  1.00000E-001 
+    DENSITY  7.85000E+003 
+    YOUNG_MODULUS  1.00000E+009 
+    POISSON_RATIO  0.00000E+000 
 End Properties
 
 Begin Nodes

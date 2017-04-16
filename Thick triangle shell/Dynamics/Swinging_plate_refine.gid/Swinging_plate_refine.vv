@@ -1,0 +1,37 @@
+BeginZE C:\Users\Peter\Desktop\TUM\Thesis\Development\Thick triangle shell\Dynamics\Swinging_plate_refine.gid\Swinging_plate_refine.vv
+   x -0.4064674973487854 1.4064676761627197
+   y 1.2264831066131592 -0.22648316621780396
+   z -2.1794495582580566 2.1794495582580566
+   e 0.72648316621780396
+   v 0.43399456143379211 -0.24923795461654663 -0.44607120752334595
+   r 0.74199032783508301
+   m 0.47780182957649231 0.44562521576881409 -0.75704926252365112 0 -0.87829685211181641 0.2253383994102478 -0.42168372869491577 0 -0.017320664599537849 0.86639523506164551 0.49905836582183838 0 0 0 0 1
+   c 0.5 0.5 0
+   pd 0
+   pno 0
+   pfo 0
+   pf 4
+   pv 0
+   NowUse 1
+   DrawingType 0
+   LightVector 90 90 150 0
+   OGLShadow(UseShadows) 0
+   OGLShadow(RenderMode) RenderNice
+   OGLShadow(ShadowBias) -0.002
+   OGLShadow(AmbientShadows) 1
+   OGLShadow(UseFBO) 0
+   OGLShadow(FBOSize) 2048
+   OGLShadow(DimmedLightFactor) 0.02
+   OGLStereo(UseStereo) 0
+   OGLStereo(RelativeEyeDistance) 1
+   OGLStereo(FlipEyes) 0
+   OGLStereo(StereoMode) AnaglyphColors
+   OGLStereo(EyeDistance) 0.075
+   OGLStereo(LeftEyeDistance) 1 0 0 1
+   OGLStereo(RightEyeDistance) 0 1 1 1
+EndZE C:\Users\Peter\Desktop\TUM\Thesis\Development\Thick triangle shell\Dynamics\Swinging_plate_refine.gid\Swinging_plate_refine.vv
+
+BeginMirror
+   Mirror 0 Angle 0.0 AngleFake -15.0 SizeFactor 2.0 HeightOffset 0.25 Color #d9e5f24d Backlight Off EdgeStyle No Type Scene DrawMode Mirror
+EndMirror
+
