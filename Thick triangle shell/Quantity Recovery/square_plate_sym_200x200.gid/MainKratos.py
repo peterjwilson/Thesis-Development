@@ -180,8 +180,12 @@ end_time   = ProjectParameters["problem_data"]["end_time"].GetDouble()
 
 # writing a initial state results file (if no restart)
 # gid_io.write_results(time, computing_model_part) done in ExecuteBeforeSolutionLoop()
-myfile = open("results.txt", "w")
+curvaturefile = open("curvatures.txt", "w")
+momentfile = open("moments.txt", "w")
 dispfile = open("displacements.txt", "w")
+rotationfile = open("rotations.txt", "w")
+stress_top_surface_file = open("stress_top_surface.txt", "w")
+stress_bottom_surface_file = open("stress_bottom_surface.txt", "w")
 # solving the problem (time integration)
 while(time <= end_time):
 
@@ -200,6 +204,9 @@ while(time <= end_time):
     print("==================================================\nAPPLYING CUSTOM SIN SURFACE LOAD\n==================================================\n\n")
     ApplyLoad(main_model_part)
     
+    print("==================================================\nHAVE I DONE COROTATIONAL AS WELL??\n==================================================\n\n")
+    
+    
     for process in list_of_processes:
         process.ExecuteInitializeSolutionStep()
 
@@ -207,10 +214,27 @@ while(time <= end_time):
         
     solver.Solve()
     
+    for process in list_of_processes:
+        process.ExecuteFinalizeSolutionStep()
+    
+    gid_output.ExecuteFinalizeSolutionStep()
+    
+        #TODO: decide if it shall be done only when output is processed or not (boundary_conditions_processes ??)
+    for process in list_of_processes:
+        process.ExecuteBeforeOutputStep()
+    
+    # write results and restart files: (frequency writing is controlled internally by the gid_io)
+    if gid_output.IsOutputStep():
+        gid_output.PrintOutput()
+    
+    # Displacements and rotations
     for node in main_model_part.Nodes:
         if node.Y > 99.9 and node.Y < 100.1:
             dispfile.write(str(node.X) + '\t' + str(node.GetSolutionStepValue(DISPLACEMENT_Z,0)) + "\n")
-    
+            rotationfile.write(str(node.X) + '\t' + str(node.GetSolutionStepValue(ROTATION_Y,0)) + "\n")
+
+            
+    # Gauss results
     proc_info = main_model_part.ProcessInfo 
     for element in main_model_part.Elements:
         x = 0.0
@@ -218,48 +242,54 @@ while(time <= end_time):
         for node in element.GetNodes():
             x += node.X/3.0
             y += (node.Y/3.0)
-        if y > 96.0 and y < 100:    #only take elements along the top boundary
-            myfile.write(str(x) + "\t" + str(y))
+        if y > 98.0 and y < 100:    #only take elements along the top boundary
+            # Curvatures
+            curvaturefile.write(str(x) + "\t" + str(y))
             strain_result = []
             strain_result = element.GetValuesOnIntegrationPoints(SHELL_CURVATURE_GLOBAL, proc_info)
             strain_av = [0,0,0,0,0,0,0,0,0]
-            print("\n\nX = ",x)
-            print(strain_result)
-            for gauss_point in range(1):    #average gauss point values into central one
-                print(strain_result[gauss_point])
+            for gauss_point in range(3):    #average gauss point values into central one
                 for i in range (9):
-                    strain_av[i] += strain_result[0][i]
+                    strain_av[i] += strain_result[gauss_point][i]/3.0
             for i in range(9):
-                myfile.write("\t" + str(strain_av[i]))
-            myfile.write(("\n"))
-        
-     
-        
-        
-        
-    for process in list_of_processes:
-        process.ExecuteFinalizeSolutionStep()
-    
-    gid_output.ExecuteFinalizeSolutionStep()
-    
-
-
-    #TODO: decide if it shall be done only when output is processed or not (boundary_conditions_processes ??)
-    for process in list_of_processes:
-        process.ExecuteBeforeOutputStep()
-    
-    # write results and restart files: (frequency writing is controlled internally by the gid_io)
-    if gid_output.IsOutputStep():
-        gid_output.PrintOutput()
-        
-
-        
-#    proc_info = main_model_part.GetSubModelPart("Parts_surface").ProcessInfo 
-#    for element in main_model_part.GetSubModelPart("Parts_surface").Elements:
-#        strain_result = []
-#        strain_result = element.GetValuesOnIntegrationPoints(VON_MISES_STRESS, proc_info)
-#        print(strain_result)
-#        #myfile.write(str(node.GetSolutionStepValue(REACTION_Y,0)) +  "\n")
+                curvaturefile.write("\t" + str(strain_av[i]))
+            curvaturefile.write(("\n"))
+            
+            # Moments
+            momentfile.write(str(x) + "\t" + str(y))
+            strain_result = []
+            strain_result = element.GetValuesOnIntegrationPoints(SHELL_MOMENT_GLOBAL, proc_info)
+            strain_av = [0,0,0,0,0,0,0,0,0]
+            for gauss_point in range(3):    #average gauss point values into central one
+                for i in range (9):
+                    strain_av[i] += strain_result[gauss_point][i]/3.0
+            for i in range(9):
+                momentfile.write("\t" + str(strain_av[i]))
+            momentfile.write(("\n"))
+            
+            # Top surface stress
+            stress_top_surface_file.write(str(x) + "\t" + str(y))
+            strain_result = []
+            strain_result = element.GetValuesOnIntegrationPoints(SHELL_STRESS_TOP_SURFACE_GLOBAL, proc_info)
+            strain_av = [0,0,0,0,0,0,0,0,0]
+            for gauss_point in range(3):    #average gauss point values into central one
+                for i in range (9):
+                    strain_av[i] += strain_result[gauss_point][i]/3.0
+            for i in range(9):
+                stress_top_surface_file.write("\t" + str(strain_av[i]))
+            stress_top_surface_file.write(("\n"))
+            
+            # Bottom surface stress
+            stress_bottom_surface_file.write(str(x) + "\t" + str(y))
+            strain_result = []
+            strain_result = element.GetValuesOnIntegrationPoints(SHELL_STRESS_BOTTOM_SURFACE_GLOBAL, proc_info)
+            strain_av = [0,0,0,0,0,0,0,0,0]
+            for gauss_point in range(3):    #average gauss point values into central one
+                for i in range (9):
+                    strain_av[i] += strain_result[gauss_point][i]/3.0
+            for i in range(9):
+                stress_bottom_surface_file.write("\t" + str(strain_av[i]))
+            stress_bottom_surface_file.write(("\n"))
                       
     #TODO: decide if it shall be done only when output is processed or not
     for process in list_of_processes:
@@ -269,8 +299,11 @@ while(time <= end_time):
 for process in list_of_processes:
     process.ExecuteFinalize()
 
-myfile.close()
+curvaturefile.close()
 dispfile.close()
+momentfile.close()
+rotationfile.close()
+stress_top_surface_file.close()
 # ending the problem (time integration finished)
 gid_output.ExecuteFinalize()
 

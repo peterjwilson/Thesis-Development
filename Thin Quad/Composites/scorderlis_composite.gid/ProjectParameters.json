@@ -134,7 +134,7 @@
             "skin_output"         : false,
             "plane_output"        : [],
             "nodal_results"       : ["DISPLACEMENT","REACTION","ROTATION","TORQUE"],
-            "gauss_point_results" : []
+            "gauss_point_results" : ["SHELL_ORTHOTROPIC_STRESS_BOTTOM_SURFACE","SHELL_ORTHOTROPIC_STRESS_TOP_SURFACE"]
         },
         "point_data_configuration"  : []
     },
