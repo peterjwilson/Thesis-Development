@@ -51,51 +51,101 @@ E = 2e11
 Poisson = 0.3
 G = E/2.0/(1+Poisson)
 h = 10
+K = 5.0/6.0                 # shear correction factor
 
-# integrated bending material matrix
-D = sp.zeros(3,3)
-D[0,0]= 1.0
-D[1,1]= 1.0
-D[0,1]= Poisson
-D[1,0] = Poisson
-D[2,2]= (1-Poisson)/2.0
-D*= (E*h**3)/(12.0*(1-Poisson**2))
+use_classical_solution = True
 
-# pure plane stress material matrix
-C = sp.zeros(3,3)
-C[0,0]= 1.0
-C[1,1]= 1.0
-C[0,1]= Poisson
-C[1,0] = Poisson
-C[2,2] = (1-Poisson) #strain is already halved in Kratos 
-C*= E/(1-Poisson**2)
+if(use_classical_solution):
+    # integrated bending material matrix
+    D = sp.zeros(3,3)
+    D[0,0]= 1.0
+    D[1,1]= 1.0
+    D[0,1]= Poisson
+    D[1,0] = Poisson
+    D[2,2]= (1-Poisson)/2.0
+    D*= (E*h**3)/(12.0*(1-Poisson**2))
+    
+    # pure plane stress material matrix
+    C = sp.zeros(3,3)
+    C[0,0]= 1.0
+    C[1,1]= 1.0
+    C[0,1]= Poisson
+    C[1,0] = Poisson
+    C[2,2] = (1-Poisson) #strain is already halved in Kratos 
+    C*= E/(1-Poisson**2)
+    
+    # solution values
+    Qmn = q0
+    dmn = (np.pi**4)/(b**4) * (D[0,0] + 2.0*(D[0,1] + 2.0*D[2,2]) + D[1,1])
+    Wmn = Qmn/dmn
+    alpha = np.pi/a
+    beta = np.pi/a
+    
+    w = -1.0*Wmn*(sp.sin(alpha*x_s))*(sp.sin(beta*y_s)) #transverse disp field
+else:
+    # integrated membrane material matrix A_ij
+    A = sp.zeros(3,3)
+    A[0,0]= 1.0
+    A[1,1]= 1.0
+    A[0,1]= Poisson
+    A[1,0] = Poisson
+    A[2,2]= (1-Poisson)/2.0
+    A*= (E*h)/((1-Poisson**2))
+    
+    # integrated bending material matrix D_ij
+    D = sp.zeros(3,3)
+    D[0,0]= 1.0
+    D[1,1]= 1.0
+    D[0,1]= Poisson
+    D[1,0] = Poisson
+    D[2,2]= (1-Poisson)/2.0
+    D*= (E*h**3)/(12.0*(1-Poisson**2))
+    
+    # integrated shear material matrix AS_ij
+    AS = sp.zeros(2,2)
+    AS[0,0]= 1.0
+    AS[1,1]= 1.0
+    AS[0,1]= Poisson
+    AS[1,0] = Poisson
+    AS*= (G*h)              #no shear correction factor yet
+    
+    
+    # pure plane stress material matrix
+    C = sp.zeros(3,3)
+    C[0,0]= 1.0
+    C[1,1]= 1.0
+    C[0,1]= Poisson
+    C[1,0] = Poisson
+    C[2,2] = (1-Poisson)    #strain is already halved in Kratos 
+    C*= E/(1-Poisson**2)
+    
+    # more constants
+    alpha = np.pi/a
+    beta = np.pi/a
+    s33 = 0
+    s34 = K*AS[1,1]*alpha
+    s35 = K*AS[0,0]*beta
+    s44 = D[0,0]*alpha**2 + D[2,2]*beta**2 + K*AS[1,1]
+    s45 = (D[0,1] + D[2,2])*alpha*beta
+    s55 = D[2,2]*alpha**2 + D[1,1]*beta**2 + K*AS[0,0]
+    
+    b0 = s44*s55 - s45*s45
+    b1 = s45*s35 - s34*s55
+    b2 = s34*s45 - s44*s35
+    bmn = s33 + s34*b1/b0 + s35*b2/b0 ##
+    
+    
+    
+    # solution values
+    f = q0*sp.sin(alpha*x_s)*sp.sin(beta*y_s)
+    fprime = sp.integrate(f,(x_s,0,b))
+    Qmn = 4.0/a/b*sp.integrate(fprime,(y_s,0,a))
+    Wmn = 1.0/bmn*Qmn
+    w = Wmn*(sp.sin(alpha*x_s))*(sp.sin(beta*y_s))      #transverse disp field
 
-# more constants
-s33 = 0
-s34 =
-s35 =
-s44 =
-s45 =
-s55 =
 
 
 
-
-
-b0 = s44*s55 - s45*s45
-b1 = s45*s35 - s34s55
-b2 = s34*s45 - s44*s35
-bmn = s33 + s34*b1/b0 + s35*b2/b0 ##
-
-
-
-# solution values
-Qmn = -1.0*q0
-Wmn = 1.0/bmn*Qmn
-alpha = np.pi/a
-beta = np.pi/a
-
-w = Wmn*(sp.sin(alpha*x_s))*(sp.sin(beta*y_s)) #transverse disp field
 phi_x = (-1.0*sp.diff(w,x_s))                       #director angles         
 phi_y = -1.0*sp.diff(w,y_s)
 kappa_x = sp.diff(phi_x,x_s)                        #curvatures
@@ -189,6 +239,40 @@ with open("stress_bottom_surface.txt", "r") as kratos_file:
       kratos_s_yy_bottom.append(float(line[6]))    
       kratos_s_xy_bottom.append(float(line[3]))
       
+# -----------------------------------------------------------------------------
+#       READ KRATOS MIDDLE SURFACE STRESSES
+# -----------------------------------------------------------------------------      
+kratos_s_xz_middle = []
+kratos_s_yz_middle = []
+with open("stress_middle_surface.txt", "r") as kratos_file:
+  for line in kratos_file:
+      line = line.split('\t')
+      kratos_s_xz_middle.append(float(line[4]))
+      kratos_s_yz_middle.append(float(line[7]))    
+      
+# -----------------------------------------------------------------------------
+#       READ STRAND MIDDLE SURFACE STRESSES
+# -----------------------------------------------------------------------------  
+strand_x = []    
+strand_s_xz_middle = []
+with open("strand_s_xz.txt", "r") as kratos_file:
+  for line in kratos_file:
+      line = line.split(' ')
+      strand_x.append(line[0])
+      strand_s_xz_middle.append(float(line[1]))    
+      
+#print("strandx",strand_x)      
+#print("strand_s_xz_middle",strand_s_xz_middle)  
+
+gid_x = []    
+gid_s_xz_middle = []
+with open("kratos_s_xz.txt", "r") as kratos_file:
+  for line in kratos_file:
+      line = line.split(' ')
+      gid_x.append(line[0])
+      gid_s_xz_middle.append(float(line[1]))   
+
+
 # -----------------------------------------------------------------------------
 #       CALCULATE DISCRETE ANALYTICAL RESULTS
 # -----------------------------------------------------------------------------
@@ -521,6 +605,30 @@ plt.ylabel('S_xy bottom surface')
 plt.grid()
 plt.tick_params(labelsize=labelfontsize)
 #plt.savefig('Simply_support_dome_n_theta.pdf',bbox_inches="tight")
+
+
+
+
+# Stress XZ middle surface
+fig = plt.figure(40)
+#plt.plot(kratos_x,kratos_s_xz_middle, color = '#77B5FE', linewidth=3.0, label = 'PYTHON',antialiased=True)
+plt.plot(gid_x,gid_s_xz_middle, color = '#FF91A4', linewidth=3.0, label = 'GID',antialiased=True)
+plt.plot(strand_x,strand_s_xz_middle,color = 'grey', linestyle='None', markerfacecolor= 'None', markersize = 7.0, marker='o', label = 'STRAND',antialiased=True)
+#plt.plot(disp_ref,load_ref,color = 'grey', linewidth=2.0, linestyle='--', label = 'Ref',antialiased=True)
+plt.legend(loc=9,bbox_to_anchor=(0.5, -0.1), ncol=3, frameon=False,fontsize=labelfontsize+2)
+#plt.legend()
+#lg = plt.legend()
+#lg.draw_frame(False)
+#lg.loc(2)
+plt.xlim([0,100])
+plt.xlabel('X Coordinate')
+plt.ylabel('S_xz middle surface')
+plt.grid()
+plt.tick_params(labelsize=labelfontsize)
+#plt.savefig('Simply_support_dome_n_theta.pdf',bbox_inches="tight")
+
+
+
 
 
 

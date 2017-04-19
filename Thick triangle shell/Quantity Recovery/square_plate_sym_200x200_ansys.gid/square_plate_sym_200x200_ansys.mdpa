@@ -7,7 +7,7 @@ End Properties
 Begin Properties 1
     THICKNESS  1.00000E+001 
     DENSITY  7.85000E+003 
-    YOUNG_MODULUS  2.0E+011 
+    YOUNG_MODULUS  2.00000E+011 
     POISSON_RATIO  3.00000E-001 
 End Properties
 
@@ -640,7 +640,7 @@ Begin Nodes
 End Nodes
 
 
-Begin Elements ShellThickElement3D3N// GUI group identifier: surface
+Begin Elements ShellThickElementCorotational3D3N// GUI group identifier: surface
          1          1        475        441        473 
          2          1        441        437        473 
          3          1        482        444        475 

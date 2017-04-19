@@ -186,6 +186,7 @@ dispfile = open("displacements.txt", "w")
 rotationfile = open("rotations.txt", "w")
 stress_top_surface_file = open("stress_top_surface.txt", "w")
 stress_bottom_surface_file = open("stress_bottom_surface.txt", "w")
+stress_middle_surface_file = open("stress_middle_surface.txt", "w")
 # solving the problem (time integration)
 while(time <= end_time):
 
@@ -242,7 +243,7 @@ while(time <= end_time):
         for node in element.GetNodes():
             x += node.X/3.0
             y += (node.Y/3.0)
-        if y > 98.0 and y < 100:    #only take elements along the top boundary
+        if y > 95.0 and y < 100:    #only take elements along the top boundary
             # Curvatures
             curvaturefile.write(str(x) + "\t" + str(y))
             strain_result = []
@@ -290,6 +291,18 @@ while(time <= end_time):
             for i in range(9):
                 stress_bottom_surface_file.write("\t" + str(strain_av[i]))
             stress_bottom_surface_file.write(("\n"))
+            
+            # Middle surface stress
+            stress_middle_surface_file.write(str(x) + "\t" + str(y))
+            strain_result = []
+            strain_result = element.GetValuesOnIntegrationPoints(SHELL_STRESS_MIDDLE_SURFACE_GLOBAL, proc_info)
+            strain_av = [0,0,0,0,0,0,0,0,0]
+            for gauss_point in range(3):    #average gauss point values into central one
+                for i in range (9):
+                    strain_av[i] += strain_result[gauss_point][i]/3.0
+            for i in range(9):
+                stress_middle_surface_file.write("\t" + str(strain_av[i]))
+            stress_middle_surface_file.write(("\n"))
                       
     #TODO: decide if it shall be done only when output is processed or not
     for process in list_of_processes:
@@ -304,6 +317,7 @@ dispfile.close()
 momentfile.close()
 rotationfile.close()
 stress_top_surface_file.close()
+stress_middle_surface_file.close()
 # ending the problem (time integration finished)
 gid_output.ExecuteFinalize()
 
