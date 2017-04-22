@@ -1,5 +1,5 @@
-BeginZE C:\Users\Peter\Desktop\TUM\Thesis\Development\Thin Quad\Composites\square_plate_sym_200x200.gid\square_plate_sym_200x200.vv
-   x -64.535606384277344 164.53561401367188
+BeginZE C:\Users\Peter\Desktop\TUM\Thesis\Development\Thin Quad\Quantity Recovery\square_plate_sym_200x200.gid\square_plate_sym_200x200.vv
+   x -41.301261901855469 141.30126953125
    y 122.6483154296875 -22.6483154296875
    z -217.9449462890625 217.9449462890625
    e 72.6483154296875
@@ -29,7 +29,7 @@ BeginZE C:\Users\Peter\Desktop\TUM\Thesis\Development\Thin Quad\Composites\squar
    OGLStereo(EyeDistance) 0.075
    OGLStereo(LeftEyeDistance) 1 0 0 1
    OGLStereo(RightEyeDistance) 0 1 1 1
-EndZE C:\Users\Peter\Desktop\TUM\Thesis\Development\Thin Quad\Composites\square_plate_sym_200x200.gid\square_plate_sym_200x200.vv
+EndZE C:\Users\Peter\Desktop\TUM\Thesis\Development\Thin Quad\Quantity Recovery\square_plate_sym_200x200.gid\square_plate_sym_200x200.vv
 
 BeginMirror
    Mirror 0 Angle 0.0 AngleFake -15.0 SizeFactor 2.0 HeightOffset 0.25 Color #d9e5f24d Backlight Off EdgeStyle No Type Scene DrawMode Mirror

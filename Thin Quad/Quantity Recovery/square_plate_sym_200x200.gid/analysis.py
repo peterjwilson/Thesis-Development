@@ -22,7 +22,7 @@ font = {'family' : 'sans-serif',
         'family' : 'Arial',
         'style'  : 'normal',
         'weight' : 'normal',
-        'size'   : myfontsize}
+        'size'   : labelfontsize}
 
 plt.rc('font', **font)
 plt.rc('font', serif='Helvetica Neue') 
@@ -170,6 +170,13 @@ with open("stress_bottom_surface.txt", "r") as kratos_file:
       kratos_s_xx_bottom.append(float(line[2]))
       kratos_s_yy_bottom.append(float(line[6]))    
       kratos_s_xy_bottom.append(float(line[3]))
+     
+kratos_s_vm_bottom = []
+with open("stress_vm_bottom_surface_file.txt", "r") as kratos_file:
+  for line in kratos_file:
+      line = line.split('\t')
+      kratos_s_vm_bottom.append(float(line[2]))   
+      
       
 # -----------------------------------------------------------------------------
 #       CALCULATE DISCRETE ANALYTICAL RESULTS
@@ -200,6 +207,7 @@ analytical_s_xy_top = []
 analytical_s_x_bottom = []
 analytical_s_y_bottom = []
 analytical_s_xy_bottom = []
+analytical_s_vm_bottom =[]
 
 for i in range(len(kratos_x)):   
     # Curvatures
@@ -234,7 +242,9 @@ for i in range(len(kratos_x)):
     analytical_s_y_bottom.append(-1.0*analytical_s_y_top[i])
     analytical_s_xy_bottom.append(-1.0*analytical_s_xy_top[i])
     
-      
+    #Von mises - bottom surface
+    vm_temp = analytical_s_x_bottom[i]**2 - analytical_s_x_bottom[i]*analytical_s_y_bottom[i] + analytical_s_y_bottom[i]**2 + 3.0*(analytical_s_xy_bottom[i]**2)
+    analytical_s_vm_bottom.append(vm_temp**0.5)  
 
 
 
@@ -397,11 +407,11 @@ plt.legend(loc=9,bbox_to_anchor=(0.5, -0.1), ncol=3, frameon=False,fontsize=labe
 #lg.draw_frame(False)
 #lg.loc(2)
 plt.xlim([0,100])
-plt.xlabel('X Coordinate')
-plt.ylabel('S_xx top surface')
+plt.xlabel('X coordinate',fontsize=myfontsize)
+plt.ylabel('Stress (XX) @ top surface',fontsize=myfontsize)
 plt.grid()
 plt.tick_params(labelsize=labelfontsize)
-#plt.savefig('Simply_support_dome_n_theta.pdf',bbox_inches="tight")
+#plt.savefig('navier_plate_quad_s_xx_top.pdf',bbox_inches="tight")
 
 
 
@@ -417,8 +427,8 @@ plt.legend(loc=9,bbox_to_anchor=(0.5, -0.1), ncol=3, frameon=False,fontsize=labe
 #lg.draw_frame(False)
 #lg.loc(2)
 plt.xlim([0,100])
-plt.xlabel('X Coordinate')
-plt.ylabel('S_yy top surface')
+plt.xlabel('X Coordinate',fontsize=myfontsize)
+plt.ylabel('S_yy top surface',fontsize=myfontsize)
 plt.grid()
 plt.tick_params(labelsize=labelfontsize)
 #plt.savefig('Simply_support_dome_n_theta.pdf',bbox_inches="tight")
@@ -436,8 +446,8 @@ plt.legend(loc=9,bbox_to_anchor=(0.5, -0.1), ncol=3, frameon=False,fontsize=labe
 #lg.draw_frame(False)
 #lg.loc(2)
 plt.xlim([0,100])
-plt.xlabel('X Coordinate')
-plt.ylabel('S_xy top surface')
+plt.xlabel('X Coordinate',fontsize=myfontsize)
+plt.ylabel('S_xy top surface',fontsize=myfontsize)
 plt.grid()
 plt.tick_params(labelsize=labelfontsize)
 #plt.savefig('Simply_support_dome_n_theta.pdf',bbox_inches="tight")
@@ -458,11 +468,11 @@ plt.legend(loc=9,bbox_to_anchor=(0.5, -0.1), ncol=3, frameon=False,fontsize=labe
 #lg.draw_frame(False)
 #lg.loc(2)
 plt.xlim([0,100])
-plt.xlabel('X Coordinate')
-plt.ylabel('S_xx bottom surface')
+plt.xlabel('X coordinate',fontsize=myfontsize)
+plt.ylabel('Stress_XX @ bottom surface',fontsize=myfontsize)
 plt.grid()
 plt.tick_params(labelsize=labelfontsize)
-#plt.savefig('Simply_support_dome_n_theta.pdf',bbox_inches="tight")
+plt.savefig('navier_plate_quad_s_xx_bot.pdf',bbox_inches="tight")
 
 
 
@@ -478,11 +488,11 @@ plt.legend(loc=9,bbox_to_anchor=(0.5, -0.1), ncol=3, frameon=False,fontsize=labe
 #lg.draw_frame(False)
 #lg.loc(2)
 plt.xlim([0,100])
-plt.xlabel('X Coordinate')
-plt.ylabel('S_yy bottom surface')
+plt.xlabel('X coordinate',fontsize=myfontsize)
+plt.ylabel('Stress_YY @ bottom surface',fontsize=myfontsize)
 plt.grid()
 plt.tick_params(labelsize=labelfontsize)
-#plt.savefig('Simply_support_dome_n_theta.pdf',bbox_inches="tight")
+plt.savefig('navier_plate_quad_s_yy_bot.pdf',bbox_inches="tight")
 
 
 
@@ -498,11 +508,34 @@ plt.legend(loc=9,bbox_to_anchor=(0.5, -0.1), ncol=3, frameon=False,fontsize=labe
 #lg.draw_frame(False)
 #lg.loc(2)
 plt.xlim([0,100])
-plt.xlabel('X Coordinate')
-plt.ylabel('S_xy bottom surface')
+plt.xlabel('X coordinate',fontsize=myfontsize)
+plt.ylabel('Stress_XY @ bottom surface',fontsize=myfontsize)
 plt.grid()
 plt.tick_params(labelsize=labelfontsize)
-#plt.savefig('Simply_support_dome_n_theta.pdf',bbox_inches="tight")
+plt.savefig('navier_plate_quad_s_xy_bot.pdf',bbox_inches="tight")
+
+
+
+
+# Stress von mises bottom surface
+fig = plt.figure(37)
+plt.plot(kratos_x,kratos_s_vm_bottom, color = '#77B5FE', linewidth=3.0, label = 'ANDES-DKQ',antialiased=True)
+#plt.plot(phi_dsg,n_theta_dsg, color = '#FF91A4', linewidth=3.0, label = 'DSG',antialiased=True)
+plt.plot(kratos_x,analytical_s_vm_bottom,color = 'grey', linestyle='None', markerfacecolor= 'None', markersize = 7.0, marker='o', label = 'Ref',antialiased=True)
+#plt.plot(disp_ref,load_ref,color = 'grey', linewidth=2.0, linestyle='--', label = 'Ref',antialiased=True)
+plt.legend(loc=9,bbox_to_anchor=(0.5, -0.1), ncol=3, frameon=False,fontsize=labelfontsize+2)
+#plt.legend()
+#lg = plt.legend()
+#lg.draw_frame(False)
+#lg.loc(2)
+plt.xlim([0,100])
+plt.xlabel('X coordinate',fontsize=myfontsize)
+plt.ylabel('Von Mises stress @ bottom surface',fontsize=myfontsize)
+plt.grid()
+plt.tick_params(labelsize=labelfontsize)
+plt.savefig('navier_plate_quad_s_vm_bot.pdf',bbox_inches="tight")
+
+
 
 
 

@@ -1,0 +1,88 @@
+Begin ModelPartData
+//  VARIABLE_NAME value
+End ModelPartData
+
+Begin Properties 0
+End Properties
+Begin Properties 1
+	SHELL_ORTHOTROPIC_LAYERS  [4,16] (
+	(0.005,0,7850,30.00E+6,3.00E+6,0.25,1.50E+6,1.50E+6,0.600E+6,32000,32000,100,100,100,100,100),
+	(0.005,90,7850,30.00E+6,3.00E+6,0.25,1.50E+6,1.50E+6,0.600E+6,32000,32000,100,100,100,100,100),
+	(0.005,90,7850,30.00E+6,3.00E+6,0.25,1.50E+6,1.50E+6,0.600E+6,32000,32000,100,100,100,100,100),
+	(0.005,0,7850,30.00E+6,3.00E+6,0.25,1.50E+6,1.50E+6,0.600E+6,32000,32000,100,100,100,100,100)
+	)
+/*     THICKNESS  1.00000E+000 
+    DENSITY  7.85000E+003 
+    YOUNG_MODULUS  2.06900E+011 
+    POISSON_RATIO  0.00000E+000  */
+End Properties
+
+Begin Nodes
+    1        0.00000        0.40000        0.00000
+    2        0.40000        0.40000        0.00000
+    3        0.00000        0.00000        0.00000
+    4        0.40000        0.00000        0.00000
+End Nodes
+
+
+Begin Elements ShellThickElementCorotational3D3N// GUI group identifier: surface
+         1          1          3          4          2 
+         2          1          2          1          3 
+End Elements
+
+Begin SubModelPart Parts_surface // Group surface // Subtree Parts
+    Begin SubModelPartNodes
+         1
+         2
+         3
+         4
+    End SubModelPartNodes
+    Begin SubModelPartElements
+         1
+         2
+    End SubModelPartElements
+    Begin SubModelPartConditions
+    End SubModelPartConditions
+End SubModelPart
+Begin SubModelPart DISPLACEMENT_botedge // Group botedge // Subtree DISPLACEMENT
+    Begin SubModelPartNodes
+         1
+         3
+    End SubModelPartNodes
+    Begin SubModelPartElements
+    End SubModelPartElements
+    Begin SubModelPartConditions
+    End SubModelPartConditions
+End SubModelPart
+Begin SubModelPart DISPLACEMENT_topedge // Group topedge // Subtree DISPLACEMENT
+    Begin SubModelPartNodes
+         2
+         4
+    End SubModelPartNodes
+    Begin SubModelPartElements
+    End SubModelPartElements
+    Begin SubModelPartConditions
+    End SubModelPartConditions
+End SubModelPart
+Begin SubModelPart ROTATION_botedge // Group botedge // Subtree ROTATION
+    Begin SubModelPartNodes
+         1
+         3
+    End SubModelPartNodes
+    Begin SubModelPartElements
+    End SubModelPartElements
+    Begin SubModelPartConditions
+    End SubModelPartConditions
+End SubModelPart
+Begin SubModelPart ROTATION_surface // Group surface // Subtree ROTATION
+    Begin SubModelPartNodes
+         1
+         2
+         3
+         4
+    End SubModelPartNodes
+    Begin SubModelPartElements
+    End SubModelPartElements
+    Begin SubModelPartConditions
+    End SubModelPartConditions
+End SubModelPart

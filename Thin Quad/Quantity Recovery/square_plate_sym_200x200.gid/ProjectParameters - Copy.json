@@ -134,7 +134,7 @@
             "skin_output"         : false,
             "plane_output"        : [],
             "nodal_results"       : ["DISPLACEMENT","REACTION","ROTATION","TORQUE"],
-            "gauss_point_results" : ["SHELL_CURVATURE_GLOBAL","SHELL_MOMENT_GLOBAL","SHELL_STRESS_BOTTOM_SURFACE_GLOBAL","SHELL_STRESS_TOP_SURFACE_GLOBAL"]
+            "gauss_point_results" : ["VON_MISES_STRESS_BOTTOM_SURFACE","SHELL_CURVATURE_GLOBAL","SHELL_MOMENT_GLOBAL","SHELL_STRESS_BOTTOM_SURFACE_GLOBAL","SHELL_STRESS_TOP_SURFACE_GLOBAL"]
         },
         "point_data_configuration"  : []
     },
