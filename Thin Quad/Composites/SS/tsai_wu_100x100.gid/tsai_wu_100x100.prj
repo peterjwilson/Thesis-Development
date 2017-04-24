@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gid version="12.2">
+  <pre>
+    <layer_to_use name="Layer0"/>
+    <groups>
+      <group id="1" name="surface" color="#ffaaaaff"/>
+      <group id="2" name="base" color="#0000ffff"/>
+    </groups>
+    <entities_groups>
+      <entities_group name="lines">
+        <vector name="entity_ids" length="1" type="integer">1</vector>
+        <vector name="entity_num_groups" length="1" type="ushort">1</vector>
+        <vector name="entity_groups" length="1" type="ushort">2</vector>
+      </entities_group>
+      <entities_group name="surfaces">
+        <vector name="entity_ids" length="1" type="integer">1</vector>
+        <vector name="entity_num_groups" length="1" type="ushort">1</vector>
+        <vector name="entity_groups" length="1" type="ushort">1</vector>
+      </entities_group>
+      <entities_group name="nodes">
+        <vector name="entity_ids" length="121" type="integer">1:121</vector>
+        <vector name="entity_num_groups" length="121" type="ushort">1x89 2 2 1 1 2 1 1 2 1x4 2 1x3 2 1x4 2 1 1 2 1x3 2 1 2 2</vector>
+        <vector name="entity_groups" length="132" type="ushort">1x89 2 1 2 1x3 2 1x3 2 1x5 2 1x4 2 1x5 2 1x3 2 1x4 2 1 1 2 1 2 1</vector>
+      </entities_group>
+      <entities_group name="elements">
+        <vector name="entity_ids" length="100" type="integer">1:100</vector>
+        <vector name="entity_num_groups" length="100" type="ushort">1x100</vector>
+        <vector name="entity_groups" length="100" type="ushort">1x100</vector>
+      </entities_group>
+      <entities_group name="faces">
+        <vector name="entity_ids" length="10" type="integer">1:10</vector>
+        <vector name="entity_num_faces" length="10" type="uchar">1x10</vector>
+        <vector name="entity_faces" length="10" type="uchar">4x10</vector>
+        <vector name="face_num_groups" length="10" type="ushort">1x10</vector>
+        <vector name="face_groups" length="10" type="ushort">2x10</vector>
+      </entities_group>
+    </entities_groups>
+  </pre>
+</gid>
