@@ -1,12 +1,12 @@
-BeginZE C:\Users\Peter\Desktop\TUM\Thesis\Development\Thin Quad\Composites\scorderlis_composite.gid\scorderlis_composite.vv
-   x -180.40538024902344 373.24166870117187
-   y 450.09970092773437 79.713653564453125
-   z -405.5791015625 705.5791015625
-   e 185.19302368164062
+BeginZE C:\Users\Peter\Desktop\TUM\Thesis\Development\Thin Quad\Composites\1 - statics\scorderlis_composite.gid\scorderlis_composite.vv
+   x -491.62356567382812 491.62356567382812
+   y 635.292724609375 -105.4793701171875
+   z -811.158203125 1411.158203125
+   e 370.38604736328125
    v -0.26859116554260254 0.31901577115058899 0.11099832504987717
    r 0.90209043025970459
    m 0.77181661128997803 -0.37163069844245911 0.51593577861785889 0 0.028891421854496002 0.83107632398605347 0.55540746450424194 0 -0.63518846035003662 -0.41376659274101257 0.65217548608779907 0 0 0 0 1
-   c 96.418136596679688 264.90667724609375 -150
+   c 0 264.90667724609375 -300
    pd 0
    pno 0
    pfo 0
@@ -29,7 +29,7 @@ BeginZE C:\Users\Peter\Desktop\TUM\Thesis\Development\Thin Quad\Composites\scord
    OGLStereo(EyeDistance) 0.075
    OGLStereo(LeftEyeDistance) 1 0 0 1
    OGLStereo(RightEyeDistance) 0 1 1 1
-EndZE C:\Users\Peter\Desktop\TUM\Thesis\Development\Thin Quad\Composites\scorderlis_composite.gid\scorderlis_composite.vv
+EndZE C:\Users\Peter\Desktop\TUM\Thesis\Development\Thin Quad\Composites\1 - statics\scorderlis_composite.gid\scorderlis_composite.vv
 
 BeginMirror
    Mirror 0 Angle 0.0 AngleFake -15.0 SizeFactor 2.0 HeightOffset 0.25 Color #d9e5f24d Backlight Off EdgeStyle No Type Scene DrawMode Mirror
