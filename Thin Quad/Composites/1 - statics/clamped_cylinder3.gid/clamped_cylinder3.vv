@@ -1,0 +1,37 @@
+BeginZE C:\Users\Peter\Desktop\TUM\Thesis\Development\Thin Quad\Composites\1 - statics\clamped_cylinder3.gid\clamped_cylinder3.vv
+   x -22.292068481445313 42.292072296142578
+   y 24.494897842407227 -24.494897842407227
+   z -83.484695434570313 63.484695434570313
+   e 24.494897842407227
+   v -0.1515101724877336 0.31620006773440218 0.11660054067378511
+   r 0.92922900400820951
+   m 0.77284365892410278 -0.31251224875450134 0.55231219530105591 0 0.12088215351104736 0.92689794301986694 0.35531347990036011 0 -0.62297689914703369 -0.20783708989620209 0.75412434339523315 0 0 0 0 1
+   c 10 0 10
+   pd 0
+   pno 0
+   pfo 0
+   pf 4
+   pv 0
+   NowUse 1
+   DrawingType 0
+   LightVector 90 90 150 0
+   OGLShadow(UseShadows) 0
+   OGLShadow(RenderMode) RenderNice
+   OGLShadow(ShadowBias) -0.002
+   OGLShadow(AmbientShadows) 1
+   OGLShadow(UseFBO) 0
+   OGLShadow(FBOSize) 2048
+   OGLShadow(DimmedLightFactor) 0.02
+   OGLStereo(UseStereo) 0
+   OGLStereo(RelativeEyeDistance) 1
+   OGLStereo(FlipEyes) 0
+   OGLStereo(StereoMode) AnaglyphColors
+   OGLStereo(EyeDistance) 0.075
+   OGLStereo(LeftEyeDistance) 1 0 0 1
+   OGLStereo(RightEyeDistance) 0 1 1 1
+EndZE C:\Users\Peter\Desktop\TUM\Thesis\Development\Thin Quad\Composites\1 - statics\clamped_cylinder3.gid\clamped_cylinder3.vv
+
+BeginMirror
+   Mirror 0 Angle 0.0 AngleFake -15.0 SizeFactor 2.0 HeightOffset 0.25 Color #d9e5f24d Backlight Off EdgeStyle No Type Scene DrawMode Mirror
+EndMirror
+

@@ -242,7 +242,7 @@ while(time <= end_time):
         for node in element.GetNodes():
             x += node.X/3.0
             y += (node.Y/3.0)
-        if y > 98.0 and y < 100:   #only take elements along the top boundary if y > 98.0 and y < 100:           
+        if y > 0.0 and y < 2.0:   #only take elements along the top boundary if y > 98.0 and y < 100:           
             # Top surface stress
             stress_top_surface_file.write(str(x) + "\t" + str(y))
             strain_result = []

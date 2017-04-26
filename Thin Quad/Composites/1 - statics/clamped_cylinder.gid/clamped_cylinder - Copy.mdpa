@@ -5,10 +5,7 @@ End ModelPartData
 Begin Properties 0
 End Properties
 Begin Properties 1
-    THICKNESS  1.00000E+000 
-    DENSITY  7.85000E+003 
-    YOUNG_MODULUS  2.06900E+011 
-    POISSON_RATIO  2.90000E-001 
+	SHELL_ORTHOTROPIC_LAYERS  [1,9] ((1,0.0,7850,7.5E+6,2E+6,0.25,1.25E+6,0.625E+6,0.625E+6))
 End Properties
 
 Begin Nodes
@@ -576,7 +573,7 @@ Begin Nodes
 End Nodes
 
 
-Begin Elements ShellThickElementCorotational3D4N// GUI group identifier: surface
+Begin Elements ShellThinElementCorotational3D4N// GUI group identifier: surface
          1          1        557        556        560        561 
          2          1        552        550        556        557 
          3          1        545        544        550        552 
