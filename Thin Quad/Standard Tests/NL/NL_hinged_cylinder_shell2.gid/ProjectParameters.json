@@ -3,7 +3,7 @@
         "problem_name"    : "NL_hinged_cylinder_shell2",
         "model_part_name" : "Structure",
         "domain_size"     : 3,
-        "time_step"       : 0.025,
+        "time_step"       : 0.035,
         "start_time"      : 0.0,
         "end_time"        : 1.0,
         "echo_level"      : 0

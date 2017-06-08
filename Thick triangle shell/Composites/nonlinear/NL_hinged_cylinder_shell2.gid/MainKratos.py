@@ -201,7 +201,7 @@ while(time <= end_time):
 
     gid_output.ExecuteInitializeSolutionStep()
     
-    ApplyLoad(-0.0325, main_model_part.GetSubModelPart("DISPLACEMENT_load"), time)
+    ApplyLoad(-0.03135, main_model_part.GetSubModelPart("DISPLACEMENT_load"), time)
         
     solver.Solve()
     

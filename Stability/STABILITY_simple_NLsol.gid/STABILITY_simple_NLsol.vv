@@ -1,0 +1,37 @@
+BeginZE C:\Users\Peter\Desktop\TUM\Thesis\Development\Thin Quad\Stability\STABILITY_simple_NLsol.gid\STABILITY_simple_NLsol.vv
+   x -2.2827320098876953 10.942980766296387
+   y 5.2871332168579102 -4.2871332168579102
+   z -15.61139965057373 13.11139965057373
+   e 4.7871332168579102
+   v 0.54393367604946707 0.075765381820570687 0.042033073624197281
+   r 0.83464303591422973
+   m 0.98498564958572388 0.012257460504770279 0.17220050096511841 0 0.15258790552616119 0.40473875403404236 -0.90161162614822388 0 -0.080747686326503754 0.91435021162033081 0.39679151773452759 0 0 0 0 1
+   c 4.3301248550415039 0.5 1.25
+   pd 0
+   pno 0
+   pfo 0
+   pf 4
+   pv 0
+   NowUse 0
+   DrawingType 0
+   LightVector 90 90 150 0
+   OGLShadow(UseShadows) 0
+   OGLShadow(RenderMode) RenderNice
+   OGLShadow(ShadowBias) -0.002
+   OGLShadow(AmbientShadows) 1
+   OGLShadow(UseFBO) 0
+   OGLShadow(FBOSize) 2048
+   OGLShadow(DimmedLightFactor) 0.02
+   OGLStereo(UseStereo) 0
+   OGLStereo(RelativeEyeDistance) 1
+   OGLStereo(FlipEyes) 0
+   OGLStereo(StereoMode) AnaglyphColors
+   OGLStereo(EyeDistance) 0.075
+   OGLStereo(LeftEyeDistance) 1 0 0 1
+   OGLStereo(RightEyeDistance) 0 1 1 1
+EndZE C:\Users\Peter\Desktop\TUM\Thesis\Development\Thin Quad\Stability\STABILITY_simple_NLsol.gid\STABILITY_simple_NLsol.vv
+
+BeginMirror
+   Mirror 0 Angle 0.0 AngleFake -15.0 SizeFactor 2.0 HeightOffset 0.25 Color #d9e5f24d Backlight Off EdgeStyle No Type Scene DrawMode Mirror
+EndMirror
+

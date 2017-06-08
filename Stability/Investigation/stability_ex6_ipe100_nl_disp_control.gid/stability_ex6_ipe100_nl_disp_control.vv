@@ -1,0 +1,37 @@
+BeginZE C:\Users\Peter\Desktop\TUM\Thesis\Development\Stability\Investigation\stability_ex6_ipe100_nl_disp_control.gid\stability_ex6_ipe100_nl_disp_control.vv
+   x -0.6398087739944458 0.6948087215423584
+   y 0.59992080926895142 -0.50562077760696411
+   z -1.1583123207092285 2.1583123207092285
+   e 0.55277079343795776
+   v -0.10896922464729404 0.28691538656355259 0.091877211660934294
+   r 0.94729292375024587
+   m 0.81847625970840454 -0.2365991622209549 0.52356225252151489 0 0.11153937131166458 0.95936858654022217 0.25917351245880127 0 -0.56360942125320435 -0.15372957289218903 0.81161051988601685 0 0 0 0 1
+   c 0.027499999850988388 0.047150000929832458 -0.5
+   pd 0
+   pno 0
+   pfo 0
+   pf 4
+   pv 0
+   NowUse 1
+   DrawingType 0
+   LightVector 90 90 150 0
+   OGLShadow(UseShadows) 0
+   OGLShadow(RenderMode) RenderNice
+   OGLShadow(ShadowBias) -0.002
+   OGLShadow(AmbientShadows) 1
+   OGLShadow(UseFBO) 0
+   OGLShadow(FBOSize) 2048
+   OGLShadow(DimmedLightFactor) 0.02
+   OGLStereo(UseStereo) 0
+   OGLStereo(RelativeEyeDistance) 1
+   OGLStereo(FlipEyes) 0
+   OGLStereo(StereoMode) AnaglyphColors
+   OGLStereo(EyeDistance) 0.075
+   OGLStereo(LeftEyeDistance) 1 0 0 1
+   OGLStereo(RightEyeDistance) 0 1 1 1
+EndZE C:\Users\Peter\Desktop\TUM\Thesis\Development\Stability\Investigation\stability_ex6_ipe100_nl_disp_control.gid\stability_ex6_ipe100_nl_disp_control.vv
+
+BeginMirror
+   Mirror 0 Angle 0.0 AngleFake -15.0 SizeFactor 2.0 HeightOffset 0.25 Color #d9e5f24d Backlight Off EdgeStyle No Type Scene DrawMode Mirror
+EndMirror
+

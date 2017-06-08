@@ -1,0 +1,37 @@
+BeginZE C:\Users\Peter\Desktop\TUM\Thesis\Development\Stability\Investigation\stability_ex6_nl.gid\stability_ex6_nl.vv
+   x -2.9492530822753906 3.1442093849182129
+   y 2.696629524230957 -2.0834012031555176
+   z -0.31663656234741211 6.3195462226867676
+   e 3.3166248798370361
+   v -0.14993372868766097 0.36269770271162832 0.084612060903695316
+   r 0.91586630689363979
+   m 0.72258234024047852 -0.26374790072441101 0.6389927864074707 0 0.046225432306528091 0.94072133302688599 0.33601570129394531 0 -0.68973761796951294 -0.21326130628585815 0.69194048643112183 0 0 0 0 1
+   c 0.1100011020898819 0.29068377614021301 -3.0014548301696777
+   pd 0
+   pno 0
+   pfo 0
+   pf 4
+   pv 0
+   NowUse 1
+   DrawingType 0
+   LightVector 90 90 150 0
+   OGLShadow(UseShadows) 0
+   OGLShadow(RenderMode) RenderNice
+   OGLShadow(ShadowBias) -0.002
+   OGLShadow(AmbientShadows) 1
+   OGLShadow(UseFBO) 0
+   OGLShadow(FBOSize) 2048
+   OGLShadow(DimmedLightFactor) 0.02
+   OGLStereo(UseStereo) 0
+   OGLStereo(RelativeEyeDistance) 1
+   OGLStereo(FlipEyes) 0
+   OGLStereo(StereoMode) AnaglyphColors
+   OGLStereo(EyeDistance) 0.075
+   OGLStereo(LeftEyeDistance) 1 0 0 1
+   OGLStereo(RightEyeDistance) 0 1 1 1
+EndZE C:\Users\Peter\Desktop\TUM\Thesis\Development\Stability\Investigation\stability_ex6_nl.gid\stability_ex6_nl.vv
+
+BeginMirror
+   Mirror 0 Angle 0.0 AngleFake -15.0 SizeFactor 2.0 HeightOffset 0.25 Color #d9e5f24d Backlight Off EdgeStyle No Type Scene DrawMode Mirror
+EndMirror
+

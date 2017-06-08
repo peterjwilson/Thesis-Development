@@ -1,0 +1,37 @@
+BeginZE C:\Users\Peter\Desktop\TUM\Thesis\Development\Stability\Investigation\stability_ex6_ipe100_nl_disp_control_tri.gid\stability_ex6_ipe100_nl_disp_control_tri.vv
+   x -0.26568666100502014 0.41042032837867737
+   y 0.28165340423583984 -0.18523247539997101
+   z -0.55503582954406738 1.9164376258850098
+   e 0.55277079343795776
+   v -0.13296990749033358 0.48621073074000992 0.16219868596873452
+   r 0.84829813695668355
+   m 0.47458142042160034 -0.40448847413063049 0.78176820278167725 0 0.14588288962841034 0.91202116012573242 0.38332173228263855 0 -0.86803841590881348 -0.067870765924453735 0.49183624982833862 0 0 0 0 1
+   c 0.027838461101055145 0.048101365566253662 -0.68070089817047119
+   pd 0
+   pno 0
+   pfo 0
+   pf 4
+   pv 0
+   NowUse 1
+   DrawingType 0
+   LightVector 90 90 150 0
+   OGLShadow(UseShadows) 0
+   OGLShadow(RenderMode) RenderNice
+   OGLShadow(ShadowBias) -0.002
+   OGLShadow(AmbientShadows) 1
+   OGLShadow(UseFBO) 0
+   OGLShadow(FBOSize) 2048
+   OGLShadow(DimmedLightFactor) 0.02
+   OGLStereo(UseStereo) 0
+   OGLStereo(RelativeEyeDistance) 1
+   OGLStereo(FlipEyes) 0
+   OGLStereo(StereoMode) AnaglyphColors
+   OGLStereo(EyeDistance) 0.075
+   OGLStereo(LeftEyeDistance) 1 0 0 1
+   OGLStereo(RightEyeDistance) 0 1 1 1
+EndZE C:\Users\Peter\Desktop\TUM\Thesis\Development\Stability\Investigation\stability_ex6_ipe100_nl_disp_control_tri.gid\stability_ex6_ipe100_nl_disp_control_tri.vv
+
+BeginMirror
+   Mirror 0 Angle 0.0 AngleFake -15.0 SizeFactor 2.0 HeightOffset 0.25 Color #d9e5f24d Backlight Off EdgeStyle No Type Scene DrawMode Mirror
+EndMirror
+

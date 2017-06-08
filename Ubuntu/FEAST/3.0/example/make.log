@@ -1,0 +1,54 @@
+make: Warning: File 'make.inc' has modification time 141 s in the future
+cd ./Hermitian/C/1_dense; make all; cd ../2_banded; make all; cd ../../../Non-Hermitian/C/1_dense; make all; cd ../2_banded; make all;\
+
+make[1]: Entering directory '/media/sf_Ubuntu/FEAST/3.0/example/Hermitian/C/1_dense'
+make[1]: Warning: File '../../../make.inc' has modification time 141 s in the future
+helloworld driver_sfeast_sygv driver_dfeast_sygv driver_cfeast_heev driver_zfeast_heev
+gcc -fopenmp -O3 -fopenmp -I//media/sf_Ubuntu/FEAST/3.0/example/Hermitian/C/1_dense/../../../..//include -c helloworld.c
+gcc -fopenmp -o helloworld helloworld.o -L/media/sf_Ubuntu/FEAST/3.0/example/Hermitian/C/1_dense/../../../..//lib/x64 -lfeast_dense -lfeast -lgfortran -llapack -lblas -lm
+gcc -fopenmp -O3 -fopenmp -I//media/sf_Ubuntu/FEAST/3.0/example/Hermitian/C/1_dense/../../../..//include -c driver_sfeast_sygv.c
+gcc -fopenmp -o driver_sfeast_sygv driver_sfeast_sygv.o -L/media/sf_Ubuntu/FEAST/3.0/example/Hermitian/C/1_dense/../../../..//lib/x64 -lfeast_dense -lfeast -lgfortran -llapack -lblas -lm
+gcc -fopenmp -O3 -fopenmp -I//media/sf_Ubuntu/FEAST/3.0/example/Hermitian/C/1_dense/../../../..//include -c driver_dfeast_sygv.c
+gcc -fopenmp -o driver_dfeast_sygv driver_dfeast_sygv.o -L/media/sf_Ubuntu/FEAST/3.0/example/Hermitian/C/1_dense/../../../..//lib/x64 -lfeast_dense -lfeast -lgfortran -llapack -lblas -lm
+gcc -fopenmp -O3 -fopenmp -I//media/sf_Ubuntu/FEAST/3.0/example/Hermitian/C/1_dense/../../../..//include -c driver_cfeast_heev.c
+gcc -fopenmp -o driver_cfeast_heev driver_cfeast_heev.o -L/media/sf_Ubuntu/FEAST/3.0/example/Hermitian/C/1_dense/../../../..//lib/x64 -lfeast_dense -lfeast -lgfortran -llapack -lblas -lm
+gcc -fopenmp -O3 -fopenmp -I//media/sf_Ubuntu/FEAST/3.0/example/Hermitian/C/1_dense/../../../..//include -c driver_zfeast_heev.c
+gcc -fopenmp -o driver_zfeast_heev driver_zfeast_heev.o -L/media/sf_Ubuntu/FEAST/3.0/example/Hermitian/C/1_dense/../../../..//lib/x64 -lfeast_dense -lfeast -lgfortran -llapack -lblas -lm
+make[1]: warning:  Clock skew detected.  Your build may be incomplete.
+make[1]: Leaving directory '/media/sf_Ubuntu/FEAST/3.0/example/Hermitian/C/1_dense'
+make[1]: Entering directory '/media/sf_Ubuntu/FEAST/3.0/example/Hermitian/C/2_banded'
+make[1]: Warning: File '../../../make.inc' has modification time 138 s in the future
+driver_sfeast_sbgv driver_dfeast_sbgv driver_cfeast_hbev driver_zfeast_hbev
+gcc -fopenmp -O3 -fopenmp -I//media/sf_Ubuntu/FEAST/3.0/example/Hermitian/C/2_banded/../../../..//include -c driver_sfeast_sbgv.c
+gcc -fopenmp -o driver_sfeast_sbgv driver_sfeast_sbgv.o -L/media/sf_Ubuntu/FEAST/3.0/example/Hermitian/C/2_banded/../../../..//lib/x64 -lfeast_banded -lfeast -lgfortran -llapack -lblas -lm
+gcc -fopenmp -O3 -fopenmp -I//media/sf_Ubuntu/FEAST/3.0/example/Hermitian/C/2_banded/../../../..//include -c driver_dfeast_sbgv.c
+gcc -fopenmp -o driver_dfeast_sbgv driver_dfeast_sbgv.o -L/media/sf_Ubuntu/FEAST/3.0/example/Hermitian/C/2_banded/../../../..//lib/x64 -lfeast_banded -lfeast -lgfortran -llapack -lblas -lm
+gcc -fopenmp -O3 -fopenmp -I//media/sf_Ubuntu/FEAST/3.0/example/Hermitian/C/2_banded/../../../..//include -c driver_cfeast_hbev.c
+gcc -fopenmp -o driver_cfeast_hbev driver_cfeast_hbev.o -L/media/sf_Ubuntu/FEAST/3.0/example/Hermitian/C/2_banded/../../../..//lib/x64 -lfeast_banded -lfeast -lgfortran -llapack -lblas -lm
+gcc -fopenmp -O3 -fopenmp -I//media/sf_Ubuntu/FEAST/3.0/example/Hermitian/C/2_banded/../../../..//include -c driver_zfeast_hbev.c
+gcc -fopenmp -o driver_zfeast_hbev driver_zfeast_hbev.o -L/media/sf_Ubuntu/FEAST/3.0/example/Hermitian/C/2_banded/../../../..//lib/x64 -lfeast_banded -lfeast -lgfortran -llapack -lblas -lm
+make[1]: warning:  Clock skew detected.  Your build may be incomplete.
+make[1]: Leaving directory '/media/sf_Ubuntu/FEAST/3.0/example/Hermitian/C/2_banded'
+make[1]: Entering directory '/media/sf_Ubuntu/FEAST/3.0/example/Non-Hermitian/C/1_dense'
+make[1]: Warning: File '../../../make.inc' has modification time 136 s in the future
+driver_dfeast_gegv driver_zfeast_syevx driver_zfeast_syev
+gcc -fopenmp -v -Wall -O3 -fopenmp -I//media/sf_Ubuntu/FEAST/3.0/example/Non-Hermitian/C/1_dense/../../../..//include -c driver_dfeast_gegv.c
+gcc -fopenmp -v -Wall -o driver_dfeast_gegv driver_dfeast_gegv.o -L/media/sf_Ubuntu/FEAST/3.0/example/Non-Hermitian/C/1_dense/../../../..//lib/x64 -lfeast_dense -lfeast -lgfortran -llapack -lblas -lm
+gcc -fopenmp -v -Wall -O3 -fopenmp -I//media/sf_Ubuntu/FEAST/3.0/example/Non-Hermitian/C/1_dense/../../../..//include -c driver_zfeast_syevx.c
+gcc -fopenmp -v -Wall -o driver_zfeast_syevx driver_zfeast_syevx.o -L/media/sf_Ubuntu/FEAST/3.0/example/Non-Hermitian/C/1_dense/../../../..//lib/x64 -lfeast_dense -lfeast -lgfortran -llapack -lblas -lm
+gcc -fopenmp -v -Wall -O3 -fopenmp -I//media/sf_Ubuntu/FEAST/3.0/example/Non-Hermitian/C/1_dense/../../../..//include -c driver_zfeast_syev.c
+gcc -fopenmp -v -Wall -o driver_zfeast_syev driver_zfeast_syev.o -L/media/sf_Ubuntu/FEAST/3.0/example/Non-Hermitian/C/1_dense/../../../..//lib/x64 -lfeast_dense -lfeast -lgfortran -llapack -lblas -lm
+make[1]: warning:  Clock skew detected.  Your build may be incomplete.
+make[1]: Leaving directory '/media/sf_Ubuntu/FEAST/3.0/example/Non-Hermitian/C/1_dense'
+make[1]: Entering directory '/media/sf_Ubuntu/FEAST/3.0/example/Non-Hermitian/C/2_banded'
+make[1]: Warning: File '../../../make.inc' has modification time 134 s in the future
+driver_zfeast_sbevx driver_zfeast_sbev driver_dfeast_gbgv
+gcc -fopenmp -O3 -fopenmp -I//media/sf_Ubuntu/FEAST/3.0/example/Non-Hermitian/C/2_banded/../../../..//include -c driver_zfeast_sbevx.c
+gcc -fopenmp -o driver_zfeast_sbevx driver_zfeast_sbevx.o -L/media/sf_Ubuntu/FEAST/3.0/example/Non-Hermitian/C/2_banded/../../../..//lib/x64 -lfeast_banded -lfeast -lgfortran -llapack -lblas -lm
+gcc -fopenmp -O3 -fopenmp -I//media/sf_Ubuntu/FEAST/3.0/example/Non-Hermitian/C/2_banded/../../../..//include -c driver_zfeast_sbev.c
+gcc -fopenmp -o driver_zfeast_sbev driver_zfeast_sbev.o -L/media/sf_Ubuntu/FEAST/3.0/example/Non-Hermitian/C/2_banded/../../../..//lib/x64 -lfeast_banded -lfeast -lgfortran -llapack -lblas -lm
+gcc -fopenmp -O3 -fopenmp -I//media/sf_Ubuntu/FEAST/3.0/example/Non-Hermitian/C/2_banded/../../../..//include -c driver_dfeast_gbgv.c
+gcc -fopenmp -o driver_dfeast_gbgv driver_dfeast_gbgv.o -L/media/sf_Ubuntu/FEAST/3.0/example/Non-Hermitian/C/2_banded/../../../..//lib/x64 -lfeast_banded -lfeast -lgfortran -llapack -lblas -lm
+make[1]: warning:  Clock skew detected.  Your build may be incomplete.
+make[1]: Leaving directory '/media/sf_Ubuntu/FEAST/3.0/example/Non-Hermitian/C/2_banded'
+make: warning:  Clock skew detected.  Your build may be incomplete.

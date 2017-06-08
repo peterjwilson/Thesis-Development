@@ -1,0 +1,85 @@
+Begin ModelPartData
+//  VARIABLE_NAME value
+End ModelPartData
+
+Begin Properties 0
+End Properties
+Begin Properties 1
+    THICKNESS  2.50000E-001 
+    DENSITY  7.85000E+003 
+    YOUNG_MODULUS  2.06900E+011 
+    POISSON_RATIO  2.90000E-001 
+End Properties
+
+Begin Nodes
+    1        0.00000        1.00000        0.00000
+    2        0.00000        0.00000        0.00000
+    3        1.00000        1.00000        5.00000
+    4        1.00000        0.00000        5.00000
+End Nodes
+
+
+Begin Elements ShellThinElementCorotational3D4N// GUI group identifier: surface
+         1          1          4          3          1          2 
+End Elements
+
+Begin Conditions PointLoadCondition3D1N// GUI group identifier: sym
+1 0 3
+2 0 4
+End Conditions
+
+Begin SubModelPart Parts_surface // Group surface // Subtree Parts
+    Begin SubModelPartNodes
+         1
+         2
+         3
+         4
+    End SubModelPartNodes
+    Begin SubModelPartElements
+         1
+    End SubModelPartElements
+    Begin SubModelPartConditions
+    End SubModelPartConditions
+End SubModelPart
+Begin SubModelPart DISPLACEMENT_hinge // Group hinge // Subtree DISPLACEMENT
+    Begin SubModelPartNodes
+         1
+         2
+    End SubModelPartNodes
+    Begin SubModelPartElements
+    End SubModelPartElements
+    Begin SubModelPartConditions
+    End SubModelPartConditions
+End SubModelPart
+Begin SubModelPart DISPLACEMENT_sym // Group sym // Subtree DISPLACEMENT
+    Begin SubModelPartNodes
+         3
+         4
+    End SubModelPartNodes
+    Begin SubModelPartElements
+    End SubModelPartElements
+    Begin SubModelPartConditions
+    End SubModelPartConditions
+End SubModelPart
+Begin SubModelPart ROTATION_sym // Group sym // Subtree ROTATION
+    Begin SubModelPartNodes
+         3
+         4
+    End SubModelPartNodes
+    Begin SubModelPartElements
+    End SubModelPartElements
+    Begin SubModelPartConditions
+    End SubModelPartConditions
+End SubModelPart
+Begin SubModelPart PointLoad3D_sym // Group sym // Subtree PointLoad3D
+    Begin SubModelPartNodes
+         3
+         4
+    End SubModelPartNodes
+    Begin SubModelPartElements
+    End SubModelPartElements
+    Begin SubModelPartConditions
+         1
+         2
+    End SubModelPartConditions
+End SubModelPart

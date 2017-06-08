@@ -1,0 +1,806 @@
+gfortran  -O3 -m64 -openmp -ffree-line-length-none -ffixed-line-length-none -cpp  -c /media/sf_Ubuntu/FEAST/3.0/src/kernel/f90_functions_wrapper.f90 -o /media/sf_Ubuntu/FEAST/3.0/src/kernel/f90_functions_wrapper.o
+gfortran  -O3 -m64 -openmp -ffree-line-length-none -ffixed-line-length-none -cpp  -c /media/sf_Ubuntu/FEAST/3.0/src/kernel/feast_tools.f90 -o /media/sf_Ubuntu/FEAST/3.0/src/kernel/feast_tools.o
+gfortran  -O3 -m64 -openmp -ffree-line-length-none -ffixed-line-length-none -cpp  -c /media/sf_Ubuntu/FEAST/3.0/src/kernel/dzfeast.f90 -o /media/sf_Ubuntu/FEAST/3.0/src/kernel/dzfeast.o
+gfortran  -O3 -m64 -openmp -ffree-line-length-none -ffixed-line-length-none -cpp  -c /media/sf_Ubuntu/FEAST/3.0/src/kernel/scfeast.f90 -o /media/sf_Ubuntu/FEAST/3.0/src/kernel/scfeast.o
+gfortran  -O3 -m64 -openmp -ffree-line-length-none -ffixed-line-length-none -cpp  -c /media/sf_Ubuntu/FEAST/3.0/src/kernel/feast_aux.f90 -o /media/sf_Ubuntu/FEAST/3.0/src/kernel/feast_aux.o
+gfortran  -O3 -m64 -openmp -ffree-line-length-none -ffixed-line-length-none -cpp  -c /media/sf_Ubuntu/FEAST/3.0/src/dense/dzfeast_dense.f90 -o /media/sf_Ubuntu/FEAST/3.0/src/dense/dzfeast_dense.o
+gfortran  -O3 -m64 -openmp -ffree-line-length-none -ffixed-line-length-none -cpp  -c /media/sf_Ubuntu/FEAST/3.0/src/dense/scfeast_dense.f90 -o /media/sf_Ubuntu/FEAST/3.0/src/dense/scfeast_dense.o
+gfortran  -O3 -m64 -openmp -ffree-line-length-none -ffixed-line-length-none -cpp  -c /media/sf_Ubuntu/FEAST/3.0/src/banded/dzfeast_banded.f90 -o /media/sf_Ubuntu/FEAST/3.0/src/banded/dzfeast_banded.o
+./spike-smp/dspike_smp.f90:2469:60: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+./spike-smp/dspike_smp.f90:2487:54: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+./spike-smp/dspike_smp.f90:803:73: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘keys’ at (1)
+./spike-smp/dspike_smp.f90:804:78: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+./spike-smp/dspike_smp.f90:835:68: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+./spike-smp/dspike_smp.f90:836:76: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+./spike-smp/dspike_smp.f90:837:76: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+./spike-smp/dspike_smp.f90:2085:51: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘xb’ at (1)
+./spike-smp/dspike_smp.f90:2117:51: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘xb’ at (1)
+./spike-smp/dspike_smp.f90:1086:68: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+./spike-smp/dspike_smp.f90:1101:68: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+./spike-smp/dspike_smp.f90:1113:70: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+./spike-smp/dspike_smp.f90:1114:70: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+./spike-smp/dspike_smp.f90:1126:63: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+./spike-smp/dspike_smp.f90:2227:71: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘xt’ at (1)
+./spike-smp/dspike_smp.f90:1141:91: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘grj’ at (1)
+./spike-smp/dspike_smp.f90:1149:65: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+./spike-smp/dspike_smp.f90:1154:59: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+./spike-smp/dspike_smp.f90:1202:103: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘keys’ at (1)
+./spike-smp/dspike_smp.f90:1471:105: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘keys’ at (1)
+./spike-smp/dspike_smp.f90:1530:100: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘grj’ at (1)
+./spike-smp/dspike_smp.f90:1561:71: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+./spike-smp/dspike_smp.f90:1575:71: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+./spike-smp/dspike_smp.f90:1578:73: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+./spike-smp/dspike_smp.f90:1588:62: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+./spike-smp/dspike_smp.f90:1608:85: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+./spike-smp/zspike_smp.f90:2469:60: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+./spike-smp/zspike_smp.f90:2487:54: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+./spike-smp/zspike_smp.f90:803:73: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘keys’ at (1)
+./spike-smp/zspike_smp.f90:804:78: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+./spike-smp/zspike_smp.f90:835:68: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+./spike-smp/zspike_smp.f90:836:76: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+./spike-smp/zspike_smp.f90:837:76: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+./spike-smp/zspike_smp.f90:2085:51: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘xb’ at (1)
+./spike-smp/zspike_smp.f90:2117:51: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘xb’ at (1)
+./spike-smp/zspike_smp.f90:1086:68: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+./spike-smp/zspike_smp.f90:1101:68: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+./spike-smp/zspike_smp.f90:1113:70: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+./spike-smp/zspike_smp.f90:1114:70: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+./spike-smp/zspike_smp.f90:1126:63: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+./spike-smp/zspike_smp.f90:2227:71: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘xt’ at (1)
+./spike-smp/zspike_smp.f90:1141:91: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘grj’ at (1)
+./spike-smp/zspike_smp.f90:1149:65: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+./spike-smp/zspike_smp.f90:1154:59: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+./spike-smp/zspike_smp.f90:1202:103: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘keys’ at (1)
+./spike-smp/zspike_smp.f90:1471:105: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘keys’ at (1)
+./spike-smp/zspike_smp.f90:1530:100: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘grj’ at (1)
+./spike-smp/zspike_smp.f90:1561:71: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+./spike-smp/zspike_smp.f90:1575:71: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+./spike-smp/zspike_smp.f90:1578:73: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+./spike-smp/zspike_smp.f90:1588:62: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+./spike-smp/zspike_smp.f90:1608:85: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/banded/dzfeast_banded.f90:388:45:
+
+              call ZSPIKE_GBTRF(spm,N,klz,klz,Az(1,1,id),band,workspike(1,id),infoloc)
+                                             1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘a’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/banded/dzfeast_banded.f90:398:54:
+
+           call ZSPIKE_GBTRS(spm,'N',N,klz,klz,fpm(23),Az(1,1,id),band,workspike(1,id),workc,N) 
+                                                      1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘a’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/banded/dzfeast_banded.f90:402:77:
+
+           call DSBMM(UPLO,n,fpm(25),kla,DONE,A(1,1),LDA,X(1,fpm(24)),N,DZERO,work(1,fpm(24)),N)
+                                                                             1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘c’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/banded/dzfeast_banded.f90:409:80:
+
+              call DSBMM(UPLO,n,fpm(25),klb,DONE,B(1,1),LDB,X(1,fpm(24)),N,DZERO,work(1,fpm(24)),N)
+                                                                                1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘c’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/banded/dzfeast_banded.f90:784:45:
+
+              call ZSPIKE_GBTRF(spm,N,klz,klz,Az(1,1,id),band,workspike(1,id),infoloc)   
+                                             1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘a’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/banded/dzfeast_banded.f90:793:54:
+
+           call ZSPIKE_GBTRS(spm,'N',N,klz,klz,fpm(23),Az(1,1,id),band,workspike(1,id),workc,N)
+                                                      1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘a’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/banded/dzfeast_banded.f90:797:54:
+
+           call ZSPIKE_GBTRS(spm,'C',N,klz,klz,fpm(23),Az(1,1,id),band,workspike(1,id),workc,N)  
+                                                      1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘a’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/banded/dzfeast_banded.f90:802:78:
+
+           call ZHBMM(UPLO2,n,fpm(25),kla,ONEC,A(1,1),LDA,X(1,fpm(24)),N,ZEROC,work(1,fpm(24)),N)
+                                                                              1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘c’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/banded/dzfeast_banded.f90:809:81:
+
+              call ZHBMM(UPLO2,n,fpm(25),klb,ONEC,B(1,1),LDB,X(1,fpm(24)),N,ZEROC,work(1,fpm(24)),N)
+                                                                                 1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘c’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/banded/dzfeast_banded.f90:1042:45:
+
+              call ZSPIKE_GBTRF(spm,N,klz,kuz,Az(1,1,id),band,workspike(1,id),infoloc)    
+                                             1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘a’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/banded/dzfeast_banded.f90:1052:54:
+
+           call ZSPIKE_GBTRS(spm,'N',N,klz,kuz,fpm(23),Az(1,1,id),band,workspike(1,id),workc,N) 
+                                                      1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘a’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/banded/dzfeast_banded.f90:1057:54:
+
+           call ZSPIKE_GBTRS(spm,'C',N,klz,kuz,fpm(23),Az(1,1,id),band,workspike(1,id),workc,N)  
+                                                      1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘a’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/banded/dzfeast_banded.f90:1062:107:
+
+           call ZGBMM('N','N',n,fpm(25),kla,kua,ONEC,A(1:kla+kua+1,1:N)*ONEC,kla+kua+1,X(1,fpm(24)),N,ZEROC,work(1,fpm(24)),N)
+                                                                                                           1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘c’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/banded/dzfeast_banded.f90:1069:107:
+
+           call ZGBMM('C','N',N,fpm(35),kla,kua,ONEC,A(1:kla+kua+1,1:N)*ONEC,kla+kua+1,X(1,fpm(34)),N,ZEROC,work(1,fpm(34)),N)
+                                                                                                           1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘c’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/banded/dzfeast_banded.f90:1079:110:
+
+              call ZGBMM('N','N',N,fpm(25),klb,kub,ONEC,B(1:klb+kub+1,1:N)*ONEC,klb+kub+1,X(1,fpm(24)),N,ZEROC,work(1,fpm(24)),N)
+                                                                                                              1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘c’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/banded/dzfeast_banded.f90:1089:110:
+
+              call ZGBMM('C','N',N,fpm(35),klb,kub,ONEC,B(1:klb+kub+1,1:N)*ONEC,klb+kub+1,X(1,fpm(34)),N,ZEROC,work(1,fpm(34)),N)
+                                                                                                              1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘c’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/banded/dzfeast_banded.f90:1322:45:
+
+              call ZSPIKE_GBTRF(spm,N,klz,kuz,Az(1,1,id),band,workspike(1,id),infoloc)        
+                                             1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘a’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/banded/dzfeast_banded.f90:1332:54:
+
+           call ZSPIKE_GBTRS(spm,'N',N,klz,kuz,fpm(23),Az(1,1,id),band,workspike(1,id),workc,N) 
+                                                      1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘a’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/banded/dzfeast_banded.f90:1337:54:
+
+           call ZSPIKE_GBTRS(spm,'C',N,klz,kuz,fpm(23),Az(1,1,id),band,workspike(1,id),workc,N)  
+                                                      1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘a’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/banded/dzfeast_banded.f90:1342:90:
+
+           call ZGBMM('N','N',n,fpm(25),kla,kua,ONEC,A(1,1),kla+kua+1,X(1,fpm(24)),N,ZEROC,work(1,fpm(24)),N)
+                                                                                          1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘c’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/banded/dzfeast_banded.f90:1347:90:
+
+           call ZGBMM('C','N',N,fpm(35),kla,kua,ONEC,A(1,1),kla+kua+1,X(1,fpm(34)),N,ZEROC,work(1,fpm(34)),N)
+                                                                                          1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘c’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/banded/dzfeast_banded.f90:1354:93:
+
+              call ZGBMM('N','N',N,fpm(25),klb,kub,ONEC,B(1,1),klb+kub+1,X(1,fpm(24)),N,ZEROC,work(1,fpm(24)),N)
+                                                                                             1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘c’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/banded/dzfeast_banded.f90:1362:93:
+
+              call ZGBMM('C','N',N,fpm(35),klb,kub,ONEC,B(1,1),klb+kub+1,X(1,fpm(34)),N,ZEROC,work(1,fpm(34)),N)            
+                                                                                             1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘c’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/banded/dzfeast_banded.f90:1694:45:
+
+              call ZSPIKE_GBTRF(spm,N,klz,klz,Az(1,1,id),band,workspike(1,id),infoloc)   
+                                             1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘a’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/banded/dzfeast_banded.f90:1704:54:
+
+           call ZSPIKE_GBTRS(spm,'N',N,klz,klz,fpm(23),Az(1,1,id),band,workspike(1,id),workc,N) 
+                                                      1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘a’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/banded/dzfeast_banded.f90:1709:78:
+
+           call ZSBMM(UPLO2,n,fpm(25),kla,ONEC,A(1,1),LDA,X(1,fpm(24)),N,ZEROC,work(1,fpm(24)),N)
+                                                                              1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘c’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/banded/dzfeast_banded.f90:1717:81:
+
+              call ZSBMM(UPLO2,n,fpm(25),klb,ONEC,B(1,1),LDB,X(1,fpm(24)),N,ZEROC,work(1,fpm(24)),N)
+                                                                                 1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘c’ at (1)
+gfortran  -O3 -m64 -openmp -ffree-line-length-none -ffixed-line-length-none -cpp  -c /media/sf_Ubuntu/FEAST/3.0/src/banded/scfeast_banded.f90 -o /media/sf_Ubuntu/FEAST/3.0/src/banded/scfeast_banded.o
+./spike-smp/sspike_smp.f90:2469:60: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+./spike-smp/sspike_smp.f90:2487:54: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+./spike-smp/sspike_smp.f90:803:73: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘keys’ at (1)
+./spike-smp/sspike_smp.f90:804:78: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+./spike-smp/sspike_smp.f90:835:68: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+./spike-smp/sspike_smp.f90:836:76: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+./spike-smp/sspike_smp.f90:837:76: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+./spike-smp/sspike_smp.f90:2085:51: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘xb’ at (1)
+./spike-smp/sspike_smp.f90:2117:51: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘xb’ at (1)
+./spike-smp/sspike_smp.f90:1086:68: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+./spike-smp/sspike_smp.f90:1101:68: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+./spike-smp/sspike_smp.f90:1113:70: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+./spike-smp/sspike_smp.f90:1114:70: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+./spike-smp/sspike_smp.f90:1126:63: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+./spike-smp/sspike_smp.f90:2227:71: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘xt’ at (1)
+./spike-smp/sspike_smp.f90:1141:91: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘grj’ at (1)
+./spike-smp/sspike_smp.f90:1149:65: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+./spike-smp/sspike_smp.f90:1154:59: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+./spike-smp/sspike_smp.f90:1202:103: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘keys’ at (1)
+./spike-smp/sspike_smp.f90:1471:105: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘keys’ at (1)
+./spike-smp/sspike_smp.f90:1530:100: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘grj’ at (1)
+./spike-smp/sspike_smp.f90:1561:71: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+./spike-smp/sspike_smp.f90:1575:71: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+./spike-smp/sspike_smp.f90:1578:73: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+./spike-smp/sspike_smp.f90:1588:62: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+./spike-smp/sspike_smp.f90:1608:85: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+./spike-smp/cspike_smp.f90:2469:60: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+./spike-smp/cspike_smp.f90:2487:54: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+./spike-smp/cspike_smp.f90:803:73: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘keys’ at (1)
+./spike-smp/cspike_smp.f90:804:78: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+./spike-smp/cspike_smp.f90:835:68: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+./spike-smp/cspike_smp.f90:836:76: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+./spike-smp/cspike_smp.f90:837:76: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+./spike-smp/cspike_smp.f90:2085:51: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘xb’ at (1)
+./spike-smp/cspike_smp.f90:2117:51: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘xb’ at (1)
+./spike-smp/cspike_smp.f90:1086:68: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+./spike-smp/cspike_smp.f90:1101:68: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+./spike-smp/cspike_smp.f90:1113:70: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+./spike-smp/cspike_smp.f90:1114:70: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+./spike-smp/cspike_smp.f90:1126:63: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+./spike-smp/cspike_smp.f90:2227:71: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘xt’ at (1)
+./spike-smp/cspike_smp.f90:1141:91: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘grj’ at (1)
+./spike-smp/cspike_smp.f90:1149:65: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+./spike-smp/cspike_smp.f90:1154:59: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+./spike-smp/cspike_smp.f90:1202:103: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘keys’ at (1)
+./spike-smp/cspike_smp.f90:1471:105: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘keys’ at (1)
+./spike-smp/cspike_smp.f90:1530:100: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘grj’ at (1)
+./spike-smp/cspike_smp.f90:1561:71: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+./spike-smp/cspike_smp.f90:1575:71: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+./spike-smp/cspike_smp.f90:1578:73: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+./spike-smp/cspike_smp.f90:1588:62: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+./spike-smp/cspike_smp.f90:1608:85: Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/banded/scfeast_banded.f90:388:45:
+
+              call CSPIKE_GBTRF(spm,N,klz,klz,Az(1,1,id),band,workspike(1,id),infoloc)
+                                             1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘a’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/banded/scfeast_banded.f90:398:54:
+
+           call CSPIKE_GBTRS(spm,'N',N,klz,klz,fpm(23),Az(1,1,id),band,workspike(1,id),workc,N) 
+                                                      1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘a’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/banded/scfeast_banded.f90:402:77:
+
+           call SSBMM(UPLO,n,fpm(25),kla,SONE,A(1,1),LDA,X(1,fpm(24)),N,SZERO,work(1,fpm(24)),N)
+                                                                             1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘c’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/banded/scfeast_banded.f90:409:80:
+
+              call SSBMM(UPLO,n,fpm(25),klb,SONE,B(1,1),LDB,X(1,fpm(24)),N,SZERO,work(1,fpm(24)),N)
+                                                                                1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘c’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/banded/scfeast_banded.f90:784:45:
+
+              call CSPIKE_GBTRF(spm,N,klz,klz,Az(1,1,id),band,workspike(1,id),infoloc)   
+                                             1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘a’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/banded/scfeast_banded.f90:793:54:
+
+           call CSPIKE_GBTRS(spm,'N',N,klz,klz,fpm(23),Az(1,1,id),band,workspike(1,id),workc,N)
+                                                      1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘a’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/banded/scfeast_banded.f90:797:54:
+
+           call CSPIKE_GBTRS(spm,'C',N,klz,klz,fpm(23),Az(1,1,id),band,workspike(1,id),workc,N)  
+                                                      1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘a’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/banded/scfeast_banded.f90:802:78:
+
+           call CHBMM(UPLO2,n,fpm(25),kla,ONEC,A(1,1),LDA,X(1,fpm(24)),N,ZEROC,work(1,fpm(24)),N)
+                                                                              1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘c’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/banded/scfeast_banded.f90:809:81:
+
+              call CHBMM(UPLO2,n,fpm(25),klb,ONEC,B(1,1),LDB,X(1,fpm(24)),N,ZEROC,work(1,fpm(24)),N)
+                                                                                 1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘c’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/banded/scfeast_banded.f90:1042:45:
+
+              call CSPIKE_GBTRF(spm,N,klz,kuz,Az(1,1,id),band,workspike(1,id),infoloc)    
+                                             1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘a’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/banded/scfeast_banded.f90:1052:54:
+
+           call CSPIKE_GBTRS(spm,'N',N,klz,kuz,fpm(23),Az(1,1,id),band,workspike(1,id),workc,N) 
+                                                      1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘a’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/banded/scfeast_banded.f90:1057:54:
+
+           call CSPIKE_GBTRS(spm,'C',N,klz,kuz,fpm(23),Az(1,1,id),band,workspike(1,id),workc,N)  
+                                                      1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘a’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/banded/scfeast_banded.f90:1063:107:
+
+           call CGBMM('N','N',n,fpm(25),kla,kua,ONEC,A(1:kla+kua+1,1:N)*ONEC,kla+kua+1,X(1,fpm(24)),N,ZEROC,work(1,fpm(24)),N)
+                                                                                                           1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘c’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/banded/scfeast_banded.f90:1071:107:
+
+           call CGBMM('C','N',N,fpm(35),kla,kua,ONEC,A(1:kla+kua+1,1:N)*ONEC,kla+kua+1,X(1,fpm(34)),N,ZEROC,work(1,fpm(34)),N)
+                                                                                                           1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘c’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/banded/scfeast_banded.f90:1081:110:
+
+              call CGBMM('N','N',N,fpm(25),klb,kub,ONEC,B(1:klb+kub+1,1:N)*ONEC,klb+kub+1,X(1,fpm(24)),N,ZEROC,work(1,fpm(24)),N)
+                                                                                                              1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘c’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/banded/scfeast_banded.f90:1091:110:
+
+              call CGBMM('C','N',N,fpm(35),klb,kub,ONEC,B(1:klb+kub+1,1:N)*ONEC,klb+kub+1,X(1,fpm(34)),N,ZEROC,work(1,fpm(34)),N)
+                                                                                                              1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘c’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/banded/scfeast_banded.f90:1325:45:
+
+              call CSPIKE_GBTRF(spm,N,klz,kuz,Az(1,1,id),band,workspike(1,id),infoloc)        
+                                             1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘a’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/banded/scfeast_banded.f90:1335:54:
+
+           call CSPIKE_GBTRS(spm,'N',N,klz,kuz,fpm(23),Az(1,1,id),band,workspike(1,id),workc,N) 
+                                                      1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘a’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/banded/scfeast_banded.f90:1340:54:
+
+           call CSPIKE_GBTRS(spm,'C',N,klz,kuz,fpm(23),Az(1,1,id),band,workspike(1,id),workc,N)  
+                                                      1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘a’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/banded/scfeast_banded.f90:1345:90:
+
+           call CGBMM('N','N',n,fpm(25),kla,kua,ONEC,A(1,1),kla+kua+1,X(1,fpm(24)),N,ZEROC,work(1,fpm(24)),N)
+                                                                                          1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘c’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/banded/scfeast_banded.f90:1349:90:
+
+           call CGBMM('C','N',N,fpm(35),kla,kua,ONEC,A(1,1),kla+kua+1,X(1,fpm(34)),N,ZEROC,work(1,fpm(34)),N)
+                                                                                          1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘c’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/banded/scfeast_banded.f90:1356:93:
+
+              call CGBMM('N','N',N,fpm(25),klb,kub,ONEC,B(1,1),klb+kub+1,X(1,fpm(24)),N,ZEROC,work(1,fpm(24)),N)
+                                                                                             1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘c’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/banded/scfeast_banded.f90:1364:93:
+
+              call CGBMM('C','N',N,fpm(35),klb,kub,ONEC,B(1,1),klb+kub+1,X(1,fpm(34)),N,ZEROC,work(1,fpm(34)),N)
+                                                                                             1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘c’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/banded/scfeast_banded.f90:1696:45:
+
+              call CSPIKE_GBTRF(spm,N,klz,klz,Az(1,1,id),band,workspike(1,id),infoloc)   
+                                             1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘a’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/banded/scfeast_banded.f90:1706:54:
+
+           call CSPIKE_GBTRS(spm,'N',N,klz,klz,fpm(23),Az(1,1,id),band,workspike(1,id),workc,N) 
+                                                      1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘a’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/banded/scfeast_banded.f90:1711:78:
+
+           call CSBMM(UPLO2,n,fpm(25),kla,ONEC,A(1,1),LDA,X(1,fpm(24)),N,ZEROC,work(1,fpm(24)),N)
+                                                                              1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘c’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/banded/scfeast_banded.f90:1719:81:
+
+              call CSBMM(UPLO2,n,fpm(25),klb,ONEC,B(1,1),LDB,X(1,fpm(24)),N,ZEROC,work(1,fpm(24)),N)
+                                                                                 1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘c’ at (1)
+gfortran  -O3 -m64 -openmp -ffree-line-length-none -ffixed-line-length-none -cpp  -c /media/sf_Ubuntu/FEAST/3.0/src/sparse/dzfeast_sparse.f90 -o /media/sf_Ubuntu/FEAST/3.0/src/sparse/dzfeast_sparse.o
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/dzfeast_sparse.f90:379:67:
+
+                 call zdaddcsr(N,opt,-ONEC,sa,isa,jsa,Ze,sb,isb,jsb,saz(1,id),isaz,jsaz) !! get saz
+                                                                   1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘sc’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/dzfeast_sparse.f90:381:73:
+
+                 call zdaddcsr(N,opt,-ONEC,ssa,sisa,sjsa,Ze,ssb,sisb,sjsb,saz(1,id),isaz,jsaz) !! get saz
+                                                                         1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘sc’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/dzfeast_sparse.f90:411:80:
+
+              call dcsrmm('U','N',N,N,fpm(25),DONE,sa,isa,jsa,X(1,fpm(24)),DZERO,work(1,fpm(24)))
+                                                                                1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/dzfeast_sparse.f90:413:83:
+
+              call dcsrmm('U','N',N,N,fpm(25),DONE,ssa,sisa,sjsa,X(1,fpm(24)),DZERO,work(1,fpm(24)))
+                                                                                   1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/dzfeast_sparse.f90:419:80:
+
+              call dcsrmm('U','N',N,N,fpm(25),DONE,sb,isb,jsb,X(1,fpm(24)),DZERO,work(1,fpm(24)))
+                                                                                1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/dzfeast_sparse.f90:421:83:
+
+              call dcsrmm('U','N',N,N,fpm(25),DONE,ssb,sisb,sjsb,X(1,fpm(24)),DZERO,work(1,fpm(24)))
+                                                                                   1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/dzfeast_sparse.f90:655:58:
+
+        call zaddcsr(N,opt,ONEC,sa,isa,jsa,ONEC,sb,isb,jsb,saz(1,1),isaz,jsaz) !! get isaz
+                                                          1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘sc’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/dzfeast_sparse.f90:657:64:
+
+        call zaddcsr(N,opt,ONEC,ssa,sisa,sjsa,ONEC,ssb,sisb,sjsb,saz(1,1),isaz,jsaz) !! get isaz
+                                                                1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘sc’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/dzfeast_sparse.f90:669:58:
+
+        call zaddcsr(N,opt,ONEC,sa,isa,jsa,ONEC,sb,isb,jsb,saz(1,1),isaz,jsaz) !! get jsaz
+                                                          1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘sc’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/dzfeast_sparse.f90:671:64:
+
+        call zaddcsr(N,opt,ONEC,ssa,sisa,sjsa,ONEC,ssb,sisb,sjsb,saz(1,1),isaz,jsaz) !! get jsaz
+                                                                1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘sc’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/dzfeast_sparse.f90:723:66:
+
+                 call zaddcsr(N,opt,-ONEC,sa,isa,jsa,Ze,sb,isb,jsb,saz(1,id),isaz,jsaz) !! get saz
+                                                                  1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘sc’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/dzfeast_sparse.f90:725:72:
+
+                 call zaddcsr(N,opt,-ONEC,ssa,sisa,sjsa,Ze,ssb,sisb,sjsb,saz(1,id),isaz,jsaz) !! get saz
+                                                                        1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘sc’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/dzfeast_sparse.f90:769:81:
+
+              call zhcsrmm('F','N',N,N,fpm(25),ONEC,sa,isa,jsa,X(1,fpm(24)),ZEROC,work(1,fpm(24)))
+                                                                                 1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/dzfeast_sparse.f90:771:84:
+
+              call zhcsrmm('F','N',N,N,fpm(25),ONEC,ssa,sisa,sjsa,X(1,fpm(24)),ZEROC,work(1,fpm(24)))
+                                                                                    1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/dzfeast_sparse.f90:776:81:
+
+              call zhcsrmm('F','N',N,N,fpm(25),ONEC,sb,isb,jsb,X(1,fpm(24)),ZEROC,work(1,fpm(24)))
+                                                                                 1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/dzfeast_sparse.f90:778:84:
+
+              call zhcsrmm('F','N',N,N,fpm(25),ONEC,ssb,sisb,sjsb,X(1,fpm(24)),ZEROC,work(1,fpm(24)))
+                                                                                    1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/dzfeast_sparse.f90:1063:64:
+
+              call zdaddcsr(N,opt,-ONEC,sa,isa,jsa,Ze,sb,isb,jsb,saz(1,id),isaz,jsaz) !! get saz
+                                                                1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘sc’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/dzfeast_sparse.f90:1106:78:
+
+           call dzcsrmm('F','N',N,N,fpm(25),ONEC,sa,isa,jsa,X(1,fpm(24)),ZEROC,work(1,fpm(24)))
+                                                                              1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/dzfeast_sparse.f90:1110:78:
+
+           call dzcsrmm('F','C',N,N,fpm(35),ONEC,sa,isa,jsa,X(1,fpm(34)),ZEROC,work(1,fpm(34)))
+                                                                              1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/dzfeast_sparse.f90:1115:78:
+
+           call dzcsrmm('F','N',N,N,fpm(25),ONEC,sb,isb,jsb,X(1,fpm(24)),ZEROC,work(1,fpm(24)))
+                                                                              1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/dzfeast_sparse.f90:1120:78:
+
+           call dzcsrmm('F','C',N,N,fpm(35),ONEC,sb,isb,jsb,X(1,fpm(34)),ZEROC,work(1,fpm(34)))
+                                                                              1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/dzfeast_sparse.f90:1329:55:
+
+     call zaddcsr(N,opt,ONEC,sa,isa,jsa,ONEC,sb,isb,jsb,saz(1,1),isaz,jsaz) !! get isaz
+                                                       1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘sc’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/dzfeast_sparse.f90:1339:55:
+
+     call zaddcsr(N,opt,ONEC,sa,isa,jsa,ONEC,sb,isb,jsb,saz(1,1),isaz,jsaz) !! get jsaz
+                                                       1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘sc’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/dzfeast_sparse.f90:1390:63:
+
+              call zaddcsr(N,opt,-ONEC,sa,isa,jsa,Ze,sb,isb,jsb,saz(1,id),isaz,jsaz) !! get saz
+                                                               1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘sc’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/dzfeast_sparse.f90:1435:77:
+
+           call zcsrmm('F','N',N,N,fpm(25),ONEC,sa,isa,jsa,X(1,fpm(24)),ZEROC,work(1,fpm(24)))
+                                                                             1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/dzfeast_sparse.f90:1440:77:
+
+           call zcsrmm('F','C',N,N,fpm(35),ONEC,sa,isa,jsa,X(1,fpm(34)),ZEROC,work(1,fpm(34)))
+                                                                             1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/dzfeast_sparse.f90:1444:77:
+
+           call zcsrmm('F','N',N,N,fpm(25),ONEC,sb,isb,jsb,X(1,fpm(24)),ZEROC,work(1,fpm(24)))
+                                                                             1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/dzfeast_sparse.f90:1449:77:
+
+           call zcsrmm('F','C',N,N,fpm(35),ONEC,sb,isb,jsb,X(1,fpm(34)),ZEROC,work(1,fpm(34)))
+                                                                             1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/dzfeast_sparse.f90:1734:58:
+
+        call zaddcsr(N,opt,ONEC,sa,isa,jsa,ONEC,sb,isb,jsb,saz(1,1),isaz,jsaz) !! get isaz
+                                                          1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘sc’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/dzfeast_sparse.f90:1736:64:
+
+        call zaddcsr(N,opt,ONEC,ssa,sisa,sjsa,ONEC,ssb,sisb,sjsb,saz(1,1),isaz,jsaz) !! get isaz
+                                                                1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘sc’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/dzfeast_sparse.f90:1749:58:
+
+        call zaddcsr(N,opt,ONEC,sa,isa,jsa,ONEC,sb,isb,jsb,saz(1,1),isaz,jsaz) !! get jsaz
+                                                          1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘sc’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/dzfeast_sparse.f90:1751:64:
+
+        call zaddcsr(N,opt,ONEC,ssa,sisa,sjsa,ONEC,ssb,sisb,sjsb,saz(1,1),isaz,jsaz) !! get jsaz
+                                                                1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘sc’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/dzfeast_sparse.f90:1802:66:
+
+                 call zaddcsr(N,opt,-ONEC,sa,isa,jsa,Ze,sb,isb,jsb,saz(1,id),isaz,jsaz) !! get saz
+                                                                  1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘sc’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/dzfeast_sparse.f90:1804:72:
+
+                 call zaddcsr(N,opt,-ONEC,ssa,sisa,sjsa,Ze,ssb,sisb,sjsb,saz(1,id),isaz,jsaz) !! get saz
+                                                                        1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘sc’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/dzfeast_sparse.f90:1832:80:
+
+              call zcsrmm('U','N',N,N,fpm(25),ONEC,sa,isa,jsa,X(1,fpm(24)),ZEROC,work(1,fpm(24)))
+                                                                                1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/dzfeast_sparse.f90:1834:83:
+
+              call zcsrmm('U','N',N,N,fpm(25),ONEC,ssa,sisa,sjsa,X(1,fpm(24)),ZEROC,work(1,fpm(24)))
+                                                                                   1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/dzfeast_sparse.f90:1840:80:
+
+              call zcsrmm('U','N',N,N,fpm(25),ONEC,sb,isb,jsb,X(1,fpm(24)),ZEROC,work(1,fpm(24)))
+                                                                                1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/dzfeast_sparse.f90:1842:83:
+
+              call zcsrmm('U','N',N,N,fpm(25),ONEC,ssb,sisb,sjsb,X(1,fpm(24)),ZEROC,work(1,fpm(24)))
+                                                                                   1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+gfortran  -O3 -m64 -openmp -ffree-line-length-none -ffixed-line-length-none -cpp  -c /media/sf_Ubuntu/FEAST/3.0/src/sparse/scfeast_sparse.f90 -o /media/sf_Ubuntu/FEAST/3.0/src/sparse/scfeast_sparse.o
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/scfeast_sparse.f90:310:59:
+
+        call csaddcsr(N,opt,ONEC,sa,isa,jsa,ONEC,sb,isb,jsb,saz(1,1),isaz,jsaz) !! get isaz
+                                                           1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘sc’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/scfeast_sparse.f90:312:65:
+
+        call csaddcsr(N,opt,ONEC,ssa,sisa,sjsa,ONEC,ssb,sisb,sjsb,saz(1,1),isaz,jsaz) !! get isaz
+                                                                 1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘sc’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/scfeast_sparse.f90:324:59:
+
+        call csaddcsr(N,opt,ONEC,sa,isa,jsa,ONEC,sb,isb,jsb,saz(1,1),isaz,jsaz) !! get jsaz
+                                                           1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘sc’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/scfeast_sparse.f90:326:65:
+
+        call csaddcsr(N,opt,ONEC,ssa,sisa,sjsa,ONEC,ssb,sisb,sjsb,saz(1,1),isaz,jsaz) !! get jsaz
+                                                                 1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘sc’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/scfeast_sparse.f90:381:67:
+
+                 call csaddcsr(N,opt,-ONEC,sa,isa,jsa,Ze,sb,isb,jsb,saz(1,id),isaz,jsaz) !! get saz
+                                                                   1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘sc’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/scfeast_sparse.f90:383:73:
+
+                 call csaddcsr(N,opt,-ONEC,ssa,sisa,sjsa,Ze,ssb,sisb,sjsb,saz(1,id),isaz,jsaz) !! get saz
+                                                                         1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘sc’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/scfeast_sparse.f90:414:80:
+
+              call scsrmm('U','N',N,N,fpm(25),SONE,sa,isa,jsa,X(1,fpm(24)),SZERO,work(1,fpm(24)))
+                                                                                1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/scfeast_sparse.f90:416:83:
+
+              call scsrmm('U','N',N,N,fpm(25),SONE,ssa,sisa,sjsa,X(1,fpm(24)),SZERO,work(1,fpm(24)))
+                                                                                   1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/scfeast_sparse.f90:422:80:
+
+              call scsrmm('U','N',N,N,fpm(25),SONE,sb,isb,jsb,X(1,fpm(24)),SZERO,work(1,fpm(24)))
+                                                                                1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/scfeast_sparse.f90:424:83:
+
+              call scsrmm('U','N',N,N,fpm(25),SONE,ssb,sisb,sjsb,X(1,fpm(24)),SZERO,work(1,fpm(24)))
+                                                                                   1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/scfeast_sparse.f90:657:58:
+
+        call caddcsr(N,opt,ONEC,sa,isa,jsa,ONEC,sb,isb,jsb,saz(1,1),isaz,jsaz) !! get isaz
+                                                          1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘sc’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/scfeast_sparse.f90:659:64:
+
+        call caddcsr(N,opt,ONEC,ssa,sisa,sjsa,ONEC,ssb,sisb,sjsb,saz(1,1),isaz,jsaz) !! get isaz
+                                                                1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘sc’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/scfeast_sparse.f90:672:58:
+
+        call caddcsr(N,opt,ONEC,sa,isa,jsa,ONEC,sb,isb,jsb,saz(1,1),isaz,jsaz) !! get jsaz
+                                                          1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘sc’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/scfeast_sparse.f90:674:64:
+
+        call caddcsr(N,opt,ONEC,ssa,sisa,sjsa,ONEC,ssb,sisb,sjsb,saz(1,1),isaz,jsaz) !! get jsaz
+                                                                1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘sc’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/scfeast_sparse.f90:730:66:
+
+                 call caddcsr(N,opt,-ONEC,sa,isa,jsa,Ze,sb,isb,jsb,saz(1,id),isaz,jsaz) !! get saz
+                                                                  1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘sc’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/scfeast_sparse.f90:732:72:
+
+                 call caddcsr(N,opt,-ONEC,ssa,sisa,sjsa,Ze,ssb,sisb,sjsb,saz(1,id),isaz,jsaz) !! get saz
+                                                                        1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘sc’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/scfeast_sparse.f90:776:81:
+
+              call chcsrmm('F','N',N,N,fpm(25),ONEC,sa,isa,jsa,X(1,fpm(24)),ZEROC,work(1,fpm(24)))
+                                                                                 1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/scfeast_sparse.f90:778:84:
+
+              call chcsrmm('F','N',N,N,fpm(25),ONEC,ssa,sisa,sjsa,X(1,fpm(24)),ZEROC,work(1,fpm(24)))
+                                                                                    1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/scfeast_sparse.f90:784:81:
+
+              call chcsrmm('F','N',N,N,fpm(25),ONEC,sb,isb,jsb,X(1,fpm(24)),ZEROC,work(1,fpm(24)))
+                                                                                 1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/scfeast_sparse.f90:786:84:
+
+              call chcsrmm('F','N',N,N,fpm(25),ONEC,ssb,sisb,sjsb,X(1,fpm(24)),ZEROC,work(1,fpm(24)))
+                                                                                    1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/scfeast_sparse.f90:1010:56:
+
+     call csaddcsr(N,opt,ONEC,sa,isa,jsa,ONEC,sb,isb,jsb,saz(1,1),isaz,jsaz) !! get isaz
+                                                        1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘sc’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/scfeast_sparse.f90:1020:56:
+
+     call csaddcsr(N,opt,ONEC,sa,isa,jsa,ONEC,sb,isb,jsb,saz(1,1),isaz,jsaz) !! get jsaz
+                                                        1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘sc’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/scfeast_sparse.f90:1075:64:
+
+              call csaddcsr(N,opt,-ONEC,sa,isa,jsa,Ze,sb,isb,jsb,saz(1,id),isaz,jsaz) !! get saz
+                                                                1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘sc’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/scfeast_sparse.f90:1118:78:
+
+           call sccsrmm('F','N',N,N,fpm(25),ONEC,sa,isa,jsa,X(1,fpm(24)),ZEROC,work(1,fpm(24)))
+                                                                              1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/scfeast_sparse.f90:1122:78:
+
+           call sccsrmm('F','C',N,N,fpm(35),ONEC,sa,isa,jsa,X(1,fpm(34)),ZEROC,work(1,fpm(34)))
+                                                                              1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/scfeast_sparse.f90:1127:78:
+
+           call sccsrmm('F','N',N,N,fpm(25),ONEC,sb,isb,jsb,X(1,fpm(24)),ZEROC,work(1,fpm(24)))
+                                                                              1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/scfeast_sparse.f90:1132:78:
+
+           call sccsrmm('F','C',N,N,fpm(35),ONEC,sb,isb,jsb,X(1,fpm(34)),ZEROC,work(1,fpm(34)))
+                                                                              1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/scfeast_sparse.f90:1341:55:
+
+     call caddcsr(N,opt,ONEC,sa,isa,jsa,ONEC,sb,isb,jsb,saz(1,1),isaz,jsaz) !! get isaz
+                                                       1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘sc’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/scfeast_sparse.f90:1351:55:
+
+     call caddcsr(N,opt,ONEC,sa,isa,jsa,ONEC,sb,isb,jsb,saz(1,1),isaz,jsaz) !! get jsaz
+                                                       1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘sc’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/scfeast_sparse.f90:1405:63:
+
+              call caddcsr(N,opt,-ONEC,sa,isa,jsa,Ze,sb,isb,jsb,saz(1,id),isaz,jsaz) !! get saz
+                                                               1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘sc’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/scfeast_sparse.f90:1450:77:
+
+           call ccsrmm('F','N',N,N,fpm(25),ONEC,sa,isa,jsa,X(1,fpm(24)),ZEROC,work(1,fpm(24)))
+                                                                             1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/scfeast_sparse.f90:1455:77:
+
+           call ccsrmm('F','C',N,N,fpm(35),ONEC,sa,isa,jsa,X(1,fpm(34)),ZEROC,work(1,fpm(34)))
+                                                                             1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/scfeast_sparse.f90:1459:77:
+
+           call ccsrmm('F','N',N,N,fpm(25),ONEC,sb,isb,jsb,X(1,fpm(24)),ZEROC,work(1,fpm(24)))
+                                                                             1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/scfeast_sparse.f90:1464:77:
+
+           call ccsrmm('F','C',N,N,fpm(35),ONEC,sb,isb,jsb,X(1,fpm(34)),ZEROC,work(1,fpm(34)))
+                                                                             1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/scfeast_sparse.f90:1749:58:
+
+        call caddcsr(N,opt,ONEC,sa,isa,jsa,ONEC,sb,isb,jsb,saz(1,1),isaz,jsaz) !! get isaz
+                                                          1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘sc’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/scfeast_sparse.f90:1751:64:
+
+        call caddcsr(N,opt,ONEC,ssa,sisa,sjsa,ONEC,ssb,sisb,sjsb,saz(1,1),isaz,jsaz) !! get isaz
+                                                                1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘sc’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/scfeast_sparse.f90:1763:58:
+
+        call caddcsr(N,opt,ONEC,sa,isa,jsa,ONEC,sb,isb,jsb,saz(1,1),isaz,jsaz) !! get jsaz
+                                                          1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘sc’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/scfeast_sparse.f90:1765:64:
+
+        call caddcsr(N,opt,ONEC,ssa,sisa,sjsa,ONEC,ssb,sisb,sjsb,saz(1,1),isaz,jsaz) !! get jsaz
+                                                                1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘sc’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/scfeast_sparse.f90:1819:66:
+
+                 call caddcsr(N,opt,-ONEC,sa,isa,jsa,Ze,sb,isb,jsb,saz(1,id),isaz,jsaz) !! get saz
+                                                                  1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘sc’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/scfeast_sparse.f90:1821:72:
+
+                 call caddcsr(N,opt,-ONEC,ssa,sisa,sjsa,Ze,ssb,sisb,sjsb,saz(1,id),isaz,jsaz) !! get saz
+                                                                        1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘sc’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/scfeast_sparse.f90:1850:80:
+
+              call ccsrmm('U','N',N,N,fpm(25),ONEC,sa,isa,jsa,X(1,fpm(24)),ZEROC,work(1,fpm(24)))
+                                                                                1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/scfeast_sparse.f90:1852:83:
+
+              call ccsrmm('U','N',N,N,fpm(25),ONEC,ssa,sisa,sjsa,X(1,fpm(24)),ZEROC,work(1,fpm(24)))
+                                                                                   1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/scfeast_sparse.f90:1857:80:
+
+              call ccsrmm('U','N',N,N,fpm(25),ONEC,sb,isb,jsb,X(1,fpm(24)),ZEROC,work(1,fpm(24)))
+                                                                                1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+/media/sf_Ubuntu/FEAST/3.0/src/sparse/scfeast_sparse.f90:1859:83:
+
+              call ccsrmm('U','N',N,N,fpm(25),ONEC,ssb,sisb,sjsb,X(1,fpm(24)),ZEROC,work(1,fpm(24)))
+                                                                                   1
+Warning: Element of assumed-shaped or pointer array passed to array dummy argument ‘b’ at (1)
+ar r libfeast.a  /media/sf_Ubuntu/FEAST/3.0/src/kernel/f90_functions_wrapper.o  /media/sf_Ubuntu/FEAST/3.0/src/kernel/feast_tools.o /media/sf_Ubuntu/FEAST/3.0/src/kernel/dzfeast.o /media/sf_Ubuntu/FEAST/3.0/src/kernel/scfeast.o /media/sf_Ubuntu/FEAST/3.0/src/kernel/feast_aux.o  
+ar: creating libfeast.a
+ar r libfeast_dense.a /media/sf_Ubuntu/FEAST/3.0/src/dense/dzfeast_dense.o /media/sf_Ubuntu/FEAST/3.0/src/dense/scfeast_dense.o 
+ar: creating libfeast_dense.a
+ar r libfeast_banded.a /media/sf_Ubuntu/FEAST/3.0/src/banded/dzfeast_banded.o /media/sf_Ubuntu/FEAST/3.0/src/banded/scfeast_banded.o
+ar: creating libfeast_banded.a
+ar r libfeast_sparse.a /media/sf_Ubuntu/FEAST/3.0/src/sparse/dzfeast_sparse.o /media/sf_Ubuntu/FEAST/3.0/src/sparse/scfeast_sparse.o
+ar: creating libfeast_sparse.a
+directory x64 already exists
+mv *.a ../lib/x64
+rm -f /media/sf_Ubuntu/FEAST/3.0/src/kernel/f90_functions_wrapper.o  /media/sf_Ubuntu/FEAST/3.0/src/kernel/feast_tools.o /media/sf_Ubuntu/FEAST/3.0/src/kernel/dzfeast.o /media/sf_Ubuntu/FEAST/3.0/src/kernel/scfeast.o /media/sf_Ubuntu/FEAST/3.0/src/kernel/feast_aux.o   /media/sf_Ubuntu/FEAST/3.0/src/dense/dzfeast_dense.o /media/sf_Ubuntu/FEAST/3.0/src/dense/scfeast_dense.o  /media/sf_Ubuntu/FEAST/3.0/src/banded/dzfeast_banded.o /media/sf_Ubuntu/FEAST/3.0/src/banded/scfeast_banded.o /media/sf_Ubuntu/FEAST/3.0/src/sparse/dzfeast_sparse.o /media/sf_Ubuntu/FEAST/3.0/src/sparse/scfeast_sparse.o 

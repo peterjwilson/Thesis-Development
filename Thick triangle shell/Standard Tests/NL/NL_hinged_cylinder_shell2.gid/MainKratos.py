@@ -23,8 +23,17 @@ def StopTimeMeasuring(time_ip, process, report):
         used_time = time_fp - time_ip
         print("::[KSM Simulation]:: [ %.2f" % round(used_time,2),"s", process," ] ")
 
+        
 #### TIME MONITORING END ####
 
+def ApplyLoad(initial_value, model_part, time):
+    for node in model_part.Nodes:
+        factor = 1
+        value = initial_value * factor * time
+        node.SetSolutionStepValue(DISPLACEMENT_Y,0,value)
+
+        
+        
 #import kratos core and applications
 from KratosMultiphysics import *
 from KratosMultiphysics.SolidMechanicsApplication import *
@@ -119,7 +128,7 @@ for process in list_of_processes:
 #### START SOLUTION ####
 
 #TODO: think if there is a better way to do this
-computing_model_part = solver.GetComputeModelPart()
+computing_model_part = solver.GetComputingModelPart()
 
 
 #### output settings start ####
@@ -169,6 +178,8 @@ end_time   = ProjectParameters["problem_data"]["end_time"].GetDouble()
 # writing a initial state results file (if no restart)
 # gid_io.write_results(time, computing_model_part) done in ExecuteBeforeSolutionLoop()
 
+fod = open("displacement_dsg.txt", "w")
+fol = open("load_dsg.txt", "w")
 # solving the problem (time integration)
 while(time <= end_time):
 
@@ -184,13 +195,21 @@ while(time <= end_time):
 
     # print process info
     ##
-    
+    print("Time = ",time)
     for process in list_of_processes:
         process.ExecuteInitializeSolutionStep()
 
     gid_output.ExecuteInitializeSolutionStep()
+    
+    ApplyLoad(-0.03, main_model_part.GetSubModelPart("DISPLACEMENT_load"), time)
         
     solver.Solve()
+    
+    for node in main_model_part.GetSubModelPart("DISPLACEMENT_load").Nodes:
+        fol.write(str(node.GetSolutionStepValue(REACTION_Y,0)) +  "\n")
+    
+    for node in main_model_part.GetSubModelPart("DISPLACEMENT_load").Nodes:
+        fod.write(str(node.GetSolutionStepValue(DISPLACEMENT_Y,0)) + "\n")
        
     for process in list_of_processes:
         process.ExecuteFinalizeSolutionStep()
@@ -209,7 +228,9 @@ while(time <= end_time):
     for process in list_of_processes:
         process.ExecuteAfterOutputStep()
 
-
+fod.close()
+fol.close()
+        
 for process in list_of_processes:
     process.ExecuteFinalize()
     

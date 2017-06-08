@@ -1,0 +1,37 @@
+BeginZE C:\Users\Peter\Desktop\TUM\Thesis\Development\Ubuntu\Stability testing\CHS\chs_eig_sol.gid\chs_eig_sol.vv
+   x -0.58947873115539551 0.59239768981933594
+   y 0.52614569664001465 -0.49477484822273254
+   z -5.3633031845092773 0.15832996368408203
+   e 1.6583124399185181
+   v 0.4199046790599823 -0.01476682722568512 -0.058535218238830566
+   r 0.90555822849273682
+   m 0.99271112680435181 0.093612775206565857 -0.075902871787548065 0 -0.11841541528701782 0.64050734043121338 -0.75876748561859131 0 -0.022413983941078186 0.76222503185272217 0.64692401885986328 0 0 0 0 1
+   c 0.0052241208031773567 0.003327713580802083 2.6024866104125977
+   pd 0
+   pno 0
+   pfo 0
+   pf 4
+   pv 0
+   NowUse 1
+   DrawingType 0
+   LightVector 90 90 150 0
+   OGLShadow(UseShadows) 0
+   OGLShadow(RenderMode) RenderNice
+   OGLShadow(ShadowBias) -0.002
+   OGLShadow(AmbientShadows) 1
+   OGLShadow(UseFBO) 0
+   OGLShadow(FBOSize) 2048
+   OGLShadow(DimmedLightFactor) 0.02
+   OGLStereo(UseStereo) 0
+   OGLStereo(RelativeEyeDistance) 1
+   OGLStereo(FlipEyes) 0
+   OGLStereo(StereoMode) AnaglyphColors
+   OGLStereo(EyeDistance) 0.075
+   OGLStereo(LeftEyeDistance) 1 0 0 1
+   OGLStereo(RightEyeDistance) 0 1 1 1
+EndZE C:\Users\Peter\Desktop\TUM\Thesis\Development\Ubuntu\Stability testing\CHS\chs_eig_sol.gid\chs_eig_sol.vv
+
+BeginMirror
+   Mirror 0 Angle 0.0 AngleFake -15.0 SizeFactor 2.0 HeightOffset 0.25 Color #d9e5f24d Backlight Off EdgeStyle No Type Scene DrawMode Mirror
+EndMirror
+

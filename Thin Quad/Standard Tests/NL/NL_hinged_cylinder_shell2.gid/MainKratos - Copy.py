@@ -30,7 +30,7 @@ def ApplyLoad(initial_value, model_part, time):
     for node in model_part.Nodes:
         factor = 1
         value = initial_value * factor * time
-        node.SetSolutionStepValue(POINT_LOAD_Y,0,value)
+        node.SetSolutionStepValue(DISPLACEMENT_Y,0,value)
 
         
         
@@ -195,20 +195,20 @@ while(time <= end_time):
 
     # print process info
     ##
-    
+    print("Time = ",time)
     for process in list_of_processes:
         process.ExecuteInitializeSolutionStep()
 
     gid_output.ExecuteInitializeSolutionStep()
     
-    ApplyLoad(-1000, main_model_part.GetSubModelPart("PointLoad3D_load"), time)
-    
-    for node in main_model_part.GetSubModelPart("PointLoad3D_load").Nodes:
-        fol.write(str(node.GetSolutionStepValue(POINT_LOAD_Y,0)) +  "\n")
+    ApplyLoad(-0.03, main_model_part.GetSubModelPart("DISPLACEMENT_load"), time)
         
     solver.Solve()
     
-    for node in main_model_part.GetSubModelPart("PointLoad3D_load").Nodes:
+    for node in main_model_part.GetSubModelPart("DISPLACEMENT_load").Nodes:
+        fol.write(str(node.GetSolutionStepValue(REACTION_Y,0)) +  "\n")
+    
+    for node in main_model_part.GetSubModelPart("DISPLACEMENT_load").Nodes:
         fod.write(str(node.GetSolutionStepValue(DISPLACEMENT_Y,0)) + "\n")
        
     for process in list_of_processes:
