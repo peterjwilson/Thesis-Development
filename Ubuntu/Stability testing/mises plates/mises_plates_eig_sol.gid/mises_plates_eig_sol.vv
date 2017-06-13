@@ -1,0 +1,37 @@
+BeginZE C:/Users/Peter/Desktop/TUM/Thesis/Development/Ubuntu/Stability testing/mises plates/mises_plates_eig_sol.gid/mises_plates_eig_sol.vv
+   x -0.993242621421813965 2.99324274063110352
+   y 2 -1
+   z -5.5 3.5
+   e 1.5
+   v 0.233742489283808669 0.396699536539862174 0.40814749695555691
+   r 0.788295377218080073
+   m 0.352090209722518921 -0.458030492067337036 0.816235661506652832 0 0.828932642936706543 0.557560145854949951 -0.0446924008429050446 0 -0.434630006551742554 0.692340075969696045 0.575987875461578369 0 0 0 0 1
+   c 1 0.5 1
+   pd 0
+   pno 0
+   pfo 0
+   pf 4
+   pv 0
+   NowUse 1
+   DrawingType 0
+   LightVector 90 90 150 0
+   OGLShadow(UseShadows) 0
+   OGLShadow(RenderMode) RenderNice
+   OGLShadow(ShadowBias) -0.002
+   OGLShadow(AmbientShadows) 1
+   OGLShadow(UseFBO) 0
+   OGLShadow(FBOSize) 2048
+   OGLShadow(DimmedLightFactor) 0.02
+   OGLStereo(UseStereo) 0
+   OGLStereo(RelativeEyeDistance) 1
+   OGLStereo(FlipEyes) 0
+   OGLStereo(StereoMode) AnaglyphColors
+   OGLStereo(EyeDistance) 0.075
+   OGLStereo(LeftEyeDistance) 1 0 0 1
+   OGLStereo(RightEyeDistance) 0 1 1 1
+EndZE C:/Users/Peter/Desktop/TUM/Thesis/Development/Ubuntu/Stability testing/mises plates/mises_plates_eig_sol.gid/mises_plates_eig_sol.vv
+
+BeginMirror
+   Mirror 0 Angle 0.0 AngleFake -15.0 SizeFactor 2.0 HeightOffset 0.25 Color #d9e5f24d Backlight Off EdgeStyle No Type Scene DrawMode Mirror
+EndMirror
+

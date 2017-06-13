@@ -198,7 +198,7 @@ while(time <= end_time):
 
     gid_output.ExecuteInitializeSolutionStep()
         
-    ApplyLoad(-0.0525, main_model_part.GetSubModelPart("DISPLACEMENT_top"), time)
+    ApplyLoad(-0.0575, main_model_part.GetSubModelPart("DISPLACEMENT_top"), time)
         
     solver.Solve()
     load = 0
@@ -213,14 +213,17 @@ while(time <= end_time):
         break
     
     dispx = 0
+    counter = 0
     for node in main_model_part.GetSubModelPart("PointLoad3D_mid").Nodes:
-        dispx = node.GetSolutionStepValue(DISPLACEMENT_X,0)
-        fodx.write(str(dispx) + "\n")
-        break
+        if node.X0 > 0.099 and node.X0 < 0.11 and node.Y0 > -0.01 and node.Y0 < 0.01:  
+            dispx = node.GetSolutionStepValue(DISPLACEMENT_X,0)
+            fodx.write(str(dispx) + "\n")
+            counter += 1
     
-    print("Load = \t",load)
+    print("Load = \t\t",load)
     print("Disp Z = \t",disp)
     print("Disp X = \t",dispx)
+    print("Count X = \t",counter)
        
     for process in list_of_processes:
         process.ExecuteFinalizeSolutionStep()

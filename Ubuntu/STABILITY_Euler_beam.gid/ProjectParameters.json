@@ -23,8 +23,8 @@
             "perform_stochastic_estimate": false,
             "solve_eigenvalue_problem": true,
             "lambda_min": 0.0,
-            "lambda_max": 5.0e6,
-            "search_dimension": 20,
+            "lambda_max": 5.0e3,
+            "search_dimension": 400,
             "linear_solver_settings":{
                 "solver_type": "skyline_lu"
             }
@@ -58,7 +58,7 @@
             "mesh_id"         : 0,
             "model_part_name" : "PointLoad3D_top",
             "variable_name"   : "POINT_LOAD",
-            "modulus"          : 5000,
+            "modulus"          : 100000,
             "direction"       : [0.0,0.0,-1.0]
         }
     }],

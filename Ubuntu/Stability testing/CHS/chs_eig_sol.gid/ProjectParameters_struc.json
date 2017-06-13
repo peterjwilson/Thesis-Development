@@ -12,7 +12,7 @@
         "solver_type"                        : "solid_mechanics_static_solver",
         "echo_level"                         : 0,
         "solution_type"                      : "Static",
-        "analysis_type"                      : "Linear",
+        "analysis_type"                      : "Non-Linear",
         "model_import_settings"              : {
             "input_type"     : "mdpa",
             "input_filename" : "chs_eig_sol"
@@ -29,7 +29,7 @@
             "scaling"     : false,
             "verbosity"   : 0
         },
-        "problem_domain_sub_model_part_list" : ["Parts_body","Parts_top"],
+        "problem_domain_sub_model_part_list" : ["Parts_surface"],
         "processes_sub_model_part_list"      : ["DISPLACEMENT_bot","DISPLACEMENT_top","SurfaceLoad3D_top"],
         "rotation_dofs"                      : true
     },
