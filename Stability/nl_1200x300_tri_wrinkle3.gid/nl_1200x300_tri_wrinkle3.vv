@@ -1,0 +1,37 @@
+BeginZE C:/Users/Peter/Desktop/TUM/Thesis/Development/Stability/nl_1200x300_tri_wrinkle3.gid/nl_1200x300_tri_wrinkle3.vv
+   x -0.579244434833526611 1.77924442291259766
+   y 0.813325047492980957 -0.513324975967407227
+   z -1.9899749755859375 1.9899749755859375
+   e 0.663325011730194092
+   v -0.266110867261886597 -0.263926953077316284 -0.100627481937408447
+   r 0.921629905700683594
+   m 0.840433359146118164 0.325950264930725098 -0.432929813861846924 0 -0.0450149215757846832 0.838118255138397217 0.543628096580505371 0 0.540042102336883545 -0.437394857406616211 0.719055116176605225 0 0 0 0 1
+   c 0.60000002384185791 0.150000005960464478 0
+   pd 0
+   pno 0
+   pfo 0
+   pf 4
+   pv 0
+   NowUse 1
+   DrawingType 0
+   LightVector 90 90 150 0
+   OGLShadow(UseShadows) 0
+   OGLShadow(RenderMode) RenderNice
+   OGLShadow(ShadowBias) -0.002
+   OGLShadow(AmbientShadows) 1
+   OGLShadow(UseFBO) 0
+   OGLShadow(FBOSize) 2048
+   OGLShadow(DimmedLightFactor) 0.02
+   OGLStereo(UseStereo) 0
+   OGLStereo(RelativeEyeDistance) 1
+   OGLStereo(FlipEyes) 0
+   OGLStereo(StereoMode) AnaglyphColors
+   OGLStereo(EyeDistance) 0.075
+   OGLStereo(LeftEyeDistance) 1 0 0 1
+   OGLStereo(RightEyeDistance) 0 1 1 1
+EndZE C:/Users/Peter/Desktop/TUM/Thesis/Development/Stability/nl_1200x300_tri_wrinkle3.gid/nl_1200x300_tri_wrinkle3.vv
+
+BeginMirror
+   Mirror 0 Angle 0.0 AngleFake -15.0 SizeFactor 2.0 HeightOffset 0.25 Color #d9e5f24d Backlight Off EdgeStyle No Type Scene DrawMode Mirror
+EndMirror
+
