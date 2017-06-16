@@ -7,6 +7,7 @@ Created on Fri Jun 16 10:26:16 2017
 
 import numpy as np
 import sympy as sp
+print("Sympy version: ",sp.__version__)
 
 x = sp.Symbol('x')
 y = sp.Symbol('y')
@@ -34,8 +35,17 @@ PY2 = sp.Symbol('PY2')
 PY3 = sp.Symbol('PY3')
 
 
+#Nodal coords
+x1 = sp.Symbol('x1')
+y1 = sp.Symbol('y1')
+x2 = sp.Symbol('x2')
+y2 = sp.Symbol('y2')
+x3 = sp.Symbol('x3')
+y3 = sp.Symbol('y3')
+
 
 def assembleEquationIntoMatrix( equation, matrix, UVector, row):
+    print("Assembling row ",row)
     row -= 1
     for col in range(9):
         filterVector = sp.zeros(9,1)
@@ -45,13 +55,13 @@ def assembleEquationIntoMatrix( equation, matrix, UVector, row):
 
     
 
-#Node coordinates
-x1 = 0.0
-y1 = 0.0
-x2 = 1.0
-y2 = 0.0
-x3 = 0.0
-y3 = 1.0
+#Node coordinates set to example values
+#x1 = 0.0
+#y1 = 0.0
+#x2 = 1.0
+#y2 = 0.0
+#x3 = 0.0
+#y3 = 1.0
 
 # Section 1 ---------------------------------------------------
 PHI = a1 + a2*x +a3*y + a4*x**2 + 0.5*(a5+a6)*x*y + a7*y**2
@@ -72,6 +82,9 @@ py = sp.diff(PY,y)
 gx = sp.diff(GX,x)
 gy = sp.diff(GY,y)
 
+print("\nSymbolic gx:",gx)
+print("\nSymbolic gy:",gy)
+
 # Section 4 ---------------------------------------------------
 # Skip internal energy derivation, just write bubble mode result
 Bub = a8 + a9
@@ -80,6 +93,8 @@ Bub = a8 + a9
 W = GAM - PHI
 WX = GX - PX
 WY = GY - PY
+
+print("Prelims complete")
 
 #Identification of the Ansatz coefficients with the node values for shifts Wi and rotations
 # (converted to zero value eqns)
@@ -95,10 +110,10 @@ eq7 = PY1 - (py.subs(x,x1)).subs(y,y1)
 eq8 = PY2 - (py.subs(x,x2)).subs(y,y2)
 eq9 = PY3 - (py.subs(x,x3)).subs(y,y3)
 
-
+print("Equations setup")
 # Setup system to solve [A][a] = [W] -------------------------
 A = sp.zeros(9) #system matrix
-UVector = sp.zeros(9,1) #vector of equations
+UVector = sp.zeros(9,1) #vector of displacements
 UVector[0] = W1
 UVector[1] = W2
 UVector[2] = W3
@@ -110,29 +125,44 @@ UVector[7] = PY2
 UVector[8] = PY3
 
 #assemble coefficients into matrix
-assembleEquationIntoMatrix(eq1,A,UVector,1)
-assembleEquationIntoMatrix(eq2,A,UVector,2)
-assembleEquationIntoMatrix(eq3,A,UVector,3)
-assembleEquationIntoMatrix(eq4,A,UVector,4)
-assembleEquationIntoMatrix(eq5,A,UVector,5)
-assembleEquationIntoMatrix(eq6,A,UVector,6)
-assembleEquationIntoMatrix(eq7,A,UVector,7)
-assembleEquationIntoMatrix(eq8,A,UVector,8)
-assembleEquationIntoMatrix(eq9,A,UVector,9)
-#sp.pprint(A)
+#assembleEquationIntoMatrix(eq1,A,UVector,1)
+#assembleEquationIntoMatrix(eq2,A,UVector,2)
+#assembleEquationIntoMatrix(eq3,A,UVector,3)
+#assembleEquationIntoMatrix(eq4,A,UVector,4)
+#assembleEquationIntoMatrix(eq5,A,UVector,5)
+#assembleEquationIntoMatrix(eq6,A,UVector,6)
+#assembleEquationIntoMatrix(eq7,A,UVector,7)
+#assembleEquationIntoMatrix(eq8,A,UVector,8)
+#assembleEquationIntoMatrix(eq9,A,UVector,9)
+#print("Printing inverse Ansatz coefficients")
+#sp.pprint(A,wrap_line=False)
 
 #solve
-ansatzCoefficients = (A**-1)*UVector
-#.pprint(ansatzCoefficients)
 
-#assign ansatz coefficients into a1 -> a9 and sub into px, py, gx, gy
-pxSub = px.subs([(a1,ansatzCoefficients[0]),(a2,ansatzCoefficients[1]),(a3,ansatzCoefficients[2]),(a4,ansatzCoefficients[3]),(a5,ansatzCoefficients[4]),(a6,ansatzCoefficients[5]),(a7,ansatzCoefficients[6]),(a8,ansatzCoefficients[7]),(a9,ansatzCoefficients[8])])
+#results = list(sp.linsolve([eq1,eq2,eq3,eq4,eq5,eq6,eq7,eq8,eq9],[a1,a2,a3,a4,a5,a6,a7,a8,a9]))
+#ansatzCoefficients = results[0]
+#print("Ansatz coefficients solved")
 
-pySub = py.subs([(a1,ansatzCoefficients[0]),(a2,ansatzCoefficients[1]),(a3,ansatzCoefficients[2]),(a4,ansatzCoefficients[3]),(a5,ansatzCoefficients[4]),(a6,ansatzCoefficients[5]),(a7,ansatzCoefficients[6]),(a8,ansatzCoefficients[7]),(a9,ansatzCoefficients[8])])
+ansatzCoefficients = sp.zeros(9,1)
+ansatzCoefficients[0] = -(2*W1*x2**2*y3**2 + 2*W1*x3**2*y2**2 + 2*W2*x1**2*y3**2 + 2*W2*x3**2*y1**2 + 2*W3*x1**2*y2**2 + 2*W3*x2**2*y1**2 - 2*W1*x1*x2*y3**2 - 2*W1*x1*x3*y2**2 - 2*W2*x1*x2*y3**2 - 2*W2*x2*x3*y1**2 - 2*W3*x1*x3*y2**2 - 2*W3*x2*x3*y1**2 - 2*W1*x2**2*y1*y3 - 2*W1*x3**2*y1*y2 - 2*W2*x1**2*y2*y3 - 2*W2*x3**2*y1*y2 - 2*W3*x1**2*y2*y3 - 2*W3*x2**2*y1*y3 + PX1*x1*x2**2*y3**2 + PX1*x1*x3**2*y2**2 - PX1*x1**2*x2*y3**2 - PX1*x1**2*x3*y2**2 - PX2*x1*x2**2*y3**2 + PX2*x2*x3**2*y1**2 + PX2*x1**2*x2*y3**2 - PX2*x2**2*x3*y1**2 - PX3*x1*x3**2*y2**2 - PX3*x2*x3**2*y1**2 + PX3*x1**2*x3*y2**2 + PX3*x2**2*x3*y1**2 + PY1*x2**2*y1*y3**2 - PY1*x2**2*y1**2*y3 + PY1*x3**2*y1*y2**2 - PY1*x3**2*y1**2*y2 + PY2*x1**2*y2*y3**2 - PY2*x1**2*y2**2*y3 - PY2*x3**2*y1*y2**2 + PY2*x3**2*y1**2*y2 - PY3*x1**2*y2*y3**2 + PY3*x1**2*y2**2*y3 - PY3*x2**2*y1*y3**2 + PY3*x2**2*y1**2*y3 - 2*W2*x1*x3**2*y1**2 - 2*W3*x1*x2**2*y1**2 - 2*W1*x2*x3**2*y2**2 - 2*W3*x1**2*x2*y2**2 - 2*W1*x2**2*x3*y3**2 - 2*W2*x1**2*x3*y3**2 - 2*W2*x1**2*y1*y3**2 - 2*W3*x1**2*y1*y2**2 - 2*W1*x2**2*y2*y3**2 - 2*W3*x2**2*y1**2*y2 - 2*W1*x3**2*y2**2*y3 - 2*W2*x3**2*y1**2*y3 - PX1*x1*x2*x3**2*y2**2 + PX1*x1**2*x2*x3*y2**2 - PX2*x1*x2*x3**2*y1**2 + PX2*x1*x2**2*x3*y1**2 - PX1*x1*x2**2*x3*y3**2 + PX1*x1**2*x2*x3*y3**2 + PX3*x1*x2*x3**2*y1**2 - PX3*x1*x2**2*x3*y1**2 + PX2*x1*x2**2*x3*y3**2 - PX2*x1**2*x2*x3*y3**2 + PX3*x1*x2*x3**2*y2**2 - PX3*x1**2*x2*x3*y2**2 + PX1*x1*x2**2*y1*y3**2 + PX1*x1*x3**2*y1*y2**2 - 2*PX1*x1*x2**2*y2*y3**2 - PX1*x2*x3**2*y1*y2**2 + PX1*x1**2*x2*y2*y3**2 - PX1*x1**2*x2*y2**2*y3 + PX2*x1*x2**2*y1*y3**2 - PX2*x1*x2**2*y1**2*y3 - PX2*x1*x3**2*y1**2*y2 - 2*PX2*x1**2*x2*y1*y3**2 - 2*PX1*x1*x3**2*y2**2*y3 - PX1*x1**2*x3*y2*y3**2 + PX1*x1**2*x3*y2**2*y3 - PX1*x2**2*x3*y1*y3**2 + PX2*x2*x3**2*y1**2*y2 + PX2*x1**2*x2*y2*y3**2 - PX3*x1*x2**2*y1**2*y3 + PX3*x1*x3**2*y1*y2**2 - PX3*x1*x3**2*y1**2*y2 - 2*PX3*x1**2*x3*y1*y2**2 - 2*PX2*x2*x3**2*y1**2*y3 - PX2*x1**2*x3*y2*y3**2 - PX2*x2**2*x3*y1*y3**2 + PX2*x2**2*x3*y1**2*y3 - PX3*x2*x3**2*y1*y2**2 + PX3*x2*x3**2*y1**2*y2 - PX3*x1**2*x2*y2**2*y3 - 2*PX3*x2**2*x3*y1**2*y2 + PX3*x1**2*x3*y2**2*y3 + PX3*x2**2*x3*y1**2*y3 + PY1*x1*x2**2*y1*y3**2 + PY1*x1*x3**2*y1*y2**2 - PY1*x1*x2**2*y2*y3**2 - 2*PY1*x2*x3**2*y1*y2**2 + PY1*x2*x3**2*y1**2*y2 - PY1*x2**2*x3*y1**2*y2 + PY2*x1*x3**2*y1*y2**2 - 2*PY2*x1*x3**2*y1**2*y2 - PY2*x1**2*x2*y1*y3**2 - PY2*x1**2*x3*y1*y2**2 - PY1*x1*x3**2*y2**2*y3 - PY1*x2*x3**2*y1**2*y3 - 2*PY1*x2**2*x3*y1*y3**2 + PY1*x2**2*x3*y1**2*y3 + PY2*x2*x3**2*y1**2*y2 + PY2*x1**2*x2*y2*y3**2 + PY3*x1*x2**2*y1*y3**2 - 2*PY3*x1*x2**2*y1**2*y3 - PY3*x1**2*x2*y1*y3**2 - PY3*x1**2*x3*y1*y2**2 - PY2*x1*x3**2*y2**2*y3 - PY2*x2*x3**2*y1**2*y3 - 2*PY2*x1**2*x3*y2*y3**2 + PY2*x1**2*x3*y2**2*y3 - PY3*x1*x2**2*y2*y3**2 + PY3*x1**2*x2*y2*y3**2 - 2*PY3*x1**2*x2*y2**2*y3 - PY3*x2**2*x3*y1**2*y2 + PY3*x1**2*x3*y2**2*y3 + PY3*x2**2*x3*y1**2*y3 - PY1*x2**2*y1*y2*y3**2 + PY1*x2**2*y1**2*y2*y3 - PY2*x1**2*y1*y2*y3**2 + PY2*x1**2*y1*y2**2*y3 - PY1*x3**2*y1*y2**2*y3 + PY1*x3**2*y1**2*y2*y3 + PY3*x1**2*y1*y2*y3**2 - PY3*x1**2*y1*y2**2*y3 + PY2*x3**2*y1*y2**2*y3 - PY2*x3**2*y1**2*y2*y3 + PY3*x2**2*y1*y2*y3**2 - PY3*x2**2*y1**2*y2*y3 + 2*W1*x1*x2*y2*y3 + 2*W1*x2*x3*y1*y2 + 2*W2*x1*x2*y1*y3 + 2*W2*x1*x3*y1*y2 - 4*W3*x1*x2*y1*y2 + 2*W1*x1*x3*y2*y3 + 2*W1*x2*x3*y1*y3 - 4*W2*x1*x3*y1*y3 + 2*W3*x1*x2*y1*y3 + 2*W3*x1*x3*y1*y2 - 4*W1*x2*x3*y2*y3 + 2*W2*x1*x3*y2*y3 + 2*W2*x2*x3*y1*y3 + 2*W3*x1*x2*y2*y3 + 2*W3*x2*x3*y1*y2 - PX1*x1*x2**2*y1*y3 - PX1*x1*x3**2*y1*y2 + PX1*x1**2*x2*y2*y3 + PX2*x1*x2**2*y1*y3 + PX1*x1**2*x3*y2*y3 - PX2*x2*x3**2*y1*y2 - PX2*x1**2*x2*y2*y3 + PX3*x1*x3**2*y1*y2 + PX2*x2**2*x3*y1*y3 + PX3*x2*x3**2*y1*y2 - PX3*x1**2*x3*y2*y3 - PX3*x2**2*x3*y1*y3 - PY1*x1*x2*y1*y3**2 - PY1*x1*x3*y1*y2**2 + PY1*x2*x3*y1**2*y2 + PY2*x1*x3*y1*y2**2 + PY1*x2*x3*y1**2*y3 - PY2*x1*x2*y2*y3**2 - PY2*x2*x3*y1**2*y2 + PY3*x1*x2*y1*y3**2 + PY2*x1*x3*y2**2*y3 + PY3*x1*x2*y2*y3**2 - PY3*x1*x3*y2**2*y3 - PY3*x2*x3*y1**2*y3 + 2*W1*x1*x2*x3*y2**2 + 2*W2*x1*x2*x3*y1**2 + 2*W1*x1*x2*x3*y3**2 + 2*W3*x1*x2*x3*y1**2 + 2*W2*x1*x2*x3*y3**2 + 2*W3*x1*x2*x3*y2**2 + 2*W1*x1*x2*y2*y3**2 - 2*W1*x1*x2*y2**2*y3 + 2*W1*x2*x3**2*y1*y2 - 2*W1*x2**2*x3*y1*y2 + 2*W2*x1*x2*y1*y3**2 - 2*W2*x1*x2*y1**2*y3 + 2*W2*x1*x3**2*y1*y2 - 2*W2*x1**2*x3*y1*y2 + 2*W3*x1*x2*y1*y2**2 + 2*W3*x1*x2*y1**2*y2 + 2*W3*x1*x2**2*y1*y2 + 2*W3*x1**2*x2*y1*y2 - 2*W1*x1*x3*y2*y3**2 + 2*W1*x1*x3*y2**2*y3 - 2*W1*x2*x3**2*y1*y3 + 2*W1*x2**2*x3*y1*y3 + 2*W2*x1*x3*y1*y3**2 + 2*W2*x1*x3*y1**2*y3 + 2*W2*x1*x3**2*y1*y3 + 2*W2*x1**2*x3*y1*y3 + 2*W3*x1*x3*y1*y2**2 - 2*W3*x1*x3*y1**2*y2 + 2*W3*x1*x2**2*y1*y3 - 2*W3*x1**2*x2*y1*y3 + 2*W1*x2*x3*y2*y3**2 + 2*W1*x2*x3*y2**2*y3 + 2*W1*x2*x3**2*y2*y3 + 2*W1*x2**2*x3*y2*y3 - 2*W2*x1*x3**2*y2*y3 - 2*W2*x2*x3*y1*y3**2 + 2*W2*x2*x3*y1**2*y3 + 2*W2*x1**2*x3*y2*y3 - 2*W3*x1*x2**2*y2*y3 - 2*W3*x2*x3*y1*y2**2 + 2*W3*x2*x3*y1**2*y2 + 2*W3*x1**2*x2*y2*y3 + 2*W1*x2**2*y1*y2*y3 + 2*W2*x1**2*y1*y2*y3 + 2*W1*x3**2*y1*y2*y3 + 2*W3*x1**2*y1*y2*y3 + 2*W2*x3**2*y1*y2*y3 + 2*W3*x2**2*y1*y2*y3 + PX1*x1*x2*x3*y1*y2 + PX1*x1*x2*x3*y1*y3 + PX2*x1*x2*x3*y1*y2 - 2*PX1*x1*x2*x3*y2*y3 - 2*PX2*x1*x2*x3*y1*y3 - 2*PX3*x1*x2*x3*y1*y2 + PX2*x1*x2*x3*y2*y3 + PX3*x1*x2*x3*y1*y3 + PX3*x1*x2*x3*y2*y3 + PY1*x1*x2*y1*y2*y3 + PY1*x1*x3*y1*y2*y3 + PY2*x1*x2*y1*y2*y3 - 2*PY1*x2*x3*y1*y2*y3 - 2*PY2*x1*x3*y1*y2*y3 - 2*PY3*x1*x2*y1*y2*y3 + PY2*x2*x3*y1*y2*y3 + PY3*x1*x3*y1*y2*y3 + PY3*x2*x3*y1*y2*y3 - 4*W1*x1*x2*x3*y2*y3 - 4*W2*x1*x2*x3*y1*y3 - 4*W3*x1*x2*x3*y1*y2 - 4*W1*x2*x3*y1*y2*y3 - 4*W2*x1*x3*y1*y2*y3 - 4*W3*x1*x2*y1*y2*y3 + PX1*x1*x2*x3**2*y1*y2 - PX1*x1*x2**2*x3*y1*y2 - PX1*x1*x2*x3**2*y1*y3 + PX1*x1*x2**2*x3*y1*y3 + PX2*x1*x2*x3**2*y1*y2 - PX2*x1**2*x2*x3*y1*y2 + 2*PX1*x1*x2*x3*y2*y3**2 + 2*PX1*x1*x2*x3*y2**2*y3 + PX1*x1*x2*x3**2*y2*y3 + PX1*x1*x2**2*x3*y2*y3 - 2*PX1*x1**2*x2*x3*y2*y3 + 2*PX2*x1*x2*x3*y1*y3**2 + 2*PX2*x1*x2*x3*y1**2*y3 + PX2*x1*x2*x3**2*y1*y3 - 2*PX2*x1*x2**2*x3*y1*y3 + PX2*x1**2*x2*x3*y1*y3 + 2*PX3*x1*x2*x3*y1*y2**2 + 2*PX3*x1*x2*x3*y1**2*y2 - 2*PX3*x1*x2*x3**2*y1*y2 + PX3*x1*x2**2*x3*y1*y2 + PX3*x1**2*x2*x3*y1*y2 - PX2*x1*x2*x3**2*y2*y3 + PX2*x1**2*x2*x3*y2*y3 + PX3*x1*x2**2*x3*y1*y3 - PX3*x1**2*x2*x3*y1*y3 - PX3*x1*x2**2*x3*y2*y3 + PX3*x1**2*x2*x3*y2*y3 + PY1*x1*x2*x3*y1*y2**2 + PY1*x1*x2*x3*y1*y3**2 + PY2*x1*x2*x3*y1**2*y2 + PY1*x1*x2*x3*y2*y3**2 + PY1*x1*x2*x3*y2**2*y3 + PY2*x1*x2*x3*y1*y3**2 + PY2*x1*x2*x3*y1**2*y3 + PY3*x1*x2*x3*y1*y2**2 + PY3*x1*x2*x3*y1**2*y2 + PY2*x1*x2*x3*y2*y3**2 + PY3*x1*x2*x3*y1**2*y3 + PY3*x1*x2*x3*y2**2*y3 + PX1*x1*x2**2*y1*y2*y3 + PX1*x1*x3**2*y1*y2*y3 + PX2*x1**2*x2*y1*y2*y3 + PX1*x2*x3**2*y1*y2*y3 + PX1*x2**2*x3*y1*y2*y3 + PX2*x1*x3**2*y1*y2*y3 + PX2*x1**2*x3*y1*y2*y3 + PX3*x1*x2**2*y1*y2*y3 + PX3*x1**2*x2*y1*y2*y3 + PX2*x2*x3**2*y1*y2*y3 + PX3*x1**2*x3*y1*y2*y3 + PX3*x2**2*x3*y1*y2*y3 + PY1*x1*x2*y1*y2*y3**2 - PY1*x1*x2*y1*y2**2*y3 - PY1*x1*x3*y1*y2*y3**2 + PY1*x1*x3*y1*y2**2*y3 + PY2*x1*x2*y1*y2*y3**2 - PY2*x1*x2*y1**2*y2*y3 + PY1*x2*x3*y1*y2*y3**2 + PY1*x2*x3*y1*y2**2*y3 - 2*PY1*x2*x3*y1**2*y2*y3 + 2*PY1*x2*x3**2*y1*y2*y3 + 2*PY1*x2**2*x3*y1*y2*y3 + PY2*x1*x3*y1*y2*y3**2 - 2*PY2*x1*x3*y1*y2**2*y3 + PY2*x1*x3*y1**2*y2*y3 + 2*PY2*x1*x3**2*y1*y2*y3 + 2*PY2*x1**2*x3*y1*y2*y3 - 2*PY3*x1*x2*y1*y2*y3**2 + PY3*x1*x2*y1*y2**2*y3 + PY3*x1*x2*y1**2*y2*y3 + 2*PY3*x1*x2**2*y1*y2*y3 + 2*PY3*x1**2*x2*y1*y2*y3 - PY2*x2*x3*y1*y2*y3**2 + PY2*x2*x3*y1**2*y2*y3 + PY3*x1*x3*y1*y2**2*y3 - PY3*x1*x3*y1**2*y2*y3 - PY3*x2*x3*y1*y2**2*y3 + PY3*x2*x3*y1**2*y2*y3 - 4*PX1*x1*x2*x3*y1*y2*y3 - 4*PX2*x1*x2*x3*y1*y2*y3 - 4*PX3*x1*x2*x3*y1*y2*y3 - 4*PY1*x1*x2*x3*y1*y2*y3 - 4*PY2*x1*x2*x3*y1*y2*y3 - 4*PY3*x1*x2*x3*y1*y2*y3)/(2*(x1*y2 - x2*y1 - x1*y3 + x3*y1 + x2*y3 - x3*y2)*(x1*y2 - x2*y1 - x1*y3 + x3*y1 + x2*y3 - x3*y2 + x1*x2*y1 - x1*x2*y2 - x1*x3*y1 + x1*x3*y3 + x2*x3*y2 - x2*x3*y3 - x1*y1*y2 + x1*y1*y3 + x2*y1*y2 - x2*y2*y3 - x3*y1*y3 + x3*y2*y3))
 
-gxSub = gx.subs([(a1,ansatzCoefficients[0]),(a2,ansatzCoefficients[1]),(a3,ansatzCoefficients[2]),(a4,ansatzCoefficients[3]),(a5,ansatzCoefficients[4]),(a6,ansatzCoefficients[5]),(a7,ansatzCoefficients[6]),(a8,ansatzCoefficients[7]),(a9,ansatzCoefficients[8])])
+ansatzCoefficients[1] = (PX1*x2*y3 - PX1*x3*y2 - PX2*x1*y3 + PX2*x3*y1 + PX3*x1*y2 - PX3*x2*y1)/(x1*y2 - x2*y1 - x1*y3 + x3*y1 + x2*y3 - x3*y2)
 
-gySub = gy.subs([(a1,ansatzCoefficients[0]),(a2,ansatzCoefficients[1]),(a3,ansatzCoefficients[2]),(a4,ansatzCoefficients[3]),(a5,ansatzCoefficients[4]),(a6,ansatzCoefficients[5]),(a7,ansatzCoefficients[6]),(a8,ansatzCoefficients[7]),(a9,ansatzCoefficients[8])])
+ansatzCoefficients[2] = (PY1*x2*y3 - PY1*x3*y2 - PY2*x1*y3 + PY2*x3*y1 + PY3*x1*y2 - PY3*x2*y1)/(x1*y2 - x2*y1 - x1*y3 + x3*y1 + x2*y3 - x3*y2)
+
+ansatzCoefficients[3] = (PX1*y2 - PX2*y1 - PX1*y3 + PX3*y1 + PX2*y3 - PX3*y2)/(2*(x1*y2 - x2*y1 - x1*y3 + x3*y1 + x2*y3 - x3*y2))
+
+ansatzCoefficients[4] = -(PX1*x2 - PX2*x1 - PX1*x3 + PX3*x1 + PX2*x3 - PX3*x2)/(x1*y2 - x2*y1 - x1*y3 + x3*y1 + x2*y3 - x3*y2)
+
+ansatzCoefficients[5] = (PY1*y2 - PY2*y1 - PY1*y3 + PY3*y1 + PY2*y3 - PY3*y2)/(x1*y2 - x2*y1 - x1*y3 + x3*y1 + x2*y3 - x3*y2)
+
+ansatzCoefficients[6] = -(PY1*x2 - PY2*x1 - PY1*x3 + PY3*x1 + PY2*x3 - PY3*x2)/(2*(x1*y2 - x2*y1 - x1*y3 + x3*y1 + x2*y3 - x3*y2))
+
+ansatzCoefficients[7] = (2*W1*x1*y2**2 + 2*W1*x1*y3**2 + 2*W2*x2*y1**2 - 2*W1*x2*y3**2 - 2*W1*x3*y2**2 - 2*W2*x1*y3**2 - 2*W2*x3*y1**2 - 2*W3*x1*y2**2 - 2*W3*x2*y1**2 + 2*W2*x2*y3**2 + 2*W3*x3*y1**2 + 2*W3*x3*y2**2 + PX1*x1**2*y2**2 + PX1*x1**2*y3**2 + PX2*x2**2*y1**2 + PX1*x2**2*y3**2 + PX1*x3**2*y2**2 + PX2*x1**2*y3**2 + PX2*x3**2*y1**2 + PX3*x1**2*y2**2 + PX3*x2**2*y1**2 + PX2*x2**2*y3**2 + PX3*x3**2*y1**2 + PX3*x3**2*y2**2 - 2*W1*x2*y1*y2 - 2*W2*x1*y1*y2 - 4*W1*x1*y2*y3 + 2*W1*x2*y1*y3 + 2*W1*x3*y1*y2 + 2*W2*x1*y1*y3 + 2*W3*x1*y1*y2 + 2*W1*x2*y2*y3 - 2*W1*x3*y1*y3 + 2*W2*x1*y2*y3 - 4*W2*x2*y1*y3 + 2*W2*x3*y1*y2 - 2*W3*x1*y1*y3 + 2*W3*x2*y1*y2 + 2*W1*x3*y2*y3 + 2*W2*x3*y1*y3 + 2*W3*x1*y2*y3 + 2*W3*x2*y1*y3 - 4*W3*x3*y1*y2 - 2*W2*x3*y2*y3 - 2*W3*x2*y2*y3 - 2*PX1*x1*x2*y3**2 - 2*PX1*x1*x3*y2**2 - 2*PX2*x1*x2*y3**2 - 2*PX2*x2*x3*y1**2 - 2*PX3*x1*x3*y2**2 - 2*PX3*x2*x3*y1**2 - 2*PX1*x1**2*y2*y3 - PX1*x2**2*y1*y3 - PX1*x3**2*y1*y2 - PX2*x1**2*y2*y3 - 2*PX2*x2**2*y1*y3 - PX2*x3**2*y1*y2 - PX3*x1**2*y2*y3 - PX3*x2**2*y1*y3 - 2*PX3*x3**2*y1*y2 + PY1*x1*y1*y2**2 + PY1*x1*y1*y3**2 - PY1*x2*y1**2*y2 - PY2*x1*y1*y2**2 - PY1*x2*y1*y3**2 + PY1*x2*y1**2*y3 - PY1*x3*y1*y2**2 + PY1*x3*y1**2*y2 + PY2*x2*y1**2*y2 - PY1*x3*y1**2*y3 - PY2*x1*y2*y3**2 + PY2*x1*y2**2*y3 + PY2*x3*y1*y2**2 - PY2*x3*y1**2*y2 - PY3*x1*y1*y3**2 + PY2*x2*y2*y3**2 + PY3*x1*y2*y3**2 - PY3*x1*y2**2*y3 + PY3*x2*y1*y3**2 - PY3*x2*y1**2*y3 - PY2*x3*y2**2*y3 - PY3*x2*y2*y3**2 + PY3*x3*y1**2*y3 + PY3*x3*y2**2*y3 - 2*W1*x1*x2*y2**2 - 2*W2*x1*x2*y1**2 + 2*W2*x1*x3*y1**2 + 2*W3*x1*x2*y1**2 - 2*W1*x1*x3*y3**2 + 2*W1*x2*x3*y2**2 + 2*W3*x1*x2*y2**2 - 2*W3*x1*x3*y1**2 + 2*W1*x2*x3*y3**2 + 2*W2*x1*x3*y3**2 - 2*W2*x2*x3*y3**2 - 2*W3*x2*x3*y2**2 + 2*W1*x2**2*y1*y2 + 2*W2*x1**2*y1*y2 - 2*W2*x1**2*y1*y3 - 2*W3*x1**2*y1*y2 - 2*W1*x2**2*y2*y3 + 2*W1*x3**2*y1*y3 + 2*W3*x1**2*y1*y3 - 2*W3*x2**2*y1*y2 - 2*W1*x3**2*y2*y3 - 2*W2*x3**2*y1*y3 + 2*W2*x3**2*y2*y3 + 2*W3*x2**2*y2*y3 - PX1*x1**2*x2*y2**2 - PX2*x1*x2**2*y1**2 - PX2*x1*x3**2*y1**2 - PX3*x1*x2**2*y1**2 - PX1*x2*x3**2*y2**2 - PX1*x1**2*x3*y3**2 - PX3*x1*x3**2*y1**2 - PX3*x1**2*x2*y2**2 - PX1*x2**2*x3*y3**2 - PX2*x1**2*x3*y3**2 - PX2*x2**2*x3*y3**2 - PX3*x2*x3**2*y2**2 + PY1*x2**2*y1**2*y2 + PY2*x1**2*y1*y2**2 + PY2*x1**2*y1*y3**2 + PY3*x1**2*y1*y2**2 + PY1*x2**2*y2*y3**2 + PY1*x3**2*y1**2*y3 + PY3*x1**2*y1*y3**2 + PY3*x2**2*y1**2*y2 + PY1*x3**2*y2**2*y3 + PY2*x3**2*y1**2*y3 + PY2*x3**2*y2**2*y3 + PY3*x2**2*y2*y3**2 - PX1*x1*x2*y1*y2 + PX1*x1*x2*y1*y3 + PX1*x1*x3*y1*y2 - PX2*x1*x2*y1*y2 + 2*PX1*x1*x2*y2*y3 - PX1*x1*x3*y1*y3 + PX1*x2*x3*y1*y2 + 2*PX2*x1*x2*y1*y3 + PX2*x1*x3*y1*y2 - 2*PX3*x1*x2*y1*y2 + 2*PX1*x1*x3*y2*y3 + PX1*x2*x3*y1*y3 + PX2*x1*x2*y2*y3 - 2*PX2*x1*x3*y1*y3 + PX2*x2*x3*y1*y2 + PX3*x1*x2*y1*y3 + 2*PX3*x1*x3*y1*y2 - 2*PX1*x2*x3*y2*y3 + PX2*x1*x3*y2*y3 + 2*PX2*x2*x3*y1*y3 + PX3*x1*x2*y2*y3 - PX3*x1*x3*y1*y3 + 2*PX3*x2*x3*y1*y2 - PX2*x2*x3*y2*y3 + PX3*x1*x3*y2*y3 + PX3*x2*x3*y1*y3 - PX3*x2*x3*y2*y3 - 2*PY1*x1*y1*y2*y3 + PY1*x2*y1*y2*y3 + PY2*x1*y1*y2*y3 + PY1*x3*y1*y2*y3 - 2*PY2*x2*y1*y2*y3 + PY3*x1*y1*y2*y3 + PY2*x3*y1*y2*y3 + PY3*x2*y1*y2*y3 - 2*PY3*x3*y1*y2*y3 + 2*W1*x1*x2*y2*y3 - 2*W1*x2*x3*y1*y2 + 2*W2*x1*x2*y1*y3 - 2*W2*x1*x3*y1*y2 + 2*W1*x1*x3*y2*y3 - 2*W1*x2*x3*y1*y3 - 2*W3*x1*x2*y1*y3 + 2*W3*x1*x3*y1*y2 - 2*W2*x1*x3*y2*y3 + 2*W2*x2*x3*y1*y3 - 2*W3*x1*x2*y2*y3 + 2*W3*x2*x3*y1*y2 + 2*PX1*x1*x2*x3*y2**2 + 2*PX2*x1*x2*x3*y1**2 + 2*PX1*x1*x2*x3*y3**2 + 2*PX3*x1*x2*x3*y1**2 + 2*PX2*x1*x2*x3*y3**2 + 2*PX3*x1*x2*x3*y2**2 + PX1*x1*x2**2*y1*y2 + PX1*x1*x2**2*y1*y3 + PX1*x1*x3**2*y1*y2 + PX2*x1**2*x2*y1*y2 - 2*PX1*x1*x2**2*y2*y3 + PX1*x1*x3**2*y1*y3 + PX1*x1**2*x2*y2*y3 + PX2*x1*x2**2*y1*y3 - 2*PX2*x1**2*x2*y1*y3 + PX3*x1*x2**2*y1*y2 + PX3*x1**2*x2*y1*y2 - 2*PX1*x1*x3**2*y2*y3 + PX1*x1**2*x3*y2*y3 + PX2*x1*x3**2*y1*y3 + PX2*x2*x3**2*y1*y2 + PX2*x1**2*x2*y2*y3 + PX2*x1**2*x3*y1*y3 + PX3*x1*x3**2*y1*y2 - 2*PX3*x1**2*x3*y1*y2 + PX1*x2*x3**2*y2*y3 + PX1*x2**2*x3*y2*y3 - 2*PX2*x2*x3**2*y1*y3 + PX2*x2**2*x3*y1*y3 + PX3*x2*x3**2*y1*y2 + PX3*x1**2*x3*y1*y3 - 2*PX3*x2**2*x3*y1*y2 + PX2*x2*x3**2*y2*y3 + PX3*x1**2*x3*y2*y3 + PX3*x2**2*x3*y1*y3 + PX3*x2**2*x3*y2*y3 - PY1*x1*x2*y1*y2**2 - PY1*x1*x2*y1*y3**2 - PY1*x1*x3*y1*y2**2 - PY2*x1*x2*y1**2*y2 - PY1*x1*x3*y1*y3**2 + 2*PY1*x2*x3*y1*y2**2 - PY1*x2*x3*y1**2*y2 - PY2*x1*x3*y1*y2**2 + 2*PY2*x1*x3*y1**2*y2 - PY3*x1*x2*y1*y2**2 - PY3*x1*x2*y1**2*y2 + 2*PY1*x2*x3*y1*y3**2 - PY1*x2*x3*y1**2*y3 - PY2*x1*x2*y2*y3**2 - PY2*x1*x3*y1*y3**2 - PY2*x1*x3*y1**2*y3 - PY2*x2*x3*y1**2*y2 - PY3*x1*x2*y1*y3**2 + 2*PY3*x1*x2*y1**2*y3 - PY1*x2*x3*y2*y3**2 - PY1*x2*x3*y2**2*y3 + 2*PY2*x1*x3*y2*y3**2 - PY2*x1*x3*y2**2*y3 - PY3*x1*x2*y2*y3**2 + 2*PY3*x1*x2*y2**2*y3 - PY3*x1*x3*y1**2*y3 - PY2*x2*x3*y2*y3**2 - PY3*x1*x3*y2**2*y3 - PY3*x2*x3*y1**2*y3 - PY3*x2*x3*y2**2*y3 - 2*PY1*x2**2*y1*y2*y3 - 2*PY2*x1**2*y1*y2*y3 - 2*PY1*x3**2*y1*y2*y3 - 2*PY3*x1**2*y1*y2*y3 - 2*PY2*x3**2*y1*y2*y3 - 2*PY3*x2**2*y1*y2*y3 - 2*PX1*x1*x2*x3*y1*y2 - 2*PX1*x1*x2*x3*y1*y3 - 2*PX2*x1*x2*x3*y1*y2 - 2*PX2*x1*x2*x3*y2*y3 - 2*PX3*x1*x2*x3*y1*y3 - 2*PX3*x1*x2*x3*y2*y3 + 2*PY1*x1*x2*y1*y2*y3 + 2*PY1*x1*x3*y1*y2*y3 + 2*PY2*x1*x2*y1*y2*y3 + 2*PY2*x2*x3*y1*y2*y3 + 2*PY3*x1*x3*y1*y2*y3 + 2*PY3*x2*x3*y1*y2*y3)/(2*(x1**2*x2*y1*y2 - x1**2*x2*y1*y3 - x1**2*x2*y2**2 + x1**2*x2*y2*y3 - x1**2*x3*y1*y2 + x1**2*x3*y1*y3 + x1**2*x3*y2*y3 - x1**2*x3*y3**2 - x1**2*y1*y2**2 + 2*x1**2*y1*y2*y3 - x1**2*y1*y3**2 + x1**2*y2**2 - 2*x1**2*y2*y3 + x1**2*y3**2 - x1*x2**2*y1**2 + x1*x2**2*y1*y2 + x1*x2**2*y1*y3 - x1*x2**2*y2*y3 + 2*x1*x2*x3*y1**2 - 2*x1*x2*x3*y1*y2 - 2*x1*x2*x3*y1*y3 + 2*x1*x2*x3*y2**2 - 2*x1*x2*x3*y2*y3 + 2*x1*x2*x3*y3**2 + x1*x2*y1**2*y2 - x1*x2*y1**2*y3 + x1*x2*y1*y2**2 - 2*x1*x2*y1*y2*y3 - 2*x1*x2*y1*y2 + x1*x2*y1*y3**2 + 2*x1*x2*y1*y3 - x1*x2*y2**2*y3 + x1*x2*y2*y3**2 + 2*x1*x2*y2*y3 - 2*x1*x2*y3**2 - x1*x3**2*y1**2 + x1*x3**2*y1*y2 + x1*x3**2*y1*y3 - x1*x3**2*y2*y3 - x1*x3*y1**2*y2 + x1*x3*y1**2*y3 + x1*x3*y1*y2**2 - 2*x1*x3*y1*y2*y3 + 2*x1*x3*y1*y2 + x1*x3*y1*y3**2 - 2*x1*x3*y1*y3 + x1*x3*y2**2*y3 - 2*x1*x3*y2**2 - x1*x3*y2*y3**2 + 2*x1*x3*y2*y3 - x2**2*x3*y1*y2 + x2**2*x3*y1*y3 + x2**2*x3*y2*y3 - x2**2*x3*y3**2 - x2**2*y1**2*y2 + x2**2*y1**2 + 2*x2**2*y1*y2*y3 - 2*x2**2*y1*y3 - x2**2*y2*y3**2 + x2**2*y3**2 + x2*x3**2*y1*y2 - x2*x3**2*y1*y3 - x2*x3**2*y2**2 + x2*x3**2*y2*y3 + x2*x3*y1**2*y2 + x2*x3*y1**2*y3 - 2*x2*x3*y1**2 - x2*x3*y1*y2**2 - 2*x2*x3*y1*y2*y3 + 2*x2*x3*y1*y2 - x2*x3*y1*y3**2 + 2*x2*x3*y1*y3 + x2*x3*y2**2*y3 + x2*x3*y2*y3**2 - 2*x2*x3*y2*y3 - x3**2*y1**2*y3 + x3**2*y1**2 + 2*x3**2*y1*y2*y3 - 2*x3**2*y1*y2 - x3**2*y2**2*y3 + x3**2*y2**2))
+
+ansatzCoefficients[8] = (2*W1*x2**2*y1 + 2*W1*x3**2*y1 + 2*W2*x1**2*y2 - 2*W1*x2**2*y3 - 2*W1*x3**2*y2 - 2*W2*x1**2*y3 - 2*W2*x3**2*y1 - 2*W3*x1**2*y2 - 2*W3*x2**2*y1 + 2*W2*x3**2*y2 + 2*W3*x1**2*y3 + 2*W3*x2**2*y3 + PY1*x2**2*y1**2 + PY1*x3**2*y1**2 + PY2*x1**2*y2**2 + PY1*x2**2*y3**2 + PY1*x3**2*y2**2 + PY2*x1**2*y3**2 + PY2*x3**2*y1**2 + PY3*x1**2*y2**2 + PY3*x2**2*y1**2 + PY2*x3**2*y2**2 + PY3*x1**2*y3**2 + PY3*x2**2*y3**2 - 2*W1*x1*x2*y2 - 2*W2*x1*x2*y1 + 2*W1*x1*x2*y3 + 2*W1*x1*x3*y2 - 4*W1*x2*x3*y1 + 2*W2*x1*x3*y1 + 2*W3*x1*x2*y1 - 2*W1*x1*x3*y3 + 2*W1*x2*x3*y2 + 2*W2*x1*x2*y3 - 4*W2*x1*x3*y2 + 2*W2*x2*x3*y1 + 2*W3*x1*x2*y2 - 2*W3*x1*x3*y1 + 2*W1*x2*x3*y3 + 2*W2*x1*x3*y3 - 4*W3*x1*x2*y3 + 2*W3*x1*x3*y2 + 2*W3*x2*x3*y1 - 2*W2*x2*x3*y3 - 2*W3*x2*x3*y2 + PX1*x1*x2**2*y1 + PX1*x1*x3**2*y1 - PX1*x1**2*x2*y2 - PX2*x1*x2**2*y1 - PX1*x1*x2**2*y3 - PX1*x1*x3**2*y2 + PX1*x1**2*x2*y3 + PX1*x1**2*x3*y2 + PX2*x1**2*x2*y2 - PX1*x1**2*x3*y3 + PX2*x1*x2**2*y3 - PX2*x2*x3**2*y1 - PX2*x1**2*x2*y3 + PX2*x2**2*x3*y1 - PX3*x1*x3**2*y1 + PX2*x2*x3**2*y2 + PX3*x1*x3**2*y2 + PX3*x2*x3**2*y1 - PX3*x1**2*x3*y2 - PX3*x2**2*x3*y1 - PX2*x2**2*x3*y3 - PX3*x2*x3**2*y2 + PX3*x1**2*x3*y3 + PX3*x2**2*x3*y3 - PY1*x1*x2*y3**2 - PY1*x1*x3*y2**2 - 2*PY1*x2*x3*y1**2 - PY2*x1*x2*y3**2 - 2*PY2*x1*x3*y2**2 - PY2*x2*x3*y1**2 - 2*PY3*x1*x2*y3**2 - PY3*x1*x3*y2**2 - PY3*x2*x3*y1**2 - 2*PY1*x2**2*y1*y3 - 2*PY1*x3**2*y1*y2 - 2*PY2*x1**2*y2*y3 - 2*PY2*x3**2*y1*y2 - 2*PY3*x1**2*y2*y3 - 2*PY3*x2**2*y1*y3 + 2*W1*x1*x2*y2**2 + 2*W2*x1*x2*y1**2 - 2*W2*x1*x3*y1**2 - 2*W3*x1*x2*y1**2 + 2*W1*x1*x3*y3**2 - 2*W1*x2*x3*y2**2 - 2*W3*x1*x2*y2**2 + 2*W3*x1*x3*y1**2 - 2*W1*x2*x3*y3**2 - 2*W2*x1*x3*y3**2 + 2*W2*x2*x3*y3**2 + 2*W3*x2*x3*y2**2 - 2*W1*x2**2*y1*y2 - 2*W2*x1**2*y1*y2 + 2*W2*x1**2*y1*y3 + 2*W3*x1**2*y1*y2 + 2*W1*x2**2*y2*y3 - 2*W1*x3**2*y1*y3 - 2*W3*x1**2*y1*y3 + 2*W3*x2**2*y1*y2 + 2*W1*x3**2*y2*y3 + 2*W2*x3**2*y1*y3 - 2*W2*x3**2*y2*y3 - 2*W3*x2**2*y2*y3 + PX1*x1**2*x2*y2**2 + PX2*x1*x2**2*y1**2 + PX2*x1*x3**2*y1**2 + PX3*x1*x2**2*y1**2 + PX1*x2*x3**2*y2**2 + PX1*x1**2*x3*y3**2 + PX3*x1*x3**2*y1**2 + PX3*x1**2*x2*y2**2 + PX1*x2**2*x3*y3**2 + PX2*x1**2*x3*y3**2 + PX2*x2**2*x3*y3**2 + PX3*x2*x3**2*y2**2 - PY1*x2**2*y1**2*y2 - PY2*x1**2*y1*y2**2 - PY2*x1**2*y1*y3**2 - PY3*x1**2*y1*y2**2 - PY1*x2**2*y2*y3**2 - PY1*x3**2*y1**2*y3 - PY3*x1**2*y1*y3**2 - PY3*x2**2*y1**2*y2 - PY1*x3**2*y2**2*y3 - PY2*x3**2*y1**2*y3 - PY2*x3**2*y2**2*y3 - PY3*x2**2*y2*y3**2 - 2*PX1*x1*x2*x3*y1 + PX1*x1*x2*x3*y2 + PX2*x1*x2*x3*y1 + PX1*x1*x2*x3*y3 - 2*PX2*x1*x2*x3*y2 + PX3*x1*x2*x3*y1 + PX2*x1*x2*x3*y3 + PX3*x1*x2*x3*y2 - 2*PX3*x1*x2*x3*y3 - PY1*x1*x2*y1*y2 + PY1*x1*x2*y1*y3 + PY1*x1*x3*y1*y2 - PY2*x1*x2*y1*y2 + PY1*x1*x2*y2*y3 - PY1*x1*x3*y1*y3 + 2*PY1*x2*x3*y1*y2 + PY2*x1*x2*y1*y3 + 2*PY2*x1*x3*y1*y2 - 2*PY3*x1*x2*y1*y2 + PY1*x1*x3*y2*y3 + 2*PY1*x2*x3*y1*y3 + PY2*x1*x2*y2*y3 - 2*PY2*x1*x3*y1*y3 + PY2*x2*x3*y1*y2 + 2*PY3*x1*x2*y1*y3 + PY3*x1*x3*y1*y2 - 2*PY1*x2*x3*y2*y3 + 2*PY2*x1*x3*y2*y3 + PY2*x2*x3*y1*y3 + 2*PY3*x1*x2*y2*y3 - PY3*x1*x3*y1*y3 + PY3*x2*x3*y1*y2 - PY2*x2*x3*y2*y3 + PY3*x1*x3*y2*y3 + PY3*x2*x3*y1*y3 - PY3*x2*x3*y2*y3 - 2*W1*x1*x2*y2*y3 + 2*W1*x2*x3*y1*y2 - 2*W2*x1*x2*y1*y3 + 2*W2*x1*x3*y1*y2 - 2*W1*x1*x3*y2*y3 + 2*W1*x2*x3*y1*y3 + 2*W3*x1*x2*y1*y3 - 2*W3*x1*x3*y1*y2 + 2*W2*x1*x3*y2*y3 - 2*W2*x2*x3*y1*y3 + 2*W3*x1*x2*y2*y3 - 2*W3*x2*x3*y1*y2 - 2*PX1*x1*x2*x3*y2**2 - 2*PX2*x1*x2*x3*y1**2 - 2*PX1*x1*x2*x3*y3**2 - 2*PX3*x1*x2*x3*y1**2 - 2*PX2*x1*x2*x3*y3**2 - 2*PX3*x1*x2*x3*y2**2 - PX1*x1*x2**2*y1*y2 - PX1*x1*x2**2*y1*y3 - PX1*x1*x3**2*y1*y2 - PX2*x1**2*x2*y1*y2 + 2*PX1*x1*x2**2*y2*y3 - PX1*x1*x3**2*y1*y3 - PX1*x1**2*x2*y2*y3 - PX2*x1*x2**2*y1*y3 + 2*PX2*x1**2*x2*y1*y3 - PX3*x1*x2**2*y1*y2 - PX3*x1**2*x2*y1*y2 + 2*PX1*x1*x3**2*y2*y3 - PX1*x1**2*x3*y2*y3 - PX2*x1*x3**2*y1*y3 - PX2*x2*x3**2*y1*y2 - PX2*x1**2*x2*y2*y3 - PX2*x1**2*x3*y1*y3 - PX3*x1*x3**2*y1*y2 + 2*PX3*x1**2*x3*y1*y2 - PX1*x2*x3**2*y2*y3 - PX1*x2**2*x3*y2*y3 + 2*PX2*x2*x3**2*y1*y3 - PX2*x2**2*x3*y1*y3 - PX3*x2*x3**2*y1*y2 - PX3*x1**2*x3*y1*y3 + 2*PX3*x2**2*x3*y1*y2 - PX2*x2*x3**2*y2*y3 - PX3*x1**2*x3*y2*y3 - PX3*x2**2*x3*y1*y3 - PX3*x2**2*x3*y2*y3 + PY1*x1*x2*y1*y2**2 + PY1*x1*x2*y1*y3**2 + PY1*x1*x3*y1*y2**2 + PY2*x1*x2*y1**2*y2 + PY1*x1*x3*y1*y3**2 - 2*PY1*x2*x3*y1*y2**2 + PY1*x2*x3*y1**2*y2 + PY2*x1*x3*y1*y2**2 - 2*PY2*x1*x3*y1**2*y2 + PY3*x1*x2*y1*y2**2 + PY3*x1*x2*y1**2*y2 - 2*PY1*x2*x3*y1*y3**2 + PY1*x2*x3*y1**2*y3 + PY2*x1*x2*y2*y3**2 + PY2*x1*x3*y1*y3**2 + PY2*x1*x3*y1**2*y3 + PY2*x2*x3*y1**2*y2 + PY3*x1*x2*y1*y3**2 - 2*PY3*x1*x2*y1**2*y3 + PY1*x2*x3*y2*y3**2 + PY1*x2*x3*y2**2*y3 - 2*PY2*x1*x3*y2*y3**2 + PY2*x1*x3*y2**2*y3 + PY3*x1*x2*y2*y3**2 - 2*PY3*x1*x2*y2**2*y3 + PY3*x1*x3*y1**2*y3 + PY2*x2*x3*y2*y3**2 + PY3*x1*x3*y2**2*y3 + PY3*x2*x3*y1**2*y3 + PY3*x2*x3*y2**2*y3 + 2*PY1*x2**2*y1*y2*y3 + 2*PY2*x1**2*y1*y2*y3 + 2*PY1*x3**2*y1*y2*y3 + 2*PY3*x1**2*y1*y2*y3 + 2*PY2*x3**2*y1*y2*y3 + 2*PY3*x2**2*y1*y2*y3 + 2*PX1*x1*x2*x3*y1*y2 + 2*PX1*x1*x2*x3*y1*y3 + 2*PX2*x1*x2*x3*y1*y2 + 2*PX2*x1*x2*x3*y2*y3 + 2*PX3*x1*x2*x3*y1*y3 + 2*PX3*x1*x2*x3*y2*y3 - 2*PY1*x1*x2*y1*y2*y3 - 2*PY1*x1*x3*y1*y2*y3 - 2*PY2*x1*x2*y1*y2*y3 - 2*PY2*x2*x3*y1*y2*y3 - 2*PY3*x1*x3*y1*y2*y3 - 2*PY3*x2*x3*y1*y2*y3)/(2*(x1**2*x2*y1*y2 - x1**2*x2*y1*y3 - x1**2*x2*y2**2 + x1**2*x2*y2*y3 - x1**2*x3*y1*y2 + x1**2*x3*y1*y3 + x1**2*x3*y2*y3 - x1**2*x3*y3**2 - x1**2*y1*y2**2 + 2*x1**2*y1*y2*y3 - x1**2*y1*y3**2 + x1**2*y2**2 - 2*x1**2*y2*y3 + x1**2*y3**2 - x1*x2**2*y1**2 + x1*x2**2*y1*y2 + x1*x2**2*y1*y3 - x1*x2**2*y2*y3 + 2*x1*x2*x3*y1**2 - 2*x1*x2*x3*y1*y2 - 2*x1*x2*x3*y1*y3 + 2*x1*x2*x3*y2**2 - 2*x1*x2*x3*y2*y3 + 2*x1*x2*x3*y3**2 + x1*x2*y1**2*y2 - x1*x2*y1**2*y3 + x1*x2*y1*y2**2 - 2*x1*x2*y1*y2*y3 - 2*x1*x2*y1*y2 + x1*x2*y1*y3**2 + 2*x1*x2*y1*y3 - x1*x2*y2**2*y3 + x1*x2*y2*y3**2 + 2*x1*x2*y2*y3 - 2*x1*x2*y3**2 - x1*x3**2*y1**2 + x1*x3**2*y1*y2 + x1*x3**2*y1*y3 - x1*x3**2*y2*y3 - x1*x3*y1**2*y2 + x1*x3*y1**2*y3 + x1*x3*y1*y2**2 - 2*x1*x3*y1*y2*y3 + 2*x1*x3*y1*y2 + x1*x3*y1*y3**2 - 2*x1*x3*y1*y3 + x1*x3*y2**2*y3 - 2*x1*x3*y2**2 - x1*x3*y2*y3**2 + 2*x1*x3*y2*y3 - x2**2*x3*y1*y2 + x2**2*x3*y1*y3 + x2**2*x3*y2*y3 - x2**2*x3*y3**2 - x2**2*y1**2*y2 + x2**2*y1**2 + 2*x2**2*y1*y2*y3 - 2*x2**2*y1*y3 - x2**2*y2*y3**2 + x2**2*y3**2 + x2*x3**2*y1*y2 - x2*x3**2*y1*y3 - x2*x3**2*y2**2 + x2*x3**2*y2*y3 + x2*x3*y1**2*y2 + x2*x3*y1**2*y3 - 2*x2*x3*y1**2 - x2*x3*y1*y2**2 - 2*x2*x3*y1*y2*y3 + 2*x2*x3*y1*y2 - x2*x3*y1*y3**2 + 2*x2*x3*y1*y3 + x2*x3*y2**2*y3 + x2*x3*y2*y3**2 - 2*x2*x3*y2*y3 - x3**2*y1**2*y3 + x3**2*y1**2 + 2*x3**2*y1*y2*y3 - 2*x3**2*y1*y2 - x3**2*y2**2*y3 + x3**2*y2**2))
+
+
 
 
 #Go through and update everything "_u"
@@ -142,24 +172,44 @@ GAM_u = GAM.subs([(a1,ansatzCoefficients[0]),(a2,ansatzCoefficients[1]),(a3,ansa
 
 PD_u = PD.subs([(a1,ansatzCoefficients[0]),(a2,ansatzCoefficients[1]),(a3,ansatzCoefficients[2]),(a4,ansatzCoefficients[3]),(a5,ansatzCoefficients[4]),(a6,ansatzCoefficients[5]),(a7,ansatzCoefficients[6]),(a8,ansatzCoefficients[7]),(a9,ansatzCoefficients[8])])
 
-C_u = C.subs([(a1,ansatzCoefficients[0]),(a2,ansatzCoefficients[1]),(a3,ansatzCoefficients[2]),(a4,ansatzCoefficients[3]),(a5,ansatzCoefficients[4]),(a6,ansatzCoefficients[5]),(a7,ansatzCoefficients[6]),(a8,ansatzCoefficients[7]),(a9,ansatzCoefficients[8])])
+#C_u = C.subs([(a1,ansatzCoefficients[0]),(a2,ansatzCoefficients[1]),(a3,ansatzCoefficients[2]),(a4,ansatzCoefficients[3]),(a5,ansatzCoefficients[4]),(a6,ansatzCoefficients[5]),(a7,ansatzCoefficients[6]),(a8,ansatzCoefficients[7]),(a9,ansatzCoefficients[8])])
 
-PX_u = PHI_u + PD_u
-PY_u = PHI_u - PD_u
+print("Update half complete")
+
+#PX_u = PHI_u + PD_u
+#PY_u = PHI_u - PD_u
 GX_u = GAM_u + PD_u
 GY_u = GAM_u - PD_u
 
 # Section 3 ---------------------------------------------------
-px_u = sp.diff(PX_u,x)
-py_u = sp.diff(PY_u,y)
+#px_u = sp.diff(PX_u,x)
+#py_u = sp.diff(PY_u,y)
 gx_u = sp.diff(GX_u,x)
 gy_u = sp.diff(GY_u,y)
 
+print("Update complete\n\nSymbolic B Matrix = ")
 
 # Assemble B Matrix ------------------------------------------
+#Bsym = sp.zeros(2,9)
+#for col in range(9):
+#    Bsym[0,col] = sp.diff(gx,UVector[col])
+#    Bsym[1,col] = sp.diff(gy,UVector[col])
+#
+#sp.pprint(Bsym,wrap_line=False)
+
+
 B = sp.zeros(2,9)
 for col in range(9):
     B[0,col] = sp.diff(gx_u,UVector[col])
     B[1,col] = sp.diff(gy_u,UVector[col])
+    
+print("\nB Matrix for [0,0] [1,0] [0,1] = ")
+sp.pprint(B.subs([(x1,0),(y1,0),(x2,1.0),(y2,0.0),(x3,0.0),(y3,1.0)]),wrap_line=False)
 
-sp.pprint(B,wrap_line=False)
+
+# TESTING FOR SIMPLIFIED FORM
+
+# gx and gy feed into B
+# only a5,a6,a8,a9 are in gx and gy
+test = sp.diff(ansatzCoefficients[4],UVector[col])
+print("Da8/DU",test)
