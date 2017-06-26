@@ -12,6 +12,9 @@ print("Sympy version: ",sp.__version__)
 x = sp.Symbol('x')
 y = sp.Symbol('y')
 
+loc1 = sp.Symbol('loc1')
+loc2 = sp.Symbol('loc2')
+
 alpha = sp.Symbol('alpha')
 beta = sp.Symbol('beta')
 
@@ -65,8 +68,8 @@ y3 = 1.0
 PHI = a1 + a2*x +a3*y + a4*x**2 + 0.5*(a5+a6)*x*y + a7*y**2
 
 #GAM = a8*x + a9*y - Bub*x*y #generic bubble mode
-#GAM = a8*x + a9*y - (a8+a9)*x*y #generic bubble mode
-GAM = a8*x + a9*y #no bubble
+GAM = a8*x + a9*y - (a8+a9)*x*y #generic bubble mode
+#GAM = a8*x + a9*y #no bubble
 
 PD = 0.5*(a5-a6)*x*y
 C = a5 - a6
@@ -140,6 +143,8 @@ PD_u = PD.subs([(a1,ansatzCoefficients[0]),(a2,ansatzCoefficients[1]),(a3,ansatz
 
 #PX_u = PHI_u + PD_u
 #PY_u = PHI_u - PD_u
+
+# super DSG
 #GX_u = GAM_u + PD_u
 #GY_u = GAM_u - PD_u
 
@@ -157,7 +162,7 @@ gy_u = sp.diff(GY_u,y)
 print("\nSymbolic GX_u:",GX_u)
 print("\nSymbolic GY_u:",GY_u)
 
-print("\nSymbolic B Matrix (probably parametric, x and y here mean alpha and beta maybe?) = ")
+print("\nSymbolic B Matrix ( parametric, x and y here mean alpha and beta maybe?) = ")
 
 # Assemble B Matrix ------------------------------------------
 B = sp.zeros(2,9)
@@ -173,10 +178,11 @@ sp.pprint(B,wrap_line=False)
 # d()/dx = d()/dalpha dalpha/dx + d()/dbeta dbeta/dx
 # d()/dy = d()/dalpha dalpha/dy + d()/dbeta dbeta/dy
 
-print("\n\nSymbolic B Matrix (cartesian, x and y here are cartesian) = ")
+print("\n\nSymbolic B Matrix (cartesian, factor of 1/detJ taken out) = ")
 for col in range(9):
     B[0,col] = sp.diff(sp.diff(GX_u,x),UVector[col])*c/detJ + sp.diff(sp.diff(GX_u,y),UVector[col])*-b/detJ
     B[1,col] = sp.diff(sp.diff(GY_u,x),UVector[col])*-d/detJ + sp.diff(sp.diff(GY_u,y),UVector[col])*a/detJ
+B = B.subs([(x,loc1),(y,loc2)])
 sp.pprint(sp.factor(B)*detJ,wrap_line=False) #detJ taken out for clarity
 print("\nPrinting individual entries of matrix above:")
 Bsimp = sp.factor(B)*detJ #detJ taken out for clarity

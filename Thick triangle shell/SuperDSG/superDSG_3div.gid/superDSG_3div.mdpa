@@ -1,0 +1,120 @@
+Begin ModelPartData
+//  VARIABLE_NAME value
+End ModelPartData
+
+Begin Properties 0
+End Properties
+Begin Properties 1
+    THICKNESS  5.00000E-002 
+    DENSITY  7.85000E+003 
+    YOUNG_MODULUS  1.00000E+003 
+    POISSON_RATIO  0.00000E+000 
+End Properties
+
+Begin Nodes
+    1        0.00000        1.00000        0.00000
+    2        0.00000        0.66667        0.00000
+    3        0.33333        0.66667        0.00000
+    4        0.00000        0.33333        0.00000
+    5        0.33333        0.33333        0.00000
+    6        0.66667        0.33333        0.00000
+    7        0.00000        0.00000        0.00000
+    8        0.33333        0.00000        0.00000
+    9        0.66667        0.00000        0.00000
+   10        1.00000        0.00000        0.00000
+End Nodes
+
+
+Begin Elements ShellThickElement3D3N// GUI group identifier: surface
+         1          1          7          8          4 
+         2          1          4          5          2 
+         3          1          4          8          5 
+         4          1          8          9          5 
+         5          1          2          3          1 
+         6          1          2          5          3 
+         7          1          5          6          3 
+         8          1          5          9          6 
+         9          1          9         10          6 
+End Elements
+
+Begin SubModelPart Parts_surface // Group surface // Subtree Parts
+    Begin SubModelPartNodes
+         1
+         2
+         3
+         4
+         5
+         6
+         7
+         8
+         9
+        10
+    End SubModelPartNodes
+    Begin SubModelPartElements
+         1
+         2
+         3
+         4
+         5
+         6
+         7
+         8
+         9
+    End SubModelPartElements
+    Begin SubModelPartConditions
+    End SubModelPartConditions
+End SubModelPart
+Begin SubModelPart DISPLACEMENT_node1 // Group node1 // Subtree DISPLACEMENT
+    Begin SubModelPartNodes
+         7
+    End SubModelPartNodes
+    Begin SubModelPartElements
+    End SubModelPartElements
+    Begin SubModelPartConditions
+    End SubModelPartConditions
+End SubModelPart
+Begin SubModelPart DISPLACEMENT_node2 // Group node2 // Subtree DISPLACEMENT
+    Begin SubModelPartNodes
+        10
+    End SubModelPartNodes
+    Begin SubModelPartElements
+    End SubModelPartElements
+    Begin SubModelPartConditions
+    End SubModelPartConditions
+End SubModelPart
+Begin SubModelPart DISPLACEMENT_node3 // Group node3 // Subtree DISPLACEMENT
+    Begin SubModelPartNodes
+         1
+    End SubModelPartNodes
+    Begin SubModelPartElements
+    End SubModelPartElements
+    Begin SubModelPartConditions
+    End SubModelPartConditions
+End SubModelPart
+Begin SubModelPart ROTATION_node1 // Group node1 // Subtree ROTATION
+    Begin SubModelPartNodes
+         7
+    End SubModelPartNodes
+    Begin SubModelPartElements
+    End SubModelPartElements
+    Begin SubModelPartConditions
+    End SubModelPartConditions
+End SubModelPart
+Begin SubModelPart ROTATION_node2 // Group node2 // Subtree ROTATION
+    Begin SubModelPartNodes
+        10
+    End SubModelPartNodes
+    Begin SubModelPartElements
+    End SubModelPartElements
+    Begin SubModelPartConditions
+    End SubModelPartConditions
+End SubModelPart
+Begin SubModelPart ROTATION_node3 // Group node3 // Subtree ROTATION
+    Begin SubModelPartNodes
+         1
+    End SubModelPartNodes
+    Begin SubModelPartElements
+    End SubModelPartElements
+    Begin SubModelPartConditions
+    End SubModelPartConditions
+End SubModelPart
