@@ -23,12 +23,12 @@ PY2 = sp.Symbol('PY2')
 PY3 = sp.Symbol('PY3')
 
 #Nodal coords
-x1 = sp.Symbol('x1')
-y1 = sp.Symbol('y1')
-x2 = sp.Symbol('x2')
-y2 = sp.Symbol('y2')
-x3 = sp.Symbol('x3')
-y3 = sp.Symbol('y3')
+#x1 = sp.Symbol('x1')
+#y1 = sp.Symbol('y1')
+#x2 = sp.Symbol('x2')
+#y2 = sp.Symbol('y2')
+#x3 = sp.Symbol('x3')
+#y3 = sp.Symbol('y3')
 
 xi = sp.Symbol('xi')
 eta = sp.Symbol('eta')
@@ -52,7 +52,6 @@ N1 = (1.0-xi-eta)
 N2 = xi
 N3 = eta
 
-
 # Displacement field
 W_test = N1*W1 + N2*W2 + N3*W3
 
@@ -67,6 +66,13 @@ sg_xi_n2 = W_test.subs([(xi,1)])- W_test.subs([(xi,0)]) + sp.integrate(phi_xi*a 
 
 sg_xi_n3 = W_test.subs([(xi,0)])- W_test.subs([(xi,0)]) + sp.integrate(phi_xi*a + phi_eta*b,(xi,0,0)).subs([(xi,0),(eta,1)])
 
+
+sg_eta_n1 = W_test.subs([(xi,0),(eta,0)]) - W_test.subs([(xi,0),(eta,0)]) + sp.integrate(phi_xi*d + phi_eta*c,(eta,0,0)).subs([(xi,0),(eta,0)])
+
+sg_eta_n2 = W_test.subs([(xi,1),(eta,0)])- W_test.subs([(xi,1),(eta,0)]) + sp.integrate(phi_xi*d + phi_eta*c,(eta,0,0)).subs([(xi,1),(eta,0)])
+
+sg_eta_n3 = W_test.subs([(xi,0),(eta,1)])- W_test.subs([(xi,0),(eta,0)]) + sp.integrate(phi_xi*d + phi_eta*c,(eta,0,1)).subs([(xi,0),(eta,1)])
+
 print("\n\n Shear gaps evaluated at each node =:")
 
 print("\n\n sg_xi_n1 =:",sp.simplify(sg_xi_n1))
@@ -74,12 +80,6 @@ print("\n\n sg_xi_n1 =:",sp.simplify(sg_xi_n1))
 print("\n\n sg_xi_n2 =:",sp.simplify(sg_xi_n2))
 
 print("\n\n sg_xi_n3 =:",sp.simplify(sg_xi_n3))
-
-sg_eta_n1 = W_test.subs([(xi,0),(eta,0)]) - W_test.subs([(xi,0),(eta,0)]) + sp.integrate(phi_xi*d + phi_eta*c,(eta,0,0)).subs([(xi,0),(eta,0)])
-
-sg_eta_n2 = W_test.subs([(xi,1),(eta,0)])- W_test.subs([(xi,1),(eta,0)]) + sp.integrate(phi_xi*d + phi_eta*c,(eta,0,0)).subs([(xi,1),(eta,0)])
-
-sg_eta_n3 = W_test.subs([(xi,0),(eta,1)])- W_test.subs([(xi,0),(eta,0)]) + sp.integrate(phi_xi*d + phi_eta*c,(eta,0,1)).subs([(xi,0),(eta,1)])
 
 print("\n\n sg_eta_n1 =:",sg_eta_n1)
 
@@ -97,11 +97,11 @@ print("\n\n\n\n\n\n")
 
 
 # Shear strain field ----------------------------------------------------------
-#gx_u = sp.diff(sg_xi_sf,xi)*c/detJ + sp.diff(sg_xi_sf,eta)*-b/detJ
-#gy_u = sp.diff(sg_eta_sf,eta)*a/detJ + sp.diff(sg_eta_sf,xi)*-d/detJ
+gx_u = sp.diff(sg_xi_sf,xi)*c/detJ + sp.diff(sg_eta_sf,eta)*-b/detJ
+gy_u = sp.diff(sg_eta_sf,eta)*a/detJ + sp.diff(sg_xi_sf,xi)*-d/detJ
 
-gx_u = sg_xi_n2*c/detJ + sg_eta_n3*-b/detJ
-gy_u = sg_eta_n3*a/detJ + sg_xi_n2*-d/detJ
+#gx_u = sg_xi_n2*c/detJ + sg_eta_n3*-b/detJ
+#gy_u = sg_eta_n3*a/detJ + sg_xi_n2*-d/detJ
 
 # vector of displacements------------------------------------------------------
 UVector = sp.zeros(9,1) 
