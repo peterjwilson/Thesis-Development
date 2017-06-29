@@ -1,6 +1,6 @@
 {
     "problem_data"             : {
-        "problem_name"    : "2x2_tri_membrane",
+        "problem_name"    : "Single_Quad_Shell_2x2",
         "model_part_name" : "Structure",
         "domain_size"     : 3,
         "time_step"       : 1.1,
@@ -9,13 +9,13 @@
         "echo_level"      : 0
     },
     "solver_settings"          : {
-        "solver_type"                        : "solid_mechanics_static_solver",
+        "solver_type"                        : "structural_mechanics_static_solver",
         "echo_level"                         : 0,
         "solution_type"                      : "Static",
         "analysis_type"                      : "Linear",
         "model_import_settings"              : {
             "input_type"     : "mdpa",
-            "input_filename" : "2x2_tri_membrane"
+            "input_filename" : "Single_Quad_Shell_2x2"
         },
         "line_search"                        : false,
         "convergence_criterion"              : "Residual_criterion",
@@ -29,8 +29,8 @@
             "scaling"     : false,
             "verbosity"   : 0
         },
-        "problem_domain_sub_model_part_list" : ["Parts_surface"],
-        "processes_sub_model_part_list"      : ["DISPLACEMENT_dirichlet","ROTATION_dirichlet","ROTATION_surface","PointLoad3D_neumann"],
+        "problem_domain_sub_model_part_list" : ["Parts_Surface"],
+        "processes_sub_model_part_list"      : ["DISPLACEMENT_Base","DISPLACEMENT_Z_disp","ROTATION_XYZ_rot","PointLoad3D_Neumann"],
         "rotation_dofs"                      : true
     },
     "constraints_process_list" : [{
@@ -40,7 +40,7 @@
         "process_name"          : "ImposeVectorValueByComponentsProcess",
         "Parameters"            : {
             "mesh_id"         : 0,
-            "model_part_name" : "DISPLACEMENT_dirichlet",
+            "model_part_name" : "DISPLACEMENT_Base",
             "variable_name"   : "DISPLACEMENT",
             "is_fixed_x"      : true,
             "is_fixed_y"      : true,
@@ -54,10 +54,10 @@
         "process_name"          : "ImposeVectorValueByComponentsProcess",
         "Parameters"            : {
             "mesh_id"         : 0,
-            "model_part_name" : "ROTATION_dirichlet",
-            "variable_name"   : "ROTATION",
-            "is_fixed_x"      : true,
-            "is_fixed_y"      : true,
+            "model_part_name" : "DISPLACEMENT_Z_disp",
+            "variable_name"   : "DISPLACEMENT",
+            "is_fixed_x"      : false,
+            "is_fixed_y"      : false,
             "is_fixed_z"      : true,
             "value"           : [0.0,0.0,0.0]
         }
@@ -68,10 +68,10 @@
         "process_name"          : "ImposeVectorValueByComponentsProcess",
         "Parameters"            : {
             "mesh_id"         : 0,
-            "model_part_name" : "ROTATION_surface",
+            "model_part_name" : "ROTATION_XYZ_rot",
             "variable_name"   : "ROTATION",
-            "is_fixed_x"      : false,
-            "is_fixed_y"      : false,
+            "is_fixed_x"      : true,
+            "is_fixed_y"      : true,
             "is_fixed_z"      : true,
             "value"           : [0.0,0.0,0.0]
         }
@@ -84,9 +84,9 @@
         "process_name"          : "ApplyConstantVectorValueProcess",
         "Parameters"            : {
             "mesh_id"         : 0,
-            "model_part_name" : "PointLoad3D_neumann",
+            "model_part_name" : "PointLoad3D_Neumann",
             "variable_name"   : "POINT_LOAD",
-            "modulus"          : 1.0,
+            "modulus"          : 0.5,
             "direction"       : [0.0,1,0]
         }
     }],
@@ -106,7 +106,7 @@
             "skin_output"         : false,
             "plane_output"        : [],
             "nodal_results"       : ["DISPLACEMENT","REACTION","ROTATION","TORQUE"],
-            "gauss_point_results" : ["LOCAL_AXES_VECTOR","SHELL_STRAIN_GLOBAL"]
+            "gauss_point_results" : ["LOCAL_AXES_VECTOR"]
         },
         "point_data_configuration"  : []
     },

@@ -1,0 +1,37 @@
+BeginZE C:/Users/Peter/Desktop/TUM/Thesis/Development/Thick triangle shell/Composites/statics/clamped_cylinder1_test.gid/clamped_cylinder1_test.vv
+   x -0.834932804107666016 30.834930419921875
+   y 5 -25
+   z -55 35
+   e 15
+   v 0.101815767586231232 -0.0736052542924880981 -0.0351213254034519196
+   r 0.991454601287841797
+   m 0.986697494983673096 0.0546540431678295135 -0.153104349970817566 0 -0.0846307501196861267 0.976800084114074707 -0.196721196174621582 0 0.138800725340843201 0.207061648368835449 0.968431651592254639 0 0 0 0 1
+   c 15 -10 10
+   pd 0
+   pno 0
+   pfo 0
+   pf 4
+   pv 0
+   NowUse 1
+   DrawingType 0
+   LightVector 90 90 150 0
+   OGLShadow(UseShadows) 0
+   OGLShadow(RenderMode) RenderNice
+   OGLShadow(ShadowBias) -0.002
+   OGLShadow(AmbientShadows) 1
+   OGLShadow(UseFBO) 0
+   OGLShadow(FBOSize) 2048
+   OGLShadow(DimmedLightFactor) 0.02
+   OGLStereo(UseStereo) 0
+   OGLStereo(RelativeEyeDistance) 1
+   OGLStereo(FlipEyes) 0
+   OGLStereo(StereoMode) AnaglyphColors
+   OGLStereo(EyeDistance) 0.075
+   OGLStereo(LeftEyeDistance) 1 0 0 1
+   OGLStereo(RightEyeDistance) 0 1 1 1
+EndZE C:/Users/Peter/Desktop/TUM/Thesis/Development/Thick triangle shell/Composites/statics/clamped_cylinder1_test.gid/clamped_cylinder1_test.vv
+
+BeginMirror
+   Mirror 0 Angle 0.0 AngleFake -15.0 SizeFactor 2.0 HeightOffset 0.25 Color #d9e5f24d Backlight Off EdgeStyle No Type Scene DrawMode Mirror
+EndMirror
+
