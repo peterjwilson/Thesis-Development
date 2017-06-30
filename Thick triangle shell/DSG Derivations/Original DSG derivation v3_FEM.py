@@ -22,13 +22,14 @@ PY1 = sp.Symbol('PY1')
 PY2 = sp.Symbol('PY2')
 PY3 = sp.Symbol('PY3')
 
-#Nodal coords
-#x1 = sp.Symbol('x1')
-#y1 = sp.Symbol('y1')
-#x2 = sp.Symbol('x2')
-#y2 = sp.Symbol('y2')
-#x3 = sp.Symbol('x3')
-#y3 = sp.Symbol('y3')
+# THESE ARE KRATOS NODAL ROTATIONS - DEFINED 
+RX1 = sp.Symbol('RX1')
+RX2 = sp.Symbol('RX2')
+RX3 = sp.Symbol('RX3')
+RY1 = sp.Symbol('RY1')
+RY2 = sp.Symbol('RY2')
+RY3 = sp.Symbol('RY3')
+
 
 xi = sp.Symbol('xi')
 eta = sp.Symbol('eta')
@@ -94,6 +95,9 @@ sg_xi_sf = N1*sg_xi_n1 + N2*sg_xi_n2 + N3*sg_xi_n3
 sg_eta_sf = N1*sg_eta_n1 + N2*sg_eta_n2 + N3*sg_eta_n3
 print("\n\n\n\n\n\n")
 
+# swap between plate theory rotations and FEM nodal rotations
+sg_xi_sf = sg_xi_sf.subs([(PY1,-RX1),(PY2,-RX2),(PY3,-RX3),(PX1,RY1),(PX2,RY2),(PX3,RY3)])
+sg_eta_sf = sg_eta_sf.subs([(PY1,-RX1),(PY2,-RX2),(PY3,-RX3),(PX1,RY1),(PX2,RY2),(PX3,RY3)])
 
 
 # Shear strain field ----------------------------------------------------------
@@ -108,14 +112,14 @@ UVector = sp.zeros(9,1)
 UVector[0] = W1
 UVector[1] = W2
 UVector[2] = W3
-UVector[3] = PX1
-UVector[4] = PX2
-UVector[5] = PX3
-UVector[6] = PY1
-UVector[7] = PY2
-UVector[8] = PY3
+UVector[3] = RX1
+UVector[4] = RX2
+UVector[5] = RX3
+UVector[6] = RY1
+UVector[7] = RY2
+UVector[8] = RY3
 
-print("Vector of displacements (rotations are per PLATE THEORY):\n",UVector)
+print("Vector of displacements (rotations are per FEM):\n",UVector)
 
 # Setup B matrix --------------------------------------------------------------
 B = sp.zeros(2,9)
