@@ -191,6 +191,16 @@ while(time <= end_time):
     gid_output.ExecuteInitializeSolutionStep()
         
     solver.Solve()
+    
+    min_z = 0.0
+    # Displacements and rotations
+    for node in main_model_part.Nodes:
+        temp_z = node.GetSolutionStepValue(DISPLACEMENT_Z,0)
+        if (temp_z < min_z):
+            min_z = temp_z
+
+    print("Min z=\n",min_z)
+
        
     for process in list_of_processes:
         process.ExecuteFinalizeSolutionStep()

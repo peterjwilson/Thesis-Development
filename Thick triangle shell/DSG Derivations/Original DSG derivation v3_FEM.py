@@ -127,6 +127,16 @@ for col in range(9):
     B[0,col] = sp.diff(gx_u,UVector[col])
     B[1,col] = sp.diff(gy_u,UVector[col])
 
+    
+
+print("\n\n\n\n\nPrinting individual entries of matrix above, just for easy copying into C++:\n")
+Bsimp = sp.factor(B)*detJ #detJ taken out for clarity
+for col in range(9):
+    print("BSuper(0,",col,")=",Bsimp[0,col],";")
+for col in range(9):
+    print("BSuper(1,",col,")=",Bsimp[1,col],";")
+    
+    
 #Rearraging B-matrix to original DSG dofs for easier comparison ---------------
 #    Here ----------------->    Original DSG
 # [w1,w2,w3,phix1,...]'  -->    [w1,phix1,phiy1,w2,...]'
@@ -144,20 +154,4 @@ sp.pprint(sp.factor(B_original_DSG_ordering)*detJ,wrap_line=False) #detJ taken o
 
 
 
-print("\n\n\n\n\nPrinting individual entries of matrix above, just for easy copying into C++:\n")
-Bsimp = sp.factor(B)*detJ #detJ taken out for clarity
-B_C_plus_plus = sp.zeros(2,18)
-for gamma in range(2):
-    for node in range(3):
-        B_C_plus_plus[gamma,2+node*6] = B[gamma,node]
-        B_C_plus_plus[gamma,3+node*6] = B[gamma,node+3]
-        B_C_plus_plus[gamma,4+node*6] = B[gamma,node+6]
-
-B_C_plus_plus *= detJ
-B_C_plus_plus = sp.simplify(B_C_plus_plus)
-for col in range(18):
-    print("data.B(6,",col,")=",B_C_plus_plus[0,col],";")
-for col in range(18):
-    print("data.B(7,",col,")=",B_C_plus_plus[1,col],";")
-    
     

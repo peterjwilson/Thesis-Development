@@ -191,6 +191,15 @@ while(time <= end_time):
     gid_output.ExecuteInitializeSolutionStep()
         
     solver.Solve()
+    
+    max_x = 0.0
+    # Displacements and rotations
+    for node in main_model_part.Nodes:
+        temp_x = node.GetSolutionStepValue(DISPLACEMENT_X,0)
+        if (temp_x > max_x):
+            max_x = temp_x
+            
+    print("Max x=\n",max_x)
        
     for process in list_of_processes:
         process.ExecuteFinalizeSolutionStep()

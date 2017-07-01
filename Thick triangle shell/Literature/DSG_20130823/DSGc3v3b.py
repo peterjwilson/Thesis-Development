@@ -85,8 +85,8 @@ N3 = eta
 PHI = a1 + a2*x +a3*y + a4*x**2 + 0.5*(a5+a6)*x*y + a7*y**2
 
 #GAM = a8*x + a9*y - Bub*x*y #generic bubble mode
-#GAM = a8*x + a9*y - (a8+a9)*x*y #generic bubble mode
-GAM = a8*x + a9*y #no bubble
+GAM = a8*x + a9*y - (a8+a9)*x*y #generic bubble mode
+#GAM = a8*x + a9*y #no bubble
 
 PD = 0.5*(a5-a6)*x*y
 C = a5 - a6
@@ -152,7 +152,9 @@ UVector[8] = PY3
 
 results = list(sp.linsolve([eq1,eq2,eq3,eq4,eq5,eq6,eq7,eq8,eq9],[a1,a2,a3,a4,a5,a6,a7,a8,a9]))
 ansatzCoefficients = results[0]
-print("\nAnsatz coefficients solved",ansatzCoefficients)
+print("\nAnsatz coefficients solved")
+for i in range(9):
+    print("a",i,"=\t",ansatzCoefficients[i])
 
 #Go through and update everything "_u"
 PHI_u = PHI.subs([(a1,ansatzCoefficients[0]),(a2,ansatzCoefficients[1]),(a3,ansatzCoefficients[2]),(a4,ansatzCoefficients[3]),(a5,ansatzCoefficients[4]),(a6,ansatzCoefficients[5]),(a7,ansatzCoefficients[6]),(a8,ansatzCoefficients[7]),(a9,ansatzCoefficients[8])])
@@ -192,6 +194,16 @@ print("\n\nGY_u_n1:",sp.simplify(GY_u.subs([(x,0),(y,0)])))
 print("\n\nGY_u_n2:",sp.simplify(GY_u.subs([(x,1),(y,0)])))
 print("\n\nGY_u_n3:",sp.simplify(GY_u.subs([(x,0),(y,1)])))
 
+sg_xi_n1 = GX_u.subs([(x,0),(y,0)])
+sg_xi_n2 = GX_u.subs([(x,1),(y,0)])
+sg_xi_n3 = GX_u.subs([(x,0),(y,1)])
+
+sg_eta_n1 = GY_u.subs([(x,0),(y,0)])
+sg_eta_n2 = GY_u.subs([(x,1),(y,0)])
+sg_eta_n3 = GY_u.subs([(x,0),(y,1)])
+
+# Manually override shear gaps, cartesian differences a thru d introduced
+print("\n\nMANUALLY OVERRIDING SHEAR GAPS!!!!!!!!!!")
 sg_xi_n1 = 0.0
 sg_xi_n2 = 0.5*a*PX1 + 0.5*a*PX2 - 1.0*W1 + 1.0*W2
 sg_xi_n3 = 0.5*b*PY1 + 0.5*b*PY3 - 1.0*W1 + 1.0*W3
@@ -246,43 +258,8 @@ for col in range(9):
 
 sp.pprint(sp.simplify(B*detJ),wrap_line=False)
 
-# conversion from parametric to cartesian space --------------------------------
 
-# jacobian style taken from p8 and 9 of original DSG formulation
-#Inverse jacobian =     1     [dAlpha/dX      dBeta/dX]     1   [ c      -b]
-#                     -----   [                       ] = ----- [          ]
-#                       2A    [dAlpha/dy      dBeta/dY]    2A   [-d       a]
-
-#a = x2-x1, b=y2-y1, c=y3-y1, d=x3-x1
-
-# d()/dx = d()/dalpha dalpha/dx + d()/dbeta dbeta/dx
-# d()/dy = d()/dalpha dalpha/dy + d()/dbeta dbeta/dy
-
-#print("\n\n\nSymbolic B Matrix (cartesian space, factor of 1/detJ taken out) = ")
-#for col in range(9):
-#    B[0,col] = sp.diff(sp.diff(GX_u,x),UVector[col])*c/detJ + sp.diff(sp.diff(GX_u,y),UVector[col])*-b/detJ
-#    B[1,col] = sp.diff(sp.diff(GY_u,x),UVector[col])*-d/detJ + sp.diff(sp.diff(GY_u,y),UVector[col])*a/detJ
-#
-#B = B.subs([(x,loc1),(y,loc2)])
-#sp.pprint(sp.factor(B)*detJ,wrap_line=False) #detJ taken out for clarity
-
-
-#Rearraging B-matrix to original DSG dofs for easier comparison ---------------
-#    Here ----------------->    Original DSG
-# [w1,w2,w3,phix1,...]'  -->    [w1,phix1,phiy1,w2,...]'
-#B_original_DSG_ordering = sp.zeros(2,9)
-#for gamma in range(2):
-#    for node in range(3):
-#        B_original_DSG_ordering[gamma,node*3] = B[gamma,node]
-#        B_original_DSG_ordering[gamma,node*3+1] = B[gamma,3+node]
-#        B_original_DSG_ordering[gamma,node*3+2] = B[gamma,6+node]
-#
-#print("\n\n\nB Matrix (cartesian space, factor of 1/detJ taken out, ordered as per original DSG formulation) = \n")
-#sp.pprint(sp.factor(B_original_DSG_ordering)*detJ,wrap_line=False) #detJ taken out for clarity
-
-
-
-print("\n\n\n\n\nPrinting individual entries of matrix above (1/detJ taken out), just for easy copying into C++:")
+print("\n\n\n\n\nPrinting individual entries of original Bmat (1/detJ taken out), just for easy copying into C++:")
 #Bsimp = sp.factor(B)*detJ #detJ taken out for clarity
 #testing below
 B = B.subs([(x,loc1),(y,loc2)])
@@ -292,3 +269,19 @@ for col in range(9):
     print("BSuper(0,",col,")=",Bsimp[0,col],";")
 for col in range(9):
     print("BSuper(1,",col,")=",Bsimp[1,col],";")
+
+    
+    
+    
+#Rearraging B-matrix to original DSG dofs for easier comparison ---------------
+#    Here ----------------->    Original DSG
+# [w1,w2,w3,phix1,...]'  -->    [w1,phix1,phiy1,w2,...]'
+B_original_DSG_ordering = sp.zeros(2,9)
+for gamma in range(2):
+    for node in range(3):
+        B_original_DSG_ordering[gamma,node*3] = B[gamma,node]
+        B_original_DSG_ordering[gamma,node*3+1] = B[gamma,3+node]
+        B_original_DSG_ordering[gamma,node*3+2] = B[gamma,6+node]
+
+print("\n\n\nB Matrix (cartesian space, factor of 1/detJ taken out, ordered as per original DSG formulation) = \n")
+sp.pprint(sp.factor(B_original_DSG_ordering)*detJ,wrap_line=False) #detJ taken out for clarity
