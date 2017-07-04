@@ -85,8 +85,8 @@ N3 = eta
 PHI = a1 + a2*x +a3*y + a4*x**2 + 0.5*(a5+a6)*x*y + a7*y**2
 
 #GAM = a8*x + a9*y - Bub*x*y #generic bubble mode
-GAM = a8*x + a9*y - (a8+a9)*x*y #generic bubble mode
-#GAM = a8*x + a9*y #no bubble
+#GAM = a8*x + a9*y - (a8+a9)*x*y #generic bubble mode
+GAM = a8*x + a9*y #no bubble
 
 PD = 0.5*(a5-a6)*x*y
 C = a5 - a6
@@ -178,7 +178,17 @@ else:
     GX_u = GAM_u + PD_u
     GY_u = GAM_u - PD_u
     
-print("prelim gx_u:",sp.diff(GX_u,x))
+print("\nprelim gx_u:",sp.diff(GX_u,x))
+print("\nprelim gy_u:",sp.diff(GY_u,y))
+
+#prelim gx_u: 0.5*PX1 + 0.5*PX2 - 1.0*W1 + 1.0*W2 + y*(-0.5*PX1 + 0.5*PX3 + 0.5*PY1 - 0.5*PY2)
+#prelim gy_u: 0.5*PY1 + 0.5*PY3 - 1.0*W1 + 1.0*W3 - x*(-0.5*PX1 + 0.5*PX3 + 0.5*PY1 - 0.5*PY2)
+
+gx_u = 0.5*a*PX1 + 0.5*a*PX2 - 1.0*W1 + 1.0*W2 + y*(-0.5*a*PX1 + 0.5*a*PX3 + 0.5*b*PY1 - 0.5*b*PY2)
+
+
+
+sg_xi_n1 = sp.integrate(gx_u,(x,0,1))
 
 print("\nGAM_u_n1:",sp.simplify(GAM_u.subs([(x,0),(y,0)])))
 print("\nGAM_u_n2:",sp.simplify(GAM_u.subs([(x,1),(y,0)])))
