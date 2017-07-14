@@ -147,7 +147,7 @@
             "skin_output"         : false,
             "plane_output"        : [],
             "nodal_results"       : ["DISPLACEMENT","REACTION","ROTATION","TORQUE"],
-            "gauss_point_results" : ["SHELL_ELEMENT_MEMBRANE_ENERGY_FRACTION","SHELL_ELEMENT_BENDING_ENERGY_FRACTION","SHELL_ELEMENT_SHEAR_ENERGY_FRACTION"]
+            "gauss_point_results" : []
         },
         "point_data_configuration"  : []
     },

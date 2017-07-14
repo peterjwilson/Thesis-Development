@@ -1,0 +1,37 @@
+BeginZE C:/Users/Peter/Desktop/TUM/Thesis/Development/HiWi/blade 10 June/blade_test_vA.gid/blade_test_vA.vv
+   x -1644.467529296875 1533.14013671875
+   y 1896.1925048828125 -1209.8709716796875
+   z -5270.19921875 523.968505859375
+   e 2500.99658203125
+   v -0.242597584566697166 -0.425042235669287616 -0.0386716255125792857
+   r 0.871200330142197221
+   m 0.63568723201751709 0.273609906435012817 -0.721830606460571289 0 0.138846978545188904 0.879301846027374268 0.455576330423355103 0 0.759357154369354248 -0.38982805609703064 0.520971000194549561 0 0 0 0 1
+   c 134.42803955078125 17.1235733032226563 2373.115234375
+   pd 0
+   pno 0
+   pfo 0
+   pf 4
+   pv 0
+   NowUse 1
+   DrawingType 0
+   LightVector 90 90 150 0
+   OGLShadow(UseShadows) 0
+   OGLShadow(RenderMode) RenderNice
+   OGLShadow(ShadowBias) -0.002
+   OGLShadow(AmbientShadows) 1
+   OGLShadow(UseFBO) 1
+   OGLShadow(FBOSize) 2048
+   OGLShadow(DimmedLightFactor) 0.02
+   OGLStereo(UseStereo) 0
+   OGLStereo(RelativeEyeDistance) 1
+   OGLStereo(FlipEyes) 0
+   OGLStereo(StereoMode) AnaglyphColors
+   OGLStereo(EyeDistance) 0.075
+   OGLStereo(LeftEyeDistance) 1 0 0 1
+   OGLStereo(RightEyeDistance) 0 1 1 1
+EndZE C:/Users/Peter/Desktop/TUM/Thesis/Development/HiWi/blade 10 June/blade_test_vA.gid/blade_test_vA.vv
+
+BeginMirror
+   Mirror 0 Angle 0.0 AngleFake -15.0 SizeFactor 2.0 HeightOffset 0.25 Color #d9e5f24d Backlight Off EdgeStyle No Type Scene DrawMode Mirror
+EndMirror
+

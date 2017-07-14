@@ -1,0 +1,37 @@
+BeginZE C:\Users\Peter\Desktop\TUM\Thesis\Development\Thick triangle shell\Composites\statics\composite barrel vault\scorderlis_composite_full2.gid\scorderlis_composite_full2.vv
+   x -538.3388671875 538.3388671875
+   y 635.292724609375 -105.4793701171875
+   z -811.158203125 1411.158203125
+   e 370.38604736328125
+   v -0.2970527708530426 0.38618290424346924 0.19884301722049713
+   r 0.85034334659576416
+   m 0.62264847755432129 -0.56760305166244507 0.53864234685897827 0 0.1087362989783287 0.74444222450256348 0.65877324342727661 0 -0.7749098539352417 -0.35161414742469788 0.52524489164352417 0 0 0 0 1
+   c 0 264.90667724609375 -300
+   pd 0
+   pno 0
+   pfo 0
+   pf 4
+   pv 0
+   NowUse 1
+   DrawingType 0
+   LightVector 90 90 150 0
+   OGLShadow(UseShadows) 0
+   OGLShadow(RenderMode) RenderNice
+   OGLShadow(ShadowBias) -0.002
+   OGLShadow(AmbientShadows) 1
+   OGLShadow(UseFBO) 0
+   OGLShadow(FBOSize) 2048
+   OGLShadow(DimmedLightFactor) 0.02
+   OGLStereo(UseStereo) 0
+   OGLStereo(RelativeEyeDistance) 1
+   OGLStereo(FlipEyes) 0
+   OGLStereo(StereoMode) AnaglyphColors
+   OGLStereo(EyeDistance) 0.075
+   OGLStereo(LeftEyeDistance) 1 0 0 1
+   OGLStereo(RightEyeDistance) 0 1 1 1
+EndZE C:\Users\Peter\Desktop\TUM\Thesis\Development\Thick triangle shell\Composites\statics\composite barrel vault\scorderlis_composite_full2.gid\scorderlis_composite_full2.vv
+
+BeginMirror
+   Mirror 0 Angle 0.0 AngleFake -15.0 SizeFactor 2.0 HeightOffset 0.25 Color #d9e5f24d Backlight Off EdgeStyle No Type Scene DrawMode Mirror
+EndMirror
+

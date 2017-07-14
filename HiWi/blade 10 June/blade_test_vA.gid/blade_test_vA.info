@@ -1,0 +1,25 @@
+ |  /           |             
+ ' /   __| _` | __|  _ \   __|
+ . \  |   (   | |   (   |\__ \ 
+_|\_\_|  \__,_|\__|\___/ ____/
+           Multi-Physics 5.0.15612
+     KRATOS  __|  _ \  |   |  _ \              
+           \__ \ (   | |   | | , )             
+           |___/\___/ ___|_| ___/ MECHANICS     
+Initializing KratosSolidMechanicsApplication...  
+     KRATOS   ___|  |                   |                   |               
+            \___ \  __|  __| |   |  __| __| |   |  __| _` | |               
+                  | |   |    |   | (    |   |   | |   (   | |               
+            _____/ \__|_|   \__,_|\___|\__|\__,_|_|  \__,_|_| MECHANICS     
+Initializing KratosExternalSolversApplication... 
+  [Reading Nodes    : 1240 nodes read]
+  [Reading Elements : 12 elements read] [Type: ShellThinElementCorotational3D3N]
+  [Reading Conditions : 1134 conditions read] [Type: SurfaceLoadCondition3D3N]
+Mon Jul 10 09:47:52 2017
+Importing    KratosSolidMechanicsApplication
+Importing    KratosStructuralMechanicsApplication
+Importing    KratosExternalSolversApplication
+Construction of MechanicalSolver finished
+::[Mechanical Solver]:: Variables ADDED
+::[Mechanical Solver]:: Model reading starts.
+KRATOS TERMINATED WITH ERROR

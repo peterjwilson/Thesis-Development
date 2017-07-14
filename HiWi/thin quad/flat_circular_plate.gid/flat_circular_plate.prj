@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gid version="13.1">
+  <pre>
+    <layer_to_use name="Layer0"/>
+    <groups>
+      <group id="1" name="surface" color="#ffaaaaff"/>
+      <group id="2" name="edge" color="#0000ffff"/>
+    </groups>
+    <entities_groups>
+      <entities_group name="lines">
+        <vector name="entity_ids" length="1" type="integer">1</vector>
+        <vector name="entity_num_groups" length="1" type="ushort">1</vector>
+        <vector name="entity_groups" length="1" type="ushort">2</vector>
+      </entities_group>
+      <entities_group name="surfaces">
+        <vector name="entity_ids" length="1" type="integer">1</vector>
+        <vector name="entity_num_groups" length="1" type="ushort">1</vector>
+        <vector name="entity_groups" length="1" type="ushort">1</vector>
+      </entities_group>
+      <entities_group name="nodes">
+        <vector name="entity_ids" length="54" type="integer">1:54</vector>
+        <vector name="entity_num_groups" length="54" type="ushort">2 1x3 2 2 1x3 2 2 1 1 2 2 1x3 2 2 1x4 2 2 1x4 2 2 1x4 2 2 1x3 2 2 1x4 2x7</vector>
+        <vector name="entity_groups" length="78" type="ushort">2 1x4 2 1 2 1x4 2 1 2 1x3 2 1 2 1x4 2 1 2 1x5 2 1 2 1x5 2 1 2 1x5 2 1 2 1x4 2 1 2 1x5 2 1 2 1 2 1 2 1 2 1 2 1 2 1</vector>
+      </entities_group>
+      <entities_group name="elements">
+        <vector name="entity_ids" length="41" type="integer">1:41</vector>
+        <vector name="entity_num_groups" length="41" type="ushort">1x41</vector>
+        <vector name="entity_groups" length="41" type="ushort">1x41</vector>
+      </entities_group>
+      <entities_group name="faces">
+        <vector name="entity_ids" length="24" type="integer">1:24</vector>
+        <vector name="entity_num_faces" length="24" type="uchar">1x24</vector>
+        <vector name="entity_faces" length="24" type="uchar">1x24</vector>
+        <vector name="face_num_groups" length="24" type="ushort">1x24</vector>
+        <vector name="face_groups" length="24" type="ushort">2x24</vector>
+      </entities_group>
+    </entities_groups>
+  </pre>
+</gid>

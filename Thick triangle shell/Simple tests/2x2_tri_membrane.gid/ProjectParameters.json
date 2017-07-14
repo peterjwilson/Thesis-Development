@@ -106,7 +106,7 @@
             "skin_output"         : false,
             "plane_output"        : [],
             "nodal_results"       : ["DISPLACEMENT","REACTION","ROTATION","TORQUE"],
-            "gauss_point_results" : ["LOCAL_AXES_VECTOR","SHELL_STRAIN_GLOBAL"]
+            "gauss_point_results" : ["LOCAL_AXIS_VECTOR_1","ORTHOTROPIC_FIBER_ORIENTATION_1"]
         },
         "point_data_configuration"  : []
     },

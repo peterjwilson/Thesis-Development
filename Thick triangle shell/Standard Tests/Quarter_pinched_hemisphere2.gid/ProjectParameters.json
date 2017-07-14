@@ -147,7 +147,7 @@
             "skin_output"         : false,
             "plane_output"        : [],
             "nodal_results"       : ["DISPLACEMENT","REACTION","ROTATION","TORQUE"],
-            "gauss_point_results" : ["VON_MISES_STRESS","SHELL_STRAIN_GLOBAL","SHELL_FORCE_GLOBAL"]
+            "gauss_point_results" : []
         },
         "point_data_configuration"  : []
     },

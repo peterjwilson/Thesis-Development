@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gid version="13.1">
+  <pre>
+    <layer_to_use name="Layer0"/>
+    <groups>
+      <group id="1" name="surface" color="#ffaaaaff"/>
+      <group id="2" name="edge" color="#0000ffff"/>
+    </groups>
+    <entities_groups>
+      <entities_group name="lines">
+        <vector name="entity_ids" length="1" type="integer">1</vector>
+        <vector name="entity_num_groups" length="1" type="ushort">1</vector>
+        <vector name="entity_groups" length="1" type="ushort">2</vector>
+      </entities_group>
+      <entities_group name="surfaces">
+        <vector name="entity_ids" length="1" type="integer">1</vector>
+        <vector name="entity_num_groups" length="1" type="ushort">1</vector>
+        <vector name="entity_groups" length="1" type="ushort">1</vector>
+      </entities_group>
+      <entities_group name="nodes">
+        <vector name="entity_ids" length="39" type="integer">1:39</vector>
+        <vector name="entity_num_groups" length="39" type="ushort">2x3 1 1 2 2 1 1 2 2 1 1 2 2 1 1 2 2 1 1 2 2 1 1 2 2 1 1 2 2 1 2x7</vector>
+        <vector name="entity_groups" length="63" type="ushort">2 1 2 1 2 1x3 2 1 2 1x3 2 1 2 1x3 2 1 2 1x3 2 1 2 1x3 2 1 2 1x3 2 1 2 1x3 2 1 2 1 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1</vector>
+      </entities_group>
+      <entities_group name="elements">
+        <vector name="entity_ids" length="52" type="integer">1:52</vector>
+        <vector name="entity_num_groups" length="52" type="ushort">1x52</vector>
+        <vector name="entity_groups" length="52" type="ushort">1x52</vector>
+      </entities_group>
+      <entities_group name="faces">
+        <vector name="entity_ids" length="24" type="integer">1:24</vector>
+        <vector name="entity_num_faces" length="24" type="uchar">1x24</vector>
+        <vector name="entity_faces" length="24" type="uchar">1x24</vector>
+        <vector name="face_num_groups" length="24" type="ushort">1x24</vector>
+        <vector name="face_groups" length="24" type="ushort">2x24</vector>
+      </entities_group>
+    </entities_groups>
+  </pre>
+</gid>
