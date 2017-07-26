@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "MainKratos.py", line 66, in <module>
+    solver.ImportModelPart()
+  File "C:\PROGRA~1\GiD\GID131~1.7D\PROBLE~1\kratos.gid\exec\kratos\KratosMultiphysics\../applications\SolidMechanicsApplication\python_scripts\solid_mechanics_implicit_dynamic_solver.py", line 120, in ImportModelPart
+    ModelPartIO(self.settings["model_import_settings"]["input_filename"].GetString()).ReadModelPart(self.main_model_part)
+RuntimeError: Element #1 is not found. [Line 2720 ] 
+ iterators::indirect_iterator< std::_Vector_iterator< std::_Vector_val<struct std::_Simple_types< shared_ptr< Element> > > >,struct iterators::use_default,struct iterators::use_default,struct iterators::use_default,struct iterators::use_default>  ModelPartIO::FindKey< PointerVectorSet< Element, IndexedObject,struct std::less<unsigned __int64>,struct std::equal_to<unsigned __int64>, shared_ptr< Element>, std::vector< shared_ptr< Element>, std::allocator< shared_ptr< Element> > > >,unsigned __int64>( PointerVectorSet< Element, IndexedObject,struct std::less<unsigned __int64>,struct std::equal_to<unsigned __int64>, shared_ptr< Element>, std::vector< shared_ptr< Element>, std::allocator< shared_ptr< Element> > > > &,unsigned __int64, std::basic_string<char,struct std::char_traits<char>, std::allocator<char> >) [ C:\KratosSource\kratos\sources\model_part_io.cpp , Line 3767 ] 
+ 
+void  ModelPartIO::ReadSubModelPartElementsBlock( ModelPart &, ModelPart &) [ C:\KratosSource\kratos\sources\model_part_io.cpp , Line 2489 ] 
+ 
+void  ModelPartIO::ReadSubModelPartBlock( ModelPart &, ModelPart &) [ C:\KratosSource\kratos\sources\model_part_io.cpp , Line 2410 ] 
+ 
+void  ModelPartIO::ReadModelPart( ModelPart &) [ C:\KratosSource\kratos\sources\model_part_io.cpp , Line 370 ] 
+

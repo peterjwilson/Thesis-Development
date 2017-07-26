@@ -1,0 +1,113 @@
+ |  /           |             
+ ' /   __| _` | __|  _ \   __|
+ . \  |   (   | |   (   |\__ \ 
+_|\_\_|  \__,_|\__|\___/ ____/
+           Multi-Physics 5.0.0-fd5a890
+     KRATOS   ___|  |                   |                   |               
+            \___ \  __|  __| |   |  __| __| |   |  __| _` | |               
+                  | |   |    |   | (    |   |   | |   (   | |               
+            _____/ \__|_|   \__,_|\___|\__|\__,_|_|  \__,_|_| MECHANICS     
+Initializing KratosExternalSolversApplication... 
+  [Reading Nodes    : 384 nodes read]
+  [Reading Elements : 376 elements read] [Type: ShellThickElementCorotational3D4N]
+  [Reading Elements : 6 elements read] [Type: ShellThinElementCorotational3D3N]
+  [Reading Conditions : 6 conditions read] [Type: SurfaceLoadCondition3D3N]
+  [Total Lines Read : 1620]
+Importing    KratosStructuralMechanicsApplication
+Importing    KratosExternalSolversApplication
+Mon Jul 17 10:33:12 2017
+::[MechanicalSolver]:: Construction finished
+::[StaticMechanicalSolver]:: Construction finished
+::[MechanicalSolver]:: Variables ADDED
+::[MechanicalSolver]:: Importing model part.
+    Reading model part from file: /home/philippb/Documents/Students/Peter/NREL_Blade_100.gid/NREL_Blade_100.mdpa
+    Finished reading model part from mdpa file.
+Computing model part:
+-computing_domain- model part
+    Number of tables : 0
+    Number of sub model parts : 0
+
+    Mesh 0 : 
+        Number of Nodes      : 384
+        Number of Properties : 1
+        Number of Elements   : 382
+        Number of Conditions : 6
+
+
+finished reading materials
+    Constitutive law was successfully imported.
+-Structure- model part
+    Buffer Size : 2
+    Number of tables : 0
+    Number of sub model parts : 5
+    Current solution step index : 0
+    DOMAIN_SIZE : 3
+    TIME : 0
+    STEP : 0
+    DELTA_TIME : 0
+    IS_RESTARTED : 0
+
+    Mesh 0 : 
+        Number of Nodes      : 384
+        Number of Properties : 3
+        Number of Elements   : 382
+        Number of Conditions : 6
+
+    -computing_domain- model part
+        Number of tables : 0
+        Number of sub model parts : 0
+
+        Mesh 0 : 
+            Number of Nodes      : 384
+            Number of Properties : 3
+            Number of Elements   : 382
+            Number of Conditions : 6
+    -SurfaceLoad3D_Load_on_surfaces_Auto1- model part
+        Number of tables : 0
+        Number of sub model parts : 0
+
+        Mesh 0 : 
+            Number of Nodes      : 8
+            Number of Properties : 0
+            Number of Elements   : 0
+            Number of Conditions : 6
+    -DISPLACEMENT_Displacement_Auto1- model part
+        Number of tables : 0
+        Number of sub model parts : 0
+
+        Mesh 0 : 
+            Number of Nodes      : 8
+            Number of Properties : 0
+            Number of Elements   : 0
+            Number of Conditions : 0
+    -Parts_Parts_Auto3- model part
+        Number of tables : 0
+        Number of sub model parts : 0
+
+        Mesh 0 : 
+            Number of Nodes      : 8
+            Number of Properties : 1
+            Number of Elements   : 6
+            Number of Conditions : 0
+    -Parts_Parts_Auto2- model part
+        Number of tables : 0
+        Number of sub model parts : 0
+
+        Mesh 0 : 
+            Number of Nodes      : 384
+            Number of Properties : 1
+            Number of Elements   : 376
+            Number of Conditions : 0
+
+::[MechanicalSolver]:: Finished importing model part.
+::[MechanicalSolver]:: DOF's ADDED
+::[StaticMechanicalSolver]:: Initializing ...
+::[MechanicalSolver]:: Initializing ...
+::[MechanicalSolver]:: Finished initialization.
+::[StaticMechanicalSolver]:: Finished initialization.
+[]
+::[KSM Simulation]:: Analysis -END- 
+ 
+::[KSM Simulation]:: [ Computing Time = (0.19  seconds process time) ( 0.19  seconds wall time) ]
+Mon Jul 17 10:33:12 2017
+KRATOS TERMINATED CORRECTLY

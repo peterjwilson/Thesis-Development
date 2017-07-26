@@ -2,21 +2,22 @@ from __future__ import print_function, absolute_import, division #makes KratosMu
 
 #### TIME MONITORING START ####
 
-# Time control starts
+# time control starts
 import time as timer
 print(timer.ctime())
-# Measure process time
+# measure process time
 t0p = timer.clock()
-# Measure wall time
+# measure wall time
 t0w = timer.time()
 
+#
 def StartTimeMeasuring():
-    # Measure process time
+    # measure process time
     time_ip = timer.clock()
     return time_ip
 
 def StopTimeMeasuring(time_ip, process, report):
-    # Measure process time
+    # measure process time
     time_fp = timer.clock()
     if( report ):
         used_time = time_fp - time_ip
@@ -24,11 +25,12 @@ def StopTimeMeasuring(time_ip, process, report):
 
 #### TIME MONITORING END ####
 
-# Import kratos core and applications
+#import kratos core and applications
 from KratosMultiphysics import *
 from KratosMultiphysics.SolidMechanicsApplication import *
 from KratosMultiphysics.StructuralMechanicsApplication import *
 from KratosMultiphysics.ExternalSolversApplication import *
+
 
 ######################################################################################
 ######################################################################################
@@ -36,74 +38,79 @@ from KratosMultiphysics.ExternalSolversApplication import *
 
 #### PARSING THE PARAMETERS ####
 
-# Import define_output
-#parameter_file = open("ProjectParametersStatic.json",'r')
-parameter_file = open("ProjectParametersDynamic.json",'r')
+#import define_output
+parameter_file = open("ProjectParameters.json",'r')
 ProjectParameters = Parameters( parameter_file.read())
 
-parallel_type = ProjectParameters["problem_data"]["parallel_type"].GetString()
-if parallel_type == "MPI":
-    import KratosMultiphysics.mpi as KratosMPI
+#set echo level
+echo_level = ProjectParameters["problem_data"]["echo_level"].GetInt()
 
-# Set echo level
-verbosity = ProjectParameters["problem_data"]["echo_level"].GetInt()
+#### model_part settings start ####
 
-#### Model_part settings start ####
-
-# Defining the model_part
+#defining the model_part
 main_model_part = ModelPart(ProjectParameters["problem_data"]["model_part_name"].GetString())
 main_model_part.ProcessInfo.SetValue(DOMAIN_SIZE, ProjectParameters["problem_data"]["domain_size"].GetInt())
 
-# Construct the solver (main setting methods are located in the solver_module)
+###TODO replace this "model" for real one once available in kratos core
+Model = {ProjectParameters["problem_data"]["model_part_name"].GetString() : main_model_part}
+
+#construct the solver (main setting methods are located in the solver_module)
 solver_module = __import__(ProjectParameters["solver_settings"]["solver_type"].GetString())
 solver = solver_module.CreateSolver(main_model_part, ProjectParameters["solver_settings"])
 
-# Add variables (always before importing the model part) (it must be integrated in the ImportModelPart)
-# If we integrate it in the model part we cannot use combined solvers
+#add variables (always before importing the model part) (it must be integrated in the ImportModelPart)
+# if we integrate it in the model part we cannot use combined solvers
 solver.AddVariables()
 
-# Read model_part (note: the buffer_size is set here) (restart can be read here)
+#read model_part (note: the buffer_size is set here) (restart can be read here)
 solver.ImportModelPart()
 
-# Add dofs (always after importing the model part) (it must be integrated in the ImportModelPart)
-# If we integrate it in the model part we cannot use combined solvers
+#add dofs (always after importing the model part) (it must be integrated in the ImportModelPart)
+# if we integrate it in the model part we cannot use combined solvers
 solver.AddDofs()
 
-# Creation of Kratos model
-SolidModel = Model()
-SolidModel.AddModelPart(main_model_part)
-
-# Build sub_model_parts or submeshes (rearrange parts for the application of custom processes)
-## Get the list of the submodel part in the object Model
+#build sub_model_parts or submeshes (rearrange parts for the application of custom processes)
+##TODO: replace MODEL for the Kratos one ASAP
+##get the list of the submodel part in the object Model
 for i in range(ProjectParameters["solver_settings"]["processes_sub_model_part_list"].size()):
     part_name = ProjectParameters["solver_settings"]["processes_sub_model_part_list"][i].GetString()
-    SolidModel.AddModelPart(main_model_part.GetSubModelPart(part_name))
+    Model.update({part_name: main_model_part.GetSubModelPart(part_name)})
 
 #print model_part and properties
-if(verbosity>1):
+if(echo_level>1):
     print("")
     print(main_model_part)
     for properties in main_model_part.Properties:
         print(properties)
 
-#### Model_part settings end ####
+#### model_part settings end ####
 
-#### Processes settings start ####
+
+#### processes settings start ####
 
 #obtain the list of the processes to be applied
 
 import process_factory
-list_of_processes = process_factory.KratosProcessFactory(SolidModel).ConstructListOfProcesses( ProjectParameters["constraints_process_list"] )
+list_of_processes = process_factory.KratosProcessFactory(Model).ConstructListOfProcesses( ProjectParameters["constraints_process_list"] )
 
-list_of_processes += process_factory.KratosProcessFactory(SolidModel).ConstructListOfProcesses( ProjectParameters["loads_process_list"] )
+list_of_processes += process_factory.KratosProcessFactory(Model).ConstructListOfProcesses( ProjectParameters["loads_process_list"] )
 
-#list_of_processes += process_factory.KratosProcessFactory(SolidModel).ConstructListOfProcesses(ProjectParameters["list_other_processes"])
-
-# Print list of constructed processes
-if(verbosity>1):
+#list_of_processes = []
+#process_definition = ProjectParameters["boundary_conditions_process_list"]
+#for i in range(process_definition.size()):
+#    item = process_definition[i]
+#    module = __import__(item["implemented_in_module"].GetString())
+#    interface_file = __import__(item["implemented_in_file"].GetString())
+#    p = interface_file.Factory(item, Model)
+#    list_of_processes.append( p )
+#    print("done ",i)
+            
+#print list of constructed processes
+if(echo_level>1):
     for process in list_of_processes:
         print(process)
 
+#TODO: decide which is the correct place to initialize the processes 
 for process in list_of_processes:
     process.ExecuteInitialize()
 
@@ -111,40 +118,37 @@ for process in list_of_processes:
 
 #### START SOLUTION ####
 
-computing_model_part = solver.GetComputingModelPart()
+#TODO: think if there is a better way to do this
+computing_model_part = solver.GetComputeModelPart()
 
-#### Output settings start ####
+
+#### output settings start ####
 
 problem_path = os.getcwd()
 problem_name = ProjectParameters["problem_data"]["problem_name"].GetString()
-output_settings = ProjectParameters["output_configuration"]
 
-# Initialize GiD  I/O (gid outputs, file_lists)
-if parallel_type == "OpenMP":
-    from gid_output_process import GiDOutputProcess
-    gid_output = GiDOutputProcess(computing_model_part,
-                                  problem_name,
-                                  output_settings)
-elif parallel_type == "MPI":
-    from gid_output_process_mpi import GiDOutputProcessMPI
-    gid_output = GiDOutputProcessMPI(computing_model_part,
-                                     problem_name,
-                                     output_settings)
+# initialize GiD  I/O (gid outputs, file_lists)
+from gid_output_process import GiDOutputProcess
+output_settings = ProjectParameters["output_configuration"]
+gid_output = GiDOutputProcess(computing_model_part,
+                              problem_name,
+                              output_settings)
 
 gid_output.ExecuteInitialize()
 
-#### Output settings end ####
+# restart write included in gid IO ??
+
+#### output settings end ####
 
 ## Sets strategies, builders, linear solvers, schemes and solving info, and fills the buffer
 solver.Initialize()
 
-if (parallel_type == "OpenMP") or (KratosMPI.mpi.rank == 0):
-    print(" ")
-    print("::[KSM Simulation]:: Analysis -START- ")
+print(" ")
+print("::[KSM Simulation]:: Analysis -START- ")
 
 for process in list_of_processes:
     process.ExecuteBeforeSolutionLoop()
-
+    
 ## Set results when are written in a single file
 gid_output.ExecuteBeforeSolutionLoop()
 
@@ -157,7 +161,6 @@ step       = 0
 time       = ProjectParameters["problem_data"]["start_time"].GetDouble()
 #end time
 end_time   = ProjectParameters["problem_data"]["end_time"].GetDouble()
-num_steps = (end_time-time)/delta_time
 
 # monitoring info:  # must be contained in the solver
 #import solving_info_utility as solving_info_utils
@@ -166,74 +169,77 @@ num_steps = (end_time-time)/delta_time
 # writing a initial state results file (if no restart)
 # gid_io.write_results(time, computing_model_part) done in ExecuteBeforeSolutionLoop()
 
-## Writing the full ProjectParameters file before solving
-if ((parallel_type == "OpenMP") or (KratosMPI.mpi.rank == 0)) and (verbosity > 0):
-    f = open("ProjectParametersOutput.json", 'w')
-    f.write(ProjectParameters.PrettyPrintJsonString())
-    f.close()
-
-# Solving the problem (time integration)
+# solving the problem (time integration)
 while(time <= end_time):
 
     #TODO: this must be done by a solving_info utility in the solver
-    # Store previous time step
+    # store previous time step
     #~ computing_model_part.ProcessInfo[PREVIOUS_DELTA_TIME] = delta_time
-    # Set new time step ( it can change when solve is called )
+    # set new time step ( it can change when solve is called )
     #~ delta_time = computing_model_part.ProcessInfo[DELTA_TIME]
 
     time = time + delta_time
     step = step + 1
-    main_model_part.ProcessInfo[TIME_STEPS] = step
     main_model_part.CloneTimeStep(time)
 
-    if (parallel_type == "OpenMP") or (KratosMPI.mpi.rank == 0):
-        print(" [STEP:",step,"/",num_steps,"| TIME:",round(time,2),"]")
-
-    # Print process info
-
+    # print process info
+    ##
+    
     for process in list_of_processes:
         process.ExecuteInitializeSolutionStep()
 
     gid_output.ExecuteInitializeSolutionStep()
-
+        
     solver.Solve()
-
-    gid_output.ExecuteFinalizeSolutionStep()
-
+       
     for process in list_of_processes:
         process.ExecuteFinalizeSolutionStep()
+    
+    gid_output.ExecuteFinalizeSolutionStep()
 
+    #TODO: decide if it shall be done only when output is processed or not (boundary_conditions_processes ??)
     for process in list_of_processes:
         process.ExecuteBeforeOutputStep()
-
-    # Write results and restart files: (frequency writing is controlled internally by the gid_io)
+    
+    # write results and restart files: (frequency writing is controlled internally by the gid_io)
     if gid_output.IsOutputStep():
         gid_output.PrintOutput()
-
+                      
+    #TODO: decide if it shall be done only when output is processed or not
     for process in list_of_processes:
         process.ExecuteAfterOutputStep()
 
 
-# Ending the problem (time integration finished)
-gid_output.ExecuteFinalize()
-
 for process in list_of_processes:
     process.ExecuteFinalize()
+    
+# ending the problem (time integration finished)
+gid_output.ExecuteFinalize()
 
-# Check solving information for any problem
+print("::[KSM Simulation]:: Analysis -END- ")
+print(" ")
+
+# check solving information for any problem
 #~ solver.InfoCheck() # InfoCheck not implemented yet.
 
 #### END SOLUTION ####
 
-if (parallel_type == "OpenMP") or (KratosMPI.mpi.rank == 0):
-    print("::[KSM Simulation]:: Analysis -END- ")
-    print(" ")
+# measure process time
+tfp = timer.clock()
+# measure wall time
+tfw = timer.time()
 
-    # Measure process time
-    tfp = timer.clock()
-    # Measure wall time
-    tfw = timer.time()
+print("::[KSM Simulation]:: [ Computing Time = (%.2f" % (tfp - t0p)," seconds process time) ( %.2f" % (tfw - t0w)," seconds wall time) ]")
 
-    print("::[KSM Simulation]:: [ Computing Time = (%.2f" % (tfp - t0p)," seconds process time) ( %.2f" % (tfw - t0w)," seconds wall time) ]")
+print(timer.ctime())
 
-    print(timer.ctime())
+# to create a benchmark: add standard benchmark files and decomment next two lines 
+# rename the file to: run_test.py
+#from run_test_benchmark_results import *
+#WriteBenchmarkResults(model_part)
+
+
+
+
+
+

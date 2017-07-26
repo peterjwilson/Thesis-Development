@@ -25,13 +25,6 @@ def StopTimeMeasuring(time_ip, process, report):
 
 #### TIME MONITORING END ####
 
-def ApplyLoad(initial_value, model_part, time):
-    for node in model_part.Nodes:
-        factor = 1
-        value = initial_value * factor * time
-        node.SetSolutionStepValue(POINT_LOAD_Y,0,value)
-
-
 #import kratos core and applications
 from KratosMultiphysics import *
 from KratosMultiphysics.SolidMechanicsApplication import *
@@ -126,7 +119,7 @@ for process in list_of_processes:
 #### START SOLUTION ####
 
 #TODO: think if there is a better way to do this
-computing_model_part = solver.GetComputingModelPart()
+computing_model_part = solver.GetComputeModelPart()
 
 
 #### output settings start ####
@@ -175,8 +168,7 @@ end_time   = ProjectParameters["problem_data"]["end_time"].GetDouble()
 
 # writing a initial state results file (if no restart)
 # gid_io.write_results(time, computing_model_part) done in ExecuteBeforeSolutionLoop()
-fod = open("displacement.txt", "w")
-fol = open("load.txt", "w")
+
 # solving the problem (time integration)
 while(time <= end_time):
 
@@ -197,16 +189,8 @@ while(time <= end_time):
         process.ExecuteInitializeSolutionStep()
 
     gid_output.ExecuteInitializeSolutionStep()
-    print("Time = ", time)    
-    ApplyLoad(10000, main_model_part.GetSubModelPart("PointLoad3D_load"), time)
-    
-    for node in main_model_part.GetSubModelPart("PointLoad3D_load").Nodes:
-        fol.write(str(node.GetSolutionStepValue(POINT_LOAD_Y,0)) +  "\n")
         
     solver.Solve()
-    
-    for node in main_model_part.GetSubModelPart("PointLoad3D_load").Nodes:
-        fod.write(str(node.GetSolutionStepValue(DISPLACEMENT_Y,0)) + "\n")
        
     for process in list_of_processes:
         process.ExecuteFinalizeSolutionStep()
@@ -228,10 +212,7 @@ while(time <= end_time):
 
 for process in list_of_processes:
     process.ExecuteFinalize()
- 
-fod.close()
-fol.close()
-
+    
 # ending the problem (time integration finished)
 gid_output.ExecuteFinalize()
 

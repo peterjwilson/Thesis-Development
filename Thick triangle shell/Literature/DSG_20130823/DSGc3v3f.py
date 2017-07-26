@@ -90,8 +90,8 @@ kirchhoffDispField = a1 + a2*xi +a3*eta + a4*xi**2 + 0.5*(a5+a6)*xi*eta + a7*eta
 
 #rmDispField = a8*xi + a9*eta - Bub*xi*eta #generic bubble mode # original Bletzinger
 #rmDispField = a8*xi + a9*eta - (a8+a9)*xi*eta #generic bubble mode # original Bletzinger
-#rmDispField = a8*xi + a9*eta #no bubble # original Bletzinger no bubbl field
-rmDispField = N1*W1 + xi*W2 + eta*W3 + a8*xi + a9*eta # modified by explicitly including displacements, this means the constants a8 and a9 are only rotations
+rmDispField = a8*xi + a9*eta #no bubble # original Bletzinger no bubbl field
+#rmDispField = N1*W1 + xi*W2 + eta*W3 + a8*xi + a9*eta # modified by explicitly including displacements, this means the constants a8 and a9 are only rotations
 
 moderatorDispField = 0.5*(a5-a6)*N2*N3 # original Bletzinger
 C = a5 - a6
@@ -126,6 +126,8 @@ rmShearField_eta = sp.diff(GY,eta)
 shearGapField = rmDispField - kirchhoffDispField
 shearGapField_xi = GX - PX
 shearGapField_eta = GY - PY
+
+print("shearGapField = ",sp.simplify(shearGapField))
 
 #Identification of the Ansatz coefficients with the node values for shifts Wi and rotations
 # (converted to zero value eqns)
@@ -188,7 +190,7 @@ kirchhoffDispField_u = kirchhoffDispField.subs([(a1,ansatzCoefficients[0]),(a2,a
 #print("\n kirchhoffDispField_u = ",kirchhoffDispField_u)
 
 rmDispField_u = rmDispField.subs([(a1,ansatzCoefficients[0]),(a2,ansatzCoefficients[1]),(a3,ansatzCoefficients[2]),(a4,ansatzCoefficients[3]),(a5,ansatzCoefficients[4]),(a6,ansatzCoefficients[5]),(a7,ansatzCoefficients[6]),(a8,ansatzCoefficients[7]),(a9,ansatzCoefficients[8])])
-#print("\nrmDispField_u = ",rmDispField_u)
+print("\nrmDispField_u = ",rmDispField_u)
 
 moderatorDispField_u = moderatorDispField.subs([(a1,ansatzCoefficients[0]),(a2,ansatzCoefficients[1]),(a3,ansatzCoefficients[2]),(a4,ansatzCoefficients[3]),(a5,ansatzCoefficients[4]),(a6,ansatzCoefficients[5]),(a7,ansatzCoefficients[6]),(a8,ansatzCoefficients[7]),(a9,ansatzCoefficients[8])])
 print("\nmoderatorDispField_u = ",moderatorDispField_u)
@@ -210,7 +212,7 @@ C_u = C.subs([(a1,ansatzCoefficients[0]),(a2,ansatzCoefficients[1]),(a3,ansatzCo
 rmDispField_w = N1*W1 + N2*W2 + N3*W3
 rmDispField_xi = N2*0.5*(a*(PX1+PX2) + b*(PY1 + PY2))
 rmDispField_eta = N3*0.5*(d*(PX1+PX3) + c*(PY1 + PY3))
-rmDispField_u = rmDispField_w + rmDispField_xi + rmDispField_eta
+#rmDispField_u = rmDispField_w + rmDispField_xi + rmDispField_eta
 GX_rm = rmDispField_u
 
 #The rotation entries in this field are NOT multiplied with lengths (a,b,c,d), resulting
@@ -235,22 +237,22 @@ GY_u = GY_u.subs([(a1,ansatzCoefficients[0]),(a2,ansatzCoefficients[1]),(a3,ansa
 # Section 8 : Switch from plate theory rotational DOFs to geometric rotations
 # -----------------------------------------------------------------------------
 
-# vector of displacements is updated
-UVector = sp.zeros(9,1) 
-UVector[0] = W1
-UVector[1] = W2
-UVector[2] = W3
-UVector[3] = RX1
-UVector[4] = RX2
-UVector[5] = RX3
-UVector[6] = RY1
-UVector[7] = RY2
-UVector[8] = RY3
-print("Vector of displacements (rotations are per FEM):\n",UVector)
-
-# Sub in Kratos rotations
-GX_u = GX_u.subs([(PY1,-RX1),(PY2,-RX2),(PY3,-RX3),(PX1,RY1),(PX2,RY2),(PX3,RY3)])
-GY_u = GY_u.subs([(PY1,-RX1),(PY2,-RX2),(PY3,-RX3),(PX1,RY1),(PX2,RY2),(PX3,RY3)])
+## vector of displacements is updated
+#UVector = sp.zeros(9,1) 
+#UVector[0] = W1
+#UVector[1] = W2
+#UVector[2] = W3
+#UVector[3] = RX1
+#UVector[4] = RX2
+#UVector[5] = RX3
+#UVector[6] = RY1
+#UVector[7] = RY2
+#UVector[8] = RY3
+#print("Vector of displacements (rotations are per FEM):\n",UVector)
+#
+## Sub in Kratos rotations
+#GX_u = GX_u.subs([(PY1,-RX1),(PY2,-RX2),(PY3,-RX3),(PX1,RY1),(PX2,RY2),(PX3,RY3)])
+#GY_u = GY_u.subs([(PY1,-RX1),(PY2,-RX2),(PY3,-RX3),(PX1,RY1),(PX2,RY2),(PX3,RY3)])
 
 
 # Jacobian entries
@@ -270,8 +272,15 @@ deta_dy = a/detJ
 #rmShearField_eta_u = sp.diff(GY_u,xi)*dxi_dy + sp.diff(GY_u,eta)*deta_dy + sp.diff(GX_u,xi)*dxi_dy + sp.diff(GX_u,eta)*deta_dy
 
 # Cartesian transformation used in Original DSG derivation
-rmShearField_xi_u = sp.diff(GX_u,xi)*c/detJ + sp.diff(GY_u,eta)*-b/detJ
-rmShearField_eta_u = sp.diff(GY_u,eta)*a/detJ + sp.diff(GX_u,xi)*-d/detJ
+#rmShearField_xi_u = sp.diff(GX_u,xi)*c/detJ + sp.diff(GY_u,eta)*-b/detJ
+#rmShearField_eta_u = sp.diff(GY_u,eta)*a/detJ + sp.diff(GX_u,xi)*-d/detJ
+
+# Parametric only differentiation
+rmShearField_xi_u = sp.diff(GX_u,xi)
+rmShearField_eta_u = sp.diff(GY_u,eta)
+
+print("\ parametric only rmShearField_xi_u = ",rmShearField_xi_u)
+print("\ parametric only rmShearField_eta_u = ",rmShearField_eta_u)
 
 
 
@@ -287,7 +296,7 @@ for col in range(9):
     B[0,col] = sp.diff(rmShearField_xi_u,UVector[col])
     B[1,col] = sp.diff(rmShearField_eta_u,UVector[col])
 
-sp.pprint(sp.simplify(B*detJ),wrap_line=False)
+sp.pprint(sp.simplify(B),wrap_line=False)
 
 
 print("\n\n\n\n\nPrinting individual entries of original Bmat (1/detJ taken out), just for easy copying into C++:")

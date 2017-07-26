@@ -178,8 +178,8 @@ end_time   = ProjectParameters["problem_data"]["end_time"].GetDouble()
 # writing a initial state results file (if no restart)
 # gid_io.write_results(time, computing_model_part) done in ExecuteBeforeSolutionLoop()
 
-fod = open("displacement.txt", "w")
-fol = open("load.txt", "w")
+fod = open("displacement_kratos_quad.txt", "w")
+fol = open("load_kratos_quad.txt", "w")
 # solving the problem (time integration)
 while(time <= end_time):
 

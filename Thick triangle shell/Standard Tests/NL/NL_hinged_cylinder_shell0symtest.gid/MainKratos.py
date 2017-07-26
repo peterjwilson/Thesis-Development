@@ -27,13 +27,13 @@ def ApplyLoad(initial_value, model_part, time):
     for node in model_part.Nodes:
         factor = 1
         value = initial_value * factor * time
-        node.SetSolutionStepValue(POINT_LOAD_Y,0,value)
+        node.SetSolutionStepValue(DISPLACEMENT_Y,0,value)
 
 #### TIME MONITORING END ####
 
 #import kratos core and applications
 from KratosMultiphysics import *
-from KratosMultiphysics.SolidMechanicsApplication import *
+#from KratosMultiphysics.SolidMechanicsApplication import *
 from KratosMultiphysics.StructuralMechanicsApplication import *
 from KratosMultiphysics.ExternalSolversApplication import *
 
@@ -175,8 +175,8 @@ end_time   = ProjectParameters["problem_data"]["end_time"].GetDouble()
 # writing a initial state results file (if no restart)
 # gid_io.write_results(time, computing_model_part) done in ExecuteBeforeSolutionLoop()
 fod = open("displacement.txt", "w")
-fol = open("load.txt", "w")
-fot = open("time.txt", "w")
+fol = open("reaction_y.txt", "w")
+fot = open("time.txt","w")
 # solving the problem (time integration)
 while(time <= end_time):
 
@@ -197,18 +197,19 @@ while(time <= end_time):
         process.ExecuteInitializeSolutionStep()
 
     gid_output.ExecuteInitializeSolutionStep()
-    
-    ApplyLoad(-600, main_model_part.GetSubModelPart("PointLoad3D_point_load"), time)
+        
+    ApplyLoad(-0.03, main_model_part.GetSubModelPart("DISPLACEMENT_point_load"), time)
         
     solver.Solve()
     
-    fol.write(str(-600*time) + ",")
-    
     fot.write(str(time) + ",")
     
-    for node in main_model_part.GetSubModelPart("PointLoad3D_point_load").Nodes:
-        disp = node.GetSolutionStepValue(DISPLACEMENT_Y,0)
-        fod.write(str(disp) + ",")
+    for node in main_model_part.GetSubModelPart("DISPLACEMENT_point_load").Nodes:
+        fol.write(str(node.GetSolutionStepValue(REACTION_Y,0)) +  ",")
+    
+    for node in main_model_part.GetSubModelPart("DISPLACEMENT_point_load").Nodes:
+        fod.write(str(node.GetSolutionStepValue(DISPLACEMENT_Y,0)) + ",")
+       
        
     for process in list_of_processes:
         process.ExecuteFinalizeSolutionStep()
@@ -227,14 +228,15 @@ while(time <= end_time):
     for process in list_of_processes:
         process.ExecuteAfterOutputStep()
 
-fod.close()
-fol.close()
+
 for process in list_of_processes:
     process.ExecuteFinalize()
     
 # ending the problem (time integration finished)
 gid_output.ExecuteFinalize()
-
+fod.close()
+fol.close()
+fot.close()
 print("::[KSM Simulation]:: Analysis -END- ")
 print(" ")
 
