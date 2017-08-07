@@ -1,0 +1,84 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Aug  3 15:26:47 2017
+
+@author: Peter
+"""
+
+import numpy as np
+import sympy as sp
+print("sympy version: ",sp.__version__)
+from mpl_toolkits.mplot3d import Axes3D
+from matplotlib.colors import Normalize
+import matplotlib.pyplot as plt
+from matplotlib import cm
+from matplotlib.ticker import LinearLocator, FormatStrFormatter
+
+myfontsize = 20
+labelfontsize = 14
+#===============================================================================
+## Set style of plots
+font = {'family' : 'sans-serif',
+        'family' : 'Arial',
+        'style'  : 'normal',
+        'weight' : 'normal',
+        'size'   : labelfontsize}
+
+plt.rc('font', **font)
+plt.rc('font', serif='Helvetica Neue') 
+#plt.rcParams['font.family'] = 'Arial'
+#plt.ticklabel_format(style='sci', axis='y', scilimits=(1e-4,10000))
+#===============================================================================
+
+xi = sp.Symbol('xi')
+eta = sp.Symbol('eta')
+
+theta = sp.Symbol('theta')
+
+vx1 = sp.Symbol('vx1')
+vx2 = sp.Symbol('vx2')
+vx3 = sp.Symbol('vx3')
+
+vy1 = sp.Symbol('vy1')
+vy2 = sp.Symbol('vy2')
+vy3 = sp.Symbol('vy3')
+
+vz1 = sp.Symbol('vz1')
+vz2 = sp.Symbol('vz2')
+vz3 = sp.Symbol('vz3')
+
+lcs0 = sp.zeros(3,3)
+lcs0[0,0] = vx1
+lcs0[0,1] = vx2
+lcs0[0,2] = vx3
+
+lcs0[1,0] = vy1
+lcs0[1,1] = vy2
+lcs0[1,2] = vy3
+
+lcs0[2,0] = vz1
+lcs0[2,1] = vz2
+lcs0[2,2] = vz3
+
+T = sp.zeros(3,3)
+T[0,0] = sp.cos(theta)
+T[0,1] = -sp.sin(theta)
+T[1,0] = sp.sin(theta)
+T[1,1] = sp.cos(theta)
+T[2,2] = 1
+
+vx = sp.zeros(3,1)
+vx[0] = vx1
+vx[1] = vx2
+vx[2] = vx3
+
+R = lcs0.T * T * lcs0 * vx
+dR_dTheta = sp.diff(R,theta)
+print(dR_dTheta)
+
+
+
+
+
+
+

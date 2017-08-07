@@ -174,7 +174,7 @@ if ((parallel_type == "OpenMP") or (KratosMPI.mpi.rank == 0)) and (verbosity > 0
 
 
 fiberVector = [0.0,0.0,1.0]
-normalVector = [0,-1,0]
+normalVector = [0,1,0]
 CompositePropertyAssignment().Execute(main_model_part.GetSubModelPart("main_mesh"),fiberVector,normalVector,main_model_part.ProcessInfo)
 
 # Solving the problem (time integration)

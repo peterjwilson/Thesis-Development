@@ -169,7 +169,8 @@ end_time   = ProjectParameters["problem_data"]["end_time"].GetDouble()
 # writing a initial state results file (if no restart)
 # gid_io.write_results(time, computing_model_part) done in ExecuteBeforeSolutionLoop()
 fiberVector = [0.5,0.0,0.5]
-CompositePropertyAssignment().Execute(main_model_part,fiberVector,main_model_part.ProcessInfo)
+normalVector = [0,1.0,0]
+CompositePropertyAssignment().Execute(main_model_part,fiberVector,normalVector,main_model_part.ProcessInfo)
 # solving the problem (time integration)
 while(time <= end_time):
 
