@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gid version="13.2">
+  <pre>
+    <layer_to_use name="Layer0"/>
+    <groups>
+      <group id="1" name="surface" color="#608fbfff"/>
+      <group id="2" name="base" color="#0000ffff"/>
+      <group id="3" name="xy sym" color="#ff00ffff"/>
+      <group id="5" name="yz sym" color="#a60021ff"/>
+      <group id="6" name="Total" color="#00ff00ff" parent_id="2"/>
+      <group id="7" name="Total" color="#996600ff" parent_id="5"/>
+      <group id="8" name="Total" color="#b33366ff" parent_id="3"/>
+      <group id="9" name="Total - 0" color="#804d4dff" parent_id="3"/>
+      <group id="10" name="Total - 0" color="#338080ff" parent_id="5"/>
+      <group id="11" name="Total" color="#4d4d80ff" parent_id="1"/>
+    </groups>
+    <entities_groups>
+      <entities_group name="lines">
+        <vector name="entity_ids" length="3" type="integer">13:15</vector>
+        <vector name="entity_num_groups" length="3" type="ushort">3 3 2</vector>
+        <vector name="entity_groups" length="8" type="ushort">3 8 9 5 7 10 2 6</vector>
+      </entities_group>
+      <entities_group name="surfaces">
+        <vector name="entity_ids" length="1" type="integer">1</vector>
+        <vector name="entity_num_groups" length="1" type="ushort">2</vector>
+        <vector name="entity_groups" length="2" type="ushort">1 11</vector>
+      </entities_group>
+      <entities_group name="nodes">
+        <vector name="entity_ids" length="81" type="integer">1:81</vector>
+        <vector name="entity_num_groups" length="81" type="ushort">7 5 4 2 5 2 4 2 5 2 2 4 2 2 5 2x4 5 2 4 2x5 5 2x4 4 2x5 5 2x6 4 2x3 5 2x10 4 2x11 5x7 7 5</vector>
+        <vector name="entity_groups" length="234" type="ushort">3 8 9 2 6 1 11 3 8 9 1 11 2 6 1 11 1 11 3 8 9 1 11 1 11 2 6 1 11 1 11 3 8 9 1 11 1 11 1 11 2 6 1 11 1 11 1 11 3 8 9 1 11 1 11 1 11 1 11 1 11 3 8 9 1 11 1 11 2 6 1 11 1 11 1 11 1 11 1 11 1 11 3 8 9 1 11 1 11 1 11 1 11 1 11 2 6 1 11 1 11 1 11 1 11 1 11 1 11 3 8 9 1 11 1 11 1 11 1 11 1 11 1 11 1 11 2 6 1 11 1 11 1 11 1 11 3 8 9 1 11 1 11 1 11 1 11 1 11 1 11 1 11 1 11 1 11 1 11 1 11 2 6 1 11 1 11 1 11 1 11 1 11 1 11 1 11 1 11 1 11 1 11 1 11 1 11 5 7 10 1 11 5 7 10 1 11 5 7 10 1 11 5 7 10 1 11 5 7 10 1 11 5 7 10 1 11 5 7 10 1 11 5 7 10 2 6 1 11 5 7 10 1 11</vector>
+      </entities_group>
+      <entities_group name="elements">
+        <vector name="entity_ids" length="88" type="integer">1:88</vector>
+        <vector name="entity_num_groups" length="88" type="ushort">2x64 3x16 2x8</vector>
+        <vector name="entity_groups" length="192" type="ushort">1 11 1 11 1 11 1 11 1 11 1 11 1 11 1 11 1 11 1 11 1 11 1 11 1 11 1 11 1 11 1 11 1 11 1 11 1 11 1 11 1 11 1 11 1 11 1 11 1 11 1 11 1 11 1 11 1 11 1 11 1 11 1 11 1 11 1 11 1 11 1 11 1 11 1 11 1 11 1 11 1 11 1 11 1 11 1 11 1 11 1 11 1 11 1 11 1 11 1 11 1 11 1 11 1 11 1 11 1 11 1 11 1 11 1 11 1 11 1 11 1 11 1 11 1 11 1 11 3 8 9 3 8 9 3 8 9 3 8 9 3 8 9 3 8 9 3 8 9 3 8 9 5 7 10 5 7 10 5 7 10 5 7 10 5 7 10 5 7 10 5 7 10 5 7 10 2 6 2 6 2 6 2 6 2 6 2 6 2 6 2 6</vector>
+      </entities_group>
+    </entities_groups>
+  </pre>
+</gid>

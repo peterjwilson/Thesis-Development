@@ -1,0 +1,531 @@
+
+C:\Users\Peter\Desktop\TUM\Thesis\Development\Issues\Quad gauss points\Works\dome_self_weight_20deg_open.gid>set PATH=C:\\KratosInstallGthub;C:\\KratosInstallGithub\\libs;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Program Files\Microsoft HPC Pack 2008 R2\Bin\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Windows Live\Shared;C:\Users\Peter\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Skype\Phone\;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\Process Lasso;C:\Program Files\Git\cmd;C:\Program Files (x86)\Subversion\bin;C:\Program Files\CMake\bin;C:\Program Files\MiKTeX 2.9\miktex\bin\x64\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Users\Peter\Anaconda3;C:\Users\Peter\Anaconda3\Scripts;C:\Users\Peter\Anaconda3\Library\bin;C:\mingw\bin;C:\Users\Peter\AppData\Local\Microsoft\WindowsApps;C:\Program Files (x86)\gfortran\libexec\gcc\i586-pc-mingw32\4.5.0;C:\Program Files (x86)\gfortran\bin
+
+C:\Users\Peter\Desktop\TUM\Thesis\Development\Issues\Quad gauss points\Works\dome_self_weight_20deg_open.gid>set OMP_NUM_THREADS=1
+
+C:\Users\Peter\Desktop\TUM\Thesis\Development\Issues\Quad gauss points\Works\dome_self_weight_20deg_open.gid>"C:\\KratosInstallGithub\\runkratos" MainKratos.py
+ |  /           |
+ ' /   __| _` | __|  _ \   __|
+ . \  |   (   | |   (   |\__ \
+_|\_\_|  \__,_|\__|\___/ ____/
+           Multi-Physics 5.1.0-9738a09
+Importing    KratosExternalSolversApplication
+Initializing KratosExternalSolversApplication...
+Importing    KratosStructuralMechanicsApplication
+     KRATOS   ___|  |                   |                   |
+            \___ \  __|  __| |   |  __| __| |   |  __| _` | |
+                  | |   |    |   | (    |   |   | |   (   | |
+            _____/ \__|_|   \__,_|\___|\__|\__,_|_|  \__,_|_| MECHANICS
+::[MechanicalSolver]:: Construction finished
+::[StaticMechanicalSolver]:: Construction finished
+::[MechanicalSolver]:: Variables ADDED
+::[MechanicalSolver]:: Importing model part.
+    Reading model part from file: C:\Users\Peter\Desktop\TUM\Thesis\Development\Issues\Quad gauss points\Works\dome_self_weight_20deg_open.gid\dome_self_weight_20deg_open.mdpa
+  [Reading Nodes    : 81 nodes read]
+  [Reading Elements : 64 elements read] [Type: ShellThickElementCorotational3D4N]
+  [Total Lines Read : 486]
+    Finished reading model part from mdpa file.
+Computing model part:
+-computing_domain- model part
+    Number of tables : 0
+    Number of sub model parts : 0
+
+    Mesh 0 :
+        Number of Nodes      : 81
+        Number of Properties : 1
+        Number of Elements   : 64
+        Number of Conditions : 0
+
+
+finished reading materials
+    Constitutive law was successfully imported.
+-Structure- model part
+    Buffer Size : 2
+    Number of tables : 0
+    Number of sub model parts : 8
+    Current solution step index : 0
+    DOMAIN_SIZE : 3
+    TIME : 0
+    STEP : 0
+    DELTA_TIME : 0
+    IS_RESTARTED : 0
+
+    Mesh 0 :
+        Number of Nodes      : 81
+        Number of Properties : 2
+        Number of Elements   : 64
+        Number of Conditions : 0
+
+    -ROTATION_yz_sym- model part
+        Number of tables : 0
+        Number of sub model parts : 0
+
+        Mesh 0 :
+            Number of Nodes      : 9
+            Number of Properties : 0
+            Number of Elements   : 0
+            Number of Conditions : 0
+    -ROTATION_xy_sym- model part
+        Number of tables : 0
+        Number of sub model parts : 0
+
+        Mesh 0 :
+            Number of Nodes      : 9
+            Number of Properties : 0
+            Number of Elements   : 0
+            Number of Conditions : 0
+    -DISPLACEMENT_xy_sym- model part
+        Number of tables : 0
+        Number of sub model parts : 0
+
+        Mesh 0 :
+            Number of Nodes      : 9
+            Number of Properties : 0
+            Number of Elements   : 0
+            Number of Conditions : 0
+    -DISPLACEMENT_yz_sym- model part
+        Number of tables : 0
+        Number of sub model parts : 0
+
+        Mesh 0 :
+            Number of Nodes      : 9
+            Number of Properties : 0
+            Number of Elements   : 0
+            Number of Conditions : 0
+    -SelfWeight3D_surface- model part
+        Number of tables : 0
+        Number of sub model parts : 0
+
+        Mesh 0 :
+            Number of Nodes      : 81
+            Number of Properties : 0
+            Number of Elements   : 0
+            Number of Conditions : 0
+    -DISPLACEMENT_base- model part
+        Number of tables : 0
+        Number of sub model parts : 0
+
+        Mesh 0 :
+            Number of Nodes      : 9
+            Number of Properties : 0
+            Number of Elements   : 0
+            Number of Conditions : 0
+    -computing_domain- model part
+        Number of tables : 0
+        Number of sub model parts : 0
+
+        Mesh 0 :
+            Number of Nodes      : 81
+            Number of Properties : 2
+            Number of Elements   : 64
+            Number of Conditions : 0
+    -Parts_surface- model part
+        Number of tables : 0
+        Number of sub model parts : 0
+
+        Mesh 0 :
+            Number of Nodes      : 81
+            Number of Properties : 1
+            Number of Elements   : 64
+            Number of Conditions : 0
+
+::[MechanicalSolver]:: Finished importing model part.
+::[MechanicalSolver]:: DOF's ADDED
+::[StaticMechanicalSolver]:: Initializing ...
+::[MechanicalSolver]:: Initializing ...
+::[MechanicalSolver]:: Finished initialization.
+::[StaticMechanicalSolver]:: Finished initialization.
+
+STEP =  1
+TIME =  1.1
+
+Element 1 strain_YY:
+        Gauss point 1:  -1.47505e-06
+        Gauss point 2:  -1.49006e-06
+        Gauss point 3:  -3.05697e-06
+        Gauss point 4:  -3.04205e-06
+
+Element 2 strain_YY:
+        Gauss point 1:  -2.53618e-06
+        Gauss point 2:  -2.50289e-06
+        Gauss point 3:  -1.31703e-06
+        Gauss point 4:  -1.34964e-06
+
+Element 3 strain_YY:
+        Gauss point 1:  -1.25709e-06
+        Gauss point 2:  -1.31257e-06
+        Gauss point 3:  -2.56544e-06
+        Gauss point 4:  -2.51189e-06
+
+Element 4 strain_YY:
+        Gauss point 1:  -4.18701e-06
+        Gauss point 2:  -4.04767e-06
+        Gauss point 3:  -1.59056e-06
+        Gauss point 4:  -1.7228e-06
+
+Element 5 strain_YY:
+        Gauss point 1:  2.83796e-06
+        Gauss point 2:  2.46661e-06
+        Gauss point 3:  -3.31713e-06
+        Gauss point 4:  -2.97177e-06
+
+Element 6 strain_YY:
+        Gauss point 1:  -1.09697e-05
+        Gauss point 2:  -1.01912e-05
+        Gauss point 3:  1.59672e-06
+        Gauss point 4:  8.9131e-07
+
+Element 7 strain_YY:
+        Gauss point 1:  1.81378e-05
+        Gauss point 2:  1.66047e-05
+        Gauss point 3:  -8.11497e-06
+        Gauss point 4:  -6.77626e-06
+
+Element 8 strain_YY:
+        Gauss point 1:  -1.17346e-06
+        Gauss point 2:  7.90429e-08
+        Gauss point 3:  2.39508e-05
+        Gauss point 4:  2.29208e-05
+
+Element 9 strain_YY:
+        Gauss point 1:  -9.27224e-07
+        Gauss point 2:  -9.66456e-07
+        Gauss point 3:  -2.29539e-06
+        Gauss point 4:  -2.25642e-06
+
+Element 10 strain_YY:
+        Gauss point 1:  -1.7902e-06
+        Gauss point 2:  -1.70962e-06
+        Gauss point 3:  -7.78365e-07
+        Gauss point 4:  -8.57304e-07
+
+Element 11 strain_YY:
+        Gauss point 1:  -4.77667e-07
+        Gauss point 2:  -6.35873e-07
+        Gauss point 3:  -1.79401e-06
+        Gauss point 4:  -1.64132e-06
+
+Element 12 strain_YY:
+        Gauss point 1:  -2.64238e-06
+        Gauss point 2:  -2.33817e-06
+        Gauss point 3:  -6.01678e-07
+        Gauss point 4:  -8.90388e-07
+
+Element 13 strain_YY:
+        Gauss point 1:  4.79895e-06
+        Gauss point 2:  3.72659e-06
+        Gauss point 3:  -1.67097e-06
+        Gauss point 4:  -6.73639e-07
+
+Element 14 strain_YY:
+        Gauss point 1:  -3.40994e-06
+        Gauss point 2:  -1.96287e-06
+        Gauss point 3:  5.10519e-06
+        Gauss point 4:  3.79403e-06
+
+Element 15 strain_YY:
+        Gauss point 1:  4.23686e-05
+        Gauss point 2:  3.6323e-05
+        Gauss point 3:  4.93236e-06
+        Gauss point 4:  1.02113e-05
+
+Element 16 strain_YY:
+        Gauss point 1:  0.000166433
+        Gauss point 2:  0.000154383
+        Gauss point 3:  8.05363e-05
+        Gauss point 4:  9.04457e-05
+
+Element 17 strain_YY:
+        Gauss point 1:  -4.78407e-07
+        Gauss point 2:  -5.26041e-07
+        Gauss point 3:  -1.44167e-06
+        Gauss point 4:  -1.39436e-06
+
+Element 18 strain_YY:
+        Gauss point 1:  -9.79723e-07
+        Gauss point 2:  -8.98203e-07
+        Gauss point 3:  -3.63901e-07
+        Gauss point 4:  -4.43759e-07
+
+Element 19 strain_YY:
+        Gauss point 1:  1.97946e-07
+        Gauss point 2:  -2.41386e-08
+        Gauss point 3:  -9.45122e-07
+        Gauss point 4:  -7.30777e-07
+
+Element 20 strain_YY:
+        Gauss point 1:  -6.50974e-07
+        Gauss point 2:  -4.42135e-07
+        Gauss point 3:  2.32091e-07
+        Gauss point 4:  3.38962e-08
+
+Element 21 strain_YY:
+        Gauss point 1:  6.10231e-06
+        Gauss point 2:  4.58327e-06
+        Gauss point 3:  2.67055e-07
+        Gauss point 4:  1.67982e-06
+
+Element 22 strain_YY:
+        Gauss point 1:  6.03364e-06
+        Gauss point 2:  6.31639e-06
+        Gauss point 3:  7.09442e-06
+        Gauss point 4:  6.83823e-06
+
+Element 23 strain_YY:
+        Gauss point 1:  6.30003e-05
+        Gauss point 2:  5.11048e-05
+        Gauss point 3:  1.63778e-05
+        Gauss point 4:  2.67649e-05
+
+Element 24 strain_YY:
+        Gauss point 1:  0.000324774
+        Gauss point 2:  0.000276223
+        Gauss point 3:  0.000109234
+        Gauss point 4:  0.000149159
+
+Element 25 strain_YY:
+        Gauss point 1:  -2.65822e-07
+        Gauss point 2:  -2.94756e-07
+        Gauss point 3:  -6.5696e-07
+        Gauss point 4:  -6.28221e-07
+
+Element 26 strain_YY:
+        Gauss point 1:  -3.254e-07
+        Gauss point 2:  -3.15015e-07
+        Gauss point 3:  -2.70721e-07
+        Gauss point 4:  -2.80894e-07
+
+Element 27 strain_YY:
+        Gauss point 1:  3.96879e-07
+        Gauss point 2:  1.87584e-07
+        Gauss point 3:  -3.76441e-07
+        Gauss point 4:  -1.7444e-07
+
+Element 28 strain_YY:
+        Gauss point 1:  7.74634e-07
+        Gauss point 2:  6.05019e-07
+        Gauss point 3:  2.49876e-07
+        Gauss point 4:  4.10847e-07
+
+Element 29 strain_YY:
+        Gauss point 1:  4.86777e-06
+        Gauss point 2:  3.52071e-06
+        Gauss point 3:  1.04425e-06
+        Gauss point 4:  2.29707e-06
+
+Element 30 strain_YY:
+        Gauss point 1:  1.00193e-05
+        Gauss point 2:  8.02611e-06
+        Gauss point 3:  4.48661e-06
+        Gauss point 4:  6.29258e-06
+
+Element 31 strain_YY:
+        Gauss point 1:  5.44137e-05
+        Gauss point 2:  4.04769e-05
+        Gauss point 3:  1.42859e-05
+        Gauss point 4:  2.64555e-05
+
+Element 32 strain_YY:
+        Gauss point 1:  0.000304189
+        Gauss point 2:  0.000229114
+        Gauss point 3:  6.32593e-05
+        Gauss point 4:  0.000124997
+
+Element 33 strain_YY:
+        Gauss point 1:  -3.50333e-07
+        Gauss point 2:  -3.21248e-07
+        Gauss point 3:  -7.60513e-08
+        Gauss point 4:  -1.04941e-07
+
+Element 34 strain_YY:
+        Gauss point 1:  1.207e-09
+        Gauss point 2:  -1.36043e-07
+        Gauss point 3:  -5.29862e-07
+        Gauss point 4:  -3.95411e-07
+
+Element 35 strain_YY:
+        Gauss point 1:  -6.33742e-08
+        Gauss point 2:  -1.18311e-07
+        Gauss point 3:  -2.17711e-07
+        Gauss point 4:  -1.64689e-07
+
+Element 36 strain_YY:
+        Gauss point 1:  1.03134e-06
+        Gauss point 2:  3.68439e-07
+        Gauss point 3:  -5.60883e-07
+        Gauss point 4:  6.82359e-08
+
+Element 37 strain_YY:
+        Gauss point 1:  1.16825e-06
+        Gauss point 2:  9.35764e-07
+        Gauss point 3:  6.5056e-07
+        Gauss point 4:  8.66777e-07
+
+Element 38 strain_YY:
+        Gauss point 1:  6.88263e-06
+        Gauss point 2:  3.33415e-06
+        Gauss point 3:  -8.55545e-07
+        Gauss point 4:  2.35966e-06
+
+Element 39 strain_YY:
+        Gauss point 1:  2.11425e-05
+        Gauss point 2:  1.39174e-05
+        Gauss point 3:  4.92201e-06
+        Gauss point 4:  1.1231e-05
+
+Element 40 strain_YY:
+        Gauss point 1:  0.000133659
+        Gauss point 2:  7.77415e-05
+        Gauss point 3:  -3.83642e-06
+        Gauss point 4:  4.21466e-05
+
+Element 41 strain_YY:
+        Gauss point 1:  -7.00377e-07
+        Gauss point 2:  -5.54182e-07
+        Gauss point 3:  2.48347e-07
+        Gauss point 4:  1.03137e-07
+
+Element 42 strain_YY:
+        Gauss point 1:  2.23832e-08
+        Gauss point 2:  -3.5282e-07
+        Gauss point 3:  -1.05268e-06
+        Gauss point 4:  -6.85125e-07
+
+Element 43 strain_YY:
+        Gauss point 1:  -8.63187e-07
+        Gauss point 2:  -6.23307e-07
+        Gauss point 3:  -3.42082e-07
+        Gauss point 4:  -5.73602e-07
+
+Element 44 strain_YY:
+        Gauss point 1:  5.22016e-07
+        Gauss point 2:  -5.26081e-07
+        Gauss point 3:  -1.47374e-06
+        Gauss point 4:  -4.79063e-07
+
+Element 45 strain_YY:
+        Gauss point 1:  -2.05909e-06
+        Gauss point 2:  -6.05585e-07
+        Gauss point 3:  5.38046e-07
+        Gauss point 4:  -8.13769e-07
+
+Element 46 strain_YY:
+        Gauss point 1:  2.50485e-06
+        Gauss point 2:  -7.29788e-07
+        Gauss point 3:  -3.16425e-06
+        Gauss point 4:  -2.33402e-07
+
+Element 47 strain_YY:
+        Gauss point 1:  -3.62175e-06
+        Gauss point 2:  1.63888e-06
+        Gauss point 3:  5.78833e-06
+        Gauss point 4:  1.19477e-06
+
+Element 48 strain_YY:
+        Gauss point 1:  3.52001e-06
+        Gauss point 2:  2.87306e-06
+        Gauss point 3:  2.27837e-06
+        Gauss point 4:  2.81039e-06
+
+Element 49 strain_YY:
+        Gauss point 1:  -1.16733e-06
+        Gauss point 2:  -7.8458e-07
+        Gauss point 3:  4.07264e-07
+        Gauss point 4:  2.70962e-08
+
+Element 50 strain_YY:
+        Gauss point 1:  -7.42611e-08
+        Gauss point 2:  -7.41304e-07
+        Gauss point 3:  -1.44449e-06
+        Gauss point 4:  -7.91043e-07
+
+Element 51 strain_YY:
+        Gauss point 1:  -1.2127e-06
+        Gauss point 2:  -6.70006e-07
+        Gauss point 3:  -3.13024e-07
+        Gauss point 4:  -8.368e-07
+
+Element 52 strain_YY:
+        Gauss point 1:  2.35724e-07
+        Gauss point 2:  -7.9785e-07
+        Gauss point 3:  -1.31683e-06
+        Gauss point 4:  -3.35928e-07
+
+Element 53 strain_YY:
+        Gauss point 1:  -1.47342e-06
+        Gauss point 2:  9.15653e-07
+        Gauss point 3:  1.9463e-06
+        Gauss point 4:  -2.75623e-07
+
+Element 54 strain_YY:
+        Gauss point 1:  3.32795e-06
+        Gauss point 2:  1.63823e-06
+        Gauss point 3:  9.50824e-07
+        Gauss point 4:  2.48184e-06
+
+Element 55 strain_YY:
+        Gauss point 1:  4.82159e-06
+        Gauss point 2:  1.73188e-05
+        Gauss point 3:  2.25704e-05
+        Gauss point 4:  1.16579e-05
+
+Element 56 strain_YY:
+        Gauss point 1:  4.01771e-05
+        Gauss point 2:  7.83102e-05
+        Gauss point 3:  9.67385e-05
+        Gauss point 4:  6.53799e-05
+
+Element 57 strain_YY:
+        Gauss point 1:  -1.49843e-06
+        Gauss point 2:  -5.65972e-07
+        Gauss point 3:  3.7466e-07
+        Gauss point 4:  -5.51518e-07
+
+Element 58 strain_YY:
+        Gauss point 1:  -1.92064e-07
+        Gauss point 2:  -7.68751e-07
+        Gauss point 3:  -9.62165e-07
+        Gauss point 4:  -3.97236e-07
+
+Element 59 strain_YY:
+        Gauss point 1:  -5.04354e-07
+        Gauss point 2:  -1.46231e-07
+        Gauss point 3:  -7.3959e-08
+        Gauss point 4:  -4.196e-07
+
+Element 60 strain_YY:
+        Gauss point 1:  4.12625e-07
+        Gauss point 2:  -3.88776e-08
+        Gauss point 3:  -1.04716e-07
+        Gauss point 4:  3.23776e-07
+
+Element 61 strain_YY:
+        Gauss point 1:  2.03094e-06
+        Gauss point 2:  3.25329e-06
+        Gauss point 3:  3.39563e-06
+        Gauss point 4:  2.2588e-06
+
+Element 62 strain_YY:
+        Gauss point 1:  7.39769e-06
+        Gauss point 2:  6.99158e-06
+        Gauss point 3:  6.95082e-06
+        Gauss point 4:  7.31878e-06
+
+Element 63 strain_YY:
+        Gauss point 1:  3.07151e-05
+        Gauss point 2:  3.72741e-05
+        Gauss point 3:  3.78881e-05
+        Gauss point 4:  3.21609e-05
+
+Element 64 strain_YY:
+        Gauss point 1:  0.000158229
+        Gauss point 2:  0.000180914
+        Gauss point 3:  0.000183113
+        Gauss point 4:  0.000164458
+
+::[KSM Simulation]:: Analysis -END-
+
+KRATOS TERMINATED CORRECTLY
+
+C:\Users\Peter\Desktop\TUM\Thesis\Development\Issues\Quad gauss points\Works\dome_self_weight_20deg_open.gid>pause
+Press any key to continue . . .

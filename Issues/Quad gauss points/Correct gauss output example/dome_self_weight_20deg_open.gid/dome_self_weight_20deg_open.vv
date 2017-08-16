@@ -1,0 +1,37 @@
+BeginZE C:/Users/Peter/Desktop/TUM/Thesis/Development/Issues/Quad gauss points/Works/dome_self_weight_20deg_open.gid/dome_self_weight_20deg_open.vv
+   x 2.01208376884460449 2.9879148006439209
+   y 6.59409809112548828 -1.89563488960266113
+   z -15.2345991134643555 10.2345991134643555
+   e 4.24486637115478516
+   v 0.274651914834976196 -0.276510179042816162 -0.0742219090461730957
+   r -0.917932212352752686
+   m 0.83606642484664917 -0.288149476051330566 0.466864824295043945 0 -0.0156267601996660233 0.83811485767364502 0.545269906520843506 0 -0.548405587673187256 -0.463177472352981567 0.696216881275177002 0 0 0 0 1
+   c 2.5 2.34923148155212402 2.5
+   pd 0
+   pno 0
+   pfo 0
+   pf 4
+   pv 0
+   NowUse 1
+   DrawingType 0
+   LightVector 90 90 150 0
+   OGLShadow(UseShadows) 0
+   OGLShadow(RenderMode) RenderNice
+   OGLShadow(ShadowBias) -0.002
+   OGLShadow(AmbientShadows) 1
+   OGLShadow(UseFBO) 0
+   OGLShadow(FBOSize) 2048
+   OGLShadow(DimmedLightFactor) 0.02
+   OGLStereo(UseStereo) 0
+   OGLStereo(RelativeEyeDistance) 1
+   OGLStereo(FlipEyes) 0
+   OGLStereo(StereoMode) AnaglyphColors
+   OGLStereo(EyeDistance) 0.075
+   OGLStereo(LeftEyeDistance) 1 0 0 1
+   OGLStereo(RightEyeDistance) 0 1 1 1
+EndZE C:/Users/Peter/Desktop/TUM/Thesis/Development/Issues/Quad gauss points/Works/dome_self_weight_20deg_open.gid/dome_self_weight_20deg_open.vv
+
+BeginMirror
+   Mirror 0 Angle 0.0 AngleFake -15.0 SizeFactor 2.0 HeightOffset 0.25 Color #d9e5f24d Backlight Off EdgeStyle No Type Scene DrawMode Mirror
+EndMirror
+

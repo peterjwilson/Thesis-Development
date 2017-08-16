@@ -1,0 +1,175 @@
+ |  /           |             
+ ' /   __| _` | __|  _ \   __|
+ . \  |   (   | |   (   |\__ \ 
+_|\_\_|  \__,_|\__|\___/ ____/
+           Multi-Physics 5.1.0-c76823de7
+Initializing KratosExternalSolversApplication... 
+     KRATOS   ___|  |                   |                   |               
+            \___ \  __|  __| |   |  __| __| |   |  __| _` | |               
+                  | |   |    |   | (    |   |   | |   (   | |               
+            _____/ \__|_|   \__,_|\___|\__|\__,_|_|  \__,_|_| MECHANICS     
+  [Reading Nodes    : 42 nodes read]
+  [Reading Elements : 30 elements read] [Type: ShellThickElementCorotational3D4N]
+  [Reading Conditions : 30 conditions read] [Type: SurfaceLoadCondition3D4N]
+  [Total Lines Read : 404]
+Importing    KratosExternalSolversApplication
+Importing    KratosStructuralMechanicsApplication
+::[MechanicalSolver]:: Construction finished
+::[StaticMechanicalSolver]:: Construction finished
+::[MechanicalSolver]:: Variables ADDED
+::[MechanicalSolver]:: Importing model part.
+    Reading model part from file: C:\Users\Peter\Desktop\TUM\Thesis\Development\New branch examples\Quad\clamped_cylinder1_test.gid\clamped_cylinder1_test.mdpa
+    Finished reading model part from mdpa file.
+Computing model part:
+-computing_domain- model part
+    Number of tables : 0
+    Number of sub model parts : 0
+
+    Mesh 0 : 
+        Number of Nodes      : 42
+        Number of Properties : 1
+        Number of Elements   : 30
+        Number of Conditions : 30
+
+
+finished reading materials
+    Constitutive law was successfully imported.
+-Structure- model part
+    Buffer Size : 2
+    Number of tables : 0
+    Number of sub model parts : 12
+    Current solution step index : 0
+    DOMAIN_SIZE : 3
+    TIME : 0
+    STEP : 0
+    DELTA_TIME : 0
+    IS_RESTARTED : 0
+
+    Mesh 0 : 
+        Number of Nodes      : 42
+        Number of Properties : 2
+        Number of Elements   : 30
+        Number of Conditions : 30
+
+    -ROTATION_yz_sym- model part
+        Number of tables : 0
+        Number of sub model parts : 0
+
+        Mesh 0 : 
+            Number of Nodes      : 7
+            Number of Properties : 0
+            Number of Elements   : 0
+            Number of Conditions : 0
+    -SurfacePressure3D_surface- model part
+        Number of tables : 0
+        Number of sub model parts : 0
+
+        Mesh 0 : 
+            Number of Nodes      : 42
+            Number of Properties : 0
+            Number of Elements   : 0
+            Number of Conditions : 30
+    -ROTATION_xz_sym- model part
+        Number of tables : 0
+        Number of sub model parts : 0
+
+        Mesh 0 : 
+            Number of Nodes      : 6
+            Number of Properties : 0
+            Number of Elements   : 0
+            Number of Conditions : 0
+    -DISPLACEMENT_yz_sym- model part
+        Number of tables : 0
+        Number of sub model parts : 0
+
+        Mesh 0 : 
+            Number of Nodes      : 7
+            Number of Properties : 0
+            Number of Elements   : 0
+            Number of Conditions : 0
+    -DISPLACEMENT_xz_sym- model part
+        Number of tables : 0
+        Number of sub model parts : 0
+
+        Mesh 0 : 
+            Number of Nodes      : 6
+            Number of Properties : 0
+            Number of Elements   : 0
+            Number of Conditions : 0
+    -DISPLACEMENT_xy_sym- model part
+        Number of tables : 0
+        Number of sub model parts : 0
+
+        Mesh 0 : 
+            Number of Nodes      : 6
+            Number of Properties : 0
+            Number of Elements   : 0
+            Number of Conditions : 0
+    -ROTATION_xy_sym- model part
+        Number of tables : 0
+        Number of sub model parts : 0
+
+        Mesh 0 : 
+            Number of Nodes      : 6
+            Number of Properties : 0
+            Number of Elements   : 0
+            Number of Conditions : 0
+    -ROTATION_ends- model part
+        Number of tables : 0
+        Number of sub model parts : 0
+
+        Mesh 0 : 
+            Number of Nodes      : 7
+            Number of Properties : 0
+            Number of Elements   : 0
+            Number of Conditions : 0
+    -DISPLACEMENT_sample- model part
+        Number of tables : 0
+        Number of sub model parts : 0
+
+        Mesh 0 : 
+            Number of Nodes      : 1
+            Number of Properties : 0
+            Number of Elements   : 0
+            Number of Conditions : 0
+    -DISPLACEMENT_ends- model part
+        Number of tables : 0
+        Number of sub model parts : 0
+
+        Mesh 0 : 
+            Number of Nodes      : 7
+            Number of Properties : 0
+            Number of Elements   : 0
+            Number of Conditions : 0
+    -computing_domain- model part
+        Number of tables : 0
+        Number of sub model parts : 0
+
+        Mesh 0 : 
+            Number of Nodes      : 42
+            Number of Properties : 2
+            Number of Elements   : 30
+            Number of Conditions : 30
+    -Parts_surface- model part
+        Number of tables : 0
+        Number of sub model parts : 0
+
+        Mesh 0 : 
+            Number of Nodes      : 42
+            Number of Properties : 1
+            Number of Elements   : 30
+            Number of Conditions : 0
+
+::[MechanicalSolver]:: Finished importing model part.
+::[MechanicalSolver]:: DOF's ADDED
+::[StaticMechanicalSolver]:: Initializing ...
+::[MechanicalSolver]:: Initializing ...
+::[MechanicalSolver]:: Finished initialization.
+::[StaticMechanicalSolver]:: Finished initialization.
+
+STEP =  1
+TIME =  1.1
+ 
+::[KSM Simulation]:: Analysis -END- 
+ 
+KRATOS TERMINATED CORRECTLY

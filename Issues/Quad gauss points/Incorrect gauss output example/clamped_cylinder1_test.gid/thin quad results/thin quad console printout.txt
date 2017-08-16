@@ -1,0 +1,364 @@
+
+C:\Users\Peter\Desktop\TUM\Thesis\Development\Issues\Quad gauss points\clamped_cylinder1_test.gid>set PATH=C:\\KratosInstallGthub;C:\\KratosInstallGithub\\libs;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Program Files\Microsoft HPC Pack 2008 R2\Bin\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Windows Live\Shared;C:\Users\Peter\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Skype\Phone\;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\Process Lasso;C:\Program Files\Git\cmd;C:\Program Files (x86)\Subversion\bin;C:\Program Files\CMake\bin;C:\Program Files\MiKTeX 2.9\miktex\bin\x64\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Users\Peter\Anaconda3;C:\Users\Peter\Anaconda3\Scripts;C:\Users\Peter\Anaconda3\Library\bin;C:\mingw\bin;C:\Users\Peter\AppData\Local\Microsoft\WindowsApps;C:\Program Files (x86)\gfortran\libexec\gcc\i586-pc-mingw32\4.5.0;C:\Program Files (x86)\gfortran\bin
+
+C:\Users\Peter\Desktop\TUM\Thesis\Development\Issues\Quad gauss points\clamped_cylinder1_test.gid>set OMP_NUM_THREADS=1
+
+C:\Users\Peter\Desktop\TUM\Thesis\Development\Issues\Quad gauss points\clamped_cylinder1_test.gid>"C:\\KratosInstallGithub\\runkratos" MainKratos.py
+ |  /           |
+ ' /   __| _` | __|  _ \   __|
+ . \  |   (   | |   (   |\__ \
+_|\_\_|  \__,_|\__|\___/ ____/
+           Multi-Physics 5.1.0-9738a09
+Importing    KratosExternalSolversApplication
+Initializing KratosExternalSolversApplication...
+Importing    KratosStructuralMechanicsApplication
+     KRATOS   ___|  |                   |                   |
+            \___ \  __|  __| |   |  __| __| |   |  __| _` | |
+                  | |   |    |   | (    |   |   | |   (   | |
+            _____/ \__|_|   \__,_|\___|\__|\__,_|_|  \__,_|_| MECHANICS
+::[MechanicalSolver]:: Construction finished
+::[StaticMechanicalSolver]:: Construction finished
+::[MechanicalSolver]:: Variables ADDED
+::[MechanicalSolver]:: Importing model part.
+    Reading model part from file: C:\Users\Peter\Desktop\TUM\Thesis\Development\Issues\Quad gauss points\clamped_cylinder1_test.gid\clamped_cylinder1_test.mdpa
+  [Reading Nodes    : 42 nodes read]
+  [Reading Elements : 30 elements read] [Type: ShellThinElementCorotational3D4N]
+  [Reading Conditions : 30 conditions read] [Type: SurfaceLoadCondition3D4N]
+  [Total Lines Read : 404]
+    Finished reading model part from mdpa file.
+Computing model part:
+-computing_domain- model part
+    Number of tables : 0
+    Number of sub model parts : 0
+
+    Mesh 0 :
+        Number of Nodes      : 42
+        Number of Properties : 1
+        Number of Elements   : 30
+        Number of Conditions : 30
+
+
+finished reading materials
+    Constitutive law was successfully imported.
+-Structure- model part
+    Buffer Size : 2
+    Number of tables : 0
+    Number of sub model parts : 12
+    Current solution step index : 0
+    DOMAIN_SIZE : 3
+    TIME : 0
+    STEP : 0
+    DELTA_TIME : 0
+    IS_RESTARTED : 0
+
+    Mesh 0 :
+        Number of Nodes      : 42
+        Number of Properties : 2
+        Number of Elements   : 30
+        Number of Conditions : 30
+
+    -ROTATION_yz_sym- model part
+        Number of tables : 0
+        Number of sub model parts : 0
+
+        Mesh 0 :
+            Number of Nodes      : 7
+            Number of Properties : 0
+            Number of Elements   : 0
+            Number of Conditions : 0
+    -SurfacePressure3D_surface- model part
+        Number of tables : 0
+        Number of sub model parts : 0
+
+        Mesh 0 :
+            Number of Nodes      : 42
+            Number of Properties : 0
+            Number of Elements   : 0
+            Number of Conditions : 30
+    -ROTATION_xz_sym- model part
+        Number of tables : 0
+        Number of sub model parts : 0
+
+        Mesh 0 :
+            Number of Nodes      : 6
+            Number of Properties : 0
+            Number of Elements   : 0
+            Number of Conditions : 0
+    -DISPLACEMENT_yz_sym- model part
+        Number of tables : 0
+        Number of sub model parts : 0
+
+        Mesh 0 :
+            Number of Nodes      : 7
+            Number of Properties : 0
+            Number of Elements   : 0
+            Number of Conditions : 0
+    -DISPLACEMENT_xz_sym- model part
+        Number of tables : 0
+        Number of sub model parts : 0
+
+        Mesh 0 :
+            Number of Nodes      : 6
+            Number of Properties : 0
+            Number of Elements   : 0
+            Number of Conditions : 0
+    -DISPLACEMENT_xy_sym- model part
+        Number of tables : 0
+        Number of sub model parts : 0
+
+        Mesh 0 :
+            Number of Nodes      : 6
+            Number of Properties : 0
+            Number of Elements   : 0
+            Number of Conditions : 0
+    -ROTATION_xy_sym- model part
+        Number of tables : 0
+        Number of sub model parts : 0
+
+        Mesh 0 :
+            Number of Nodes      : 6
+            Number of Properties : 0
+            Number of Elements   : 0
+            Number of Conditions : 0
+    -ROTATION_ends- model part
+        Number of tables : 0
+        Number of sub model parts : 0
+
+        Mesh 0 :
+            Number of Nodes      : 7
+            Number of Properties : 0
+            Number of Elements   : 0
+            Number of Conditions : 0
+    -DISPLACEMENT_sample- model part
+        Number of tables : 0
+        Number of sub model parts : 0
+
+        Mesh 0 :
+            Number of Nodes      : 1
+            Number of Properties : 0
+            Number of Elements   : 0
+            Number of Conditions : 0
+    -DISPLACEMENT_ends- model part
+        Number of tables : 0
+        Number of sub model parts : 0
+
+        Mesh 0 :
+            Number of Nodes      : 7
+            Number of Properties : 0
+            Number of Elements   : 0
+            Number of Conditions : 0
+    -computing_domain- model part
+        Number of tables : 0
+        Number of sub model parts : 0
+
+        Mesh 0 :
+            Number of Nodes      : 42
+            Number of Properties : 2
+            Number of Elements   : 30
+            Number of Conditions : 30
+    -Parts_surface- model part
+        Number of tables : 0
+        Number of sub model parts : 0
+
+        Mesh 0 :
+            Number of Nodes      : 42
+            Number of Properties : 1
+            Number of Elements   : 30
+            Number of Conditions : 0
+
+::[MechanicalSolver]:: Finished importing model part.
+::[MechanicalSolver]:: DOF's ADDED
+::[StaticMechanicalSolver]:: Initializing ...
+::[MechanicalSolver]:: Initializing ...
+::[MechanicalSolver]:: Finished initialization.
+::[StaticMechanicalSolver]:: Finished initialization.
+
+STEP =  1
+TIME =  1.1
+
+Element 1 strain_YY:
+        Gauss point 1:  0.000888122
+        Gauss point 2:  0.000888292
+        Gauss point 3:  0.000888292
+        Gauss point 4:  0.000888122
+
+Element 2 strain_YY:
+        Gauss point 1:  0.000888122
+        Gauss point 2:  0.000888292
+        Gauss point 3:  0.000888292
+        Gauss point 4:  0.000888122
+
+Element 3 strain_YY:
+        Gauss point 1:  0.000888122
+        Gauss point 2:  0.000888292
+        Gauss point 3:  0.000888292
+        Gauss point 4:  0.000888122
+
+Element 4 strain_YY:
+        Gauss point 1:  0.000888122
+        Gauss point 2:  0.000888292
+        Gauss point 3:  0.000888292
+        Gauss point 4:  0.000888122
+
+Element 5 strain_YY:
+        Gauss point 1:  0.000888122
+        Gauss point 2:  0.000888292
+        Gauss point 3:  0.000888292
+        Gauss point 4:  0.000888122
+
+Element 6 strain_YY:
+        Gauss point 1:  0.000888122
+        Gauss point 2:  0.000888292
+        Gauss point 3:  0.000888292
+        Gauss point 4:  0.000888122
+
+Element 7 strain_YY:
+        Gauss point 1:  0.000886711
+        Gauss point 2:  0.000884384
+        Gauss point 3:  0.000884384
+        Gauss point 4:  0.000886711
+
+Element 8 strain_YY:
+        Gauss point 1:  0.000886711
+        Gauss point 2:  0.000884384
+        Gauss point 3:  0.000884384
+        Gauss point 4:  0.000886711
+
+Element 9 strain_YY:
+        Gauss point 1:  0.000886711
+        Gauss point 2:  0.000884384
+        Gauss point 3:  0.000884384
+        Gauss point 4:  0.000886711
+
+Element 10 strain_YY:
+        Gauss point 1:  0.000886711
+        Gauss point 2:  0.000884384
+        Gauss point 3:  0.000884384
+        Gauss point 4:  0.000886711
+
+Element 11 strain_YY:
+        Gauss point 1:  0.000886711
+        Gauss point 2:  0.000884384
+        Gauss point 3:  0.000884384
+        Gauss point 4:  0.000886711
+
+Element 12 strain_YY:
+        Gauss point 1:  0.000886711
+        Gauss point 2:  0.000884384
+        Gauss point 3:  0.000884384
+        Gauss point 4:  0.000886711
+
+Element 13 strain_YY:
+        Gauss point 1:  0.000885066
+        Gauss point 2:  0.000897643
+        Gauss point 3:  0.000897643
+        Gauss point 4:  0.000885066
+
+Element 14 strain_YY:
+        Gauss point 1:  0.000885066
+        Gauss point 2:  0.000897643
+        Gauss point 3:  0.000897643
+        Gauss point 4:  0.000885066
+
+Element 15 strain_YY:
+        Gauss point 1:  0.000885066
+        Gauss point 2:  0.000897643
+        Gauss point 3:  0.000897643
+        Gauss point 4:  0.000885066
+
+Element 16 strain_YY:
+        Gauss point 1:  0.000885066
+        Gauss point 2:  0.000897643
+        Gauss point 3:  0.000897643
+        Gauss point 4:  0.000885066
+
+Element 17 strain_YY:
+        Gauss point 1:  0.000885066
+        Gauss point 2:  0.000897643
+        Gauss point 3:  0.000897643
+        Gauss point 4:  0.000885066
+
+Element 18 strain_YY:
+        Gauss point 1:  0.000885066
+        Gauss point 2:  0.000897643
+        Gauss point 3:  0.000897643
+        Gauss point 4:  0.000885066
+
+Element 19 strain_YY:
+        Gauss point 1:  0.000948657
+        Gauss point 2:  0.00092654
+        Gauss point 3:  0.00092654
+        Gauss point 4:  0.000948657
+
+Element 20 strain_YY:
+        Gauss point 1:  0.000948657
+        Gauss point 2:  0.00092654
+        Gauss point 3:  0.00092654
+        Gauss point 4:  0.000948657
+
+Element 21 strain_YY:
+        Gauss point 1:  0.000948657
+        Gauss point 2:  0.00092654
+        Gauss point 3:  0.00092654
+        Gauss point 4:  0.000948657
+
+Element 22 strain_YY:
+        Gauss point 1:  0.000948657
+        Gauss point 2:  0.00092654
+        Gauss point 3:  0.00092654
+        Gauss point 4:  0.000948657
+
+Element 23 strain_YY:
+        Gauss point 1:  0.000948657
+        Gauss point 2:  0.00092654
+        Gauss point 3:  0.00092654
+        Gauss point 4:  0.000948657
+
+Element 24 strain_YY:
+        Gauss point 1:  0.000948657
+        Gauss point 2:  0.00092654
+        Gauss point 3:  0.00092654
+        Gauss point 4:  0.000948657
+
+Element 25 strain_YY:
+        Gauss point 1:  0.000481863
+        Gauss point 2:  0.000224797
+        Gauss point 3:  0.000224797
+        Gauss point 4:  0.000481863
+
+Element 26 strain_YY:
+        Gauss point 1:  0.000481863
+        Gauss point 2:  0.000224797
+        Gauss point 3:  0.000224797
+        Gauss point 4:  0.000481863
+
+Element 27 strain_YY:
+        Gauss point 1:  0.000481863
+        Gauss point 2:  0.000224797
+        Gauss point 3:  0.000224797
+        Gauss point 4:  0.000481863
+
+Element 28 strain_YY:
+        Gauss point 1:  0.000481863
+        Gauss point 2:  0.000224797
+        Gauss point 3:  0.000224797
+        Gauss point 4:  0.000481863
+
+Element 29 strain_YY:
+        Gauss point 1:  0.000481863
+        Gauss point 2:  0.000224797
+        Gauss point 3:  0.000224797
+        Gauss point 4:  0.000481863
+
+Element 30 strain_YY:
+        Gauss point 1:  0.000481863
+        Gauss point 2:  0.000224797
+        Gauss point 3:  0.000224797
+        Gauss point 4:  0.000481863
+
+::[KSM Simulation]:: Analysis -END-
+
+KRATOS TERMINATED CORRECTLY
+
+C:\Users\Peter\Desktop\TUM\Thesis\Development\Issues\Quad gauss points\clamped_cylinder1_test.gid>pause
+Press any key to continue . . .

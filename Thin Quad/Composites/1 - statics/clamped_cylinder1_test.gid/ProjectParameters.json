@@ -188,7 +188,7 @@
             "skin_output"         : false,
             "plane_output"        : [],
             "nodal_results"       : ["DISPLACEMENT","REACTION","ROTATION","TORQUE"],
-            "gauss_point_results" : []
+            "gauss_point_results" : ["SHELL_STRAIN"]
         },
         "point_data_configuration"  : []
     },

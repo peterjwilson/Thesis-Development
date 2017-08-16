@@ -1,0 +1,64 @@
+BeginZE C:/Users/Peter/Desktop/TUM/Thesis/Development/Issues/Quad gauss points/Works/dome_self_weight_20deg_open.gid/thick quad/thick_quad_results.vv
+   x -7.19325828552246094 12.1932582855224609
+   y 6.59409809112548828 -1.89563488960266113
+   z -15.2345991134643555 10.2345991134643555
+   e 4.24486637115478516
+   v -0.198866319912893913 0.388084608349322013 0.156553552628400622
+   r 0.886190447209900034
+   m 0.649762630462646484 -0.43182644248008728 0.625567317008972168 0 0.123118609189987183 0.871886372566223145 0.473978906869888306 0 -0.750100195407867432 -0.230954810976982117 0.619685053825378418 0 0 0 0 1
+   c 2.5 2.34923148155212402 2.5
+   pd 0
+   pno 0
+   pfo 0
+   pf 4
+   pv 0
+   NowUse 2
+   DrawingType 3
+   LightVector 90 90 150 0
+   OGLShadow(UseShadows) 0
+   OGLShadow(RenderMode) RenderNice
+   OGLShadow(ShadowBias) -0.002
+   OGLShadow(AmbientShadows) 1
+   OGLShadow(UseFBO) 0
+   OGLShadow(FBOSize) 2048
+   OGLShadow(DimmedLightFactor) 0.02
+   OGLStereo(UseStereo) 0
+   OGLStereo(RelativeEyeDistance) 1
+   OGLStereo(FlipEyes) 0
+   OGLStereo(StereoMode) AnaglyphColors
+   OGLStereo(EyeDistance) 0.075
+   OGLStereo(LeftEyeDistance) 1 0 0 1
+   OGLStereo(RightEyeDistance) 0 1 1 1
+EndZE C:/Users/Peter/Desktop/TUM/Thesis/Development/Issues/Quad gauss points/Works/dome_self_weight_20deg_open.gid/thick quad/thick_quad_results.vv
+
+BeginMirror
+   Mirror 0 Angle 0.0 AngleFake -15.0 SizeFactor 2.0 HeightOffset 0.25 Color #d9e5f24d Backlight Off EdgeStyle No Type Scene DrawMode Mirror
+EndMirror
+
+
+BeginPostState
+BeginSingleMesh
+  Num meshes: 0
+  Num sets: 1
+  Num cuts: 0
+  Set: 0
+  State: On
+    Name: "Kratos_Quadrilateral3D4_Mesh_1"
+    IdSet: 2
+    Color Type: 0
+    Color Ambient: 0 0 0.3 0.5
+    Color Diffuse: 0 0 1 0.5
+    Color Specular: 1 1 1 0.5
+    Color Shininess: 0.5
+    Property Massive: 1
+    Property Transparent: 0
+    Property Style: 3932222
+    Property Edge Width: 1
+    Property Vector Filter Factor: 0
+    Property Stream Arrow: 0
+  EndSet: 0
+EndSingleMesh
+  Post_Prefs_Vector_Size: 0 32 32 32
+  ResultView: {Id 5} {No results} {} {} {} {} 4 0
+EndPostState
+
