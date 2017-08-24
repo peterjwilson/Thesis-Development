@@ -3702,7 +3702,7 @@ Begin Nodes
 3670   0.085341006307  -0.009236938404            5.029 
 End Nodes
 
-Begin Elements ShellThinElement3D3N // main_mesh
+Begin Elements ShellThickElementCorotational3D3N // main_mesh
    1   1	112	645	644
    2   1	646	105	644
    3   1	263	646	645

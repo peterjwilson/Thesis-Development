@@ -2073,7 +2073,7 @@ Begin Nodes
 2033   0.082424132229  -0.013047311149            5.029 
 End Nodes
 
-Begin Elements ShellThickElement3D4N // main_mesh
+Begin Elements ShellThinElementCorotational3D4N // main_mesh
    1   1	1	6	240	221
    2   1	221	240	241	220
    3   1	220	241	242	219
@@ -4076,7 +4076,7 @@ Begin Elements ShellThickElement3D4N // main_mesh
 2000   1	2021	123	4	231
 End Elements // ShellThickElement3D4N
 
-Begin Elements ShellThinElement3D3N // main_mesh
+Begin Elements ShellThickElementCorotational3D3N // main_mesh
 2001   2	2026	237	2023
 2002   2	236	2023	237
 2003   2	2026	238	237
