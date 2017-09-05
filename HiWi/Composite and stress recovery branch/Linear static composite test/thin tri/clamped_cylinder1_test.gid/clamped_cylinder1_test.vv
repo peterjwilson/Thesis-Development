@@ -1,0 +1,37 @@
+BeginZE C:/Users/Peter/Desktop/TUM/Thesis/Development/HiWi/Composite and stress recovery branch/Linear static composite test/thick tri/clamped_cylinder1_test.gid/clamped_cylinder1_test.vv
+   x 13.2758617401123047 16.7241344451904297
+   y 5 -25
+   z -55 35
+   e 15
+   v 0.0860799565770638403 0.17406638711947961 0.0391826751012330637
+   r 0.980181582167924947
+   m 0.936331212520599365 -0.0468450188636779785 0.34797900915145874 0 0.106779530644416809 0.982109904289245605 -0.155107200145721436 0 -0.334487646818161011 0.182388752698898315 0.924582242965698242 0 0 0 0 1
+   c 15 -10 10
+   pd 0
+   pno 0
+   pfo 0
+   pf 4
+   pv 0
+   NowUse 1
+   DrawingType 0
+   LightVector 90 90 150 0
+   OGLShadow(UseShadows) 0
+   OGLShadow(RenderMode) RenderNice
+   OGLShadow(ShadowBias) -0.002
+   OGLShadow(AmbientShadows) 1
+   OGLShadow(UseFBO) 0
+   OGLShadow(FBOSize) 2048
+   OGLShadow(DimmedLightFactor) 0.02
+   OGLStereo(UseStereo) 0
+   OGLStereo(RelativeEyeDistance) 1
+   OGLStereo(FlipEyes) 0
+   OGLStereo(StereoMode) AnaglyphColors
+   OGLStereo(EyeDistance) 0.075
+   OGLStereo(LeftEyeDistance) 1 0 0 1
+   OGLStereo(RightEyeDistance) 0 1 1 1
+EndZE C:/Users/Peter/Desktop/TUM/Thesis/Development/HiWi/Composite and stress recovery branch/Linear static composite test/thick tri/clamped_cylinder1_test.gid/clamped_cylinder1_test.vv
+
+BeginMirror
+   Mirror 0 Angle 0.0 AngleFake -15.0 SizeFactor 2.0 HeightOffset 0.25 Color #d9e5f24d Backlight Off EdgeStyle No Type Scene DrawMode Mirror
+EndMirror
+
