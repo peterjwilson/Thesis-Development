@@ -1,0 +1,338 @@
+{
+    "problem_data": {
+        "problem_name": "clamped_cylinder1_test",
+        "model_part_name": "Structure",
+        "domain_size": 3,
+        "parallel_type": "OpenMP",
+        "time_step": 1.1,
+        "start_time": 0.0,
+        "end_time": 1.0,
+        "echo_level": 2
+    },
+    "solver_settings": {
+        "solver_type": "Static",
+        "echo_level": 2,
+        "solution_type": "Static",
+        "analysis_type": "Linear",
+        "model_import_settings": {
+            "input_type": "mdpa",
+            "input_filename": "clamped_cylinder1_test",
+            "input_file_label": 0
+        },
+        "material_import_settings": {
+            "materials_filename": "StructuralMaterials.json"
+        },
+        "line_search": false,
+        "convergence_criterion": "Residual_criterion",
+        "displacement_relative_tolerance": 0.0001,
+        "displacement_absolute_tolerance": 1e-9,
+        "residual_relative_tolerance": 0.0001,
+        "residual_absolute_tolerance": 1e-9,
+        "max_iteration": 10,
+        "problem_domain_sub_model_part_list": [
+            "Parts_surface"
+        ],
+        "processes_sub_model_part_list": [
+            "DISPLACEMENT_ends",
+            "DISPLACEMENT_xy_sym",
+            "DISPLACEMENT_xz_sym",
+            "DISPLACEMENT_yz_sym",
+            "DISPLACEMENT_sample",
+            "ROTATION_xy_sym",
+            "ROTATION_xz_sym",
+            "ROTATION_yz_sym",
+            "SurfacePressure3D_surface"
+        ],
+        "rotation_dofs": true,
+        "scheme_type": "Static",
+        "buffer_size": 2,
+        "time_integration_method": "Implicit",
+        "computing_model_part_name": "computing_domain",
+        "pressure_dofs": false,
+        "reform_dofs_at_each_step": false,
+        "compute_reactions": true,
+        "compute_contact_forces": false,
+        "block_builder": true,
+        "clear_storage": false,
+        "move_mesh_flag": true,
+        "component_wise": false,
+        "linear_solver_settings": {
+            "solver_type": "SuperLUSolver",
+            "max_iteration": 500,
+            "tolerance": 1e-9,
+            "scaling": false,
+            "verbosity": 1
+        },
+        "bodies_list": []
+    },
+    "constraints_process_list": [
+        {
+            "python_module": "assign_vector_variable_process",
+            "kratos_module": "KratosMultiphysics",
+            "help": "This process fixes the selected components of a given vector variable",
+            "process_name": "AssignVectorVariableProcess",
+            "Parameters": {
+                "mesh_id": 0,
+                "model_part_name": "DISPLACEMENT_ends",
+                "variable_name": "DISPLACEMENT",
+                "value": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "interval": [
+                    0.0,
+                    1e30
+                ],
+                "constrained": [
+                    true,
+                    true,
+                    true
+                ],
+                "local_axes": {}
+            }
+        },
+        {
+            "python_module": "assign_vector_variable_process",
+            "kratos_module": "KratosMultiphysics",
+            "help": "This process fixes the selected components of a given vector variable",
+            "process_name": "AssignVectorVariableProcess",
+            "Parameters": {
+                "mesh_id": 0,
+                "model_part_name": "DISPLACEMENT_xy_sym",
+                "variable_name": "DISPLACEMENT",
+                "value": [
+                    null,
+                    null,
+                    0.0
+                ],
+                "interval": [
+                    0.0,
+                    1e30
+                ],
+                "constrained": [
+                    true,
+                    true,
+                    true
+                ],
+                "local_axes": {}
+            }
+        },
+        {
+            "python_module": "assign_vector_variable_process",
+            "kratos_module": "KratosMultiphysics",
+            "help": "This process fixes the selected components of a given vector variable",
+            "process_name": "AssignVectorVariableProcess",
+            "Parameters": {
+                "mesh_id": 0,
+                "model_part_name": "DISPLACEMENT_xz_sym",
+                "variable_name": "DISPLACEMENT",
+                "value": [
+                    null,
+                    0.0,
+                    null
+                ],
+                "interval": [
+                    0.0,
+                    1e30
+                ],
+                "constrained": [
+                    true,
+                    true,
+                    true
+                ],
+                "local_axes": {}
+            }
+        },
+        {
+            "python_module": "assign_vector_variable_process",
+            "kratos_module": "KratosMultiphysics",
+            "help": "This process fixes the selected components of a given vector variable",
+            "process_name": "AssignVectorVariableProcess",
+            "Parameters": {
+                "mesh_id": 0,
+                "model_part_name": "DISPLACEMENT_yz_sym",
+                "variable_name": "DISPLACEMENT",
+                "value": [
+                    0.0,
+                    null,
+                    null
+                ],
+                "interval": [
+                    0.0,
+                    1e30
+                ],
+                "constrained": [
+                    true,
+                    true,
+                    true
+                ],
+                "local_axes": {}
+            }
+        },
+        {
+            "python_module": "assign_vector_variable_process",
+            "kratos_module": "KratosMultiphysics",
+            "help": "This process fixes the selected components of a given vector variable",
+            "process_name": "AssignVectorVariableProcess",
+            "Parameters": {
+                "mesh_id": 0,
+                "model_part_name": "DISPLACEMENT_sample",
+                "variable_name": "DISPLACEMENT",
+                "value": [
+                    0.0,
+                    0.0,
+                    null
+                ],
+                "interval": [
+                    0.0,
+                    1e30
+                ],
+                "constrained": [
+                    true,
+                    true,
+                    true
+                ],
+                "local_axes": {}
+            }
+        },
+        {
+            "python_module": "assign_vector_variable_process",
+            "kratos_module": "KratosMultiphysics",
+            "help": "This process fixes the selected components of a given vector variable",
+            "process_name": "AssignVectorVariableProcess",
+            "Parameters": {
+                "mesh_id": 0,
+                "model_part_name": "ROTATION_xy_sym",
+                "variable_name": "ROTATION",
+                "value": [
+                    0.0,
+                    0.0,
+                    null
+                ],
+                "interval": [
+                    0.0,
+                    1e30
+                ],
+                "constrained": [
+                    true,
+                    true,
+                    true
+                ],
+                "local_axes": {}
+            }
+        },
+        {
+            "python_module": "assign_vector_variable_process",
+            "kratos_module": "KratosMultiphysics",
+            "help": "This process fixes the selected components of a given vector variable",
+            "process_name": "AssignVectorVariableProcess",
+            "Parameters": {
+                "mesh_id": 0,
+                "model_part_name": "ROTATION_xz_sym",
+                "variable_name": "ROTATION",
+                "value": [
+                    0.0,
+                    null,
+                    0.0
+                ],
+                "interval": [
+                    0.0,
+                    1e30
+                ],
+                "constrained": [
+                    true,
+                    true,
+                    true
+                ],
+                "local_axes": {}
+            }
+        },
+        {
+            "python_module": "assign_vector_variable_process",
+            "kratos_module": "KratosMultiphysics",
+            "help": "This process fixes the selected components of a given vector variable",
+            "process_name": "AssignVectorVariableProcess",
+            "Parameters": {
+                "mesh_id": 0,
+                "model_part_name": "ROTATION_yz_sym",
+                "variable_name": "ROTATION",
+                "value": [
+                    null,
+                    0.0,
+                    0.0
+                ],
+                "interval": [
+                    0.0,
+                    1e30
+                ],
+                "constrained": [
+                    true,
+                    true,
+                    true
+                ],
+                "local_axes": {}
+            }
+        }
+    ],
+    "loads_process_list": [
+        {
+            "python_module": "assign_scalar_to_conditions_process",
+            "kratos_module": "KratosMultiphysics",
+            "help": "This process sets a scalar variable value over a condition",
+            "process_name": "AssignScalarToConditionsProcess",
+            "Parameters": {
+                "mesh_id": 0,
+                "model_part_name": "SurfacePressure3D_surface",
+                "variable_name": "NEGATIVE_FACE_PRESSURE",
+                "value": -2040.37,
+                "interval": [
+                    0.0,
+                    1e30
+                ],
+                "local_axes": {}
+            }
+        }
+    ],
+    "output_configuration": {
+        "result_file_configuration": {
+            "gidpost_flags": {
+                "GiDPostMode": "GiD_PostBinary",
+                "WriteDeformedMeshFlag": "WriteDeformed",
+                "WriteConditionsFlag": "WriteConditions",
+                "MultiFileFlag": "SingleFile"
+            },
+            "file_label": "step",
+            "output_control_type": "step",
+            "output_frequency": 1,
+            "body_output": true,
+            "node_output": false,
+            "skin_output": false,
+            "plane_output": [],
+            "nodal_results": [
+                "DISPLACEMENT",
+                "REACTION",
+                "ROTATION",
+                "TORQUE"
+            ],
+            "gauss_point_results": [],
+            "nodal_nonhistorical_results": [],
+            "nodal_flags_results": [],
+            "additional_list_files": []
+        },
+        "point_data_configuration": []
+    },
+    "restart_options": {
+        "SaveRestart": false,
+        "RestartFrequency": 0,
+        "LoadRestart": false,
+        "Restart_Step": 0
+    },
+    "constraints_data": {
+        "incremental_load": false,
+        "incremental_displacement": false
+    },
+    "material_import_settings": {
+        "materials_filename": "StructuralMaterials.json"
+    }
+}

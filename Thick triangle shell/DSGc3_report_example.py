@@ -502,14 +502,14 @@ kirchhoffShearField_eta_u = kirchhoffShearField_eta_u.subs([(W1,disps[0]),(W2,di
 print('\n\nkirchhoffShearField_eta_u = ',kirchhoffShearField_eta_u)
 
 
-divisions = 8
+divisions = 25
 u = np.linspace(0, 1, divisions)
 v = np.linspace(1, 0, divisions)
 
 x_mesh = np.outer(np.ones_like(u), v)
 y_mesh = np.outer(v, u)
 
-divisions = 10
+divisions = 25
 u = np.linspace(0, 1, divisions)
 v = np.linspace(1, 0, divisions)
 

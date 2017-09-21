@@ -1,0 +1,139 @@
+ |  /           |             
+ ' /   __| _` | __|  _ \   __|
+ . \  |   (   | |   (   |\__ \ 
+_|\_\_|  \__,_|\__|\___/ ____/
+           Multi-Physics 5.1.0-c76823de7
+Initializing KratosExternalSolversApplication... 
+     KRATOS   ___|  |                   |                   |               
+            \___ \  __|  __| |   |  __| __| |   |  __| _` | |               
+                  | |   |    |   | (    |   |   | |   (   | |               
+            _____/ \__|_|   \__,_|\___|\__|\__,_|_|  \__,_|_| MECHANICS     
+  [Reading Nodes    : 425 nodes read]
+  [Reading Elements : 384 elements read] [Type: ShellThickElementCorotational3D4N]
+  [Reading Conditions : 384 conditions read] [Type: SurfaceLoadCondition3D4N]
+  [Total Lines Read : 2985]
+Importing    KratosExternalSolversApplication
+Importing    KratosStructuralMechanicsApplication
+::[MechanicalSolver]:: Construction finished
+::[StaticMechanicalSolver]:: Construction finished
+::[MechanicalSolver]:: Variables ADDED
+::[MechanicalSolver]:: Importing model part.
+    Reading model part from file: C:\Users\Peter\Desktop\TUM\Thesis\Development\HiWi\Composite and stress recovery branch\Linear static stress recovery testing - scordelis lo roof\Thick quad\Scordelis-Lo roof_struc4.gid\Scordelis-Lo roof_struc4.mdpa
+    Finished reading model part from mdpa file.
+Computing model part:
+-computing_domain- model part
+    Number of tables : 0
+    Number of sub model parts : 0
+
+    Mesh 0 : 
+        Number of Nodes      : 425
+        Number of Properties : 1
+        Number of Elements   : 384
+        Number of Conditions : 384
+
+
+finished reading materials
+    Constitutive law was successfully imported.
+-Structure- model part
+    Buffer Size : 2
+    Number of tables : 0
+    Number of sub model parts : 8
+    Current solution step index : 0
+    DOMAIN_SIZE : 3
+    TIME : 0
+    STEP : 0
+    DELTA_TIME : 0
+    IS_RESTARTED : 0
+
+    Mesh 0 : 
+        Number of Nodes      : 425
+        Number of Properties : 2
+        Number of Elements   : 384
+        Number of Conditions : 384
+
+    -computing_domain- model part
+        Number of tables : 0
+        Number of sub model parts : 0
+
+        Mesh 0 : 
+            Number of Nodes      : 425
+            Number of Properties : 2
+            Number of Elements   : 384
+            Number of Conditions : 384
+    -SurfaceLoad3D_Surface- model part
+        Number of tables : 0
+        Number of sub model parts : 0
+
+        Mesh 0 : 
+            Number of Nodes      : 425
+            Number of Properties : 0
+            Number of Elements   : 0
+            Number of Conditions : 384
+    -ROTATION_XZ_sym- model part
+        Number of tables : 0
+        Number of sub model parts : 0
+
+        Mesh 0 : 
+            Number of Nodes      : 17
+            Number of Properties : 0
+            Number of Elements   : 0
+            Number of Conditions : 0
+    -ROTATION_YZ_sym- model part
+        Number of tables : 0
+        Number of sub model parts : 0
+
+        Mesh 0 : 
+            Number of Nodes      : 25
+            Number of Properties : 0
+            Number of Elements   : 0
+            Number of Conditions : 0
+    -DISPLACEMENT_XZ_sym- model part
+        Number of tables : 0
+        Number of sub model parts : 0
+
+        Mesh 0 : 
+            Number of Nodes      : 17
+            Number of Properties : 0
+            Number of Elements   : 0
+            Number of Conditions : 0
+    -DISPLACEMENT_YZ_sym- model part
+        Number of tables : 0
+        Number of sub model parts : 0
+
+        Mesh 0 : 
+            Number of Nodes      : 25
+            Number of Properties : 0
+            Number of Elements   : 0
+            Number of Conditions : 0
+    -DISPLACEMENT_Dirichlet- model part
+        Number of tables : 0
+        Number of sub model parts : 0
+
+        Mesh 0 : 
+            Number of Nodes      : 17
+            Number of Properties : 0
+            Number of Elements   : 0
+            Number of Conditions : 0
+    -Parts_Surface- model part
+        Number of tables : 0
+        Number of sub model parts : 0
+
+        Mesh 0 : 
+            Number of Nodes      : 425
+            Number of Properties : 1
+            Number of Elements   : 384
+            Number of Conditions : 0
+
+::[MechanicalSolver]:: Finished importing model part.
+::[MechanicalSolver]:: DOF's ADDED
+::[StaticMechanicalSolver]:: Initializing ...
+::[MechanicalSolver]:: Initializing ...
+::[MechanicalSolver]:: Finished initialization.
+::[StaticMechanicalSolver]:: Finished initialization.
+
+STEP =  1
+TIME =  1.1
+ 
+::[KSM Simulation]:: Analysis -END- 
+ 
+KRATOS TERMINATED CORRECTLY

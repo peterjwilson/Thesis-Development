@@ -1,0 +1,20 @@
+{
+    "properties" : [{
+        "model_part_name" : "Parts_surface",
+        "properties_id"   : 1,
+        "Material"        : {
+            "constitutive_law" : {
+                "name" : "KratosMultiphysics.StructuralMechanicsApplication.LinearElasticOrthotropic2DLaw"
+            },
+            "Variables"        : {
+                "THICKNESS"     : 0.02,
+                "DENSITY"       : 7850.0,
+				"KratosMultiphysics.StructuralMechanicsApplication.SHELL_ORTHOTROPIC_LAYERS" : [[0.005,0,7850,20010000,1301000,0.3,1001000,1001000,1001000,80000,50000,4000,30000,6000,6000,6000],
+																								[0.005,45,7850,20010000,1301000,0.3,1001000,1001000,1001000,80000,50000,4000,30000,6000,6000,6000],
+																								[0.005,45,7850,20010000,1301000,0.3,1001000,1001000,1001000,80000,50000,4000,30000,6000,6000,6000],
+																								[0.005,0,7850,20010000,1301000,0.3,1001000,1001000,1001000,80000,50000,4000,30000,6000,6000,6000]]
+			},
+            "Tables"           : {}
+        }
+    }]
+}
